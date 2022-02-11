@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerCore : MonoBehaviour
+namespace Player
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerCore
     {
-        
+        public float moveSpeed { get; set; }
+        public float jumpPower { get; set; }
+        public float jumpTime { get; set; }
+        public Vector3 playerPos { get; set; }
+        public PlayerState playerState;
+        PlayerScriptable playerScriptable;
+        public PlayerCore(PlayerScriptable scriptable, Vector3 startPos)
+        {
+            playerScriptable = scriptable;
+            moveSpeed = playerScriptable.walkSpeed;
+            jumpPower = playerScriptable.jumpPower;
+            jumpTime = playerScriptable.jumpTime;
+            playerPos = startPos;
+            
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    public enum PlayerState
     {
-        
+        Stay,Walk
     }
 }
