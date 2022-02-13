@@ -1,0 +1,441 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.8f1 (507919d4fff5) revision 5273881'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19042.1466; Version 2009; 64bit' Language: 'ja' Physical Memory: 8048 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.8f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+54708
+Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 56.01 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.8f1 (507919d4fff5)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) UHD Graphics 620 (ID=0x5917)
+    Vendor:   
+    VRAM:     4024 MB
+    Driver:   27.20.100.7988
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56556
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004928 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 48.49 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.255 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002596 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 43.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.316 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.51 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1812 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.0 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2255.
+Total: 2.625000 ms (FindLiveObjects: 0.198300 ms CreateObjectMapping: 0.070600 ms MarkObjects: 2.208600 ms  DeleteObjects: 0.146400 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Free Asset - 2D Handcrafted Art/Prefab
+  artifactKey: Guid(4d7f61d8e3804fe4aa09f1e14046f2dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Prefab using Guid(4d7f61d8e3804fe4aa09f1e14046f2dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e8043216c3c2a93191aa4825ea0b2de') in 0.010852 seconds
+  Import took 0.014937 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000322 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Prefab/Dust2.prefab
+  artifactKey: Guid(1bebafe46ad6c91498badf5d89804451) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Prefab/Dust2.prefab using Guid(1bebafe46ad6c91498badf5d89804451) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ff8c6420adcd62ae23f39dac72ea0a0') in 0.081582 seconds
+  Import took 0.086776 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000500 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Scripts
+  artifactKey: Guid(97098a33cce6d4a4c9e4684a8d80f536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Scripts using Guid(97098a33cce6d4a4c9e4684a8d80f536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0a6d5ffb2ed6812d39f96f3e22752f1') in 0.009466 seconds
+  Import took 0.014709 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000339 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Prefab/Dust.prefab
+  artifactKey: Guid(411bc9616f611ce49a9df7a02d549cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Prefab/Dust.prefab using Guid(411bc9616f611ce49a9df7a02d549cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b3af5e2a2c04b522d4e26224b7d1872') in 0.012144 seconds
+  Import took 0.016875 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Material/Drop.mat
+  artifactKey: Guid(dbe0dfa3fcd760844833fba257f2f548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Material/Drop.mat using Guid(dbe0dfa3fcd760844833fba257f2f548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3684a707a7eae827a1505f5754f1fcf5') in 0.129734 seconds
+  Import took 0.134997 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000312 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Prefab/Sun_rays.prefab
+  artifactKey: Guid(292bbc865a358704a84b3a9512b6d0a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Prefab/Sun_rays.prefab using Guid(292bbc865a358704a84b3a9512b6d0a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cf4d6785cb523c2ce5fa55ce3175c84') in 0.010037 seconds
+  Import took 0.014179 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000305 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Prefab/WaterSuspension.prefab
+  artifactKey: Guid(b30d9391f199e7b4fbf3a08af1835fbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Prefab/WaterSuspension.prefab using Guid(b30d9391f199e7b4fbf3a08af1835fbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe72a4d6c707a90c6fa53acdad7d97d6') in 0.011129 seconds
+  Import took 0.016594 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000422 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Prefab/Ripple.prefab
+  artifactKey: Guid(e64b62ab6c9c9024fb88039858b97ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Prefab/Ripple.prefab using Guid(e64b62ab6c9c9024fb88039858b97ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f9c2293526ec7ba12ff3fe4a2463818') in 0.010159 seconds
+  Import took 0.015681 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000360 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Prefab/Drops.prefab
+  artifactKey: Guid(f8d68b077782545439effc638eac1db5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Prefab/Drops.prefab using Guid(f8d68b077782545439effc638eac1db5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '186630b50409f504617ed063f63a3483') in 0.010783 seconds
+  Import took 0.015368 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.484630 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/DemoScene.unity
+  artifactKey: Guid(d30fbee988f498842a6e22beea9f1786) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/DemoScene.unity using Guid(d30fbee988f498842a6e22beea9f1786) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '813e899b3e0acaf4adc01c36db5aaa65') in 0.008878 seconds
+  Import took 0.013316 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.198839 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite
+  artifactKey: Guid(22e7c00afa021524bb5bb644f8e08475) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite using Guid(22e7c00afa021524bb5bb644f8e08475) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e2b727ae41ec8ea831bcfc5206f52b9') in 0.009054 seconds
+  Import took 0.013419 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.068184 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Dust1.psd
+  artifactKey: Guid(3dec6952ae175ec489db5acd6fdbc68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Dust1.psd using Guid(3dec6952ae175ec489db5acd6fdbc68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e8dab3ae3409e9a4826d754b128c2ab') in 0.120294 seconds
+  Import took 0.125558 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000374 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/SunRays.psd
+  artifactKey: Guid(3960e1e6835b1934d95575d2ca534fa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/SunRays.psd using Guid(3960e1e6835b1934d95575d2ca534fa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b40f5466660e7cbd8b6fb2205adf3088') in 0.028907 seconds
+  Import took 0.033560 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000355 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Fog.psd
+  artifactKey: Guid(4029ecf14233cea4980157b99d0cbc26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Fog.psd using Guid(4029ecf14233cea4980157b99d0cbc26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e7cbf09a20d3140bdb8008386748f20') in 0.074880 seconds
+  Import took 0.078786 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000365 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/WaterCausticSprite.psd
+  artifactKey: Guid(1662ec17f4b516c46b0972250c36ade0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/WaterCausticSprite.psd using Guid(1662ec17f4b516c46b0972250c36ade0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7a975b77d06131ab0da0137a0d65457') in 0.249352 seconds
+  Import took 0.253699 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/suspensionDark.png
+  artifactKey: Guid(3da62fbb1303db94c87eb855e007b9d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/suspensionDark.png using Guid(3da62fbb1303db94c87eb855e007b9d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d61947a5d8d40f337fca630eee542f0') in 0.104758 seconds
+  Import took 0.108703 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000338 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Sprite3.png
+  artifactKey: Guid(6167b5d3cb29d52488e611c0cb2a074c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Sprite3.png using Guid(6167b5d3cb29d52488e611c0cb2a074c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d265cefc51a2873fde312b8e2078c04') in 0.216679 seconds
+  Import took 0.222072 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000330 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/WaterDrop.png
+  artifactKey: Guid(35918f6e079a0b04fa52f4d4f14dad6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/WaterDrop.png using Guid(35918f6e079a0b04fa52f4d4f14dad6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6dd0fca1165eb31b7ec4a780992e14a') in 0.021524 seconds
+  Import took 0.026157 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000349 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Ripple.psd
+  artifactKey: Guid(652d48bb47aa3f9449283f5c365dc950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Ripple.psd using Guid(652d48bb47aa3f9449283f5c365dc950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ca7a4a73d58c6dbf87a6b147a6b8c89') in 0.018668 seconds
+  Import took 0.023914 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000432 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Sprite4.png
+  artifactKey: Guid(74673f9934429b64cb1f34ae3f958274) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Sprite4.png using Guid(74673f9934429b64cb1f34ae3f958274) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1e9cd7ebfc48ac2b84941b9c755f546') in 0.239647 seconds
+  Import took 0.245612 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.141277 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss2/Moss2-animation_56.png
+  artifactKey: Guid(e30a567566c71174a9ac184bd1a99577) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss2/Moss2-animation_56.png using Guid(e30a567566c71174a9ac184bd1a99577) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77c9b1b624680fc4d93897f16c8ac604') in 0.032648 seconds
+  Import took 0.038624 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000483 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss2/Moss2-animation_58.png
+  artifactKey: Guid(622f4b4755958c84784b4055dca4b8fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss2/Moss2-animation_58.png using Guid(622f4b4755958c84784b4055dca4b8fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a0ddfa975a43e2c0250d4021e72b10c') in 0.024583 seconds
+  Import took 0.028658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000406 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss2/Moss2-animation_59.png
+  artifactKey: Guid(f41be9244cd2d1c4687a8fd098d73b1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss2/Moss2-animation_59.png using Guid(f41be9244cd2d1c4687a8fd098d73b1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5889369be09381b4136057407333d6ea') in 0.022430 seconds
+  Import took 0.028064 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000349 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss2/Moss2-animation_57.png
+  artifactKey: Guid(6b2fa855049d93f4da2ee9127308f1ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss2/Moss2-animation_57.png using Guid(6b2fa855049d93f4da2ee9127308f1ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5780f4989b334510161288540392d169') in 0.021078 seconds
+  Import took 0.026026 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000382 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss2/Moss2-animation_60.png
+  artifactKey: Guid(7d8821c79917ea04d856438a606060a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss2/Moss2-animation_60.png using Guid(7d8821c79917ea04d856438a606060a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67f8fa5c4ec384057cd8a8b84554b859') in 0.021604 seconds
+  Import took 0.026316 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000372 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss2/Moss2-animation_61.png
+  artifactKey: Guid(c011566da36bcce4ca64ead70a355156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss2/Moss2-animation_61.png using Guid(c011566da36bcce4ca64ead70a355156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c6744b7336a5500def0949127a78877') in 0.018916 seconds
+  Import took 0.023428 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss2/Moss2-animation_62.png
+  artifactKey: Guid(74ba093a6a11c524993f4c1be5ef8da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss2/Moss2-animation_62.png using Guid(74ba093a6a11c524993f4c1be5ef8da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25c63b95f8236a543808852e26e9afbb') in 0.025209 seconds
+  Import took 0.030782 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.329104 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss1/_44.png
+  artifactKey: Guid(e03d94d8f089c614c9bc5db3772ec177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss1/_44.png using Guid(e03d94d8f089c614c9bc5db3772ec177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45eeedd8cea76f3ff624023fe54deb4a') in 0.025660 seconds
+  Import took 0.031844 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000336 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss1/_47.png
+  artifactKey: Guid(6f8b13ae9e155f54dbe66c711a98e704) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss1/_47.png using Guid(6f8b13ae9e155f54dbe66c711a98e704) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e80870fa719a204ebf746877c050b8c') in 0.023888 seconds
+  Import took 0.028865 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000362 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss1/_49.png
+  artifactKey: Guid(74e9c267b65d33c428b8a6ae26b1bdbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss1/_49.png using Guid(74e9c267b65d33c428b8a6ae26b1bdbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7439e91fa8475180bff5bf5474e228f2') in 0.023180 seconds
+  Import took 0.029182 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000403 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss1/_45.png
+  artifactKey: Guid(3fab1d5846290b849b1425756d677f46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss1/_45.png using Guid(3fab1d5846290b849b1425756d677f46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09ab230943b290123e2db3233bd1dd1f') in 0.025191 seconds
+  Import took 0.030994 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000344 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss1/_50.png
+  artifactKey: Guid(2af81ca67be793647b0b0861d436fd53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss1/_50.png using Guid(2af81ca67be793647b0b0861d436fd53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3dd5071dc54036c690c0b18716f6ee7') in 0.023691 seconds
+  Import took 0.027692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000316 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss1/_46.png
+  artifactKey: Guid(65e412103ae6c114ba90fa2bb9eeaa4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss1/_46.png using Guid(65e412103ae6c114ba90fa2bb9eeaa4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4defcc8651746ce613f200915e30ae67') in 0.027581 seconds
+  Import took 0.032232 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000377 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss1/_48.png
+  artifactKey: Guid(c9e4de95675fdff4dadd13ca531b0ed6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Moss1/_48.png using Guid(c9e4de95675fdff4dadd13ca531b0ed6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7a331d84f6afb2855dc975b2118857e') in 0.022992 seconds
+  Import took 0.027739 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.872568 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_44.png
+  artifactKey: Guid(0244a7863d875f54d8fc1f7285f7483c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_44.png using Guid(0244a7863d875f54d8fc1f7285f7483c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b916acc4cef7c57822f5a3ddf97e216') in 0.025031 seconds
+  Import took 0.029308 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_51.png
+  artifactKey: Guid(ea25c01ab531c8d4db0ce07d58ee46ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_51.png using Guid(ea25c01ab531c8d4db0ce07d58ee46ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5886bf6162343d8d8e901e75f1905809') in 0.023023 seconds
+  Import took 0.027701 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000553 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_49.png
+  artifactKey: Guid(c3fc7753c7347f14695829971400490c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_49.png using Guid(c3fc7753c7347f14695829971400490c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36db1337af0b74ca4592f312242f2f17') in 0.020506 seconds
+  Import took 0.024861 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000360 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_48.png
+  artifactKey: Guid(590c13464661db6408c79958f7d48ce5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_48.png using Guid(590c13464661db6408c79958f7d48ce5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '481a9f22019be5930a665d3803fd5f58') in 0.022111 seconds
+  Import took 0.026444 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000498 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_45.png
+  artifactKey: Guid(d5f73cd1cb1e5704c90a66099969dd36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_45.png using Guid(d5f73cd1cb1e5704c90a66099969dd36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '321666c1be673d9a1568398f69c48fea') in 0.023113 seconds
+  Import took 0.028839 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000356 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_52.png
+  artifactKey: Guid(900f769151e4da646b62cf1fb5547dc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_52.png using Guid(900f769151e4da646b62cf1fb5547dc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1720136afeb8e89c72aa3682ee94354') in 0.024704 seconds
+  Import took 0.028654 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000405 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_46.png
+  artifactKey: Guid(9c274e0da6fa059439d706f003721cc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_46.png using Guid(9c274e0da6fa059439d706f003721cc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '619dfff831cc3f601d2ba4e45a6683a4') in 0.024879 seconds
+  Import took 0.030270 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000397 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_50.png
+  artifactKey: Guid(7d065014cf2deca43be5538f9691f3f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_50.png using Guid(7d065014cf2deca43be5538f9691f3f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba803b689002dee5bc09a6427b8f71dc') in 0.021460 seconds
+  Import took 0.026127 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000381 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_47.png
+  artifactKey: Guid(6e64746b2f118cb4dbe6112bcb6336d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Alg1/Algae1-animation_47.png using Guid(6e64746b2f118cb4dbe6112bcb6336d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dfe0058d7b84ef74f20a0295b2eaf0d') in 0.023806 seconds
+  Import took 0.028318 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001215 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.116 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.35 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1804 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.3 MB.
+System memory in use after: 92.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2463.
+Total: 2.486000 ms (FindLiveObjects: 0.225900 ms CreateObjectMapping: 0.076200 ms MarkObjects: 2.062200 ms  DeleteObjects: 0.120500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 166590.651962 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa27944bdea339c97c39027c7eea529c') in 0.673309 seconds
+  Import took 1.028232 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
