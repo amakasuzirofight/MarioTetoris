@@ -1,0 +1,2 @@
+C:\Users\user\Desktop\Mariteto\MarioTetrisMastarData\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Mariteto\MarioTetrisMastarData\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
