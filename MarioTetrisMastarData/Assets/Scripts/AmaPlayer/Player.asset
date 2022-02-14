@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1968061399b343b4087bda7328079754, type: 3}
-  m_Name: PlayerData
+  m_Name: Player
   m_EditorClassIdentifier: 
-  walkSpeed: 0.2
-  jumpPower: 0.1
-  jumpTime: 0.4
-  playerHigh: 3
-  playerWidth: 2
+  walkSpeed: 0
+  jumpPower: 0
+  jumpTime: 0
+  playerHigh: 0
+  playerWidth: 0

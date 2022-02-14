@@ -25,7 +25,7 @@ namespace Player
                 case PlayerState.Stay:
                     break;
                 case PlayerState.Walk:
-                    playerMove.PlayerMoveCulculate(playerCore.playerPos,field.testFieldArray);
+                    playerMove.PlayerWalkCulculate(playerCore.playerPos,field.testFieldArray);
                     break;
             }
             
