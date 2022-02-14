@@ -34,7 +34,7 @@ namespace Test
         //Œ»İ‚ÌÀ•W‚ğ”z—ñ‚É•ÏŠ·
         public static Vector2 PosToArray(Vector3 pos)
         {
-            return new Vector2((pos.x / 1)+HIGHT-1, WIDTH-(pos.y / 1));
+            return new Vector2((pos.x / 1), WIDTH-(pos.y / 1));
         }
 
         //public static bool IsBetween(float value, float a, float b)

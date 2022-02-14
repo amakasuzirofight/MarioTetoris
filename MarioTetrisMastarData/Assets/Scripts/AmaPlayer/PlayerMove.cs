@@ -35,7 +35,7 @@ namespace Player
         //‘«Œ³Šm”F
         bool IsFrontTouchGround(Vector2 arrayNum, float[,] FieldInfo)
         {
-            //if (FieldInfo[arrayNum.x,arrayNum.y-1])
+            //if (FieldInfo[arrayNum.x, arrayNum.y - 1])
             //{
 
             //}
