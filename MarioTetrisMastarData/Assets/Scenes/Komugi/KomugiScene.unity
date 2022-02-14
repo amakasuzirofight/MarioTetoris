@@ -333,6 +333,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageData: {fileID: 4900000, guid: fb0250185b323d84696262a72a5679cb, type: 3}
   text: {fileID: 58973700}
+  ground: {fileID: 5839409026174869350, guid: daf3bc4ee21fa2c45be67a988801f28d, type: 3}
+  mino: {fileID: 5328104141122990612, guid: 9c8bf7a4bf38eaf4d889dc45576b38a3, type: 3}
 --- !u!4 &1678169665
 Transform:
   m_ObjectHideFlags: 0

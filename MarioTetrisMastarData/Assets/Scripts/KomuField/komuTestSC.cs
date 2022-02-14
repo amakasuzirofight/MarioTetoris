@@ -9,11 +9,13 @@ public class Brock
 {
     public List<Vector2> number;
     public bool fallFlg;
+    public List<GameObject> minos;
     private int brockNumber;
 
     public Brock(int newNum)
     {
         number = new List<Vector2>();
+        minos = new List<GameObject>();
         fallFlg = true;
         brockNumber = newNum;
     }
@@ -47,6 +49,9 @@ public class komuTestSC : MonoBehaviour
     List<int[]> stage_csv_int = new List<int[]>();
     StreamWriter writer;
     [SerializeField] private Text text;
+    [SerializeField] private GameObject ground;
+    [SerializeField] private GameObject mino;
+    GameObject obj;
 
     List<Brock> activeBrock;
 
@@ -90,6 +95,11 @@ public class komuTestSC : MonoBehaviour
             activeBrock[activeBrock.Count - 1].number.Add(new Vector2(0,1));
             activeBrock[activeBrock.Count - 1].number.Add(new Vector2(0,2));
             activeBrock[activeBrock.Count - 1].stateChenge(true);
+
+            for (int i = 0; i < activeBrock[0].number.Count;i++)
+            {
+                activeBrock[activeBrock.Count - 1].minos.Add(Instantiate(mino));
+            }
 
             brNum++;
         }
@@ -155,6 +165,11 @@ public class komuTestSC : MonoBehaviour
             {
                 Debug.Log("string = " + stage_csv[i][j]);
                 Debug.Log("int    = " + stage_csv_int[i][j]);
+                if (stage_csv_int[i][j] == 1)
+                {
+                    obj = Instantiate(ground);
+                    obj.transform.position = new Vector3(j, i * -1, 0);
+                }
             }
         }
     }
@@ -183,12 +198,6 @@ public class komuTestSC : MonoBehaviour
                         Debug.Log(activeBrock[i].stateCheck());
                         break;
                     }
-                    //else // ’Êí—Ž‰º
-                    //{
-                    //    stage_csv_int[(int)activeBrock[i].number[j].x][(int)activeBrock[i].number[j].y] = 0;
-                    //    activeBrock[i].number[j] += new Vector2(1, 0);
-                    //    stage_csv_int[(int)activeBrock[i].number[j].x][(int)activeBrock[i].number[j].y] = activeBrock[i].brockNumGet();
-                    //}
                 }
 
                 if (activeBrock[i].stateCheck()) Fall(i);
@@ -214,7 +223,13 @@ public class komuTestSC : MonoBehaviour
         {
             stage_csv_int[(int)activeBrock[i].number[j].x][(int)activeBrock[i].number[j].y] = 0;
             activeBrock[i].number[j] += new Vector2(1, 0);
+            activeBrock[i].minos[j].transform.position = new Vector3((int)activeBrock[i].number[j].y, (int)activeBrock[i].number[j].x * -1,0);
             stage_csv_int[(int)activeBrock[i].number[j].x][(int)activeBrock[i].number[j].y] = activeBrock[i].brockNumGet();
         }
+    }
+
+    public List<int[]> StageDataGeter()
+    {
+        return stage_csv_int;
     }
 }
