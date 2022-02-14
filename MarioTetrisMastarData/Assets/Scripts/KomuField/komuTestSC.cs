@@ -2,20 +2,143 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.IO;
+
+public class Brock
+{
+    public List<Vector2> number;
+    public bool fallFlg;
+    public List<GameObject> minos;
+    private int brockNumber;
+
+    public Brock(int newNum)
+    {
+        number = new List<Vector2>();
+        minos = new List<GameObject>();
+        fallFlg = true;
+        brockNumber = newNum;
+    }
+
+    public void brockNumSet(int num)
+    {
+        brockNumber = num;
+    }
+
+    public int brockNumGet()
+    {
+        return brockNumber;
+    }
+
+    public void stateChenge(bool fallState)
+    {
+        fallFlg = fallState;
+        Debug.Log($"chenge => {fallFlg}");
+    }
+
+    public bool stateCheck()
+    {
+        return fallFlg;
+    }
+}
 
 public class komuTestSC : MonoBehaviour
 {
     [SerializeField] private TextAsset stageData;
     List<string[]> stage_csv = new List<string[]>();
+    List<int[]> stage_csv_int = new List<int[]>();
     StreamWriter writer;
     [SerializeField] private Text text;
+    [SerializeField] private GameObject ground;
+    [SerializeField] private GameObject mino;
+    GameObject obj;
+
+    List<Brock> activeBrock;
+
+    int brNum = 2;
 
     int count = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        activeBrock = new List<Brock>();
+        Log();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Log();
+        }
+
+        if (count > 3000)
+        {
+            Debug.Log("処理終了");
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("fal");
+
+            stage_csv_int[0][0] = brNum;
+            stage_csv_int[0][1] = brNum;
+            stage_csv_int[0][2] = brNum;
+            stage_csv_int[1][1] = brNum;
+
+            activeBrock.Add(new Brock(brNum));
+            activeBrock[activeBrock.Count - 1].number.Add(new Vector2(1, 1));
+            activeBrock[activeBrock.Count - 1].number.Add(new Vector2(0,0));
+            activeBrock[activeBrock.Count - 1].number.Add(new Vector2(0,1));
+            activeBrock[activeBrock.Count - 1].number.Add(new Vector2(0,2));
+            activeBrock[activeBrock.Count - 1].stateChenge(true);
+
+            for (int i = 0; i < activeBrock[0].number.Count;i++)
+            {
+                activeBrock[activeBrock.Count - 1].minos.Add(Instantiate(mino));
+            }
+
+            brNum++;
+        }
+
+        count++;
+
+        if (count % 30 == 0)
+        {
+            check();
+        }
+
+
+        text.text = "";
+        for (int i = 0;i < stage_csv_int.Count;i++)
+        {
+            for (int j = 0;j < stage_csv_int[0].Length;j++)
+            {
+                text.text += stage_csv_int[i][j] + ",";
+            }
+            text.text += "\n";
+        }
+    }
+
+    private void LateUpdate()
+    {
+        for (int i = 0;i < activeBrock.Count;i++)
+        {
+            if (!activeBrock[i].stateCheck())
+            {
+                activeBrock.RemoveAt(i);
+                i--;
+                return;
+            }
+        }
+    }
+
+    public void Log()
+    {
+        stage_csv = new List<string[]>();
         StringReader reader = new StringReader(stageData.text);
 
         // , で分割しつつ一行ずつ読み込み
@@ -26,142 +149,87 @@ public class komuTestSC : MonoBehaviour
             stage_csv.Add(line.Split(',')); // , 区切りでリストに追加
         }
 
+        for (int i = 0;i < stage_csv.Count;i++)
+        {
+            stage_csv_int.Add(new int[stage_csv[i].Length]);
+            for (int j = 0;j < stage_csv[i].Length;j++)
+            {
+                stage_csv_int[i][j] = Convert.ToInt32(stage_csv[i][j]);
+            }
+        }
+
         // csvDatas[行][列]を指定して値を自由に取り出せる
-        for (int i = 0;i < stage_csv.Count;i++)
+        for (int i = 0; i < stage_csv.Count; i++)
         {
-            for (int j = 0;j < stage_csv[0].Length;j++)
+            for (int j = 0; j < stage_csv[0].Length; j++)
             {
-                Debug.Log(stage_csv[i][j]);
-            }
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            Debug.Log("debug");
-            writer = new StreamWriter("Assets/KomuFile/StageData.csv", append: false);
-            for (int i = 0;i < stage_csv.Count;i++)
-            {
-                for (int j = 0; j < stage_csv[0].Length;j++)
+                Debug.Log("string = " + stage_csv[i][j]);
+                Debug.Log("int    = " + stage_csv_int[i][j]);
+                if (stage_csv_int[i][j] == 1)
                 {
-                    if (stage_csv[i][j] == "1")
-                    {
-                        stage_csv[i][j] = "2,";
-                        writer.Write(stage_csv[i][j]);
-                    }
-                    else
-                    {
-                        writer.Write(stage_csv[i][j] + ",");
-                    }
+                    obj = Instantiate(ground);
+                    obj.transform.position = new Vector3(j, i * -1, 0);
                 }
-                writer.WriteLine();
             }
-
-            writer.Close();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("fal");
-
-            stage_csv[0][0] = "2,";
-            stage_csv[0][1] = "2,";
-            stage_csv[0][2] = "2";
-
-            //writer = new StreamWriter("Assets/KomuFile/StageData.csv", append: false);
-
-            //for (int i = 1;i < stage_csv.Count;i++)
-            //{
-            //    for (int j = 0;j < stage_csv[0].Length;j++)
-            //    {
-            //        if (i == 0) stage_csv[i][j] = "2";
-            //        writer.Write(stage_csv[i][j] + ",");
-            //    }
-            //    writer.WriteLine();
-            //}
-            //writer.Close();
-        }
-
-        count++;
-
-        if (count == 30)
-        {
-            check();
-            count = 0;
-        }
-
-
-        text.text = "";
-        for (int i = 0;i < stage_csv.Count;i++)
-        {
-            for (int j = 0;j < stage_csv[0].Length;j++)
-            {
-                text.text += stage_csv[i][j] + ",";
-            }
-            text.text += "\n";
         }
     }
 
     public void check()
     {
-        writer = new StreamWriter("Assets/KomuFile/StageData.csv", append: false);
-
-        for (int i = stage_csv.Count - 1;i > 0;--i)
+        using (writer = new StreamWriter("Assets/KomuFile/StageData.csv", append: false))
         {
-            for (int j = stage_csv[0].Length - 1; j > 0;--j)
+            // 確認
+            for(int i = 0;i < activeBrock.Count;i++)
             {
-                if (stage_csv[i][j] == "2," && i + 1 < stage_csv.Count - 1)
+                if (!activeBrock[i].stateCheck()) return;
+                for (int j = 0; j < activeBrock[i].number.Count; j++)
                 {
-                    stage_csv[i + 1][j] = "2,";
-                    writer.Write(stage_csv[i + 1][j]);
-                    stage_csv[i][j] = "0,";
-                    writer.Write(stage_csv[i][j]);
-                }
-                else if (stage_csv[i][j] == "2" && i + 1 < stage_csv.Count - 1)
-                {
-                    stage_csv[i + 1][j] = "2";
-                    writer.Write(stage_csv[i + 1][j]);
-                    stage_csv[i][j] = "0";
-                    writer.Write(stage_csv[i][j]);
-                }
-                else
-                {
-                    if (j == stage_csv[0].Length - 1)
+                    if (activeBrock[i].number[j].x >= stage_csv_int.Count - 1) // 最下層であるなら落下防止
                     {
-                        writer.Write(stage_csv[i][j]);
+                        Debug.Log("先がないため移動を中止します");
+                        activeBrock[i].stateChenge(false);
+                        break;
                     }
-                    else
+                    else if (activeBrock[i].brockNumGet() != stage_csv_int[(int)activeBrock[i].number[j].x + 1][(int)activeBrock[i].number[j].y]
+                             && stage_csv_int[(int)activeBrock[i].number[j].x + 1][(int)activeBrock[i].number[j].y] != 0) // 移動先が違うブロックであるなら落下防止
                     {
-                        writer.Write(stage_csv[i][j] + ",");
+                        activeBrock[i].stateChenge(false);
+                        Debug.Log("先にブロックを確認したため移動を中止します");
+                        Debug.Log(activeBrock[i].stateCheck());
+                        break;
                     }
                 }
+
+                if (activeBrock[i].stateCheck()) Fall(i);
             }
 
-            writer.WriteLine();
+            // 記述
+            for (int i = 0;i < stage_csv_int.Count;i++)
+            {
+                for (int j = 0;j < stage_csv_int[i].Length;j++)
+                {
+                    writer.Write(stage_csv_int[i][j].ToString());
+                    if (j < stage_csv_int[i].Length - 1) writer.Write(",");
+                }
+
+                writer.WriteLine();
+            }
         }
+    }
 
-        //for (int i = 0 ; i < stage_csv.Count;i++)
-        //{
-        //    for(int j = 0; j < stage_csv[0].Length;j++)
-        //    {
-        //        if (stage_csv[i][j] == "2" && i + 1 <= stage_csv.Count)
-        //        {
-        //            stage_csv[i + 1][j] = "2,";
-        //            writer.Write(stage_csv[i + 1][j]);
-        //            stage_csv[i][j] = "0,";
-        //            writer.Write(stage_csv[i][j]);
-        //        }
-        //        else if (i + 1 > stage_csv.Count)
-        //        {
-        //            stage_csv[i + 1][j] = "0,";
-        //            writer.Write(stage_csv[i][j]);
-        //        }
-        //    }
-        //}
+    public void Fall(int i)
+    {
+        for (int j = 0; j < activeBrock[i].number.Count; j++)
+        {
+            stage_csv_int[(int)activeBrock[i].number[j].x][(int)activeBrock[i].number[j].y] = 0;
+            activeBrock[i].number[j] += new Vector2(1, 0);
+            activeBrock[i].minos[j].transform.position = new Vector3((int)activeBrock[i].number[j].y, (int)activeBrock[i].number[j].x * -1,0);
+            stage_csv_int[(int)activeBrock[i].number[j].x][(int)activeBrock[i].number[j].y] = activeBrock[i].brockNumGet();
+        }
+    }
 
-        writer.Close();
+    public List<int[]> StageDataGeter()
+    {
+        return stage_csv_int;
     }
 }
