@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Player
 {
-    public class PlayerMove2D :IPlayerAction
+    public class PlayerWalk :IPlayerAction
     {
         public event ChangeStater changeStateEvent;
         public event CoreUpdate coreUpdateEvent;

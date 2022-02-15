@@ -8,7 +8,7 @@ public class AmaInstaller : MonoInstaller
     {
         Container
             .Bind<IPlayerAction>()
-            .To<PlayerMove2D>()
+            .To<PlayerWalk>()
             .AsCached();
         Container
             .Bind<IPlayerAction>()
