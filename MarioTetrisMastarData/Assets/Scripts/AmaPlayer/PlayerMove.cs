@@ -23,14 +23,20 @@ namespace Player
         {
             //現在の座標を配列に変換
             Vector2 posToField = Test.TestField.PosToArray(playerPos);
+            Vector3 playerPosition = playerPos;
             //Test.TestField.IsBetween(playerPos)
             //地面を踏んでいるか
-            if (IsFrontTouchGround(posToField,FieldInfo))
+            if (IsFrontTouchGround(posToField, FieldInfo))
             {
                 //踏んでいた場合歩く
+                playerPosition.x += _speed;
+                if(IsSideGround())
+                {
 
+                }
             }
-            return playerPos;
+
+            return playerPosition;
         }
         //足元確認
         bool IsFrontTouchGround(Vector2 arrayNum, float[,] FieldInfo)
@@ -41,7 +47,15 @@ namespace Player
             //}
             return true;
         }
+        bool IsSideGround()
+        {
+            return true;
+        }
 
+    }
+    public enum Pivot
+    {
+        LEFT,RIGHT
     }
 
 }
