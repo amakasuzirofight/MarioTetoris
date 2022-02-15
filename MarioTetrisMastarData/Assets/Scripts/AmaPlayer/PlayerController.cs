@@ -11,6 +11,8 @@ namespace Player
         [SerializeField] PlayerScriptable playerScriptable;
         private PlayerMove playerMove;
         PlayerCore playerCore;
+
+      
         void Start()
         {
             playerCore = new PlayerCore(playerScriptable, transform.position) ;

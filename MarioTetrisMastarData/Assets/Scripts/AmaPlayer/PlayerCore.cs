@@ -12,7 +12,7 @@ namespace Player
         public float playerHigh { get; set; }
         public float playerWidth { get; set; }
 
-        public PlayerState playerState;
+        public PlayerState playerState { get; }
         PlayerScriptable playerScriptable;
         public PlayerCore(PlayerScriptable scriptable, Vector3 startPos)
         {
@@ -25,11 +25,17 @@ namespace Player
             playerWidth = playerScriptable.playerWidth;
 
             playerPos = startPos;
-            
         }
+        
     }
     public enum PlayerState
     {
-        Stay,Walk
+        Stay,Walk,Jump
+    }
+    public struct PlayerInfo
+    {
+        Vector3 playerPos;
+        Sprite playerSpr;
+
     }
 }
