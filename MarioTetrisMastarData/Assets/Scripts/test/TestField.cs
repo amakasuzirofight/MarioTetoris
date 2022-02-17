@@ -19,7 +19,6 @@ namespace Test
             {0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0},
             {1,1,1,1,1,1,0,0,0,0, 0,0,0,0,0,0,0,0,0,0},
         };
-
         // Start is called before the first frame update
         void Start()
         {
@@ -34,7 +33,7 @@ namespace Test
         //åªç›ÇÃç¿ïWÇîzóÒÇ…ïœä∑
         public static Vector2 PosToArray(Vector3 pos)
         {
-            return new Vector2((pos.x / 1)+HIGHT-1, WIDTH-(pos.y / 1));
+            return new Vector2((pos.x / 1), WIDTH-(pos.y / 1));
         }
 
         //public static bool IsBetween(float value, float a, float b)

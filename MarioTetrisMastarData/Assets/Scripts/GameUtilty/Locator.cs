@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Utility
 {
-    public class Locator<T>
+    public static class  Locator<T>
     {
         private static Dictionary<int, T> dic = new Dictionary<int, T>(1);
 
