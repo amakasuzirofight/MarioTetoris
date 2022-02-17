@@ -5,44 +5,6 @@ using UnityEngine.UI;
 using System;
 using System.IO;
 
-
-public class Brock
-{
-    public List<FieldInfo> csv_pos;
-    public bool fallFlg;
-    public List<GameObject> minos;
-    private int brockNumber;
-
-    public Brock(int newNum)
-    {
-        csv_pos = new List<FieldInfo>();
-        minos = new List<GameObject>();
-        fallFlg = true;
-        brockNumber = newNum;
-    }
-
-    public void brockNumSet(int num)
-    {
-        brockNumber = num;
-    }
-
-    public int brockNumGet()
-    {
-        return brockNumber;
-    }
-
-    public void stateChenge(bool fallState)
-    {
-        fallFlg = fallState;
-        Debug.Log($"chenge => {fallFlg}");
-    }
-
-    public bool stateCheck()
-    {
-        return fallFlg;
-    }
-}
-
 public class komuTestSC : MonoBehaviour
 {
     [SerializeField] private TextAsset stageData;
@@ -99,6 +61,54 @@ public class komuTestSC : MonoBehaviour
             activeBrock[activeBrock.Count - 1].stateChenge(true);
 
             for (int i = 0; i < activeBrock[0].csv_pos.Count;i++)
+            {
+                activeBrock[activeBrock.Count - 1].minos.Add(Instantiate(mino));
+            }
+
+            brNum++;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            Debug.Log("fal");
+
+            stage_csv_int[0][7] = brNum;
+            stage_csv_int[0][8] = brNum;
+            stage_csv_int[0][9] = brNum;
+            stage_csv_int[0][10] = brNum;
+
+            activeBrock.Add(new Brock(brNum));
+            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(0, 7));
+            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(0, 8));
+            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(0, 9));
+            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(0, 10));
+            activeBrock[activeBrock.Count - 1].stateChenge(true);
+
+            for (int i = 0; i < activeBrock[0].csv_pos.Count; i++)
+            {
+                activeBrock[activeBrock.Count - 1].minos.Add(Instantiate(mino));
+            }
+
+            brNum++;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Debug.Log("fal");
+
+            stage_csv_int[0][2] = brNum;
+            stage_csv_int[0][3] = brNum;
+            stage_csv_int[0][4] = brNum;
+            stage_csv_int[0][5] = brNum;
+
+            activeBrock.Add(new Brock(brNum));
+            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(0, 2));
+            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(0, 3));
+            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(0, 4));
+            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(0, 5));
+            activeBrock[activeBrock.Count - 1].stateChenge(true);
+
+            for (int i = 0; i < activeBrock[0].csv_pos.Count; i++)
             {
                 activeBrock[activeBrock.Count - 1].minos.Add(Instantiate(mino));
             }
