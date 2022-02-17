@@ -8,6 +8,8 @@ public class PlayerScriptable : ScriptableObject
     [Header("移動速度"), SerializeField] public float walkSpeed;
     [Header("ジャンプ力"), SerializeField] public float jumpPower;
     [Header("最大ジャンプ時間"), SerializeField] public float jumpTime;
+    [Header("ジャンプの高度遷移"), SerializeField] public AnimationCurve jumpCurve;
+    [Header("プレイヤーの落下速度"), SerializeField] public float fallSpeed;
     [Header("キャラの背の高さ"), SerializeField] public float playerHigh;
     [Header("キャラの横幅"), SerializeField] public float playerWidth;
 }

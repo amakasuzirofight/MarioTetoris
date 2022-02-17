@@ -8,12 +8,13 @@ public class Amapping
     [RuntimeInitializeOnLoadMethod]//ç≈ë¨
     void MappingAma()
     {
-        PlayerJump playerJump = new PlayerJump();
-        Locator<IPlayerAction>.Bind(playerJump, 2);
-        PlayerWalk playerMove = new PlayerWalk();
-        Locator<IPlayerAction>.Bind(playerMove,1);
-        PlayerStay stay = new PlayerStay();
-        Locator<IPlayerAction>.Bind(stay,0);
+        //PlayerJump playerJump = new PlayerJump();
+        //Locator<IPlayerAction>.Bind(playerJump, 2);
+        //PlayerWalk playerMove = new PlayerWalk();
+        //Locator<IPlayerAction>.Bind(playerMove,1);
+        //PlayerStay stay = new PlayerStay();
+        //Locator<IPlayerAction>.Bind(stay,0);
+
     }
  
  

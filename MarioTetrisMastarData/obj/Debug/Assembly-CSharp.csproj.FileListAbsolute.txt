@@ -331,3 +331,6 @@ C:\Users\user\Desktop\Mariteto\MarioTetrisMastarData\Temp\Bin\Debug\UnityEngine.
 C:\Users\user\Desktop\Mariteto\MarioTetrisMastarData\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\user\Desktop\Mariteto\MarioTetrisMastarData\obj\Debug\Assembly-CSharp.dll
 C:\Users\user\Desktop\Mariteto\MarioTetrisMastarData\obj\Debug\Assembly-CSharp.pdb
+C:\Users\user\Documents\MarioTetoris\MarioTetrisMastarData\obj\Debug\Assembly-CSharp.csproj.AssemblyReference.cache
+C:\Users\user\Documents\MarioTetoris\MarioTetrisMastarData\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\MarioTetoris\MarioTetrisMastarData\obj\Debug\Assembly-CSharp.dll

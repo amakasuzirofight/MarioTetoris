@@ -70,11 +70,11 @@ public class komuTestSC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Debug.Log(FieldNumberGeter(new Vector3(2,-7,0)));
-            Log();
-        }
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    Debug.Log(FieldNumberGeter(new Vector3(2,-7,0)));
+        //    Log();
+        //}
 
         if (count > 3000)
         {
@@ -92,13 +92,13 @@ public class komuTestSC : MonoBehaviour
             stage_csv_int[1][1] = brNum;
 
             activeBrock.Add(new Brock(brNum));
-            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(1,1));
-            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(0,0));
-            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(0,1));
-            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(0,2));
+            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(1, 1));
+            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(0, 0));
+            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(0, 1));
+            activeBrock[activeBrock.Count - 1].csv_pos.Add(new FieldInfo(0, 2));
             activeBrock[activeBrock.Count - 1].stateChenge(true);
 
-            for (int i = 0; i < activeBrock[0].csv_pos.Count;i++)
+            for (int i = 0; i < activeBrock[0].csv_pos.Count; i++)
             {
                 activeBrock[activeBrock.Count - 1].minos.Add(Instantiate(mino));
             }
@@ -115,9 +115,9 @@ public class komuTestSC : MonoBehaviour
 
 
         text.text = "";
-        for (int i = 0;i < stage_csv_int.Count;i++)
+        for (int i = 0; i < stage_csv_int.Count; i++)
         {
-            for (int j = 0;j < stage_csv_int[0].Length;j++)
+            for (int j = 0; j < stage_csv_int[0].Length; j++)
             {
                 text.text += stage_csv_int[i][j] + ",";
             }
@@ -127,7 +127,7 @@ public class komuTestSC : MonoBehaviour
 
     private void LateUpdate()
     {
-        for (int i = 0;i < activeBrock.Count;i++)
+        for (int i = 0; i < activeBrock.Count; i++)
         {
             if (!activeBrock[i].stateCheck())
             {
@@ -151,10 +151,10 @@ public class komuTestSC : MonoBehaviour
             stage_csv.Add(line.Split(',')); // , 区切りでリストに追加
         }
 
-        for (int i = 0;i < stage_csv.Count;i++)
+        for (int i = 0; i < stage_csv.Count; i++)
         {
             stage_csv_int.Add(new int[stage_csv[i].Length]);
-            for (int j = 0;j < stage_csv[i].Length;j++)
+            for (int j = 0; j < stage_csv[i].Length; j++)
             {
                 stage_csv_int[i][j] = Convert.ToInt32(stage_csv[i][j]);
             }
@@ -181,7 +181,7 @@ public class komuTestSC : MonoBehaviour
         using (writer = new StreamWriter("Assets/KomuFile/StageData.csv", append: false))
         {
             // 確認
-            for(int i = 0;i < activeBrock.Count;i++)
+            for (int i = 0; i < activeBrock.Count; i++)
             {
                 if (!activeBrock[i].stateCheck()) return;
                 for (int j = 0; j < activeBrock[i].csv_pos.Count; j++)
@@ -206,9 +206,9 @@ public class komuTestSC : MonoBehaviour
             }
 
             // 記述
-            for (int i = 0;i < stage_csv_int.Count;i++)
+            for (int i = 0; i < stage_csv_int.Count; i++)
             {
-                for (int j = 0;j < stage_csv_int[i].Length;j++)
+                for (int j = 0; j < stage_csv_int[i].Length; j++)
                 {
                     writer.Write(stage_csv_int[i][j].ToString());
                     if (j < stage_csv_int[i].Length - 1) writer.Write(",");
@@ -225,7 +225,7 @@ public class komuTestSC : MonoBehaviour
         {
             stage_csv_int[(int)activeBrock[i].csv_pos[j].height][(int)activeBrock[i].csv_pos[j].width] = 0;
             activeBrock[i].csv_pos[j] += new FieldInfo(1, 0);
-            activeBrock[i].minos[j].transform.position = new Vector3((int)activeBrock[i].csv_pos[j].width, (int)activeBrock[i].csv_pos[j].height * -1,0);
+            activeBrock[i].minos[j].transform.position = new Vector3((int)activeBrock[i].csv_pos[j].width, (int)activeBrock[i].csv_pos[j].height * -1, 0);
             stage_csv_int[(int)activeBrock[i].csv_pos[j].height][(int)activeBrock[i].csv_pos[j].width] = activeBrock[i].brockNumGet();
         }
     }
@@ -235,26 +235,26 @@ public class komuTestSC : MonoBehaviour
         return stage_csv_int;
     }
 
-    public FieldNumber FieldNumberGeter(Vector3 pos,Difference difference = Difference.STAY)
+    public FieldNumber FieldNumberGeter(Vector3 pos, Difference difference = Difference.STAY)
     {
         FieldNumber fieldnum = FieldNumber.NULL;
         int number = -1;
         switch (difference)
         {
             case Difference.UP:
-                number = stage_csv_int[((int)pos.y + 1) * - 1][(int)pos.x];
+                number = stage_csv_int[((int)pos.y + 1) * -1][(int)pos.x];
                 break;
             case Difference.DOWN:
-                number = stage_csv_int[((int)pos.y - 1)* - 1][(int)pos.x];
+                number = stage_csv_int[((int)pos.y - 1) * -1][(int)pos.x];
                 break;
             case Difference.LEFT:
-                number = stage_csv_int[(int)pos.y * - 1][(int)pos.x - 1];
+                number = stage_csv_int[(int)pos.y * -1][(int)pos.x - 1];
                 break;
             case Difference.RIGHT:
-                number = stage_csv_int[(int)pos.y * - 1][(int)pos.x + 1];
+                number = stage_csv_int[(int)pos.y * -1][(int)pos.x + 1];
                 break;
             case Difference.STAY:
-                number = stage_csv_int[(int)pos.y * - 1][(int)pos.x];
+                number = stage_csv_int[(int)pos.y * -1][(int)pos.x];
                 break;
 
         }

@@ -9,24 +9,20 @@ namespace Player
 {
         public event ChangeStater changeStateEvent;
         public event CoreUpdate coreUpdateEvent;
+        public event CheckGounder checkGround;
 
-        public void StateUpdate()
+        public PlayerStay()
         {
-            throw new System.NotImplementedException();
+
         }
+       
 
-        // Start is called before the first frame update
-        void Start()
-    {
-        
+     
+        public void StateUpdate(PlayerCore core)
+        {
+            Debug.Log("ステイ！！！！！");
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
 
 }
 

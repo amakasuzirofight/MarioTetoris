@@ -1,0 +1,2 @@
+C:\Users\user\Documents\MarioTetoris\MarioTetrisMastarData\obj\Debug\Unity.2D.Tilemap.Extras.Editor.csproj.AssemblyReference.cache
+C:\Users\user\Documents\MarioTetoris\MarioTetrisMastarData\obj\Debug\Unity.2D.Tilemap.Extras.Editor.csproj.CoreCompileInputs.cache
