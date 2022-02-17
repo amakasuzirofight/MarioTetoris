@@ -124,15 +124,6 @@ public class komuTestSC : MonoBehaviour
         }
 
 
-        text.text = "";
-        for (int i = 0; i < stage_csv_int.Count; i++)
-        {
-            for (int j = 0; j < stage_csv_int[0].Length; j++)
-            {
-                text.text += stage_csv_int[i][j] + ",";
-            }
-            text.text += "\n";
-        }
     }
 
     private void LateUpdate()

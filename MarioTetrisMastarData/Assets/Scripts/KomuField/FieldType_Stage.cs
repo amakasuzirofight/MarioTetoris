@@ -72,7 +72,7 @@ public class FieldType_Stage : FieldBase
         if (frameCount % checkFrame == 0)
         {
             FieldUpdate();
-            // frameCount = 0;
+            frameCount = 0;
         }
     }
 
