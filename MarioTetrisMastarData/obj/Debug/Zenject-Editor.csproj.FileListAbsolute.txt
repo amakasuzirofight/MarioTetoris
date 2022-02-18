@@ -1,0 +1,2 @@
+C:\Users\user\Documents\MarioTetoris\MarioTetrisMastarData\obj\Debug\Zenject-Editor.csproj.AssemblyReference.cache
+C:\Users\user\Documents\MarioTetoris\MarioTetrisMastarData\obj\Debug\Zenject-Editor.csproj.CoreCompileInputs.cache
