@@ -124,15 +124,15 @@ public class komuTestSC : MonoBehaviour
         }
 
 
-        text.text = "";
-        for (int i = 0; i < stage_csv_int.Count; i++)
-        {
-            for (int j = 0; j < stage_csv_int[0].Length; j++)
-            {
-                text.text += stage_csv_int[i][j] + ",";
-            }
-            text.text += "\n";
-        }
+        //text.text = "";
+        //for (int i = 0; i < stage_csv_int.Count; i++)
+        //{
+        //    for (int j = 0; j < stage_csv_int[0].Length; j++)
+        //    {
+        //        text.text += stage_csv_int[i][j] + ",";
+        //    }
+        //    text.text += "\n";
+        //}
     }
 
     private void LateUpdate()
@@ -175,8 +175,8 @@ public class komuTestSC : MonoBehaviour
         {
             for (int j = 0; j < stage_csv[0].Length; j++)
             {
-                Debug.Log("string = " + stage_csv[i][j]);
-                Debug.Log("int    = " + stage_csv_int[i][j]);
+                //Debug.Log("string = " + stage_csv[i][j]);
+                //Debug.Log("int    = " + stage_csv_int[i][j]);
                 if (stage_csv_int[i][j] == 1)
                 {
                     obj = Instantiate(ground);
@@ -188,7 +188,7 @@ public class komuTestSC : MonoBehaviour
 
     public void check()
     {
-        using (writer = new StreamWriter("Assets/KomuFile/StageData.csv", append: false))
+        using (writer = new StreamWriter($"Assets/KomuFile/{stageData.name}.csv", append: false))
         {
             // Šm”F
             for (int i = 0; i < activeBrock.Count; i++)

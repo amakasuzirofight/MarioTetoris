@@ -12,42 +12,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1968061399b343b4087bda7328079754, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  walkSpeed: 0.2
-  jumpPower: 0.1
-  jumpTime: 0.4
+  walkSpeed: 0.1
+  jumpPower: 0.06
+  jumpTime: 0.3
   jumpCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      value: 1.0000011
+      inSlope: -1.2201082
+      outSlope: -1.2201082
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.48448396
-      value: 0.8982523
-      inSlope: 0.45724058
-      outSlope: 0.45724058
-      tangentMode: 0
+      time: 0.7772391
+      value: 0.051685303
+      inSlope: -0.7260648
+      outSlope: -0.7260648
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      value: 0
+      inSlope: -0.23202142
+      outSlope: -0.23202142
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  fallSpeed: 0.3
+  fallSpeed: 0.04
   playerHigh: 3
   playerWidth: 2

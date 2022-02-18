@@ -20,8 +20,10 @@ namespace Player
      
         public void StateUpdate(PlayerCore core)
         {
-            Debug.Log("ステイ！！！！！");
+            //Debug.Log("ステイ！！！！！");
         }
+
+       
     }
 
 }
