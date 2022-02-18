@@ -6,16 +6,18 @@ namespace Enemy
 {
     public class EnemyBaseFollow : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        // Enemy‚ÌŠî’ê’Ç]ƒNƒ‰ƒX
+
+        protected virtual void Follow(GameObject deteObj,float spd) 
         {
+            Vector3 pos = transform.position;
+            float distance = deteObj.transform.position.x - pos.x;
+            int dir = 1;
 
-        }
+            if (distance < 0) dir =  1;
+            else              dir = -1;
 
-        // Update is called once per frame
-        void Update()
-        {
-
+            transform.position += new Vector3(pos.x * spd * Time.deltaTime, 0f, 0f) * dir;
         }
     }
 

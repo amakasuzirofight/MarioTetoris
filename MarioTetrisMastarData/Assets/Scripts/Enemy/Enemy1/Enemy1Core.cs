@@ -20,9 +20,9 @@ namespace Enemy
             // ステータス初期化メソッド(コンストラクタでいい？？)
             private void StatusSet(int hp, int atkPow, float spd) 
             {
-                Hp = hp;
+                Hp     = hp;
                 AtkPow = atkPow;
-                Spd = spd;
+                Spd    = spd;
             }
         }
 

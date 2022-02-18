@@ -8,12 +8,15 @@ namespace Enemy
     {
         // Enemy‚ÌŠî’êˆÚ“®ƒNƒ‰ƒX
 
-        protected virtual void Move(float spd) 
+        protected virtual void Move(float spd, bool isTurn) 
         {
             Vector3 pos = transform.position;
+            int dir = 1;
 
-            if (pos.x > pos.x + 5)
-            transform.position += new Vector3(pos.x * spd * Time.deltaTime, 0f, 0f); 
+            if (isTurn) dir =  1;
+            else        dir = -1;
+
+            transform.position += new Vector3(pos.x * spd * Time.deltaTime, 0f, 0f) * dir;
         }
     }
 }
