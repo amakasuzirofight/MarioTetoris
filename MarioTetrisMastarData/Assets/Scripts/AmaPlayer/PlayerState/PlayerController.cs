@@ -14,13 +14,21 @@ namespace Player
         ICharInputter charInputter;
         private PlayerMove playerMove;
         PlayerCore playerCore;
-
+        PlayerInfo playerInfo;
         IPlayerAction[] playerActions;
         bool IsGround;
         void Start()
         {
             playerActions = new IPlayerAction[4];
             playerCore = new PlayerCore(playerScriptable, transform.position);
+            //ゲーム情報の構造体の値を設定
+            #region
+            //playerInfo.moveSpeed = playerCore.moveSpeed;
+            //playerInfo.jumpPower = playerCore.jumpPower;
+            //playerInfo.jumpTime = playerCore.jumpTime;
+            //playerInfo.playerPos = playerCore.playerPos;
+            //playerInfo.moveSpeed = playerCore.moveSpeed;
+            #endregion
             charInputter = inputObj.GetComponent<ICharInputter>();
 
             playerActions[0] = new PlayerStay();
@@ -33,16 +41,17 @@ namespace Player
                 playerActions[i].coreUpdateEvent += CoreUpdate;
                 playerActions[i].changeStateEvent += ChangeState;
                 playerActions[i].checkGround += FieldNumberGeter2D;
-
             }
+
         }
 
         // Update is called once per frame
         void Update()
         {
             //Debug.LogWarning(charInputter.MoveInput());
-            //StateChangeByInput();
-            //playerActions[(int)playerCore.playerState].StateUpdate(playerCore);
+            StateChangeByInput();
+            playerActions[(int)playerCore.playerState].StateUpdate(playerCore);
+            Debug.Log("State Is "+playerCore.playerState);
 
         }
         void StateChangeByInput()
@@ -51,16 +60,19 @@ namespace Player
             FieldNumber underField = komuTestSC.FieldNumberGeter(playerCore.playerPos, Difference.DOWN);
             if (underField == FieldNumber.GROUND || underField == FieldNumber.MINO)//地面に乗っている場合
             {
+                //ジャンプフラグをつける
+                playerCore.SetCanJump(true);
                 if (charInputter.JumpInput())//ジャンプが押されていた場合
                 {
-                    if (playerCore.canJump)//ジャンプ中でないとき
+                    if (playerCore.canJump)//ジャンプ中できるとき
                     {
+                        Debug.Log("ジャンプに移行");
                         ChangeState(PlayerState.JumpUp);
                     }
                 }
                 else if (playerCore.movedirection != 0)//ジャンプ中でなくて横移動があった場合歩く
                 {
-                        playerCore.SetState(PlayerState.Walk);
+                    playerCore.SetState(PlayerState.Walk);
                 }
                 else
                 {
@@ -69,7 +81,12 @@ namespace Player
             }
             else //空中にいる場合落下させる
             {
-                ChangeState(PlayerState.FallDown);
+                Debug.Log("空中にいるため落下");
+                if (playerCore.canJump == true)
+                {
+                    ChangeState(PlayerState.FallDown);
+
+                }
             }
 
 
@@ -91,6 +108,7 @@ namespace Player
         {
             return playerCore;
         }
+        
     }
 }
 
