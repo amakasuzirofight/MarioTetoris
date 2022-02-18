@@ -6,16 +6,14 @@ namespace Enemy
 {
     public class EnemyBaseDetection : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        // Enemy‚ÌŠî’êŒŸoƒNƒ‰ƒX
+
+        protected virtual bool Ditection(GameObject diteObj, float deteRange)
         {
+            float distance = diteObj.transform.position.x - transform.position.x;
 
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            if (Mathf.Abs(distance) < deteRange) return true;
+            return false;
         }
     }
 
