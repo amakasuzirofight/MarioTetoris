@@ -7,40 +7,42 @@ namespace Enemy
     public class EnemyBaseMove : MonoBehaviour
     {
         // Enemyの基底移動関係クラス
-
+        protected int dir = -1;
 
         // 移動メソッド
-        protected virtual void Move(Rigidbody2D rb ,float spd, bool isTurn) 
+        protected virtual void Move(Rigidbody2D rb ,float spd) 
         {
-            int dir = -1;
-
-            if (isTurn) dir *= -1;
+            Vector3 scale = transform.localScale;
 
             rb.velocity = new Vector3(dir * spd, rb.velocity.y, 0f);
+            transform.localScale = new Vector3(-dir , scale.y);
         }
 
 
-        // 特定のオブジェクトを検出するメソッド
-        protected virtual bool Ditection(GameObject diteObj, float deteRange)
+        // 距離を返すメソッド
+        protected virtual float Distance(GameObject obj)
         {
-            float distance = diteObj.transform.position.x - transform.position.x;
+            float distance = obj.transform.position.x - transform.position.x;
 
-            if (Mathf.Abs(distance) < deteRange) return true;
+            return distance;
+        }
+
+
+        // オブジェクト検出メソッド
+        protected virtual bool Detection(float dis, float diteRange) 
+        {
+            if (Mathf.Abs(dis) < diteRange) return true;
             return false;
         }
 
 
-        // 検出したオブジェクトを追従するメソッド
-        protected virtual void Follow(GameObject deteObj, Rigidbody2D rb, float spd, bool flg)
+        // 検出したオブジェクト追従メソッド
+        protected virtual void Follow(Rigidbody2D rb, float spd, float dis, bool flg)
         {
-            Vector3 pos = transform.position;
-            float distance = deteObj.transform.position.x - pos.x;
-            int dir = -1;
-
             if (!flg) return;
 
-            if (distance < 0) dir = -1;
-            else dir = 1;
+            if (dis < 0) dir = -1;
+            else         dir =  1;
 
             rb.velocity = new Vector3(dir * spd, rb.velocity.y, 0f);
         }

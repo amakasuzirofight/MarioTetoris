@@ -9,14 +9,9 @@ namespace Enemy
     {
         public class Enemy1MoveState : EnemyBaseMove, IEnemy1State
         {
-            // Playerが実装するの！？
-            // PlayerのStart状態処理
+            // PlayerのMove状態処理
 
-            [SerializeField] private GameObject player;
-            [SerializeField] private bool flg;
-            [SerializeField] private float range;
-
-            public Enemy1StateType StateType => Enemy1StateType.MOVE;
+            public Enemy1StateType StateType =>  Enemy1StateType.MOVE;
             public event Action<Enemy1StateType> ChangeStateEvent;
 
             private Enemy1Core enemy1Core;
@@ -25,14 +20,13 @@ namespace Enemy
             void IEnemy1State.OnStart(Enemy1StateType beforeState, Enemy1Core enemy)
             {
                 enemy1Core ??= GetComponent<Enemy1Core>();
-                rb ??= GetComponent<Rigidbody2D>();
+                rb         ??= GetComponent<Rigidbody2D>();
             }
 
             void IEnemy1State.OnUpdate(Enemy1Core enemy)
             {
-                //Debug.Log(StateType);
-
-                Move(rb, enemy1Core.Spd, Ditection(player, range));
+                Debug.Log(StateType);
+                Move(rb, enemy1Core.Spd);
             }
 
             void IEnemy1State.OnFixedUpdate(Enemy1Core enemy)
@@ -43,14 +37,23 @@ namespace Enemy
             {
             }
 
+            // ステート変更メソッド
             private void StateChangeManager()
             {
-                // Playerと触れた時
                 ChangeStateEvent(Enemy1StateType.DAMAGED);
             }
+
+            private void OnTriggerEnter2D(Collider2D collision)
+            {
+                if(collision.name == "Player")
+                {
+                    // Playerの攻撃に当たったら
+                    StateChangeManager();
+                }
+                else dir *= -1;
+            }
+
+
         }
-
     }
-
-
 }

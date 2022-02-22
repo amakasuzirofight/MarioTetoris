@@ -7,22 +7,25 @@ namespace Enemy
 {
     namespace Enemy1State
     {
-        public class Enemy1StartState : MonoBehaviour, IEnemy1State
+        public class Enemy1DeadState : EnemyBaseDead, IEnemy1State
         {
-            // Player‚ªÀ‘•‚·‚é‚ÌIH
-            // Player‚ÌStartó‘Ôˆ—
+            // Player‚ÌDeadó‘Ôˆ—
 
-            public Enemy1StateType StateType => Enemy1StateType.START;
+            public Enemy1StateType StateType =>  Enemy1StateType.DEAD;
             public event Action<Enemy1StateType> ChangeStateEvent;
+
 
             void IEnemy1State.OnStart(Enemy1StateType beforeState, Enemy1Core enemy)
             {
+                Debug.Log(StateType);
+
+                // €–Sˆ—
+                Dead();
             }
 
             void IEnemy1State.OnUpdate(Enemy1Core enemy)
             {
                 Debug.Log(StateType);
-                ChangeStateEvent(Enemy1StateType.MOVE);
             }
 
             void IEnemy1State.OnFixedUpdate(Enemy1Core enemy)

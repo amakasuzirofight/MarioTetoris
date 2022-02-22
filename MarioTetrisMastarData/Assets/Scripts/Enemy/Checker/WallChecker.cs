@@ -12,14 +12,14 @@ namespace MyUtility
         // 壁判定処理
 
         [SerializeField, Tooltip("レイの長さ")]     　　private float raylength = 1f;
-        [SerializeField, Tooltip("地面(壁)のレイヤー")] private LayerMask groundLayer;
+        [SerializeField, Tooltip("地面(壁)のレイヤー")] private LayerMask layer;
 
 
         // 着地判定メソッド(レイの処理)
         public bool CheckIsGround(CapsuleCollider2D col)
         {
             bool hit;                                               // 当たった時の判定変数
-            float rayInitialPos  = col.size.y;                      // RayのY座標初期位置
+            float rayInitialPos  = col.size.y + -1f;                // RayのY座標初期位置
             float colHalfHeight2 = col.size.y / 3.2f;               // RayのY座標間隔
             Vector3 lineLength = transform.right * raylength;       // レイを飛ばす方向と長さ
             Vector3 checkPos = transform.position;                  // プレイヤーの座標
@@ -32,15 +32,14 @@ namespace MyUtility
 
 
             // レイを飛ばす
-            hit = true;
             for (int loop = 0; loop < MAX_LOOP; ++loop)
             {
-                Debug.DrawLine(checkPos + transform.right * 0.1f, checkPos - lineLength * -transform.localScale.x, Color.red);// デバッグでレイを表示
-                hit &= Physics2D.Linecast(checkPos + transform.right * 0.1f, checkPos - lineLength * -transform.localScale.x, groundLayer);
+                Debug.DrawLine(checkPos + transform.right * 0.1f, checkPos - lineLength * transform.localScale.x, Color.red);// デバッグでレイを表示
+                hit = Physics2D.Linecast(checkPos + transform.right * 0.1f, checkPos - lineLength * transform.localScale.x, layer);
+                if (hit) return true;
                 checkPos.y -= colHalfHeight2;// 座標を--していく
             }
-
-            return hit;
+            return false;
         }
 
     }
