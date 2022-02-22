@@ -72,13 +72,18 @@ namespace Player
 
                 FieldNumber fieldObjX, fieldObjY;
                 //移動先にブロックがないか確認
-                fieldObjX = checkGround(anotherPos, numberForward);
-                //ブロックがあった場合、場所の更新はそのまま
-                //X軸
-                if (fieldObjX == FieldNumber.GROUND || fieldObjX == FieldNumber.MINO)
+                if (numberForward != default)
                 {
-                    anotherPosX = core.playerPos.x;
+                    //X軸
+                    fieldObjX = checkGround(PlayerCore.Cordrectiondifference(anotherPos, numberForward, core), numberForward);
+                    //ブロックがあった場合、場所の更新はそのまま
+                    if (fieldObjX == FieldNumber.GROUND || fieldObjX == FieldNumber.MINO)
+                    {
+                        anotherPosX = core.playerPos.x;
+                    }
                 }
+               
+
                 fieldObjY = checkGround(anotherPos, numberUp);
                 //Y軸
                 if (fieldObjY == FieldNumber.GROUND || fieldObjY == FieldNumber.MINO)
@@ -91,7 +96,7 @@ namespace Player
                 }
 
                 //移動したい座標確定
-                Debug.Log(anotherPosY);
+                //Debug.Log(anotherPosY);
                 anotherPos = new Vector3(anotherPosX, anotherPosY, core.playerPos.z);
                 core.playerPos = anotherPos;
                 coreUpdateEvent(core);

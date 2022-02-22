@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ namespace Inputer
 {
     public class CharInput : MonoBehaviour, ICharInputter
     {
+        public event JumpPush JumpEvent;
 
         void Start()
         {
@@ -15,6 +17,7 @@ namespace Inputer
         void Update()
         {
             MoveInput();
+            if (Input.GetKeyDown(KeyCode.W)) JumpEvent();
         }
         public float MoveInput()
         {
@@ -39,6 +42,11 @@ namespace Inputer
                 return true;
             }
             return false;
+        }
+
+        public Action JumpInputEvent()
+        {
+            throw new NotImplementedException();
         }
     }
 

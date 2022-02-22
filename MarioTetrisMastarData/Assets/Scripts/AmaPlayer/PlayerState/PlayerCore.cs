@@ -61,7 +61,7 @@ namespace Player
         {
             movedirection = power;
         }
-
+        //•â³‚µ‚½’l‚ª‹A‚Á‚Ä‚­‚é
         public static Vector3 Cordrectiondifference(Vector3 pos, Difference difference, PlayerCore core)
         {
             switch (difference)

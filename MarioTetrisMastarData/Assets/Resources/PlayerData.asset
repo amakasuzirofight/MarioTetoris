@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   walkSpeed: 0.1
-  jumpPower: 0.06
+  jumpPower: 0.07
   jumpTime: 0.3
   jumpCurve:
     serializedVersion: 2
@@ -48,6 +48,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  fallSpeed: 0.04
+  fallSpeed: 0.1
   playerHigh: 3
   playerWidth: 2

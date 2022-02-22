@@ -41,7 +41,9 @@ namespace Player
             //Šm”F‚µ‚½‚¢•ûŒü‚ğæ“¾
             Difference movedDifference = _speed == 1 ? Difference.RIGHT : Difference.LEFT;
             //Field‚É•·‚­
-            if (checkGround(anotherPos, movedDifference) == FieldNumber.GROUND || checkGround(anotherPos, movedDifference) == FieldNumber.MINO)
+            if (checkGround(PlayerCore.Cordrectiondifference(anotherPos, movedDifference, core), movedDifference) == FieldNumber.GROUND
+                ||
+                checkGround(PlayerCore.Cordrectiondifference(anotherPos, movedDifference, core), movedDifference) == FieldNumber.MINO)
             {
                 //áŠQ•¨”­Œ©‚É‚Â‚«ˆÚ“®‚³‚¹‚È‚¢
                 coreUpdateEvent(core);
@@ -52,9 +54,14 @@ namespace Player
                 core.playerPos = anotherPos;
                 coreUpdateEvent(core);
             }
+            //if (checkGround(anotherPos, movedDifference) == FieldNumber.GROUND || checkGround(anotherPos, movedDifference) == FieldNumber.MINO)
+            //{
+
+            //}
+
         }
 
-    
+
     }
 
 
