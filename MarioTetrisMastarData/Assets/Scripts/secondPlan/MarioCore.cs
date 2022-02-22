@@ -43,6 +43,7 @@ namespace Mario
 
             canJump = true;
             marioState = MarioState.Stay;
+            _localScale = transform.localScale;
         }
 
         // Update is called once per frame
@@ -53,8 +54,19 @@ namespace Mario
                 TestAttackCol.SetActive(true);
             }
         }
+        Vector3 _localScale;
         private void FixedUpdate()
         {
+            if (inputer.MoveInput() != 0)
+            {
+                //テスト用反転
+                
+                transform.localScale = new Vector3(inputer.MoveInput() == 1 ? _localScale.x : -_localScale.x, transform.localScale.y, transform.localScale.z);
+            }
+         
+
+
+
             isGround = CheckIsGround(capsuleCollider2D, 3, 0.005f);
             JumpJudge();
             MoveJudge();
