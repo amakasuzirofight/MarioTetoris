@@ -166,8 +166,8 @@ public class komuTestSC : MonoBehaviour
         {
             for (int j = 0; j < stage_csv[0].Length; j++)
             {
-                Debug.Log("string = " + stage_csv[i][j]);
-                Debug.Log("int    = " + stage_csv_int[i][j]);
+                //Debug.Log("string = " + stage_csv[i][j]);
+                //Debug.Log("int    = " + stage_csv_int[i][j]);
                 if (stage_csv_int[i][j] == 1)
                 {
                     obj = Instantiate(ground);

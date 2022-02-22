@@ -51,14 +51,17 @@ namespace Player
             //Debug.LogWarning(charInputter.MoveInput());
             StateChangeByInput();
             playerActions[(int)playerCore.playerState].StateUpdate(playerCore);
-            Debug.Log("State Is "+playerCore.playerState);
+            //Debug.Log("State Is " + playerCore.playerState);
 
         }
         void StateChangeByInput()
         {
             playerCore.SetMoveDirection(charInputter.MoveInput());
-            FieldNumber underField = komuTestSC.FieldNumberGeter(playerCore.playerPos, Difference.DOWN);
-            if (underField == FieldNumber.GROUND || underField == FieldNumber.MINO)//地面に乗っている場合
+            //FieldNumber underField = komuTestSC.FieldNumberGeter(playerCore.playerPos, Difference.DOWN);
+            IsGround = JudgeGround(playerCore.playerPos, playerCore);
+            Debug.Log(IsGround);
+            //if (underField == FieldNumber.GROUND || underField == FieldNumber.MINO)//地面に乗っている場合
+            if(IsGround)
             {
                 //ジャンプフラグをつける
                 playerCore.SetCanJump(true);
@@ -88,8 +91,21 @@ namespace Player
 
                 }
             }
-
-
+        }
+        bool JudgeGround(Vector3 pos, PlayerCore core)
+        {
+            return
+                (
+                  FieldNumberGeter2D(PlayerCore.Cordrectiondifference(pos, Difference.LEFT, core), Difference.DOWN) == FieldNumber.GROUND
+                  ||
+                  FieldNumberGeter2D(PlayerCore.Cordrectiondifference(pos, Difference.LEFT, core), Difference.DOWN) == FieldNumber.MINO
+                 )
+                 &&
+                 (
+                    FieldNumberGeter2D(PlayerCore.Cordrectiondifference(pos, Difference.RIGHT, core), Difference.DOWN) == FieldNumber.GROUND
+                    ||
+                    FieldNumberGeter2D(PlayerCore.Cordrectiondifference(pos, Difference.RIGHT, core), Difference.DOWN) == FieldNumber.MINO
+                 );
         }
         void CoreUpdate(PlayerCore core)
         {
@@ -108,7 +124,7 @@ namespace Player
         {
             return playerCore;
         }
-        
+
     }
 }
 
