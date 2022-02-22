@@ -7,12 +7,12 @@ namespace Enemy
 {
     namespace Enemy1State
     {
-        public class Enemy1DamageState : EnemyBaseMove, IEnemy1State
+        public class Enemy1DamageState : EnemyBaseHPManager, IEnemy1State
         {
             // Player‚ªŽÀ‘•‚·‚é‚ÌIH
             // Player‚ÌStartó‘Ôˆ—
 
-            public Enemy1StateType StateType => Enemy1StateType.DEAD;
+            public Enemy1StateType StateType => Enemy1StateType.DAMAGED;
             public event Action<Enemy1StateType> ChangeStateEvent;
 
             private Enemy1Core enemy1Core;
@@ -37,7 +37,7 @@ namespace Enemy
 
             private void StateChangeManager()
             {
-
+                if(enemy1Core.Hp <= 0) ChangeStateEvent(Enemy1StateType.DEAD);
             }
         }
 

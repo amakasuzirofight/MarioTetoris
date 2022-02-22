@@ -25,8 +25,6 @@ namespace Enemy
                 Spd    = spd;
             }
         }
-
     }
-
 }
 

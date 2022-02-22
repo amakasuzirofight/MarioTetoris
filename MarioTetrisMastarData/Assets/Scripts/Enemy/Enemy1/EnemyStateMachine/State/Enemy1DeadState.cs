@@ -7,7 +7,7 @@ namespace Enemy
 {
     namespace Enemy1State
     {
-        public class Enemy1DeadState : EnemyBaseMove, IEnemy1State
+        public class Enemy1DeadState : EnemyBaseDead, IEnemy1State
         {
             // Player‚ªÀ‘•‚·‚é‚ÌIH
             // Player‚ÌStartó‘Ôˆ—

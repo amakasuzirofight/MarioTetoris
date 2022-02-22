@@ -14,7 +14,7 @@ namespace Enemy
             [SerializeField]
             private Enemy1Core enemy1;
 
-            private Enemy1StateType crrentEnemy1State = Enemy1StateType.COUNT;
+            private Enemy1StateType crrentEnemy1State = Enemy1StateType.START;
             private Dictionary<Enemy1StateType, IEnemy1State> enemyStateDic = new Dictionary<Enemy1StateType, IEnemy1State>((int)Enemy1StateType.COUNT);
 
 
@@ -74,20 +74,20 @@ namespace Enemy
 
             // 引数の中はEnum型にしてもいいっぽい！
             // ステート変更メソッド(event変数に代入するメソッド)
-            public void ChangeState(Enemy1StateType playerState)
+            public void ChangeState(Enemy1StateType enemyState)
             {
-                if (playerState is Enemy1StateType.COUNT)
+                if (enemyState is Enemy1StateType.COUNT)
                 {
                     Debug.LogErrorFormat($"Count state is specified ,CurrentState{crrentEnemy1State}");
                     return;
                 }
 
-                enemyStateDic[crrentEnemy1State].OnEnd(playerState, enemy1);
+                enemyStateDic[crrentEnemy1State].OnEnd(enemyState, enemy1);
 
                 // 中身を変更
-                crrentEnemy1State = playerState;
+                crrentEnemy1State = enemyState;
 
-                enemyStateDic[crrentEnemy1State].OnStart(playerState, enemy1);
+                enemyStateDic[crrentEnemy1State].OnStart(enemyState, enemy1);
             }
         }
     }

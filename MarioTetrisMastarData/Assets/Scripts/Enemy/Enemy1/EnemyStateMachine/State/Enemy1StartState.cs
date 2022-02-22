@@ -15,17 +15,14 @@ namespace Enemy
             public Enemy1StateType StateType => Enemy1StateType.START;
             public event Action<Enemy1StateType> ChangeStateEvent;
 
-            private Enemy1Core enemy1Core;
-
             void IEnemy1State.OnStart(Enemy1StateType beforeState, Enemy1Core enemy)
             {
-                enemy1Core ??= GetComponent<Enemy1Core>();
             }
 
             void IEnemy1State.OnUpdate(Enemy1Core enemy)
             {
                 Debug.Log(StateType);
-                // ChangeStateEvent(PlayerStateEnum.STAY);
+                ChangeStateEvent(Enemy1StateType.MOVE);
             }
 
             void IEnemy1State.OnFixedUpdate(Enemy1Core enemy)

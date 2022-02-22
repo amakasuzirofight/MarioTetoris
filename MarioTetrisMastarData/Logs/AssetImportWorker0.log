@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.8f1 (507919d4fff5) revision 5273881'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19042.1466; Version 2009; 64bit' Language: 'ja' Physical Memory: 8048 MB
+OS: 'Windows 10 Pro; OS build 19042.1526; Version 2009; 64bit' Language: 'ja' Physical Memory: 8048 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -15,35 +15,11 @@ C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-65387
+57570
 Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 132.72 ms, found 1 plugins.
-=======
-49936
-Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
-C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
-Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 66.64 ms, found 1 plugins.
->>>>>>> AmakasuFeature2D
-=======
-54553
-Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
-C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
-Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 87.81 ms, found 1 plugins.
->>>>>>> Feature_Amakasu3D
-=======
-63824
-Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
-C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
-Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 176.94 ms, found 1 plugins.
->>>>>>> feature_Enemy1
+Refreshing native plugins compatible for Editor in 62.08 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.8f1 (507919d4fff5)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -59,259 +35,107 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56612
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56856
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002399 seconds.
+Registered in 0.003402 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 99.93 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 102.07 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.060 seconds
+- Completed reload, in  1.833 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004989 seconds.
+Registered in 0.006071 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 81.05 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 82.46 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.432 seconds
+- Completed reload, in  1.495 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.58 ms, found 1 plugins.
-=======
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56560
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002088 seconds.
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 70.85 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.444 seconds
-Platform modules already initialized, skipping
-Registering precompiled user dll's ...
-Registered in 0.006215 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 100.85 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.663 seconds
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
 Refreshing native plugins compatible for Editor in 0.52 ms, found 1 plugins.
->>>>>>> AmakasuFeature2D
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2464 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 106.9 MB.
-System memory in use after: 106.9 MB.
-
-Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 2908.
-<<<<<<< HEAD
-Total: 2.713900 ms (FindLiveObjects: 0.290800 ms CreateObjectMapping: 0.133400 ms MarkObjects: 2.089400 ms  DeleteObjects: 0.198800 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Resources/PlayerData.asset
-  artifactKey: Guid(d192c1e5fd7152142b2d6b0861cab497) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/PlayerData.asset using Guid(d192c1e5fd7152142b2d6b0861cab497) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63b0d780894c8a0ea9c6ac008efa207a') in 0.064887 seconds
-  Import took 0.077010 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.140981 seconds.
-  path: Assets/Prefabs/SceneChengeObject.prefab
-  artifactKey: Guid(76adf0f1ecf0389429a1a9dca36bdf18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/SceneChengeObject.prefab using Guid(76adf0f1ecf0389429a1a9dca36bdf18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2fe4fcc2621f5ab2759c61e087fccf3') in 0.049133 seconds
-  Import took 0.055124 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000367 seconds.
-  path: Assets/Prefabs/TownData1_tileMaps.prefab
-  artifactKey: Guid(201a6fe4438836a42919ac214593a667) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/TownData1_tileMaps.prefab using Guid(201a6fe4438836a42919ac214593a667) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '162cbbfa1c33c2bab3c87dcb914b8e81') in 0.015564 seconds
-  Import took 0.022508 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000417 seconds.
-  path: Assets/Prefabs/StageData1.prefab
-  artifactKey: Guid(bc7c4d938141ad24a9b15b0e2d180311) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/StageData1.prefab using Guid(bc7c4d938141ad24a9b15b0e2d180311) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc362ac2131a9d137c3a9e9e0cf472bf') in 0.019422 seconds
-  Import took 0.027019 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000698 seconds.
-  path: Assets/Prefabs/TownData1.prefab
-  artifactKey: Guid(0116bc29db8a4f14189a3a973befb59b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/TownData1.prefab using Guid(0116bc29db8a4f14189a3a973befb59b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0e9584d707f99a213ca24101d4a7e25') in 0.019469 seconds
-  Import took 0.029103 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.060111 seconds.
-  path: Assets/Scenes/Amakasu/AmakasuScene.unity
-  artifactKey: Guid(402ac4edb7d0cba4fab12a676876b139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Amakasu/AmakasuScene.unity using Guid(402ac4edb7d0cba4fab12a676876b139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5f022e2bb2a7076100758e366c74a37') in 0.014058 seconds
-  Import took 0.029044 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.700423 seconds.
-  path: Assets/Scenes/Komugi/KomugiScene.unity
-  artifactKey: Guid(909d6dbe02428d647963ce1cd8d5475b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Komugi/KomugiScene.unity using Guid(909d6dbe02428d647963ce1cd8d5475b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8150374b16fdc7fe50893e47926a4dea') in 0.016962 seconds
-  Import took 0.021493 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.176956 seconds.
-  path: Assets/Scripts/AmaPlayer/Maping
-  artifactKey: Guid(3a541598af97cd54f8632bd2171c0d4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AmaPlayer/Maping using Guid(3a541598af97cd54f8632bd2171c0d4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe3e3868eb0afa8a79592a9774dbd20a') in 0.014933 seconds
-  Import took 0.032074 seconds .
-=======
-Total: 3.029300 ms (FindLiveObjects: 0.308700 ms CreateObjectMapping: 0.157800 ms MarkObjects: 2.297500 ms  DeleteObjects: 0.241400 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Scenes/Amakasu/AmakasuScene.unity
-  artifactKey: Guid(402ac4edb7d0cba4fab12a676876b139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Amakasu/AmakasuScene.unity using Guid(402ac4edb7d0cba4fab12a676876b139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96ac915da7e3079307f36f95a38190bc') in 0.029097 seconds
-  Import took 0.035783 seconds .
->>>>>>> AmakasuFeature2D
-=======
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56112
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003961 seconds.
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 83.87 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.242 seconds
-Platform modules already initialized, skipping
-Registering precompiled user dll's ...
-Registered in 0.005091 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 103.82 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.731 seconds
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 0.95 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2464 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 106.8 MB.
-System memory in use after: 106.9 MB.
-
-Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 2908.
-Total: 2.927900 ms (FindLiveObjects: 0.288200 ms CreateObjectMapping: 0.120500 ms MarkObjects: 2.294800 ms  DeleteObjects: 0.223200 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Scenes/Amakasu/AmakasuScene.unity
-  artifactKey: Guid(402ac4edb7d0cba4fab12a676876b139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Amakasu/AmakasuScene.unity using Guid(402ac4edb7d0cba4fab12a676876b139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96ac915da7e3079307f36f95a38190bc') in 0.032156 seconds
-  Import took 0.038187 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.479811 seconds.
-  path: Assets/Scenes/Amakasu/AmakasuScene 1.unity
-  artifactKey: Guid(c94f9bdfd227eda4ca4cbf1011d9cf06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Amakasu/AmakasuScene 1.unity using Guid(c94f9bdfd227eda4ca4cbf1011d9cf06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '395e759b6fda33ae7e41133e9e8ed5a9') in 0.014799 seconds
-  Import took 0.021531 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.968872 seconds.
-  path: Assets/Scenes/Amakasu/AmakasuScene2D.unity
-  artifactKey: Guid(c94f9bdfd227eda4ca4cbf1011d9cf06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Amakasu/AmakasuScene2D.unity using Guid(c94f9bdfd227eda4ca4cbf1011d9cf06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f5e49ca124f1c654a8c175f66152f06') in 0.015411 seconds
-  Import took 0.022143 seconds .
->>>>>>> Feature_Amakasu3D
-=======
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56868
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004357 seconds.
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 227.54 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  6.463 seconds
-Platform modules already initialized, skipping
-Registering precompiled user dll's ...
-Registered in 0.009206 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 156.72 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.419 seconds
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2469 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2467 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 106.3 MB.
 System memory in use after: 106.5 MB.
 
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2912.
-Total: 3.855200 ms (FindLiveObjects: 0.376400 ms CreateObjectMapping: 0.190200 ms MarkObjects: 3.187300 ms  DeleteObjects: 0.099700 ms)
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2911.
+Total: 2.760600 ms (FindLiveObjects: 0.349000 ms CreateObjectMapping: 0.183900 ms MarkObjects: 2.145100 ms  DeleteObjects: 0.081100 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scenes/Amakasu
-  artifactKey: Guid(1a1ec94116b892c46a11720c0a7520ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Amakasu using Guid(1a1ec94116b892c46a11720c0a7520ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c7406083d8a0317fcd3ebfcdc20fe89') in 0.019950 seconds
-  Import took 0.028208 seconds .
+  path: Assets/Scripts/Enemy/EnemyBase/EnemyBaseMove.cs
+  artifactKey: Guid(ff613aea16364544c930199c31943191) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/EnemyBase/EnemyBaseMove.cs using Guid(ff613aea16364544c930199c31943191) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39e713d4277aa8a7bdc7902e481eda60') in 0.058582 seconds
+  Import took 0.066044 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000394 seconds.
-  path: Assets/Scripts/Enemy/Enemy1
-  artifactKey: Guid(aed0823123826bc45afa79b727425924) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Enemy/Enemy1 using Guid(aed0823123826bc45afa79b727425924) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a06a20c0254e023e768afc7c11b6bd33') in 0.015279 seconds
-  Import took 0.025217 seconds .
+  Time since last request: 124.626045 seconds.
+  path: Assets/Scripts/Enemy/Checker
+  artifactKey: Guid(8f979b20eff2f93478f4e145f9cb1154) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Checker using Guid(8f979b20eff2f93478f4e145f9cb1154) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bcd5b5cdb54b28f129cd104fee788ff') in 0.014379 seconds
+  Import took 0.022044 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.010186 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.49 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.172 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.56 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2454 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 105.5 MB.
+System memory in use after: 105.7 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2916.
+Total: 3.911600 ms (FindLiveObjects: 0.610000 ms CreateObjectMapping: 0.300200 ms MarkObjects: 2.959700 ms  DeleteObjects: 0.040700 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000381 seconds.
-  path: Assets/Scenes/Amakasu/AmakasuScene.unity
-  artifactKey: Guid(402ac4edb7d0cba4fab12a676876b139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Amakasu/AmakasuScene.unity using Guid(402ac4edb7d0cba4fab12a676876b139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5f022e2bb2a7076100758e366c74a37') in 0.032162 seconds
-  Import took 0.041006 seconds .
+  Time since last request: 142.511905 seconds.
+  path: Assets/Scripts/Enemy/Checker/Ground.cs
+  artifactKey: Guid(995a71383534af64f9c068c272ce7209) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Checker/Ground.cs using Guid(995a71383534af64f9c068c272ce7209) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13e78e11183f3637dc12301bc604dcca') in 0.015274 seconds
+  Import took 0.022369 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.005226 seconds.
-  path: Assets/Scenes/Amakasu/AmakasuScene.unity
-  artifactKey: Guid(402ac4edb7d0cba4fab12a676876b139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Amakasu/AmakasuScene.unity using Guid(402ac4edb7d0cba4fab12a676876b139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5f022e2bb2a7076100758e366c74a37') in 0.004351 seconds
-  Import took 0.012909 seconds .
->>>>>>> feature_Enemy1
+  Time since last request: 0.006291 seconds.
+  path: Assets/Scripts/Enemy/Checker/Ground.cs
+  artifactKey: Guid(995a71383534af64f9c068c272ce7209) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Checker/Ground.cs using Guid(995a71383534af64f9c068c272ce7209) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13e78e11183f3637dc12301bc604dcca') in 0.003580 seconds
+  Import took 0.008481 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003503 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.157 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.48 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2455 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 105.5 MB.
+System memory in use after: 105.8 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2921.
+Total: 3.020800 ms (FindLiveObjects: 0.287600 ms CreateObjectMapping: 0.114900 ms MarkObjects: 2.569900 ms  DeleteObjects: 0.047200 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
