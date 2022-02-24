@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class RobotItemsCore : MonoBehaviour
+using Mario;
+namespace RobotItem
 {
-    // Start is called before the first frame update
-    void Start()
+    public class RobotItemsCore : MonoBehaviour
     {
+        IaddAtems addItems;
+        void Start()
+        {
+            addItems = Utility.Locator<IaddAtems>.GetT();
+            addItems.GetItemEvent += AddItem;
+        }
         
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+        void AddItem(ItemName name)
+        {
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -49,6 +49,7 @@ namespace Mario
         // Update is called once per frame
         void Update()
         {
+            TestAttackCol.SetActive(false);
             if (Input.GetKey(KeyCode.Space))
             {
                 TestAttackCol.SetActive(true);
@@ -63,9 +64,6 @@ namespace Mario
                 
                 transform.localScale = new Vector3(inputer.MoveInput() == 1 ? _localScale.x : -_localScale.x, transform.localScale.y, transform.localScale.z);
             }
-         
-
-
 
             isGround = CheckIsGround(capsuleCollider2D, 3, 0.005f);
             JumpJudge();

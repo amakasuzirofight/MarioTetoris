@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Utility
 {
-    public static class  Locator<T>
+    public static class Locator<T>
     {
         private static Dictionary<int, T> dic = new Dictionary<int, T>(1);
 
@@ -24,7 +24,7 @@ namespace Utility
             dic.Clear();
         }
 
-        public static T GetT(int id)
+        public static T GetT(int id = 0)
         {
             if (!dic.ContainsKey(id)) return default;
             return dic[id];
