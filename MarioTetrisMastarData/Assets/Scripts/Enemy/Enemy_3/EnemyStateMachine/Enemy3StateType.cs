@@ -1,5 +1,5 @@
 
-public enum Enemy2StateType
+public enum Enemy3StateType
 {
     START,
     STAY,

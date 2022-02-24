@@ -15,11 +15,11 @@ C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56118
+56824
 Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 68.30 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 62.97 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.8f1 (507919d4fff5)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -35,59 +35,623 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56404
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56652
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002094 seconds.
+Registered in 0.002067 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 65.09 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 62.22 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.343 seconds
+- Completed reload, in  1.298 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003769 seconds.
+Registered in 0.003842 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 75.99 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 62.19 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.288 seconds
+- Completed reload, in  1.245 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
 Refreshing native plugins compatible for Editor in 0.48 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2494 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 106.9 MB.
+System memory in use after: 107.1 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2938.
+Total: 2.213500 ms (FindLiveObjects: 0.262800 ms CreateObjectMapping: 0.096000 ms MarkObjects: 1.748400 ms  DeleteObjects: 0.105300 ms)
+
+========================================================================
+Received Import Request.
+  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/HexagonPointed-TopWithBorder.png
+  artifactKey: Guid(4b2a04fdbe0ef4d8da8f90eaca817cd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/HexagonPointed-TopWithBorder.png using Guid(4b2a04fdbe0ef4d8da8f90eaca817cd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50858912bcacf81ddc08543ec3f9aa89') in 0.146627 seconds
+  Import took 0.154385 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000598 seconds.
+  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/HexagonPointed-Top.png
+  artifactKey: Guid(eed45a33cd08446c8b88325cf82fc52f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/HexagonPointed-Top.png using Guid(eed45a33cd08446c8b88325cf82fc52f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1809652a82d8d22ff10af5a0b0652610') in 0.026422 seconds
+  Import took 0.034882 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000338 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Edit_Pose@4x.png
+  artifactKey: Guid(eb81c5f176e01b746be35f0aa3603593) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Edit_Pose@4x.png using Guid(eb81c5f176e01b746be35f0aa3603593) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17d27c60f85822009545c8dd9fdf5138') in 0.035649 seconds
+  Import took 0.041971 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000327 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Geometry@4x.png
+  artifactKey: Guid(7b0bba6a9b6960a4fb500a75d4a4caa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Geometry@4x.png using Guid(7b0bba6a9b6960a4fb500a75d4a4caa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08bae5ef4628b04b62a709ca63cf20d7') in 0.025847 seconds
+  Import took 0.031495 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/HexagonFlat-TopWithBorder.png
+  artifactKey: Guid(a9716c16a44a94eed9b5c90fbf4d9bdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/HexagonFlat-TopWithBorder.png using Guid(a9716c16a44a94eed9b5c90fbf4d9bdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c1507bf4f496c46ba43d87bf87ee59e') in 0.028041 seconds
+  Import took 0.034289 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000325 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Edit_Pose@3x.png
+  artifactKey: Guid(558997ec9158c584a9ba9ee3eddbe8b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Edit_Pose@3x.png using Guid(558997ec9158c584a9ba9ee3eddbe8b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '290f923d69ca0b20974535d9d53a5688') in 0.026338 seconds
+  Import took 0.031381 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000385 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Edit_Pose@2x.png
+  artifactKey: Guid(f169a69b888768d44906789625031d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Edit_Pose@2x.png using Guid(f169a69b888768d44906789625031d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec08923bc832a7d07b97146cfca55ebd') in 0.027674 seconds
+  Import took 0.033235 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000330 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Weights@2x.png
+  artifactKey: Guid(ba75d79a1a0723e488112808560789b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Weights@2x.png using Guid(ba75d79a1a0723e488112808560789b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '212dbc97f84e8ffae68976ac0e00d8eb') in 0.025955 seconds
+  Import took 0.032167 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/HexagonFlat-Top.png
+  artifactKey: Guid(16037dbd798344f57a526d53d48f5ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/HexagonFlat-Top.png using Guid(16037dbd798344f57a526d53d48f5ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02a715b525ddce76caf760635f8aeeea') in 0.024886 seconds
+  Import took 0.031527 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000301 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Edit_Pose@4x.png
+  artifactKey: Guid(095744d2710d19e4ab3dd9f6852cbd15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Edit_Pose@4x.png using Guid(095744d2710d19e4ab3dd9f6852cbd15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f1797191ee80cee1607220f8498065e') in 0.028106 seconds
+  Import took 0.033134 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Geometry@4x.png
+  artifactKey: Guid(a4c77cea19fd0f84581d6e437a86290c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Geometry@4x.png using Guid(a4c77cea19fd0f84581d6e437a86290c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e5017c34c9cf5d5cff933f724126c70') in 0.018216 seconds
+  Import took 0.024918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000387 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Weights@4x.png
+  artifactKey: Guid(a56b84f780e8aef439e9a83d60ca7420) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Weights@4x.png using Guid(a56b84f780e8aef439e9a83d60ca7420) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84ea1e5671cde7dabde86f1e26f95e16') in 0.028805 seconds
+  Import took 0.036419 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Weights@3x.png
+  artifactKey: Guid(ed5ce024c84dbdb42ac5037d03e7c039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Weights@3x.png using Guid(ed5ce024c84dbdb42ac5037d03e7c039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '703c8e7fa4c28587eb63c824da9737b0') in 0.022562 seconds
+  Import took 0.028945 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Geometry@3x.png
+  artifactKey: Guid(902d611ab43afe940bd891d4a3a480f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Geometry@3x.png using Guid(902d611ab43afe940bd891d4a3a480f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92c1643a3475d16aea94be128df42ba8') in 0.022690 seconds
+  Import took 0.027854 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000384 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Edit_Pose.png
+  artifactKey: Guid(9844a6aa871b23547892e819f4dd55c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Edit_Pose.png using Guid(9844a6aa871b23547892e819f4dd55c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c369d583b8a23da930c7a142a862e14c') in 0.024747 seconds
+  Import took 0.030655 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000329 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Geometry@2x.png
+  artifactKey: Guid(ae5924760c9fbf54d89df9f13435887e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Geometry@2x.png using Guid(ae5924760c9fbf54d89df9f13435887e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '951c86c1deb812aa1ad8e1e6ca4ec1d0') in 0.022231 seconds
+  Import took 0.028317 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Edit_Pose@3x.png
+  artifactKey: Guid(32854586e42553846b24646ce18cf625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Edit_Pose@3x.png using Guid(32854586e42553846b24646ce18cf625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0d05f31c909a1f7690fbbd6754339da') in 0.022866 seconds
+  Import took 0.028180 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Edit_Pose@2x.png
+  artifactKey: Guid(1da4b8d35afa8314198e7b69dc383431) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Edit_Pose@2x.png using Guid(1da4b8d35afa8314198e7b69dc383431) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b2811ea1501571df6098a1224894111') in 0.019379 seconds
+  Import took 0.024922 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000319 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Geometry@2x.png
+  artifactKey: Guid(114d4aa7bb14433489b942bb28ff6183) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Geometry@2x.png using Guid(114d4aa7bb14433489b942bb28ff6183) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c9c1bf017bb84e1456328d42c00f9f1') in 0.024761 seconds
+  Import took 0.030837 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000321 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Geometry@3x.png
+  artifactKey: Guid(a581ff3810b2e0a4690cddcf7634ed22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Geometry@3x.png using Guid(a581ff3810b2e0a4690cddcf7634ed22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dff2924842c9c799b01a0f7f8a37e83') in 0.020664 seconds
+  Import took 0.025917 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000307 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Weights@4x.png
+  artifactKey: Guid(ea292d445b1c4cb48897511cd9453f1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Weights@4x.png using Guid(ea292d445b1c4cb48897511cd9453f1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89aac5031eef5ae0f94f3067b285ab71') in 0.024372 seconds
+  Import took 0.030147 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000316 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Geometry.png
+  artifactKey: Guid(41842964c48860f46b45e7b3d5986e07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Geometry.png using Guid(41842964c48860f46b45e7b3d5986e07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '980faa258f10cbc991b961fd7611bfc1') in 0.024852 seconds
+  Import took 0.032505 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Weights@3x.png
+  artifactKey: Guid(8174b068fa7b788459b03cec80d0641a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Weights@3x.png using Guid(8174b068fa7b788459b03cec80d0641a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02ef737858dc04334650c965375253c9') in 0.023606 seconds
+  Import took 0.029966 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Weights.png
+  artifactKey: Guid(007c4dbed3f8be9429c39de72ee3c2d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Weights.png using Guid(007c4dbed3f8be9429c39de72ee3c2d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5059fb7727494efd71628c729f5c445') in 0.021875 seconds
+  Import took 0.030160 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000339 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Weights@2x.png
+  artifactKey: Guid(ef3672bed7321e34da872e8c2e205209) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Weights@2x.png using Guid(ef3672bed7321e34da872e8c2e205209) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09f96478b725a7e78aced9474518fd8b') in 0.023290 seconds
+  Import took 0.031063 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Weights.png
+  artifactKey: Guid(2892d6ec6ca2a1f45adbd52fdb96fcfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Generate_Weights.png using Guid(2892d6ec6ca2a1f45adbd52fdb96fcfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd31dedfc857b4b4c904b6d370d55403c') in 0.020392 seconds
+  Import took 0.025812 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000401 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Geometry.png
+  artifactKey: Guid(cbef2434b36ff174a98995b13ef80390) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Generate_Geometry.png using Guid(cbef2434b36ff174a98995b13ef80390) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec09bd35e8576760bfcb5413412bd18c') in 0.023529 seconds
+  Import took 0.030394 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 61.067712 seconds.
+  path: Assets/Scripts/Enemy/Enemy3
+  artifactKey: Guid(aeb8c4d771f097b41ac3b41ebd557b88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy3 using Guid(aeb8c4d771f097b41ac3b41ebd557b88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e1f262c06bfa74012454faf447d60fd') in 0.008421 seconds
+  Import took 0.014669 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.154721 seconds.
+  path: Assets/Scripts/Enemy/Enemy_3
+  artifactKey: Guid(aeb8c4d771f097b41ac3b41ebd557b88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_3 using Guid(aeb8c4d771f097b41ac3b41ebd557b88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c30c7f6168d539bb371e71a9eeabd674') in 0.011506 seconds
+  Import took 0.018122 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.465215 seconds.
+  path: Assets/Scripts/Input
+  artifactKey: Guid(53389b9c10d86c04f856b1e9350d237f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Input using Guid(53389b9c10d86c04f856b1e9350d237f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dd4a9e3d997b94ae45868a278d5cd56') in 0.015886 seconds
+  Import took 0.021695 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.385914 seconds.
+  path: Assets/Scripts/GameUtilty
+  artifactKey: Guid(df4a6538012e32246923f3adad9bede2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GameUtilty using Guid(df4a6538012e32246923f3adad9bede2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ca49d70d439fa600510a5b6f194cc16') in 0.008589 seconds
+  Import took 0.021412 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.513309 seconds.
+  path: Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine
+  artifactKey: Guid(b5132e428c9ac714786a302f9c4c8817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine using Guid(b5132e428c9ac714786a302f9c4c8817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd84f01c5a4a055a3836d6835fd02a14c') in 0.008814 seconds
+  Import took 0.014738 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.512557 seconds.
+  path: Assets/Scripts/Enemy/Enemy_3/Enemy3Core.cs
+  artifactKey: Guid(f7d06b079ced49e419b4cbda6430b3f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_3/Enemy3Core.cs using Guid(f7d06b079ced49e419b4cbda6430b3f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ed4e008161ad099899bd791b5b0f287') in 0.022790 seconds
+  Import took 0.030455 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003609 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.099 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.58 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2481 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 109.1 MB.
+System memory in use after: 109.3 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2960.
+Total: 5.093200 ms (FindLiveObjects: 0.557500 ms CreateObjectMapping: 0.294800 ms MarkObjects: 4.194300 ms  DeleteObjects: 0.044200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003505 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.51 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.118 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.54 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2481 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 109.1 MB.
+System memory in use after: 109.3 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2964.
+Total: 2.258200 ms (FindLiveObjects: 0.229600 ms CreateObjectMapping: 0.110600 ms MarkObjects: 1.872900 ms  DeleteObjects: 0.044300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 29.499990 seconds.
+  path: Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/Enemy3StateManager.cs
+  artifactKey: Guid(f70243bcd73217244aadac0a0149abc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/Enemy3StateManager.cs using Guid(f70243bcd73217244aadac0a0149abc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f692548cffbf11989320c078486d609') in 0.012247 seconds
+  Import took 0.018030 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004758 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.140 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.53 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2482 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 109.2 MB.
+System memory in use after: 109.4 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2969.
+Total: 2.477900 ms (FindLiveObjects: 0.263500 ms CreateObjectMapping: 0.102900 ms MarkObjects: 2.064000 ms  DeleteObjects: 0.046400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.246558 seconds.
+  path: Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/Enemy3StateType.cs
+  artifactKey: Guid(23705f216f28b9a458bcb543cb8a1a59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/Enemy3StateType.cs using Guid(23705f216f28b9a458bcb543cb8a1a59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae22f8186048c554efd41dd50b5394fb') in 0.012615 seconds
+  Import took 0.020872 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003591 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.086 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.54 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2483 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 109.2 MB.
+System memory in use after: 109.4 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2974.
+Total: 2.602900 ms (FindLiveObjects: 0.294600 ms CreateObjectMapping: 0.104100 ms MarkObjects: 2.163200 ms  DeleteObjects: 0.040000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.490114 seconds.
+  path: Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/IEnemy3State.cs
+  artifactKey: Guid(fd46e8977b74cf24b929c9c33868f81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/IEnemy3State.cs using Guid(fd46e8977b74cf24b929c9c33868f81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ad088cbe4d20ff792118506e06087d1') in 0.010478 seconds
+  Import took 0.016067 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002060 seconds.
+  path: Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/IEnemy3State.cs
+  artifactKey: Guid(fd46e8977b74cf24b929c9c33868f81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/IEnemy3State.cs using Guid(fd46e8977b74cf24b929c9c33868f81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ad088cbe4d20ff792118506e06087d1') in 0.003472 seconds
+  Import took 0.011038 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003646 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.125 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.53 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2484 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 109.1 MB.
+System memory in use after: 109.4 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2979.
+Total: 2.677900 ms (FindLiveObjects: 0.333300 ms CreateObjectMapping: 0.102700 ms MarkObjects: 2.197500 ms  DeleteObjects: 0.043500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.230140 seconds.
+  path: Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/State
+  artifactKey: Guid(33cdd4d3180b8494e9c0d9e51e00ab15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/State using Guid(33cdd4d3180b8494e9c0d9e51e00ab15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8db06319da7918637c6b8c4801fd2c7b') in 0.009450 seconds
+  Import took 0.014806 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003683 seconds.
+  path: Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/State
+  artifactKey: Guid(33cdd4d3180b8494e9c0d9e51e00ab15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/State using Guid(33cdd4d3180b8494e9c0d9e51e00ab15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8db06319da7918637c6b8c4801fd2c7b') in 0.003391 seconds
+  Import took 0.010655 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 357.920311 seconds.
+  path: Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/State/Enemy3StayState.cs
+  artifactKey: Guid(6a7f4d37b541b784ea716f5856df4376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/State/Enemy3StayState.cs using Guid(6a7f4d37b541b784ea716f5856df4376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e333fda04bbff3dd46d8910ae054731c') in 0.010371 seconds
+  Import took 0.018010 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005309 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.142 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.10 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2485 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 109.3 MB.
+System memory in use after: 109.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2984.
+Total: 3.562700 ms (FindLiveObjects: 0.392600 ms CreateObjectMapping: 0.169900 ms MarkObjects: 2.952800 ms  DeleteObjects: 0.046600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.202868 seconds.
+  path: Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/State/Enemy3StartState.cs
+  artifactKey: Guid(c87b8808cae311b419b2086df40a3093) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/State/Enemy3StartState.cs using Guid(c87b8808cae311b419b2086df40a3093) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d510cb8aeeadd8f960b9eaa4c70ac92') in 0.012117 seconds
+  Import took 0.019033 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003357 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.115 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.53 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2486 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 106.8 MB.
-System memory in use after: 106.9 MB.
+System memory in use before: 109.3 MB.
+System memory in use after: 109.5 MB.
 
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2930.
-Total: 2.361000 ms (FindLiveObjects: 0.297600 ms CreateObjectMapping: 0.111100 ms MarkObjects: 1.845100 ms  DeleteObjects: 0.106200 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Prefabs/Enemy/BerorinMedama.prefab
-  artifactKey: Guid(0a96cae797096c54284498f146a1d51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy/BerorinMedama.prefab using Guid(0a96cae797096c54284498f146a1d51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70dec3b0275d4dddbfee389aa6f40e33') in 0.158922 seconds
-  Import took 0.166521 seconds .
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2989.
+Total: 2.594100 ms (FindLiveObjects: 0.286000 ms CreateObjectMapping: 0.098300 ms MarkObjects: 2.189500 ms  DeleteObjects: 0.019200 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.834732 seconds.
-  path: Assets/Prefabs/Enemy/BerorinMedama.prefab
-  artifactKey: Guid(0a96cae797096c54284498f146a1d51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy/BerorinMedama.prefab using Guid(0a96cae797096c54284498f146a1d51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a72328885b06bfc9c8fec6a2aafda34') in 0.016286 seconds
-  Import took 0.022610 seconds .
+  Time since last request: 18.373083 seconds.
+  path: Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/State/Enemy3FollowState.cs
+  artifactKey: Guid(985c554e116c7544eb2b164e4b5f59e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/State/Enemy3FollowState.cs using Guid(985c554e116c7544eb2b164e4b5f59e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01f8cbfbf50736ec8f8d042c1f08ff5d') in 0.013022 seconds
+  Import took 0.018953 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003602 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.170 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.60 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2487 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 109.3 MB.
+System memory in use after: 109.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2994.
+Total: 2.505400 ms (FindLiveObjects: 0.257500 ms CreateObjectMapping: 0.209500 ms MarkObjects: 2.019100 ms  DeleteObjects: 0.018300 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.517790 seconds.
-  path: Assets/Prefabs/Enemy
-  artifactKey: Guid(15aa6bf09c934a84a882c43445081e50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy using Guid(15aa6bf09c934a84a882c43445081e50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e5c7f04527d826c24558abffcf81f98') in 0.014693 seconds
-  Import took 0.019412 seconds .
+  Time since last request: 14.126969 seconds.
+  path: Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/State/Enemy3DamageState.cs
+  artifactKey: Guid(4b3a1c43f022e1440a49a8d50d8a2405) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/State/Enemy3DamageState.cs using Guid(4b3a1c43f022e1440a49a8d50d8a2405) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28a088c4bafdc0918ff44bc032db5cdb') in 0.011685 seconds
+  Import took 0.020319 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003637 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.092 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.56 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2488 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 109.4 MB.
+System memory in use after: 109.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2999.
+Total: 3.015100 ms (FindLiveObjects: 0.365200 ms CreateObjectMapping: 0.179900 ms MarkObjects: 2.419400 ms  DeleteObjects: 0.049400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.509799 seconds.
+  path: Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/State/Enemy3DeadState.cs
+  artifactKey: Guid(02973b1cb67cce14591329a4c26ae899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_3/EnemyStateMachine/State/Enemy3DeadState.cs using Guid(02973b1cb67cce14591329a4c26ae899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39dec53fd59567831ba95e99323ec218') in 0.011526 seconds
+  Import took 0.018281 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003457 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.067 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2489 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 109.3 MB.
+System memory in use after: 109.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3004.
+Total: 2.554700 ms (FindLiveObjects: 0.288900 ms CreateObjectMapping: 0.110700 ms MarkObjects: 2.107100 ms  DeleteObjects: 0.046900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 34.738344 seconds.
+  path: Assets/Scripts/Enemy/Enemy_1/EnemyStateMachine/State/Enemy1DamageState.cs
+  artifactKey: Guid(ec47bcfade85d3a40a34e24ccd7a2cc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_1/EnemyStateMachine/State/Enemy1DamageState.cs using Guid(ec47bcfade85d3a40a34e24ccd7a2cc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a835d05787ca8bb58704b39e3ad9255d') in 0.010845 seconds
+  Import took 0.015230 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021036 seconds.
+  path: Assets/Scripts/Enemy/Enemy_1/EnemyStateMachine/State/Enemy1DamageState.cs
+  artifactKey: Guid(ec47bcfade85d3a40a34e24ccd7a2cc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy_1/EnemyStateMachine/State/Enemy1DamageState.cs using Guid(ec47bcfade85d3a40a34e24ccd7a2cc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a835d05787ca8bb58704b39e3ad9255d') in 0.002465 seconds
+  Import took 0.006859 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004766 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.186 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.52 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2489 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 109.4 MB.
+System memory in use after: 109.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3008.
+Total: 2.632400 ms (FindLiveObjects: 0.291900 ms CreateObjectMapping: 0.106900 ms MarkObjects: 2.179500 ms  DeleteObjects: 0.053000 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

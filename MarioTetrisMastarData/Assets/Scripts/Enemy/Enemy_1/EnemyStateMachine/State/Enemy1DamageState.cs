@@ -15,11 +15,11 @@ namespace Enemy
             public Enemy1StateType StateType =>  Enemy1StateType.DAMAGED;
             public event Action<Enemy1StateType> ChangeStateEvent;
 
-            private Enemy1Core enemy1Core;
+            private Enemy1Core core;
 
             void IEnemy1State.OnStart(Enemy1StateType beforeState, Enemy1Core enemy)
             {
-                enemy1Core ??= GetComponent<Enemy1Core>();
+                core ??= GetComponent<Enemy1Core>();
             }
 
             void IEnemy1State.OnUpdate(Enemy1Core enemy)
@@ -40,7 +40,7 @@ namespace Enemy
             private void StateChangeManager()
             {
                 // HPÇ™0ÇÃèÍçá
-                if (enemy1Core.Hp <= 0) 
+                if (core.Hp <= 0) 
                 {
                     // éÄñSèÛë‘Ç…ëJà⁄
                     ChangeStateEvent(Enemy1StateType.DEAD);

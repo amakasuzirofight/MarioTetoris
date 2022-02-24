@@ -39,12 +39,15 @@ namespace Enemy
         // 検出したオブジェクト追従メソッド
         protected virtual void Follow(Rigidbody2D rb, float spd, float dis, bool flg)
         {
+            Vector3 scale = transform.localScale;
+
             if (!flg) return;
 
             if (dis < 0) dir = -1;
             else         dir =  1;
 
             rb.velocity = new Vector3(dir * spd, rb.velocity.y, 0f);
+            transform.localScale = new Vector3(-dir , scale.y);
         }
     }
 }
