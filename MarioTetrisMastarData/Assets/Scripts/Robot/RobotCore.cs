@@ -10,13 +10,14 @@ namespace Robot
         [SerializeField] float moveSpeed;
         [SerializeField] GameObject inputObj;
         [SerializeField] RobotMove robotMove;
-
+        [SerializeField] float MaxRoboPositionX;
+        [SerializeField] float MinRoboPositionX;
 
         IRobotInput robotInput;
         // Start is called before the first frame update
         void Start()
         {
-
+            robotInput = inputObj.GetComponent<IRobotInput>();
         }
 
         // Update is called once per frame
@@ -32,10 +33,10 @@ namespace Robot
         {
             if (robotInput.MovePower() != 0)
             {
-                robotMove.ExecutionRoboWalk(moveSpeed);
             }
-        }
+            robotMove.ExecutionRoboWalk(moveSpeed * robotInput.MovePower());
 
+        }
     }
 
 
