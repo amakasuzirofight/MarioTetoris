@@ -53,6 +53,7 @@ C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< HEAD
 57056
 =======
 <<<<<<< HEAD
@@ -95,6 +96,13 @@ Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 364.12 ms, found 1 plugins.
 >>>>>>> 895dc6fa9e14ce9acaff82fc817c18b38b7c94a4
 >>>>>>> 44fdc07c94cc0e2c9f4c4a91c5e0808ad0ded054
+=======
+52822
+Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 126.00 ms, found 1 plugins.
+>>>>>>> feature_TetrisDataBase
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.8f1 (507919d4fff5)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -122,6 +130,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< HEAD
 <<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56700
 =======
@@ -666,10 +675,59 @@ System memory in use after: 105.9 MB.
 
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2919.
 Total: 3.239400 ms (FindLiveObjects: 0.305200 ms CreateObjectMapping: 0.150400 ms MarkObjects: 2.736400 ms  DeleteObjects: 0.045900 ms)
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56888
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004946 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 279.55 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  9.001 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.009432 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 273.88 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  7.744 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 1.00 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2730 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.9 MB.
+System memory in use after: 113.9 MB.
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 3174.
+Total: 8.327400 ms (FindLiveObjects: 0.552900 ms CreateObjectMapping: 0.343800 ms MarkObjects: 7.171000 ms  DeleteObjects: 0.257200 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scripts/secondPlan/MarioCore.cs
+  artifactKey: Guid(adc6adc5a4a9431469d51dc668abd0fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/secondPlan/MarioCore.cs using Guid(adc6adc5a4a9431469d51dc668abd0fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '330d0905f683d49b98b097c36e54d1e6') in 0.208463 seconds
+  Import took 0.227937 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 315.449705 seconds.
+  path: Assets/Scripts/secondPlan/MarioCore.cs
+  artifactKey: Guid(adc6adc5a4a9431469d51dc668abd0fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/secondPlan/MarioCore.cs using Guid(adc6adc5a4a9431469d51dc668abd0fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '652870d6101a4e439ffcb95c7fc47f6a') in 0.006266 seconds
+  Import took 0.017729 seconds .
+>>>>>>> feature_TetrisDataBase
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.006657 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -5685,17 +5743,40 @@ Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3330.
 Total: 2.948700 ms (FindLiveObjects: 0.351700 ms CreateObjectMapping: 0.111400 ms MarkObjects: 2.436700 ms  DeleteObjects: 0.047700 ms)
 >>>>>>> c28ff1194e0b69a3961260256ef16a4d9ee8adfa
 >>>>>>> 50a8c2298e0881f4ec1ef35378191d12c1f3761b
+=======
+Registered in 0.011760 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.05 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.144 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.80 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2721 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.6 MB.
+System memory in use after: 113.7 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3178.
+Total: 6.722100 ms (FindLiveObjects: 0.899500 ms CreateObjectMapping: 0.377900 ms MarkObjects: 4.894100 ms  DeleteObjects: 0.547100 ms)
+>>>>>>> feature_TetrisDataBase
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
 <<<<<<< HEAD
+<<<<<<< HEAD
 Registered in 0.003955 seconds.
+=======
+Registered in 0.007948 seconds.
+>>>>>>> feature_TetrisDataBase
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.84 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  2.339 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
@@ -5795,10 +5876,43 @@ Start importing Assets/Scripts/KomuField/FieldType_Select.cs using Guid(7a0d79b6
   Import took 0.028006 seconds .
 >>>>>>> c28ff1194e0b69a3961260256ef16a4d9ee8adfa
 >>>>>>> 1269a2684b7545296a62c4313675f0dfaa43b23e
+=======
+- Completed reload, in  1.337 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.96 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2721 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.6 MB.
+System memory in use after: 113.7 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3182.
+Total: 3.338800 ms (FindLiveObjects: 0.421900 ms CreateObjectMapping: 0.220400 ms MarkObjects: 2.552100 ms  DeleteObjects: 0.142800 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+Registered in 0.008759 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.277 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.54 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2721 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.7 MB.
+System memory in use after: 113.7 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3186.
+Total: 5.289900 ms (FindLiveObjects: 0.676600 ms CreateObjectMapping: 0.427400 ms MarkObjects: 4.058700 ms  DeleteObjects: 0.125900 ms)
+>>>>>>> feature_TetrisDataBase
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 Registered in 0.003849 seconds.
@@ -5886,10 +6000,29 @@ Received Import Request.
 Start importing Assets/Prefabs/Way.prefab using Guid(a017ef1a7e4be474b9c21e914d8975d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e547eb14561722fef4178928c810670') in 0.006227 seconds
   Import took 0.012440 seconds .
 >>>>>>> 895dc6fa9e14ce9acaff82fc817c18b38b7c94a4
+=======
+Registered in 0.006563 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.322 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2721 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.7 MB.
+System memory in use after: 113.8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3190.
+Total: 5.832000 ms (FindLiveObjects: 0.499100 ms CreateObjectMapping: 0.241800 ms MarkObjects: 4.806100 ms  DeleteObjects: 0.282800 ms)
+>>>>>>> feature_TetrisDataBase
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 <<<<<<< HEAD
 Registered in 0.003849 seconds.
 Begin MonoManager ReloadAssembly
@@ -5942,10 +6075,49 @@ Total: 3.884400 ms (FindLiveObjects: 0.535500 ms CreateObjectMapping: 0.281200 m
 >>>>>>> c28ff1194e0b69a3961260256ef16a4d9ee8adfa
 >>>>>>> 1269a2684b7545296a62c4313675f0dfaa43b23e
 >>>>>>> 50a8c2298e0881f4ec1ef35378191d12c1f3761b
+=======
+Registered in 0.004409 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.96 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.305 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2721 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.7 MB.
+System memory in use after: 113.8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3194.
+Total: 3.341000 ms (FindLiveObjects: 0.756600 ms CreateObjectMapping: 0.209000 ms MarkObjects: 2.223600 ms  DeleteObjects: 0.150700 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+Registered in 0.007336 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.067 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.16 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2721 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.7 MB.
+System memory in use after: 113.8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3198.
+Total: 4.889600 ms (FindLiveObjects: 0.654500 ms CreateObjectMapping: 0.315400 ms MarkObjects: 3.711800 ms  DeleteObjects: 0.205400 ms)
+>>>>>>> feature_TetrisDataBase
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 Registered in 0.004551 seconds.
@@ -5961,9 +6133,19 @@ Refreshing native plugins compatible for Editor in 1.91 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
 - Completed reload, in  3.007 seconds
+=======
+Registered in 0.004170 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.57 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.618 seconds
+>>>>>>> feature_TetrisDataBase
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.81 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+<<<<<<< HEAD
 Unloading 2734 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 117.1 MB.
 System memory in use after: 117.2 MB.
@@ -6089,10 +6271,19 @@ Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3351.
 Total: 3.912300 ms (FindLiveObjects: 0.517300 ms CreateObjectMapping: 0.224100 ms MarkObjects: 3.105500 ms  DeleteObjects: 0.063200 ms)
 >>>>>>> c28ff1194e0b69a3961260256ef16a4d9ee8adfa
 >>>>>>> 1269a2684b7545296a62c4313675f0dfaa43b23e
+=======
+Unloading 2721 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.7 MB.
+System memory in use after: 113.8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3202.
+Total: 3.147500 ms (FindLiveObjects: 0.344000 ms CreateObjectMapping: 0.188100 ms MarkObjects: 2.479800 ms  DeleteObjects: 0.134500 ms)
+>>>>>>> feature_TetrisDataBase
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 Registered in 0.005975 seconds.
@@ -6498,5 +6689,67 @@ Total: 3.270500 ms (FindLiveObjects: 0.385200 ms CreateObjectMapping: 0.174700 m
 >>>>>>> 895dc6fa9e14ce9acaff82fc817c18b38b7c94a4
 >>>>>>> c28ff1194e0b69a3961260256ef16a4d9ee8adfa
 >>>>>>> 1269a2684b7545296a62c4313675f0dfaa43b23e
+=======
+Registered in 0.006800 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.718 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.60 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2721 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.7 MB.
+System memory in use after: 113.8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3206.
+Total: 3.246500 ms (FindLiveObjects: 0.317000 ms CreateObjectMapping: 0.146600 ms MarkObjects: 2.555400 ms  DeleteObjects: 0.226100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 26952.949186 seconds.
+  path: Assets/Prefabs/Input.prefab
+  artifactKey: Guid(06432966a96cff84895d4cd3e230932f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Input.prefab using Guid(06432966a96cff84895d4cd3e230932f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c50277b95e69873109d34dbc1347d1b8') in 0.081332 seconds
+  Import took 0.090545 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000426 seconds.
+  path: Assets/Prefabs/Mario.prefab
+  artifactKey: Guid(0ad0d006488f4de449ba0576977ceb62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Mario.prefab using Guid(0ad0d006488f4de449ba0576977ceb62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b85fdf31cbc5fd9324fc62fc4aeb4cb') in 0.155051 seconds
+  Import took 0.164083 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006921 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.642 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.84 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2721 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3217.
+Total: 4.445100 ms (FindLiveObjects: 0.644100 ms CreateObjectMapping: 0.235600 ms MarkObjects: 3.413500 ms  DeleteObjects: 0.149900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.693948 seconds.
+  path: Assets/Prefabs/Mario.prefab
+  artifactKey: Guid(0ad0d006488f4de449ba0576977ceb62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Mario.prefab using Guid(0ad0d006488f4de449ba0576977ceb62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45fd16636152850e28e7547bbe1c4122') in 0.125666 seconds
+  Import took 0.137466 seconds .
+>>>>>>> feature_TetrisDataBase
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

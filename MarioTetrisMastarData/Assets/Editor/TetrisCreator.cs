@@ -37,8 +37,9 @@ public class TetrisCreator : EditorWindow
     int fallSpeed;                                                                      //落下スピード
     string assetName = "";                                                              //作られるassetの名前
     TetrisTypeEnum tetrisTypeEnum;
+    TetrisAngle tetrisAngle;
 
-    enum createAssetEnum
+    enum CreateAssetEnum
     {
         tetrimino_0 = 0,
         tetrimino_90 = 1,
@@ -184,7 +185,10 @@ public class TetrisCreator : EditorWindow
                     EditorGUILayout.EndHorizontal();
                 }
                 //保存
-                tetrisDataArray[(int)createAssetEnum.tetrimino_0].tetriminoArray = keepArray_0;
+                tetrisDataArray[(int)CreateAssetEnum.tetrimino_0].tetriminoArray = keepArray_0;
+
+                tetrisDataArray[(int)CreateAssetEnum.tetrimino_0].tetrisAngle = (int)CreateAssetEnum.tetrimino_0;
+                
             }
             using (new GUILayout.VerticalScope())
             {
@@ -201,7 +205,8 @@ public class TetrisCreator : EditorWindow
                     }
                     EditorGUILayout.EndHorizontal();
                 }
-                tetrisDataArray[(int)createAssetEnum.tetrimino_90].tetriminoArray = keepArray_90;
+                tetrisDataArray[(int)CreateAssetEnum.tetrimino_90].tetriminoArray = keepArray_90;
+                tetrisDataArray[(int)CreateAssetEnum.tetrimino_90].tetrisAngle = (TetrisAngle)(int)CreateAssetEnum.tetrimino_90;
             }
 
             using (new GUILayout.VerticalScope())
@@ -219,7 +224,8 @@ public class TetrisCreator : EditorWindow
                     }
                     EditorGUILayout.EndHorizontal();
                 }
-                tetrisDataArray[(int)createAssetEnum.tetrimino_180].tetriminoArray = keepArray_180;
+                tetrisDataArray[(int)CreateAssetEnum.tetrimino_180].tetriminoArray = keepArray_180;
+                tetrisDataArray[(int)CreateAssetEnum.tetrimino_180].tetrisAngle = (TetrisAngle)(int)CreateAssetEnum.tetrimino_180;
             }
 
             using (new GUILayout.VerticalScope())
@@ -237,7 +243,8 @@ public class TetrisCreator : EditorWindow
                     }
                     EditorGUILayout.EndHorizontal();
                 }
-                tetrisDataArray[(int)createAssetEnum.tetrimono_270].tetriminoArray = keepArray_270;
+                tetrisDataArray[(int)CreateAssetEnum.tetrimono_270].tetriminoArray = keepArray_270;
+                tetrisDataArray[(int)CreateAssetEnum.tetrimono_270].tetrisAngle = (TetrisAngle)(int)CreateAssetEnum.tetrimono_270;
             }
         }
 
