@@ -11,16 +11,16 @@ namespace Enemy
         {
             // PlayerÇÃMoveèÛë‘èàóù
 
-            public Enemy1StateType StateType =>  Enemy1StateType.MOVE;
+            public Enemy1StateType StateType => Enemy1StateType.MOVE;
             public event Action<Enemy1StateType> ChangeStateEvent;
 
-            private Enemy1Core  core;
+            private Enemy1Core core;
             private Rigidbody2D rb;
 
             void IEnemy1State.OnStart(Enemy1StateType beforeState, Enemy1Core enemy)
             {
                 core ??= GetComponent<Enemy1Core>();
-                rb   ??= GetComponent<Rigidbody2D>();
+                rb ??= GetComponent<Rigidbody2D>();
             }
 
             void IEnemy1State.OnUpdate(Enemy1Core enemy)
@@ -45,19 +45,23 @@ namespace Enemy
                 ChangeStateEvent(Enemy1StateType.DAMAGED);
             }
 
-   
+
             private void OnTriggerEnter2D(Collider2D collision)
             {
                 var player = collision.GetComponent<TestMarioAttack>();
 
-                // PlayerÇÃñ{ëÃÇ…ìñÇΩÇ¡ÇΩÇÁ
+                // PlayerÇÃçUåÇÇ…ìñÇΩÇ¡ÇΩÇÁ
                 if (player != null)
                 {
                     StateChangeManager();
                 }
 
-                // ScaleÇîΩì]
-                dir *= -1;
+
+                if (collision.gameObject.tag == "Ground")
+                {
+                    // ScaleÇîΩì]
+                    dir *= -1;
+                }
             }
         }
     }
