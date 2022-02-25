@@ -155,6 +155,7 @@ namespace Mario
             }
             return false;
         }
+        Vector2 dir = new Vector2(5f, 1f);
 
         public void DamageRecevable(int damage)
         {

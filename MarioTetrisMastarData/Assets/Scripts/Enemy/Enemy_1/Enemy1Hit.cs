@@ -10,12 +10,12 @@ namespace Enemy
     {
         public class Enemy1Hit : EnemyBaseHPManager, IDamageRecevable
         {
-            private IDamageRecevable damageRecevable;
+            // Enemy1‚ÌÚG”»’èˆ—
+
             private Enemy1Core core;
 
             void Start()
             {
-                damageRecevable = GetComponent<IDamageRecevable>();
                 core = GetComponent<Enemy1Core>();
             }
 
@@ -34,7 +34,6 @@ namespace Enemy
                 {
                     IDamageRecevable damage = at;
 
-                    Debug.Log("‚Ä‚ß‚¦‚Ç‚±Œ©‚Ä‚ñ‚¾‚æ");
                     damage.DamageRecevable(core.AtkPow);
                 }
             }

@@ -28,6 +28,7 @@ namespace Enemy
                 core ??= GetComponent<Enemy1Core>();
                 rb   ??= GetComponent<Rigidbody2D>();
 
+                // ノックバック処理
                 KnockBack(player, rb, 5f);
             }
 
@@ -48,6 +49,7 @@ namespace Enemy
             // ステート変更メソッド
             private void StateChangeManager()
             {
+                // 待機時間
                 if (!WaitTime(TRANS_COUNT)) return;
 
                 // HPが0の場合
