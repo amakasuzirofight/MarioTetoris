@@ -10,7 +10,7 @@ namespace Tetris
     {
         [SerializeField] public int fallSpeed;
         [SerializeField] public string assetName;
-        [SerializeField] public TetrisTypeEnum tetrisTeypEnum;
+        [SerializeField] public TetrisTypeEnum tetrisTypeEnum;
         [SerializeField] public TetrisAngle tetrisAngle;
         [HideInInspector][SerializeField] public bool[] tetriminoArray = new bool[16];
 
@@ -18,20 +18,20 @@ namespace Tetris
         {
             assetName = name;
             fallSpeed = speed;
-            tetrisTeypEnum = tetrisType;
+            tetrisTypeEnum = tetrisType;
         }
     }
 
     
     public enum TetrisTypeEnum
     {
-        Teyp_T,
-        Teyp_I,
-        Teyp_L,
-        Teyp_J,
-        Teyp_Z,
-        Teyp_S,
-        Teyp_O
+        Type_T,
+        Type_I,
+        Type_L,
+        Type_J,
+        Type_Z,
+        Type_S,
+        Type_O
     }
 
     public enum TetrisAngle
