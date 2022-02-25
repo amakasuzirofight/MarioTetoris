@@ -60,9 +60,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef464e23715cef41a0f83a14db5879b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fieldChengers:
+  - {fileID: 2167748351525670585, guid: 4a73e37386dc1124888c23f8fb94a135, type: 3}
   activeChenger: {fileID: 0}
   setCharacters_: []
   checkFrame: 30
   stage_csv: {fileID: 4900000, guid: fb0250185b323d84696262a72a5679cb, type: 3}
-  groundObject: {fileID: 5839409026174869350, guid: daf3bc4ee21fa2c45be67a988801f28d, type: 3}
-  minoObject: {fileID: 5328104141122990612, guid: 9c8bf7a4bf38eaf4d889dc45576b38a3, type: 3}
+  brock_csv: {fileID: 4900000, guid: 00a6f621ecaafc44aa7a0c4711e14465, type: 3}
