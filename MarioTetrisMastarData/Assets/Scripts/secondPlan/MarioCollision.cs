@@ -7,23 +7,23 @@ using UnityEngine;
 using Enemy;
 using Items;
 using RobotItem;
+using UniRx;
 namespace Mario
 {
-    class MarioCollision : MonoBehaviour,IaddAtems
-
+    class MarioCollision : MonoBehaviour,IAddAtems
     {
-        public event Action<ItemName> GetItemEvent;
+        public event Action<ItemName,int> GetItemEvent;
 
         private void Awake()
         {
-            Utility.Locator<IaddAtems>.Bind(this);
+            Utility.Locator<IAddAtems>.Bind(this);
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if(collision.GetComponent<IItemHit>()!=null)
             {
                 var temp = collision.GetComponent<IItemHit>();
-                GetItemEvent(temp.GetItemName());
+                GetItemEvent(temp.GetItemName(),1);
             }
         }
     }

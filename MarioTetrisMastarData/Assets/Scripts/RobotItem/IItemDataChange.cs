@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mario
+namespace RobotItem
 {
-    interface IAddAtems
+    interface IItemDataChange
     {
-        public event Action<ItemName,int> GetItemEvent;
+        public event Action<Dictionary<ItemName, int>> ChangeItemBox;
     }
 }
