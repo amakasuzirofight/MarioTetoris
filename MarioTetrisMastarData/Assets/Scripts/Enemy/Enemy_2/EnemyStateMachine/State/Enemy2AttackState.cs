@@ -36,7 +36,10 @@ namespace Enemy
                 Debug.Log(StateType);
 
                 // この間に待ち時間を作る
-                if (WaitTime(attackTimeCount)) Debug.Log("攻撃！！");
+                if (WaitTime(attackTimeCount))
+                { 
+                    Debug.Log("攻撃！！");
+                }
 
                 StateChangeManager();
             }
@@ -79,7 +82,7 @@ namespace Enemy
             }
 
             // 時間待機メソッド
-            private bool WaitTime(float count) 
+            private bool WaitTime(float count)
             {
                 time += Time.deltaTime;
 

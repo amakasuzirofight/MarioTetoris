@@ -25,7 +25,7 @@ namespace Enemy
                 core ??= GetComponent<Enemy1Core>();
                 rb   ??= GetComponent<Rigidbody2D>();
 
-                KnockBack(player, rb, 1f);
+                //KnockBack(player, rb, 5f);
             }
 
             void IEnemy1State.OnUpdate(Enemy1Core enemy)
@@ -45,17 +45,23 @@ namespace Enemy
             // ƒXƒe[ƒg•ÏXƒƒ\ƒbƒh
             private void StateChangeManager()
             {
-                //// HP‚ª0‚Ìê‡
-                //if (core.Hp <= 0) 
-                //{
-                //    // €–Só‘Ô‚É‘JˆÚ
-                //    ChangeStateEvent(Enemy1StateType.DEAD);
-                //}
-                //else 
-                //{
-                //    // ˆÚ“®ó‘Ô‚É‘JˆÚ
-                //    ChangeStateEvent(Enemy1StateType.MOVE);
-                //}
+                // HP‚ª0‚Ìê‡
+                if (core.Hp <= 0)
+                {
+                    // €–Só‘Ô‚É‘JˆÚ
+                    ChangeStateEvent(Enemy1StateType.DEAD);
+                }
+                else
+                {
+                    StartCoroutine(aa());
+                }
+            }
+
+            IEnumerator aa() 
+            {
+                yield return new WaitForSeconds(2);
+                // ˆÚ“®ó‘Ô‚É‘JˆÚ
+                ChangeStateEvent(Enemy1StateType.MOVE);
             }
         }
     }

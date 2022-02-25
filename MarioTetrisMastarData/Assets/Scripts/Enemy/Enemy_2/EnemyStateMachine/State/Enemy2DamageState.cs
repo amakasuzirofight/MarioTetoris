@@ -23,7 +23,7 @@ namespace Enemy
             {
                 core ??= GetComponent<Enemy2Core>();
                 rb ??= GetComponent<Rigidbody2D>();
-                KnockBack(player, rb, 0.6f);
+                //KnockBack(player, rb, 0.6f);
             }
 
             void IEnemy2State.OnUpdate(Enemy2Core enemy)
