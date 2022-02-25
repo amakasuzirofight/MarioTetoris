@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dea47579a29764449e3469b36fd0c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fieldChengers:
+  - {fileID: 2167748351525670585, guid: 4a73e37386dc1124888c23f8fb94a135, type: 3}
   activeChenger: {fileID: 0}
   setCharacters_: []
-  fieldChengers:
-  - {fileID: 850065087672729559, guid: 76adf0f1ecf0389429a1a9dca36bdf18, type: 3}
   tileMapObject: {fileID: 3162813003287667441, guid: 201a6fe4438836a42919ac214593a667, type: 3}

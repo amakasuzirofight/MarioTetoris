@@ -2,45 +2,73 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FieldManager : MonoBehaviour
+namespace Field
 {
-    [SerializeField] private FieldBase baseScene;
-    FieldBase nowField;
-    GameObject obj;
-
-    // Start is called before the first frame update
-    void Start()
+    public class FieldManager : MonoBehaviour
     {
-        nowField = baseScene;
-        // obj = Instantiate(nowField.gameObject);
-        nowField.fieldcomplete = FieldChenge;
-        nowField.OpenField();
-    }
+        [SerializeField] private FieldBase baseScene;
+        FieldBase nowField;
+        GameObject activeSceneObject;
+        FieldState state;
 
-    // Update is called once per frame
-    void Update()
-    {
-        nowField.FieldCheck();
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        private void OnEnable()
         {
-            List<FieldInfo> fields = new List<FieldInfo>();
-            fields.Add(new FieldInfo(0,0));
-            fields.Add(new FieldInfo(0,1));
-            fields.Add(new FieldInfo(0,2));
-            fields.Add(new FieldInfo(0,3));
+            state = FieldState.NORMAL;
+            activeSceneObject = Instantiate(baseScene.gameObject);
+            nowField = baseScene;
+            nowField.fieldcomplete = FieldChenge;
+            nowField.OpenField();
+        }
 
-            nowField.CreateBrock(fields);
+        void Awake()
+        {
+            //state = FieldState.NORMAL;
+            //activeSceneObject = Instantiate(baseScene.gameObject);
+            //nowField = baseScene;
+            //nowField.fieldcomplete = FieldChenge;
+            //nowField.OpenField();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            switch (state)
+            {
+                case FieldState.NORMAL:
+                    nowField.FieldCheck();
+
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        List<FieldInfo> fields = new List<FieldInfo>();
+                        fields.Add(new FieldInfo(0, 0));
+                        fields.Add(new FieldInfo(0, 1));
+                        fields.Add(new FieldInfo(0, 2));
+                        fields.Add(new FieldInfo(0, 3));
+
+                        nowField.CreateBrock(fields);
+                    }
+                    break;
+                case FieldState.CONVERSATION:
+                    break;
+                case FieldState.EVENT:
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+        public void FieldChenge()
+        {
+            Debug.Log("Close");
+            nowField.CloseField();
+            FieldBase next = nowField.activeChenger.nextField;
+            Destroy(activeSceneObject);
+            nowField = next;
+            activeSceneObject = Instantiate(nowField.gameObject);
+            nowField.fieldcomplete = FieldChenge;
+            nowField.OpenField();
         }
     }
 
-    public void FieldChenge()
-    {
-        nowField.CloseField();
-        FieldBase next = nowField.activeChenger.nextField;
-        nowField.activeChenger = default;
-        nowField = next;
-        nowField.fieldcomplete = FieldChenge;
-        nowField.OpenField();
-    }
 }
