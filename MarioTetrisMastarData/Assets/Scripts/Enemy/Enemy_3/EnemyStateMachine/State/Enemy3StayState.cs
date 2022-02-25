@@ -37,6 +37,7 @@ namespace Enemy
             {
             }
 
+            // ステート変更メソッド
             private void StateChangeManager()
             {
                 // オブジェクトが検知範囲に入った場合
@@ -48,8 +49,14 @@ namespace Enemy
 
             private void OnTriggerEnter2D(Collider2D collision)
             {
-                // Playerの攻撃に当たったら
-                ChangeStateEvent(Enemy3StateType.DAMAGED);
+                var player = collision.GetComponent<TestMarioAttack>();
+
+                // Playerの本体に当たったら
+                if (player != null)
+                {
+                    ChangeStateEvent(Enemy3StateType.DAMAGED);
+                    StateChangeManager();
+                }
             }
 
         }

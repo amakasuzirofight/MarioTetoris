@@ -25,7 +25,6 @@ namespace Enemy
 
             void IEnemy1State.OnUpdate(Enemy1Core enemy)
             {
-                Debug.Log(StateType);
             }
 
             void IEnemy1State.OnFixedUpdate(Enemy1Core enemy)

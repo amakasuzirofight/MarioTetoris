@@ -28,8 +28,9 @@ namespace Enemy
             void IEnemy2State.OnUpdate(Enemy2Core enemy)
             {
                 Debug.Log(StateType);
-                Follow(rb,core.Spd,Distance(player), Detection(Distance(player), core.DiteRange));
 
+                // 追従処理
+                Follow(rb,core.Spd,Distance(player), Detection(Distance(player), core.DiteRange));
                 StateChangeManager();
             }
 
@@ -41,6 +42,8 @@ namespace Enemy
             {
             }
 
+
+            // ステート変更メソッド
             private void StateChangeManager()
             {
                 // オブジェクトが検知範囲外の場合
@@ -56,9 +59,17 @@ namespace Enemy
                 }
             }
 
+
             private void OnTriggerEnter2D(Collider2D collision)
             {
-                ChangeStateEvent(Enemy2StateType.DAMAGED);
+                var player = collision.GetComponent<TestMarioAttack>();
+
+                // Playerの本体に当たったら
+                if (player != null)
+                {
+                    ChangeStateEvent(Enemy2StateType.DAMAGED);
+                    StateChangeManager();
+                }
             }
         }
 

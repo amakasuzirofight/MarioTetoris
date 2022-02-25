@@ -19,6 +19,8 @@ GameObject:
   - component: {fileID: 8294017748306185990}
   - component: {fileID: 8294017748306185992}
   - component: {fileID: 8294017748306185995}
+  - component: {fileID: 8535843053265068962}
+  - component: {fileID: 1445343498261069196}
   m_Layer: 0
   m_Name: BerorinMedama
   m_TagString: Untagged
@@ -141,7 +143,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0807798, y: -0.19999999}
+  m_Offset: {x: -0.93265676, y: -0.19999999}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -152,7 +154,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2615595, y: 1}
+  m_Size: {x: 0.11401081, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &8294017748306185987
 MonoBehaviour:
@@ -167,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
-  atkPow: 5
+  atkPow: 1
   spd: 4
 --- !u!114 &8294017748306185986
 MonoBehaviour:
@@ -218,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec47bcfade85d3a40a34e24ccd7a2cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &8294017748306185995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,5 +231,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e27d843aead087744a6d6bf372aeafc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8535843053265068962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294017748306185997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62dc45c12103a3740977d89440dee4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1445343498261069196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294017748306185997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1bcf6fa50d38d428804a9c8b22258f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
