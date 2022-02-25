@@ -11,6 +11,7 @@ namespace Tetris
         [SerializeField] public int fallSpeed;
         [SerializeField] public string assetName;
         [SerializeField] public TetrisTypeEnum tetrisTeypEnum;
+        [SerializeField] public TetrisAngle tetrisAngle;
         [HideInInspector][SerializeField] public bool[] tetriminoArray = new bool[16];
 
         public void ActivateScriptableObject(string name,int speed, TetrisTypeEnum tetrisType)
@@ -27,10 +28,19 @@ namespace Tetris
         Teyp_T,
         Teyp_I,
         Teyp_L,
-        Teyp_L_Reverse,
+        Teyp_J,
         Teyp_Z,
-        Teyp_Z_Reverse,
-        Teyp_Box
+        Teyp_S,
+        Teyp_O
+    }
+
+    public enum TetrisAngle
+    {
+        Angle_0,
+        Angle_90,
+        Angle_180,
+        Angle_270,
+        Count
     }
 }
 
