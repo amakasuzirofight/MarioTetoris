@@ -11,7 +11,7 @@ namespace Field
         GameObject activeSceneObject;
         FieldState state;
 
-        private void OnEnable()
+        private void Start()
         {
             state = FieldState.NORMAL;
             activeSceneObject = Instantiate(baseScene.gameObject);

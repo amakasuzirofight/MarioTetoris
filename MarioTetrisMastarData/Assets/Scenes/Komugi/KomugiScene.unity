@@ -161,7 +161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149195950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.632933, y: -6.8640537, z: -7.454879}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -488,6 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeBrockList: {fileID: 11400000, guid: 1158c7c22dd52ac4a884a4411eccacf0, type: 2}
+  enemyList: {fileID: 11400000, guid: 4498f28c7eca77d47850e1f967a4fbc9, type: 2}
   minoBrockList: {fileID: 11400000, guid: c89379b76b198164590dd63420fcb6aa, type: 2}
 --- !u!4 &1611760199
 Transform:
@@ -497,7 +498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611760197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.275246, y: 0.092785046, z: -0.38003367}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
