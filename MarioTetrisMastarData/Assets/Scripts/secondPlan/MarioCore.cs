@@ -5,7 +5,7 @@ using UnityEngine;
 using Inputer;
 namespace Mario
 {
-    public class MarioCore : MonoBehaviour
+    public class MarioCore : MonoBehaviour, Connector.IDamageRecevable
     {
         [SerializeField] GameObject TestAttackCol;
 
@@ -13,7 +13,7 @@ namespace Mario
         [SerializeField] float speed;
         [SerializeField] float jumpPower;
         [SerializeField] GameObject inputObj;
-        //[SerializeField] GameObject groundCheckObj;
+
         [SerializeField] MarioJump marioJump;
         [SerializeField] MarioWalk marioWalk;
         [SerializeField] LayerMask layerMask;
@@ -154,6 +154,11 @@ namespace Mario
                 checkPos.x += colHalfWidth;// ç¿ïWÇÅ{ÇPÇµÇƒÇ¢Ç≠
             }
             return false;
+        }
+
+        public void DamageRecevable(int damage)
+        {
+            Hp -= damage;
         }
     }
     public enum MarioState
