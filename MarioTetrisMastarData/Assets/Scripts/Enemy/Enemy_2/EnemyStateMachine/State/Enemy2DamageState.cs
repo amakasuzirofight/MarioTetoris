@@ -7,18 +7,23 @@ namespace Enemy
 {
     namespace Enemy2State
     {
-        public class Enemy2DamageState : MonoBehaviour, IEnemy2State
+        public class Enemy2DamageState : EnemyBaseTouched, IEnemy2State
         {
             // EnemyのDamage状態処理
+
+            [SerializeField] private GameObject player;
 
             public Enemy2StateType StateType => Enemy2StateType.DAMAGED;
             public event Action<Enemy2StateType> ChangeStateEvent;
 
             private Enemy2Core core;
+            private Rigidbody2D rb;
 
             void IEnemy2State.OnStart(Enemy2StateType beforeState, Enemy2Core enemy)
             {
                 core ??= GetComponent<Enemy2Core>();
+                rb ??= GetComponent<Rigidbody2D>();
+                KnockBack(player, rb, 0.6f);
             }
 
             void IEnemy2State.OnUpdate(Enemy2Core enemy)
@@ -34,6 +39,8 @@ namespace Enemy
             void IEnemy2State.OnEnd(Enemy2StateType nextState, Enemy2Core enemy)
             {
             }
+
+
 
             // ステート変更メソッド
             private void StateChangeManager()

@@ -7,7 +7,7 @@ namespace Enemy
 {
     namespace Enemy3State
     {
-        public class Enemy3DamageState : MonoBehaviour, IEnemy3State
+        public class Enemy3DamageState : EnemyBaseTouched, IEnemy3State
         {
             //Enemy‚ÌDamageó‘Ôˆ—
 
@@ -15,6 +15,7 @@ namespace Enemy
             public event Action<Enemy3StateType> ChangeStateEvent;
 
             private Enemy3Core core;
+
 
             void IEnemy3State.OnStart(Enemy3StateType beforeState, Enemy3Core enemy)
             {

@@ -17,6 +17,8 @@ namespace Enemy
             void IEnemy2State.OnStart(Enemy2StateType beforeState, Enemy2Core enemy)
             {
                 Debug.Log(StateType);
+
+                // €–Sˆ—
                 Dead();
             }
 

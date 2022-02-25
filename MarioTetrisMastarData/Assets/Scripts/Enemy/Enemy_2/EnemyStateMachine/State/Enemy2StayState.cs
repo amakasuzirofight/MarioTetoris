@@ -46,10 +46,16 @@ namespace Enemy
                 }
             }
 
+
             private void OnTriggerEnter2D(Collider2D collision)
             {
-                // Player‚ÌUŒ‚‚É“–‚½‚Á‚½‚ç
-                ChangeStateEvent(Enemy2StateType.DAMAGED);
+                var player = collision.GetComponent<TestMarioAttack>();
+
+                // Player‚Ì–{‘Ì‚É“–‚½‚Á‚½‚ç
+                if (player != null)
+                {
+                    ChangeStateEvent(Enemy2StateType.DAMAGED);
+                }
             }
         }
 

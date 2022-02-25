@@ -20,13 +20,14 @@ GameObject:
   - component: {fileID: 239584743707288842}
   - component: {fileID: 239584743707288846}
   - component: {fileID: 239584743707288847}
+  - component: {fileID: 51252641}
   m_Layer: 0
   m_Name: Hatti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &239584743707288834
 Transform:
   m_ObjectHideFlags: 0
@@ -142,8 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 5
-  atkPow: 2
-  spd: 4
+  atkPow: 1
+  spd: 2
   diteRange: 15
   atkRange: 2
 --- !u!114 &239584743707288833
@@ -209,6 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69be8910b9e09dc4fa1b0f76cd738cac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &239584743707288846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,5 +233,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02973b1cb67cce14591329a4c26ae899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &51252641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239584743707288838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b3d0bb4f7c4254a9e44cc7b558c98d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

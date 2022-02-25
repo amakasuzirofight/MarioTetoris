@@ -2,22 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBaseHPManager : MonoBehaviour
+namespace Enemy
 {
-    // Enemyの基底HPクラス
-
-    private const int MAX_HP = 10;// 後で変更
-    private const int MIN_HP = 0;
-
-    protected float Damage(int hp, int damageNum) 
+    public class EnemyBaseHPManager : MonoBehaviour
     {
-        hp -= damageNum;
-        return Mathf.Max(hp, MIN_HP);
+        // Enemyの基底HPクラス
+
+        private const int MAX_HP = 10;// 後で変更
+        private const int MIN_HP = 0;
+
+        protected int Damage(int hp, int damageNum)
+        {
+            hp -= damageNum;
+            return Mathf.Max(hp, MIN_HP);
+        }
+
+        protected float Recovery(int hp, int recoveryNum)
+        {
+            hp += recoveryNum;
+            return Mathf.Min(hp, MAX_HP);
+        }
     }
 
-    protected float Recovery(int hp, int recoveryNum) 
-    {
-        hp += recoveryNum;
-        return Mathf.Min(hp, MAX_HP);
-    }
 }

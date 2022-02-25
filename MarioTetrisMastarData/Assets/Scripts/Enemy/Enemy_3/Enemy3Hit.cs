@@ -6,19 +6,25 @@ using Mario;
 
 namespace Enemy
 {
-    namespace Enemy2State
+    namespace Enemy3State
     {
-        public class Enemy2Hit : EnemyBaseHPManager, IDamageRecevable
+        public class Enemy3Hit : EnemyBaseHPManager, IDamageRecevable
         {
             private IDamageRecevable damageRecevable;
-            private Enemy2Core core;
+            private Enemy3Core core;
 
             void Start()
             {
                 damageRecevable = GetComponent<IDamageRecevable>();
-                core = GetComponent<Enemy2Core>();
+                core = GetComponent<Enemy3Core>();
             }
 
+
+            // Enemyダメージ処理
+            public void DamageRecevable(int damage)
+            {
+                core.Hp = Damage(core.Hp, damage);
+            }
 
             // Playerに触れた時にダメージを与える(甘糟待ち)
             //private void OnCollisionEnter2D(Collision2D collision)
@@ -37,15 +43,6 @@ namespace Enemy
             //    }
             //}
 
-
-            // Enemyダメージ処理
-            public void DamageRecevable(int damage)
-            {
-                Debug.Log("痛い！！");
-                core.Hp = Damage(core.Hp, damage);
-
-                // Playerの攻撃判定をボタンが押された瞬間にすればいける
-            }
         }
 
     }

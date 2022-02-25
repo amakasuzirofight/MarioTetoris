@@ -11,6 +11,8 @@ namespace Enemy
         {
             //EnemyのDamage状態処理
 
+            [SerializeField] private GameObject player;
+
             public Enemy3StateType StateType => Enemy3StateType.ATTACK;
             public event Action<Enemy3StateType> ChangeStateEvent;
 
@@ -42,8 +44,22 @@ namespace Enemy
             // ステート変更メソッド
             private void StateChangeManager()
             {
-                // 移動状態に遷移
-                ChangeStateEvent(Enemy3StateType.STAY);
+                if (!Detection(Distance(player), core.AtkRange))
+                {
+                    ChangeStateEvent(Enemy3StateType.STAY);
+                }
+            }
+
+            private void OnTriggerEnter2D(Collider2D collision)
+            {
+                var player = collision.GetComponent<TestMarioAttack>();
+
+                // Playerの本体に当たったら
+                if (player != null)
+                {
+                    ChangeStateEvent(Enemy3StateType.DAMAGED);
+                    StateChangeManager();
+                }
             }
 
         }
