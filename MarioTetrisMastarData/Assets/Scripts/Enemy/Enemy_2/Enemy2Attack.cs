@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Connector;
+using Mario;
 
 namespace Enemy
 {
@@ -21,10 +22,15 @@ namespace Enemy
                 core = GetComponent<Enemy2Core>();
             }
 
-            private void OnTriggerEnter2D(Collider2D collision)
+            // Playerに触れた時にダメージを与える(甘糟待ち)
+            private void OnCollisionEnter2D(Collision2D collision)
             {
-                // Playerだったら
-                damageRecevable.DamageRecevable(core.AtkPow);
+                if (collision.gameObject.TryGetComponent(out MarioCore at))
+                {
+                    IDamageRecevable damage = at;
+                    Debug.Log("殺す！！！");
+                    damage.DamageRecevable(core.AtkPow);
+                }
             }
         }
     }

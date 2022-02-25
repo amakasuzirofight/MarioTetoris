@@ -21,21 +21,16 @@ namespace Enemy
 
 
             // Playerに触れた時にダメージを与える(甘糟待ち)
-            //private void OnCollisionEnter2D(Collision2D collision)
-            //{
-            //    Transform parent = collision.gameObject.transform;
+            private void OnCollisionEnter2D(Collision2D collision)
+            {
+                if (collision.gameObject.TryGetComponent(out MarioCore at))
+                {
+                    IDamageRecevable damage = at;
 
-            //    for (int i = 0; i < parent.childCount; i++)
-            //    {
-            //        if (parent.GetChild(i).TryGetComponent(out TestMarioAttack at))
-            //        {
-            //            IDamageRecevable damage = (IDamageRecevable)at;
-
-            //            Debug.Log("てめえどこ見てんだよ");
-            //            damage.DamageRecevable(core.AtkPow);
-            //        }
-            //    }
-            //}
+                    Debug.Log("てめえどこ見てんだよ");
+                    damage.DamageRecevable(core.AtkPow);
+                }
+            }
 
 
             // Enemyダメージ処理

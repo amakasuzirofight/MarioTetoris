@@ -144,11 +144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184368151730898601, guid: 0ad0d006488f4de449ba0576977ceb62, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.43
+      value: -7.9
       objectReference: {fileID: 0}
     - target: {fileID: 7184368151730898601, guid: 0ad0d006488f4de449ba0576977ceb62, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.76
+      value: -2.1
       objectReference: {fileID: 0}
     - target: {fileID: 7184368151730898601, guid: 0ad0d006488f4de449ba0576977ceb62, type: 3}
       propertyPath: m_LocalPosition.z
@@ -182,13 +182,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7184368151730898604, guid: 0ad0d006488f4de449ba0576977ceb62, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 85859f0e65afc944db9c24d4c98a0c37, type: 2}
     - target: {fileID: 7184368151730898605, guid: 0ad0d006488f4de449ba0576977ceb62, type: 3}
       propertyPath: inputObj
       value: 
       objectReference: {fileID: 4271556976094582983, guid: 06432966a96cff84895d4cd3e230932f, type: 3}
     - target: {fileID: 7184368153623078259, guid: 0ad0d006488f4de449ba0576977ceb62, type: 3}
       propertyPath: m_Size.x
-      value: 2.0402083
+      value: 1.5889914
       objectReference: {fileID: 0}
     - target: {fileID: 7184368153623078259, guid: 0ad0d006488f4de449ba0576977ceb62, type: 3}
       propertyPath: m_Enabled
@@ -196,7 +200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184368153623078259, guid: 0ad0d006488f4de449ba0576977ceb62, type: 3}
       propertyPath: m_Offset.x
-      value: 0.52010435
+      value: 0.29449594
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ad0d006488f4de449ba0576977ceb62, type: 3}
@@ -473,6 +477,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hatti
       objectReference: {fileID: 0}
+    - target: {fileID: 239584743707288838, guid: 893359473db4dac48b7a409af6433157, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 239584743707288842, guid: 893359473db4dac48b7a409af6433157, type: 3}
       propertyPath: player
       value: 
@@ -585,6 +593,10 @@ PrefabInstance:
     - target: {fileID: 8783895768432152135, guid: 2416597795627784f9abb7e068b6dd47, type: 3}
       propertyPath: m_Name
       value: Torippi
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783895768432152135, guid: 2416597795627784f9abb7e068b6dd47, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8783895768432152185, guid: 2416597795627784f9abb7e068b6dd47, type: 3}
       propertyPath: player

@@ -27,24 +27,16 @@ namespace Enemy
             }
 
             // Player‚ÉG‚ê‚½‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é(ŠÃ‘Œ‘Ò‚¿)
-            //private void OnCollisionEnter2D(Collision2D collision)
-            //{
-            //    Transform parent = collision.gameObject.transform;
+            private void OnCollisionEnter2D(Collision2D collision)
+            {
+                if (collision.gameObject.TryGetComponent(out MarioCore at))
+                {
+                    IDamageRecevable damage = at;
 
-            //    for (int i = 0; i < parent.childCount; i++)
-            //    {
-            //        if (parent.GetChild(i).TryGetComponent(out TestMarioAttack at))
-            //        {
-            //            IDamageRecevable damage = (IDamageRecevable)at;
-
-            //            Debug.Log("‚Ä‚ß‚¦‚Ç‚±Œ©‚Ä‚ñ‚¾‚æ");
-            //            damage.DamageRecevable(core.AtkPow);
-            //        }
-            //    }
-            //}
-
+                    Debug.Log("‚Ä‚ß‚¦‚Ç‚±Œ©‚Ä‚ñ‚¾‚æ");
+                    damage.DamageRecevable(core.AtkPow);
+                }
+            }
         }
-
     }
-
 }

@@ -20,12 +20,16 @@ namespace Enemy
             private Enemy1Core core;
             private Rigidbody2D rb;
 
+            private float time = 0f;
+            private const float TRANS_COUNT = 0.8f;
+
             void IEnemy1State.OnStart(Enemy1StateType beforeState, Enemy1Core enemy)
             {
                 core ??= GetComponent<Enemy1Core>();
                 rb   ??= GetComponent<Rigidbody2D>();
 
-                KnockBack(player, rb, 1f);
+                // ノックバック処理
+                KnockBack(player, rb, 5f);
             }
 
             void IEnemy1State.OnUpdate(Enemy1Core enemy)
@@ -45,17 +49,33 @@ namespace Enemy
             // ステート変更メソッド
             private void StateChangeManager()
             {
-                //// HPが0の場合
-                //if (core.Hp <= 0) 
-                //{
-                //    // 死亡状態に遷移
-                //    ChangeStateEvent(Enemy1StateType.DEAD);
-                //}
-                //else 
-                //{
-                //    // 移動状態に遷移
-                //    ChangeStateEvent(Enemy1StateType.MOVE);
-                //}
+                // 待機時間
+                if (!WaitTime(TRANS_COUNT)) return;
+
+                // HPが0の場合
+                if (core.Hp <= 0)
+                {
+                    // 死亡状態に遷移
+                    ChangeStateEvent(Enemy1StateType.DEAD);
+                }
+                else
+                {
+                    // 移動状態に遷移
+                    ChangeStateEvent(Enemy1StateType.MOVE);
+                }
+            }
+
+            // 待ち時間メソッド
+            private bool WaitTime(float count) 
+            {
+                time += Time.deltaTime;
+
+                if (time > count) 
+                {
+                    time = 0f;
+                    return true;
+                }
+                return false;
             }
         }
     }
