@@ -62,6 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldChengers:
   - {fileID: 2167748351525670585, guid: 4a73e37386dc1124888c23f8fb94a135, type: 3}
+  stageNumber: 1
   activeChenger: {fileID: 0}
   setCharacters_: []
   checkFrame: 30

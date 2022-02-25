@@ -9,10 +9,15 @@ public static class Utility_
 {
     public static Dictionary<int, GameObject> objectGeter = new Dictionary<int, GameObject>();
     public static Dictionary<int, GameObject> minoGeter = new Dictionary<int, GameObject>();
+    public static Dictionary<int, GameObject> enemyGeter = new Dictionary<int, GameObject>();
 
     private static Text systemMessage;
     private static List<int[]> csvData;
-    private static List<bool> stageFlgList;
+    private static Stage thisStage = Stage.NONE;
+    public static List<bool> stageFlgList;
+
+    public const int BROCK_NUMBER_COUNT = 20;
+    public const int ENEMY_NUMBER_COUNT = 20;
 
     public static void MessageWriter(string message)
     {
@@ -29,6 +34,18 @@ public static class Utility_
     {
         systemMessage.text = default;
         systemMessage.gameObject.SetActive(false);
+    }
+
+    public static void StageFlgSeter(List<bool> newStage,Stage stage)
+    {
+        if (stage == thisStage) return;
+        else thisStage = stage;
+        stageFlgList = newStage;
+    }
+
+    public static void FlgChenger(int index)
+    {
+        stageFlgList[index] = true;
     }
 
     public static List<int[]> CsvToIntList(TextAsset baseData)
@@ -56,7 +73,7 @@ public static class Utility_
         return returnData;
     }
 
-    public static void CsvWriter(FieldInfo position,int number)
+    public static void CsvWriter(FieldInfo position, int number)
     {
         csvData[position.height][position.width] = number;
     }
@@ -68,14 +85,19 @@ public static class Utility_
     }
 }
 
-public struct Stage1ClearFlg
+[Serializable]
+public struct StageClearFlg
 {
-    public bool clearFlg1_1;
-    public bool clearFlg1_2;
-    public bool clearFlg1_3;
-    public bool clearFlg1_4;
-    public bool clearFlg1_5;
-    public bool clearFlg1_6;
+    public bool clearFlg_1;
+    public bool clearFlg_2;
+    public bool clearFlg_3;
+    public bool clearFlg_4;
+    public bool clearFlg_5;
+    public bool clearFlg_6;
+    public bool clearFlg_7;
+    public bool clearFlg_8;
+    public bool clearFlg_9;
+    public bool clearFlg_10;
 }
 
 public enum Difference
@@ -103,9 +125,12 @@ public enum FieldState
     EVENT
 }
 
-public enum ItemNumber
+public enum Stage
 {
-
+    NONE,
+    STAGE1,
+    STAGE2,
+    COUNT
 }
 
 public struct FieldInfo
