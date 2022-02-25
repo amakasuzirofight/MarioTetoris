@@ -1926,6 +1926,34 @@ PrefabInstance:
       objectReference: {fileID: 76090457}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ad0d006488f4de449ba0576977ceb62, type: 3}
+--- !u!1 &7184368152791865048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7184368151730898593, guid: 0ad0d006488f4de449ba0576977ceb62, type: 3}
+  m_PrefabInstance: {fileID: 7184368152791865047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7184368152791865049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184368152791865048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41fa3c8c93aec884dbb9108dba4479f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TestAttackCol: {fileID: 0}
+  speed: 0
+  jumpPower: 0
+  inputObj: {fileID: 0}
+  marioJump: {fileID: 0}
+  marioWalk: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  attackPower: 0
+  Hp: 0
 --- !u!1001 &8540818091487457798
 PrefabInstance:
   m_ObjectHideFlags: 0

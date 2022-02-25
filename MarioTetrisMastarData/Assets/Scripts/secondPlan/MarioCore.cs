@@ -17,6 +17,8 @@ namespace Mario
         [SerializeField] MarioJump marioJump;
         [SerializeField] MarioWalk marioWalk;
         [SerializeField] LayerMask layerMask;
+        [SerializeField] protected int attackPower;
+        [SerializeField] protected int Hp;
 
         Rigidbody2D rigidbody2D;
         BoxCollider2D boxCollider2D;
@@ -49,10 +51,13 @@ namespace Mario
         // Update is called once per frame
         void Update()
         {
-            TestAttackCol.SetActive(false);
             if (Input.GetKey(KeyCode.Space))
             {
                 TestAttackCol.SetActive(true);
+            }
+            else
+            {
+                TestAttackCol.SetActive(false);
             }
         }
         Vector3 _localScale;
@@ -61,7 +66,7 @@ namespace Mario
             if (inputer.MoveInput() != 0)
             {
                 //テスト用反転
-                
+
                 transform.localScale = new Vector3(inputer.MoveInput() == 1 ? _localScale.x : -_localScale.x, transform.localScale.y, transform.localScale.z);
             }
 

@@ -6,6 +6,10 @@ namespace Items
 {
     public class ItemBase : MonoBehaviour, IItemHit
     {
+        /// <summary>
+        /// プレイヤーに当たった時に名前を返す
+        /// </summary>
+        /// <returns></returns>
         public ItemName GetItemName()
         {
             return name;

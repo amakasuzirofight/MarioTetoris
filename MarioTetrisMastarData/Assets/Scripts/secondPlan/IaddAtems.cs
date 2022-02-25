@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Mario
 {
-    interface IaddAtems
+    interface IAddAtems
     {
-        public event Action<ItemName> GetItemEvent;
+        public event Action<ItemName,int> GetItemEvent;
     }
 }

@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 7184368151730898602}
   - component: {fileID: 7184368151730898603}
   - component: {fileID: 7184368151730898604}
+  - component: {fileID: 7184368151730898592}
   - component: {fileID: 7184368151730898605}
   - component: {fileID: 7184368151730898606}
   - component: {fileID: 7184368151730898607}
-  - component: {fileID: 7184368151730898592}
   m_Layer: 0
   m_Name: Mario
   m_TagString: Untagged
@@ -136,6 +136,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &7184368151730898592
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184368151730898593}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.95423657, y: -0.7807398}
+  m_Size: {x: 7.3251176, y: 10.968567}
+  m_Direction: 0
 --- !u!114 &7184368151730898605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +173,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+  attackPower: 2
+  Hp: 5
 --- !u!114 &7184368151730898606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,22 +199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a988df901cfb414a96ac05d9fc3ce97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!70 &7184368151730898592
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7184368151730898593}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.95423657, y: -0.7807398}
-  m_Size: {x: 7.3251176, y: 10.968567}
-  m_Direction: 0
 --- !u!1 &7184368153623078261
 GameObject:
   m_ObjectHideFlags: 0
