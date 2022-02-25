@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435ced375ba917843b7d30890601fd7a, type: 3}
+  m_Name: BrockData_stage
+  m_EditorClassIdentifier: 
+  objectsList:
+  - {fileID: 0}
+  - {fileID: 5839409026174869350, guid: daf3bc4ee21fa2c45be67a988801f28d, type: 3}
+  - {fileID: 4855559329700555584, guid: f2ca17ac809dadd4f9b2e5c5d79cc81a, type: 3}

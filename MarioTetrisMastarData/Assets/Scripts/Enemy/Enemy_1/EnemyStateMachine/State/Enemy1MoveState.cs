@@ -14,19 +14,19 @@ namespace Enemy
             public Enemy1StateType StateType =>  Enemy1StateType.MOVE;
             public event Action<Enemy1StateType> ChangeStateEvent;
 
-            private Enemy1Core enemy1Core;
+            private Enemy1Core core;
             private Rigidbody2D rb;
 
             void IEnemy1State.OnStart(Enemy1StateType beforeState, Enemy1Core enemy)
             {
-                enemy1Core ??= GetComponent<Enemy1Core>();
+                core ??= GetComponent<Enemy1Core>();
                 rb         ??= GetComponent<Rigidbody2D>();
             }
 
             void IEnemy1State.OnUpdate(Enemy1Core enemy)
             {
                 Debug.Log(StateType);
-                Move(rb, enemy1Core.Spd);
+                Move(rb, core.Spd);
             }
 
             void IEnemy1State.OnFixedUpdate(Enemy1Core enemy)
@@ -50,6 +50,7 @@ namespace Enemy
                     // PlayerÇÃçUåÇÇ…ìñÇΩÇ¡ÇΩÇÁ
                     StateChangeManager();
                 }
+                // Ç±ÇÍBaseÇÃä÷êîÇ…Ç∑ÇÈ
                 else dir *= -1;
             }
 

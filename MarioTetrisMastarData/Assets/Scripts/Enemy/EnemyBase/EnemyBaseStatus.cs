@@ -11,5 +11,7 @@ namespace Enemy
         public int Hp { get; set; }
         public int AtkPow { get; set; }
         public float Spd { get; set; }
+        public float DiteRange { get; set; }
+        public float AtkRange { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace Enemy
 {
     namespace Enemy1State
     {
-        public class EnemyHit : EnemyBaseHPManager, IDamageRecevable
+        public class Enemy1Hit : EnemyBaseHPManager, IDamageRecevable
         {
             private IDamageRecevable damageRecevable;
             private Enemy1Core enemyCore;
