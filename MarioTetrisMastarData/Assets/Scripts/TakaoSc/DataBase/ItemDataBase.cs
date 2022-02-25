@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Tetris
 {
-    public class ItemDataBase : MonoBehaviour
+    public class ItemDataBase : MonoBehaviour,IGetTetrisInfo
     {
         [SerializeField] List<TetrisScriptableObject> typeTList;
         [SerializeField] List<TetrisScriptableObject> typeIList;
@@ -19,6 +19,12 @@ namespace Tetris
 
         Dictionary<TetrisTypeEnum, Dictionary<TetrisAngle, List<TetrisScriptableObject>>> tetriminoTypeDic = new Dictionary<TetrisTypeEnum, Dictionary<TetrisAngle, List<TetrisScriptableObject>>>();
         Dictionary<TetrisAngle, List<TetrisScriptableObject>> tetriminoAngleDic = new Dictionary<TetrisAngle, List<TetrisScriptableObject>> ();
+
+        public TetrisScriptableObject GetTetrimino(TetrisTypeEnum type, TetrisAngle angle)
+        {
+            throw new System.NotImplementedException();
+        }
+
 
         // Start is called before the first frame update
         void Start()
