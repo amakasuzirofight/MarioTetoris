@@ -6,9 +6,13 @@ namespace Inputer
 {
     public class SelectInput : MonoBehaviour,ISelectInput
     {
-        public event Action<SelectBottonType> OnSelectButton;
+        public event Action<SelectButtonType> OnSelectButton;
         public event Action<float> MouceWhileEvent;
 
+        private void Awake()
+        {
+            Utility.Locator<ISelectInput>.Bind(this);
+        }
         // Start is called before the first frame update
         void Start()
         {
@@ -20,15 +24,15 @@ namespace Inputer
         {
             if(Input.GetKeyDown(KeyCode.DownArrow))
             {
-                OnSelectButton(SelectBottonType.ArrowDown);
+                OnSelectButton(SelectButtonType.ArrowDown);
             }
             if(Input.GetMouseButtonDown(0))
             {
-                OnSelectButton(SelectBottonType.MouceRight);
+                OnSelectButton(SelectButtonType.MouceRight);
             }
             if (Input.GetMouseButtonDown(1))
             {
-                OnSelectButton(SelectBottonType.MouceLeft);
+                OnSelectButton(SelectButtonType.MouceLeft);
             }
             if(Input.mouseScrollDelta.y!=0)
             {
@@ -36,7 +40,7 @@ namespace Inputer
             }
         }
     }
-    public enum SelectBottonType
+    public enum SelectButtonType
     {
         MouceLeft,MouceRight,ArrowDown,Non
     }
