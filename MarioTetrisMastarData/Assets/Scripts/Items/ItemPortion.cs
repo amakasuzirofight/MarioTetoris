@@ -16,11 +16,10 @@ namespace Items
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if(TryGetComponent<IRecoveryRecevable>(out var toSometningHit))
-            {
-                toSometningHit.RecoveryRecevable(recoveryAmount);
-                Hit();
-            }
+            //if(TryGetComponent<IRecoveryRecevable>(out var toSometningHit))
+            //{ 
+            //    Hit();
+            //}
         }
     }
 }
