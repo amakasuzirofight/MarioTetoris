@@ -1,9 +1,9 @@
 namespace Connector
 {
-    interface IDamageRecevable 
+    interface IRecoveryRecevable 
     {
         // ダメージ用インターフェース
 
-        void DamageRecevable(int damage);
+        void RecoveryRecevable(int damage);
     }
 }
