@@ -5,7 +5,7 @@ using UnityEngine;
 using Inputer;
 namespace Mario
 {
-    public class MarioCore : MonoBehaviour, Connector.IRecoveryRecevable
+    public class MarioCore : MonoBehaviour, Connector.IDamageRecevable
     {
         [SerializeField] GameObject TestAttackCol;
 

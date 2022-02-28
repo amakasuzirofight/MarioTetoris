@@ -8,7 +8,7 @@ namespace Enemy
 {
     namespace Enemy1State
     {
-        public class Enemy1Hit : EnemyBaseHPManager, IRecoveryReceivable
+        public class Enemy1Hit : EnemyBaseHPManager,IDamageRecevable
         {
             // Enemy1‚ÌÚG”»’èˆ—
 
@@ -36,6 +36,11 @@ namespace Enemy
 
                 //    damage.DamageRecevable(core.AtkPow);
                 //}
+            }
+
+            public void RecoveryRecevable(int damage)
+            {
+                throw new System.NotImplementedException();
             }
         }
     }

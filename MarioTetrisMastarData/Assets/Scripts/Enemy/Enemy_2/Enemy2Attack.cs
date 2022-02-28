@@ -12,13 +12,13 @@ namespace Enemy
         {
             // Enemy2ÇÃçUåÇèàóù
 
-            private IRecoveryRecevable damageRecevable;
+            private IDamageRecevable damageRecevable;
             private Enemy2Core core;
 
             // Start is called before the first frame update
             void Start()
             {
-                damageRecevable = GetComponent<IRecoveryRecevable>();
+                damageRecevable = GetComponent<IDamageRecevable>();
                 core = GetComponent<Enemy2Core>();
             }
 
@@ -27,7 +27,7 @@ namespace Enemy
             {
                 if (collision.gameObject.TryGetComponent(out MarioCore at))
                 {
-                    IRecoveryRecevable damage = at;
+                    IDamageRecevable damage = at;
                     Debug.Log("éEÇ∑ÅIÅIÅI");
                     damage.RecoveryRecevable(core.AtkPow);
                 }

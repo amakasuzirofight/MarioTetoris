@@ -8,14 +8,14 @@ namespace Enemy
 {
     namespace Enemy2State
     {
-        public class Enemy2Hit : EnemyBaseHPManager, IRecoveryRecevable
+        public class Enemy2Hit : EnemyBaseHPManager, IDamageRecevable
         {
-            private IRecoveryRecevable damageRecevable;
+            private IDamageRecevable damageRecevable;
             private Enemy2Core core;
 
             void Start()
             {
-                damageRecevable = GetComponent<IRecoveryRecevable>();
+                damageRecevable = GetComponent<IDamageRecevable>();
                 core = GetComponent<Enemy2Core>();
             }
 
@@ -25,7 +25,7 @@ namespace Enemy
             {
                 if (collision.gameObject.TryGetComponent(out MarioCore at))
                 {
-                    IRecoveryRecevable damage = at;
+                    IDamageRecevable damage = at;
 
                     Debug.Log("‚Ä‚ß‚¦‚Ç‚±Œ©‚Ä‚ñ‚¾‚æ");
                     damage.RecoveryRecevable(core.AtkPow);

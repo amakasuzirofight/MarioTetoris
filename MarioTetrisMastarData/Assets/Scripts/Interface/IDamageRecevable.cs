@@ -1,6 +1,6 @@
 namespace Connector
 {
-    interface IRecoveryRecevable 
+    interface IDamageRecevable 
     {
         // ダメージ用インターフェース
 

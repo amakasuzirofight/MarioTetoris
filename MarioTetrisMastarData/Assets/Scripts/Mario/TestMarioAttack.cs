@@ -18,10 +18,10 @@ public class TestMarioAttack : MonoBehaviour
   
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Connector.IRecoveryRecevable damageRecevable;
-        if (collision.gameObject.GetComponent< Connector.IRecoveryRecevable>()!=null)
+        Connector.IDamageRecevable damageRecevable;
+        if (collision.gameObject.GetComponent< Connector.IDamageRecevable>()!=null)
         {
-            damageRecevable = collision.gameObject.GetComponent<Connector.IRecoveryRecevable>();
+            damageRecevable = collision.gameObject.GetComponent<Connector.IDamageRecevable>();
             damageRecevable.RecoveryRecevable(5);
         }
     }
