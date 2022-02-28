@@ -5,7 +5,7 @@ using UnityEngine;
 using Inputer;
 namespace Mario
 {
-    public class MarioCore : MonoBehaviour, Connector.IDamageRecevable
+    public class MarioCore : MonoBehaviour, Connector.IRecoveryRecevable
     {
         [SerializeField] GameObject TestAttackCol;
 
@@ -156,7 +156,7 @@ namespace Mario
             return false;
         }
 
-        public void DamageRecevable(int damage)
+        public void RecoveryRecevable(int damage)
         {
             Hp -= damage;
         }
