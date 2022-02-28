@@ -36,7 +36,7 @@ public static class Utility_
         systemMessage.gameObject.SetActive(false);
     }
 
-    public static void StageFlgSeter(List<bool> newStage,Stage stage)
+    public static void StageFlgSeter(List<bool> newStage, Stage stage)
     {
         if (stage == thisStage) return;
         else thisStage = stage;
@@ -175,9 +175,9 @@ public struct FieldInfo
         width = newWidth;
     }
 
-    public static FieldInfo operator +(FieldInfo base_,FieldInfo add)
+    public static FieldInfo operator +(FieldInfo base_, FieldInfo add)
     {
-        return new FieldInfo(base_.height + add.height,base_.width + add.width);
+        return new FieldInfo(base_.height + add.height, base_.width + add.width);
     }
 
     public static FieldInfo operator -(FieldInfo base_, FieldInfo add)
@@ -187,7 +187,7 @@ public struct FieldInfo
 
     public static FieldInfo VecToFieldInfo(Vector2 vec)
     {
-        return new FieldInfo((int)vec.y,(int)vec.x);
+        return new FieldInfo((int)vec.y * -1, (int)vec.x);
     }
 
     public static Vector2 FieldInfoToVec(FieldInfo pos)

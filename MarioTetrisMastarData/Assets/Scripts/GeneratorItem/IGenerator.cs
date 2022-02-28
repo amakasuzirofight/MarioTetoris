@@ -18,7 +18,7 @@ namespace ItemGenerater
         /// <param name="テトリスの形"></param>
         /// <param name="テトリスの角度"></param>
         /// <param name="生成位置"></param>
-        public void GenerateItem(Tetris.TetrisTypeEnum tetrisType, Tetris.TetrisAngle tetrisAngle, Vector3 pos);
+        public void GenerateItem(Tetris.TetrisTypeEnum tetrisType, Tetris.TetrisAngle tetrisAngle, List<FieldInfo> positions);
     }
 
 }
