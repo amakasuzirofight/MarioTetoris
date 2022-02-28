@@ -73,6 +73,31 @@ public static class Utility_
         return returnData;
     }
 
+    public static List<int[]> StringListToIntList(string str)
+    {
+        StringReader reader = new StringReader(str);
+        List<string[]> csvData = new List<string[]>();
+        List<int[]> returnData = new List<int[]>();
+        while (reader.Peek() != -1) // reader.Peaek‚ª-1‚É‚È‚é‚Ü‚Å
+        {
+            string line = reader.ReadLine(); // ˆês‚¸‚Â“Ç‚İ‚İ
+            csvData.Add(line.Split(',')); // , ‹æØ‚è‚ÅƒŠƒXƒg‚É’Ç‰Á
+        }
+
+        for (int i = 0; i < csvData.Count; i++)
+        {
+            returnData.Add(new int[csvData[i].Length]);
+            for (int j = 0; j < csvData[i].Length; j++)
+            {
+                returnData[i][j] = Convert.ToInt32(csvData[i][j]);
+            }
+        }
+
+        FieldData = returnData;
+
+        return returnData;
+    }
+
     public static void CsvWriter(FieldInfo position, int number)
     {
         csvData[position.height][position.width] = number;
@@ -133,6 +158,12 @@ public enum Stage
     COUNT
 }
 
+[Serializable]
+public struct CreateStageData
+{
+    [SerializeField] public string datastr;
+}
+
 public struct FieldInfo
 {
     public int height;
@@ -157,6 +188,11 @@ public struct FieldInfo
     public static FieldInfo VecToFieldInfo(Vector2 vec)
     {
         return new FieldInfo((int)vec.y,(int)vec.x);
+    }
+
+    public static Vector2 FieldInfoToVec(FieldInfo pos)
+    {
+        return new Vector2(pos.width, pos.height * -1);
     }
 }
 

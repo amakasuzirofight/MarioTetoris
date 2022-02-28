@@ -29,4 +29,9 @@ public class GameStatus : MonoBehaviour
             Utility_.minoGeter[i] = minoBrockList.minoBrockList[i];
         }
     }
+
+    void Updata()
+    {
+
+    }
 }

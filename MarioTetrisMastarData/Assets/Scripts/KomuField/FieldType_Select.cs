@@ -13,11 +13,6 @@ namespace Field
         [SerializeField] private Stage stage;
         private List<GameObject> objects;
 
-        //public void Start()
-        //{
-        //    WriteJson();
-        //}
-
         public override void OpenField()
         {
             ReadJson();
@@ -29,6 +24,11 @@ namespace Field
 
         public override void FieldCheck()
         {
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                WriteJson();
+            }
+
             ChengerCheck();
         }
 
@@ -64,21 +64,23 @@ namespace Field
 
         private void WriteJson()
         {
+            Debug.Log("save");
+
             StageClearFlg stage;
-            stage.clearFlg_1 = false;
-            stage.clearFlg_2 = false;
-            stage.clearFlg_3 = false;
-            stage.clearFlg_4 = false;
-            stage.clearFlg_5 = false;
-            stage.clearFlg_6 = false;
-            stage.clearFlg_7 = false;
-            stage.clearFlg_8 = false;
-            stage.clearFlg_9 = false;
-            stage.clearFlg_10 = false;
+            stage.clearFlg_1 = Utility_.stageFlgList[1];
+            stage.clearFlg_2 = Utility_.stageFlgList[2];
+            stage.clearFlg_3 = Utility_.stageFlgList[3];
+            stage.clearFlg_4 = Utility_.stageFlgList[4];
+            stage.clearFlg_5 = Utility_.stageFlgList[5];
+            stage.clearFlg_6 = Utility_.stageFlgList[6];
+            stage.clearFlg_7 = Utility_.stageFlgList[7];
+            stage.clearFlg_8 = Utility_.stageFlgList[8];
+            stage.clearFlg_9 = Utility_.stageFlgList[9];
+            stage.clearFlg_10 = Utility_.stageFlgList[10];
 
             StreamWriter writer = new StreamWriter(Application.dataPath + "/JsonData/" + stageFlgs.name + ".json");
 
-            string jsonstr = JsonUtility.ToJson(stage);//受け取ったPlayerDataをJSONに変換
+            string jsonstr = JsonUtility.ToJson(stage);// JSONに変換
             writer.WriteLine(jsonstr);
             writer.Flush();//バッファをクリアする
             writer.Close();//ファイルをクローズする

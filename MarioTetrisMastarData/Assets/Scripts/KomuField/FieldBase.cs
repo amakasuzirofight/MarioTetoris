@@ -113,13 +113,13 @@ namespace Field
                         if (csvData[i][j] < Utility_.BROCK_NUMBER_COUNT)
                         {
                             GameObject obj = Instantiate(Utility_.objectGeter[csvData[i][j]]);
-                            obj.transform.position = new Vector3(j, i * -1, 0);
+                            obj.transform.position = FieldInfo.FieldInfoToVec(new FieldInfo(i,j));
                             objects.Add(obj);
                         }
                         else if (csvData[i][j] < Utility_.BROCK_NUMBER_COUNT + Utility_.ENEMY_NUMBER_COUNT)
                         {
                             GameObject obj = Instantiate(Utility_.enemyGeter[csvData[i][j] - Utility_.BROCK_NUMBER_COUNT]);
-                            obj.transform.position = new Vector3(j, i * -1, 0);
+                            obj.transform.position = FieldInfo.FieldInfoToVec(new FieldInfo(i, j));
                             objects.Add(obj);
                         }
                     }
