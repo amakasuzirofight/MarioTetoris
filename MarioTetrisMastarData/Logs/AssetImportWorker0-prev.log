@@ -16,7 +16,26 @@ C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 Logs/AssetImportWorker0.log
 -srvPort
 <<<<<<< HEAD
+<<<<<<< HEAD
 54235
+=======
+<<<<<<< HEAD
+61549
+Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 79.89 ms, found 1 plugins.
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+60305
+Successfully changed project path to: C:/Users/user/Desktop/Mariteto/MarioTetrisMastarData
+C:/Users/user/Desktop/Mariteto/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 73.37 ms, found 1 plugins.
+=======
+50718
+>>>>>>> 489a118664e468a78a8380a67759904c11fbf594
 Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 Using Asset Import Pipeline V2.
@@ -28,6 +47,14 @@ C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 79.89 ms, found 1 plugins.
 >>>>>>> feature_ItemSobj
+>>>>>>> 936b321a1b2cdde6a385c7935434a6c04b54fa0d
+=======
+61549
+Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 79.89 ms, found 1 plugins.
+>>>>>>> feature_Item
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.8f1 (507919d4fff5)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -44,7 +71,16 @@ Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Managed
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
 <<<<<<< HEAD
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56376
+=======
+<<<<<<< HEAD
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56292
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56060
+>>>>>>> 489a118664e468a78a8380a67759904c11fbf594
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
@@ -92,6 +128,7 @@ Start importing Assets/Sprites/カエル.psd using Guid(8dff3ab04863bff448928d5b
   Import took 0.043846 seconds .
 
 ========================================================================
+<<<<<<< HEAD
 Received Prepare
 Registering precompiled user dll's ...
 Registered in 0.004561 seconds.
@@ -107,6 +144,179 @@ Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2775 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 117.9 MB.
 System memory in use after: 118.0 MB.
+=======
+Received Import Request.
+  Time since last request: 3.090382 seconds.
+  path: Assets/FieldData/FieldData.csv
+  artifactKey: Guid(60d565935280c154db225571b91523b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FieldData/FieldData.csv using Guid(60d565935280c154db225571b91523b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '158df2ce66e8e6da7697fdfb89e2fbae') in 0.004872 seconds
+  Import took 0.012158 seconds .
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56960
+>>>>>>> 936b321a1b2cdde6a385c7935434a6c04b54fa0d
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56292
+>>>>>>> feature_Item
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002347 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 73.58 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.408 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.004204 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 72.10 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.456 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2775 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.7 MB.
+System memory in use after: 111.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3219.
+Total: 2.674500 ms (FindLiveObjects: 0.323300 ms CreateObjectMapping: 0.131600 ms MarkObjects: 2.101700 ms  DeleteObjects: 0.116800 ms)
+
+========================================================================
+Received Import Request.
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feature_Item
+  path: Assets/Prefabs/DataBase/TetrisDataBase.prefab
+  artifactKey: Guid(f9dfb66f0915f8d4e84fde0dacba70b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/DataBase/TetrisDataBase.prefab using Guid(f9dfb66f0915f8d4e84fde0dacba70b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8c943a0d742cfe9bd45bc850b1410b2') in 0.080986 seconds
+  Import took 0.086857 seconds .
+<<<<<<< HEAD
+=======
+  path: Assets/ScriptableObjects/Tetrimino/Tetrimino_S2.asset
+  artifactKey: Guid(c03864d3826b3d145b6cd2d6454744ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetrimino_S2.asset using Guid(c03864d3826b3d145b6cd2d6454744ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '256c58457dc4e546864c3fe17361cf4d') in 0.061644 seconds
+  Import took 0.067320 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000335 seconds.
+  path: Assets/ScriptableObjects/Tetrimino/Tetrimino_S1.asset
+  artifactKey: Guid(51db89c779be3c3479fe48657cc1da04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetrimino_S1.asset using Guid(51db89c779be3c3479fe48657cc1da04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1af9e5f118d67c7681647817afb56502') in 0.009162 seconds
+  Import took 0.015899 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000440 seconds.
+  path: Assets/ScriptableObjects/Tetrimino/Tetrimino_O0.asset
+  artifactKey: Guid(3d58a231b4200374aa7f8208f084d8d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetrimino_O0.asset using Guid(3d58a231b4200374aa7f8208f084d8d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21365189daefcc663513fa2ff28921c6') in 0.021406 seconds
+  Import took 0.028808 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/ScriptableObjects/Tetrimino/Tetrimino_Z0.asset
+  artifactKey: Guid(710157ceb48da7047a474f526d8dec58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetrimino_Z0.asset using Guid(710157ceb48da7047a474f526d8dec58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd4e35518a4dec63f08b907bb5df2d8f') in 0.010907 seconds
+  Import took 0.019488 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000386 seconds.
+  path: Assets/ScriptableObjects/Tetrimino/Tetrimino_Z3.asset
+  artifactKey: Guid(7b1ea6f87994309458d386e7431a93ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetrimino_Z3.asset using Guid(7b1ea6f87994309458d386e7431a93ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20a6101a741032664b6864e4f0004cec') in 0.011418 seconds
+  Import took 0.021506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000415 seconds.
+  path: Assets/ScriptableObjects/Tetrimino/Tetrimino_S0.asset
+  artifactKey: Guid(788d449655aaab64a808e6cd16fbd1f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetrimino_S0.asset using Guid(788d449655aaab64a808e6cd16fbd1f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db2df579f207fdad8d146b320539fe66') in 0.009252 seconds
+  Import took 0.016943 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000331 seconds.
+  path: Assets/ScriptableObjects/Tetrimino/Tetrimino_O1.asset
+  artifactKey: Guid(5a37cbabdc69c4e4ca49dcf2d31df652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetrimino_O1.asset using Guid(5a37cbabdc69c4e4ca49dcf2d31df652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5bd75d50b1fb7281f380d88d572129e') in 0.011440 seconds
+  Import took 0.018487 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/ScriptableObjects/Tetrimino/Tetrimino_O3.asset
+  artifactKey: Guid(15b4ee84d180fee418556f695d50b58d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetrimino_O3.asset using Guid(15b4ee84d180fee418556f695d50b58d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa4fb114cfb6987c8918dfe1c232484a') in 0.009397 seconds
+  Import took 0.017215 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000333 seconds.
+  path: Assets/ScriptableObjects/Tetrimino/Tetrimino_O2.asset
+  artifactKey: Guid(2de5fb6d6d5f5cb4ebceb7537273ad24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetrimino_O2.asset using Guid(2de5fb6d6d5f5cb4ebceb7537273ad24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34c9090bc7ca181d19da40124675b0dc') in 0.011957 seconds
+  Import took 0.018324 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000369 seconds.
+  path: Assets/ScriptableObjects/Tetrimino/Tetrimino_Z2.asset
+  artifactKey: Guid(9551ab4fa53c92c418b78d2a879ee276) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetrimino_Z2.asset using Guid(9551ab4fa53c92c418b78d2a879ee276) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e77209dc5171216f7806d620cbe7789d') in 0.010785 seconds
+  Import took 0.017970 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000330 seconds.
+  path: Assets/ScriptableObjects/Tetrimino/Tetrimino_Z1.asset
+  artifactKey: Guid(2723d112cb31a1b44b6eb825e74c3267) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetrimino_Z1.asset using Guid(2723d112cb31a1b44b6eb825e74c3267) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cdf6115a5d4ab8388224413cd4e11ae') in 0.011219 seconds
+  Import took 0.018245 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000315 seconds.
+  path: Assets/ScriptableObjects/Tetrimino/Tetrimino_S3.asset
+  artifactKey: Guid(192ae80b59b76064da381fe45f0c0af1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetrimino_S3.asset using Guid(192ae80b59b76064da381fe45f0c0af1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfd765722159ae588435d4893a837511') in 0.009254 seconds
+  Import took 0.015443 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5614.059321 seconds.
+  path: Assets/ScriptableObjects/Tetrimino/Tetris_TypeT0.asset
+  artifactKey: Guid(a02be9564dcd70b4bbab10e314c2bd7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetris_TypeT0.asset using Guid(a02be9564dcd70b4bbab10e314c2bd7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43a54543b3102a88414c2e4c2b110b38') in 0.010117 seconds
+  Import took 0.023984 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021346 seconds.
+  path: Assets/ScriptableObjects/Tetrimino/Tetris_TypeT1.asset
+  artifactKey: Guid(bb082b63313643d48be824a0cf6ddc2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetris_TypeT1.asset using Guid(bb082b63313643d48be824a0cf6ddc2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5b7ab5091c994a98538395a047ab5bd') in 0.014216 seconds
+  Import took 0.022995 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000465 seconds.
+  path: Assets/ScriptableObjects/Tetrimino/Tetris_TypeT2.asset
+  artifactKey: Guid(a4a0844d84f1faf4c980efdc060bea3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Tetrimino/Tetris_TypeT2.asset using Guid(a4a0844d84f1faf4c980efdc060bea3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3d7c4abb4710d19dcb5a635b59ba624') in 0.019437 seconds
+  Import took 0.037331 seconds .
+>>>>>>> 489a118664e468a78a8380a67759904c11fbf594
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3238.
 Total: 3.136800 ms (FindLiveObjects: 0.391400 ms CreateObjectMapping: 0.245100 ms MarkObjects: 2.311200 ms  DeleteObjects: 0.187300 ms)
@@ -214,5 +424,8 @@ Received Import Request.
 Start importing Assets/Prefabs/DataBase/TetrisDataBase.prefab using Guid(f9dfb66f0915f8d4e84fde0dacba70b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8c943a0d742cfe9bd45bc850b1410b2') in 0.080986 seconds
   Import took 0.086857 seconds .
 >>>>>>> feature_ItemSobj
+>>>>>>> 936b321a1b2cdde6a385c7935434a6c04b54fa0d
+=======
+>>>>>>> feature_Item
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
