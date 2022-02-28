@@ -21,6 +21,8 @@ namespace Field
 
         public override void OpenField()
         {
+            Utility.Locator<FieldBase>.Bind(this);
+
             activeChenger = default;
             frameCount = 0;
             brockNumber = 10;
@@ -83,8 +85,6 @@ namespace Field
 
             groundObjects = new List<GameObject>();
         }
-
-        public override string[] setCharactersGeter => base.setCharactersGeter;
 
         public override void CreateBrock(List<FieldInfo> positions)
         {

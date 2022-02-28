@@ -9,10 +9,15 @@ public static class Utility_
 {
     public static Dictionary<int, GameObject> objectGeter = new Dictionary<int, GameObject>();
     public static Dictionary<int, GameObject> minoGeter = new Dictionary<int, GameObject>();
+    public static Dictionary<int, GameObject> enemyGeter = new Dictionary<int, GameObject>();
 
     private static Text systemMessage;
     private static List<int[]> csvData;
-    private static List<bool> stageFlgList;
+    private static Stage thisStage = Stage.NONE;
+    public static List<bool> stageFlgList;
+
+    public const int BROCK_NUMBER_COUNT = 20;
+    public const int ENEMY_NUMBER_COUNT = 20;
 
     public static void MessageWriter(string message)
     {
@@ -29,6 +34,18 @@ public static class Utility_
     {
         systemMessage.text = default;
         systemMessage.gameObject.SetActive(false);
+    }
+
+    public static void StageFlgSeter(List<bool> newStage, Stage stage)
+    {
+        if (stage == thisStage) return;
+        else thisStage = stage;
+        stageFlgList = newStage;
+    }
+
+    public static void FlgChenger(int index)
+    {
+        stageFlgList[index] = true;
     }
 
     public static List<int[]> CsvToIntList(TextAsset baseData)
@@ -56,7 +73,32 @@ public static class Utility_
         return returnData;
     }
 
-    public static void CsvWriter(FieldInfo position,int number)
+    public static List<int[]> StringListToIntList(string str)
+    {
+        StringReader reader = new StringReader(str);
+        List<string[]> csvData = new List<string[]>();
+        List<int[]> returnData = new List<int[]>();
+        while (reader.Peek() != -1) // reader.Peaek‚ª-1‚É‚È‚é‚Ü‚Å
+        {
+            string line = reader.ReadLine(); // ˆês‚¸‚Â“Ç‚İ‚İ
+            csvData.Add(line.Split(',')); // , ‹æØ‚è‚ÅƒŠƒXƒg‚É’Ç‰Á
+        }
+
+        for (int i = 0; i < csvData.Count; i++)
+        {
+            returnData.Add(new int[csvData[i].Length]);
+            for (int j = 0; j < csvData[i].Length; j++)
+            {
+                returnData[i][j] = Convert.ToInt32(csvData[i][j]);
+            }
+        }
+
+        FieldData = returnData;
+
+        return returnData;
+    }
+
+    public static void CsvWriter(FieldInfo position, int number)
     {
         csvData[position.height][position.width] = number;
     }
@@ -68,14 +110,19 @@ public static class Utility_
     }
 }
 
-public struct Stage1ClearFlg
+[Serializable]
+public struct StageClearFlg
 {
-    public bool clearFlg1_1;
-    public bool clearFlg1_2;
-    public bool clearFlg1_3;
-    public bool clearFlg1_4;
-    public bool clearFlg1_5;
-    public bool clearFlg1_6;
+    public bool clearFlg_1;
+    public bool clearFlg_2;
+    public bool clearFlg_3;
+    public bool clearFlg_4;
+    public bool clearFlg_5;
+    public bool clearFlg_6;
+    public bool clearFlg_7;
+    public bool clearFlg_8;
+    public bool clearFlg_9;
+    public bool clearFlg_10;
 }
 
 public enum Difference
@@ -103,9 +150,18 @@ public enum FieldState
     EVENT
 }
 
-public enum ItemNumber
+public enum Stage
 {
+    NONE,
+    STAGE1,
+    STAGE2,
+    COUNT
+}
 
+[Serializable]
+public struct CreateStageData
+{
+    [SerializeField] public string datastr;
 }
 
 public struct FieldInfo
@@ -119,9 +175,9 @@ public struct FieldInfo
         width = newWidth;
     }
 
-    public static FieldInfo operator +(FieldInfo base_,FieldInfo add)
+    public static FieldInfo operator +(FieldInfo base_, FieldInfo add)
     {
-        return new FieldInfo(base_.height + add.height,base_.width + add.width);
+        return new FieldInfo(base_.height + add.height, base_.width + add.width);
     }
 
     public static FieldInfo operator -(FieldInfo base_, FieldInfo add)
@@ -131,7 +187,12 @@ public struct FieldInfo
 
     public static FieldInfo VecToFieldInfo(Vector2 vec)
     {
-        return new FieldInfo((int)vec.y,(int)vec.x);
+        return new FieldInfo((int)vec.y * -1, (int)vec.x);
+    }
+
+    public static Vector2 FieldInfoToVec(FieldInfo pos)
+    {
+        return new Vector2(pos.width, pos.height * -1);
     }
 }
 

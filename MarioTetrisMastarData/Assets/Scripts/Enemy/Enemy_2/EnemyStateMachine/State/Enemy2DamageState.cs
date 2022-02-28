@@ -22,11 +22,13 @@ namespace Enemy
             private float time = 0f;
             private const float TRANS_COUNT = 0.8f;
 
+
             void IEnemy2State.OnStart(Enemy2StateType beforeState, Enemy2Core enemy)
             {
                 core ??= GetComponent<Enemy2Core>();
                 rb ??= GetComponent<Rigidbody2D>();
 
+                // ノックバック処理
                 KnockBack(player, rb, 5f);
             }
 
@@ -49,6 +51,7 @@ namespace Enemy
             // ステート変更メソッド
             private void StateChangeManager()
             {
+                // 待機時間
                 if (!WaitTime(TRANS_COUNT)) return;
 
                 // HPが0の場合

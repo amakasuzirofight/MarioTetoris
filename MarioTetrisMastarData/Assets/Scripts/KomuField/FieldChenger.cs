@@ -10,21 +10,27 @@ namespace Field
     {
         public FieldBase nextField;
 
-        public bool activeFlg = false;
-
-        public Action nextFieldAction;
+        [HideInInspector] public bool activeFlg = false;
 
         [SerializeField] private KeyCode debugCode = KeyCode.Return;
+
+        protected int fieldNum;
 
         public virtual GameObject Create()
         {
             return Instantiate(gameObject);
         }
 
+        public void numberSet(int num)
+        {
+            fieldNum = num;
+        }
+
         public void Update()
         {
             if (Input.GetKeyDown(debugCode))
             {
+                if (fieldNum != 0) Utility_.FlgChenger(fieldNum);
                 activeFlg = true;
             }
         }

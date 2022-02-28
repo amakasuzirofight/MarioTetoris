@@ -38,6 +38,7 @@ namespace Enemy
                 // ‚±‚ÌŠÔ‚É‘Ò‚¿ŠÔ‚ğì‚é
                 if (WaitTime(attackTimeCount))
                 { 
+                    // Animation‚ğÄ¶
                     Debug.Log("UŒ‚II");
                 }
 
