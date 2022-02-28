@@ -16,6 +16,7 @@ C:/Users/user/Desktop/Mariteto/MarioTetrisMastarData
 Logs/AssetImportWorker0.log
 -srvPort
 <<<<<<< HEAD
+<<<<<<< HEAD
 61549
 Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
@@ -44,6 +45,13 @@ Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 81.51 ms, found 1 plugins.
 >>>>>>> feature_ItemSobj
 >>>>>>> 936b321a1b2cdde6a385c7935434a6c04b54fa0d
+=======
+61549
+Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 79.89 ms, found 1 plugins.
+>>>>>>> feature_Item
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.8f1 (507919d4fff5)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -59,6 +67,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< HEAD
 <<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56292
 =======
@@ -193,6 +202,9 @@ Start importing Assets/FieldData/FieldData.csv using Guid(60d565935280c154db2255
 =======
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56960
 >>>>>>> 936b321a1b2cdde6a385c7935434a6c04b54fa0d
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56292
+>>>>>>> feature_Item
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
@@ -227,10 +239,14 @@ Total: 2.674500 ms (FindLiveObjects: 0.323300 ms CreateObjectMapping: 0.131600 m
 ========================================================================
 Received Import Request.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feature_Item
   path: Assets/Prefabs/DataBase/TetrisDataBase.prefab
   artifactKey: Guid(f9dfb66f0915f8d4e84fde0dacba70b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Prefabs/DataBase/TetrisDataBase.prefab using Guid(f9dfb66f0915f8d4e84fde0dacba70b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8c943a0d742cfe9bd45bc850b1410b2') in 0.080986 seconds
   Import took 0.086857 seconds .
+<<<<<<< HEAD
 =======
   path: Assets/ScriptableObjects/Tetrimino/Tetrimino_S2.asset
   artifactKey: Guid(c03864d3826b3d145b6cd2d6454744ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
@@ -4452,6 +4468,8 @@ Start importing Assets/ScriptableObjects/Tetrimino/TypeZTetrimino1.asset using G
   Import took 0.018670 seconds .
 >>>>>>> feature_ItemSobj
 >>>>>>> 936b321a1b2cdde6a385c7935434a6c04b54fa0d
+=======
+>>>>>>> feature_Item
 
 A crash has been intercepted by the crash handler. For call stack and other details, see the latest crash report generated in:
  * C:/Users/user/AppData/Local/Temp/Unity/Editor/Crashes
