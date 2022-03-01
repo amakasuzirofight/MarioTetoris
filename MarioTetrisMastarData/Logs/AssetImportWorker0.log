@@ -16,6 +16,7 @@ C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 Logs/AssetImportWorker0.log
 -srvPort
 <<<<<<< HEAD
+<<<<<<< HEAD
 60191
 Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
@@ -28,6 +29,13 @@ C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 76.39 ms, found 1 plugins.
 >>>>>>> eea38023a9c6a048c0dbeba2066e33e3125d9ec3
+=======
+50487
+Successfully changed project path to: C:/Users/user/Desktop/Mariteto/MarioTetrisMastarData
+C:/Users/user/Desktop/Mariteto/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 80.20 ms, found 1 plugins.
+>>>>>>> feater_komugeam
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.8f1 (507919d4fff5)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -43,6 +51,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< HEAD
 <<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56548
 Begin MonoManager ReloadAssembly
@@ -63,10 +72,32 @@ Refreshing native plugins compatible for Editor in 88.01 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
 - Completed reload, in  1.649 seconds
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56636
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002875 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 87.86 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.434 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.004713 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 99.58 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.895 seconds
+>>>>>>> feater_komugeam
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+<<<<<<< HEAD
 Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2787 Unused Serialized files (Serialized files now loaded: 0)
@@ -2246,10 +2277,36 @@ System memory in use after: 118.8 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3513.
 Total: 6.959400 ms (FindLiveObjects: 0.804300 ms CreateObjectMapping: 0.443500 ms MarkObjects: 5.345000 ms  DeleteObjects: 0.363700 ms)
+=======
+Refreshing native plugins compatible for Editor in 0.88 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2775 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.6 MB.
+System memory in use after: 114.8 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3220.
+Total: 3.842800 ms (FindLiveObjects: 0.670800 ms CreateObjectMapping: 0.322400 ms MarkObjects: 2.763200 ms  DeleteObjects: 0.084300 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/CreateStage/craeteStage.json
+  artifactKey: Guid(805a08984ef4548448734f64d7322651) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CreateStage/craeteStage.json using Guid(805a08984ef4548448734f64d7322651) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adad079d64029f0bf4868446e84058be') in 0.062227 seconds
+  Import took 0.069616 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/CreateStage
+  artifactKey: Guid(6c0905828d70ecd429a634ee9b75a409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CreateStage using Guid(6c0905828d70ecd429a634ee9b75a409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '361f54d092f3a91ea292bfd0c69de926') in 0.009023 seconds
+  Import took 0.015581 seconds .
+>>>>>>> feater_komugeam
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.011757 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2266,10 +2323,29 @@ System memory in use after: 118.8 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3517.
 Total: 3.393000 ms (FindLiveObjects: 0.402300 ms CreateObjectMapping: 0.249300 ms MarkObjects: 2.611700 ms  DeleteObjects: 0.128500 ms)
+=======
+Registered in 0.005287 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.714 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.02 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2761 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.7 MB.
+System memory in use after: 113.9 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3224.
+Total: 3.098100 ms (FindLiveObjects: 0.436100 ms CreateObjectMapping: 0.229400 ms MarkObjects: 2.400600 ms  DeleteObjects: 0.030700 ms)
+>>>>>>> feater_komugeam
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.004040 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2286,16 +2362,39 @@ System memory in use after: 118.8 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3521.
 Total: 5.133500 ms (FindLiveObjects: 0.438700 ms CreateObjectMapping: 0.226300 ms MarkObjects: 4.085800 ms  DeleteObjects: 0.380500 ms)
+=======
+Registered in 0.006610 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.486 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.74 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2761 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.7 MB.
+System memory in use after: 114.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3228.
+Total: 5.886600 ms (FindLiveObjects: 0.507100 ms CreateObjectMapping: 0.269900 ms MarkObjects: 5.059700 ms  DeleteObjects: 0.047900 ms)
+>>>>>>> feater_komugeam
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.005495 seconds.
+=======
+Registered in 0.006396 seconds.
+>>>>>>> feater_komugeam
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.60 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  1.291 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.60 ms, found 1 plugins.
@@ -2306,10 +2405,23 @@ System memory in use after: 118.9 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3525.
 Total: 4.174900 ms (FindLiveObjects: 0.384200 ms CreateObjectMapping: 0.177100 ms MarkObjects: 3.440600 ms  DeleteObjects: 0.171500 ms)
+=======
+- Completed reload, in  1.499 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.75 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2761 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.8 MB.
+System memory in use after: 114.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3232.
+Total: 3.770800 ms (FindLiveObjects: 0.376300 ms CreateObjectMapping: 0.182200 ms MarkObjects: 3.176200 ms  DeleteObjects: 0.034400 ms)
+>>>>>>> feater_komugeam
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.007028 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2317,19 +2429,38 @@ Refreshing native plugins compatible for Editor in 0.56 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
 - Completed reload, in  1.475 seconds
+=======
+Registered in 0.004758 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.61 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.422 seconds
+>>>>>>> feater_komugeam
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.82 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+<<<<<<< HEAD
 Unloading 2778 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 118.8 MB.
 System memory in use after: 118.9 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3529.
 Total: 2.753500 ms (FindLiveObjects: 0.319700 ms CreateObjectMapping: 0.160200 ms MarkObjects: 2.143100 ms  DeleteObjects: 0.129300 ms)
+=======
+Unloading 2761 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.8 MB.
+System memory in use after: 114.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3236.
+Total: 3.070600 ms (FindLiveObjects: 0.354600 ms CreateObjectMapping: 0.139100 ms MarkObjects: 2.548800 ms  DeleteObjects: 0.026700 ms)
+>>>>>>> feater_komugeam
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.008712 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2346,10 +2477,29 @@ System memory in use after: 118.9 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3533.
 Total: 12.325700 ms (FindLiveObjects: 1.369400 ms CreateObjectMapping: 1.114000 ms MarkObjects: 9.004100 ms  DeleteObjects: 0.832100 ms)
+=======
+Registered in 0.007347 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.483 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2761 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.8 MB.
+System memory in use after: 114.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3240.
+Total: 2.662600 ms (FindLiveObjects: 0.315500 ms CreateObjectMapping: 0.168600 ms MarkObjects: 2.150500 ms  DeleteObjects: 0.026900 ms)
+>>>>>>> feater_komugeam
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.016716 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2386,10 +2536,29 @@ System memory in use after: 118.9 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3541.
 Total: 5.007100 ms (FindLiveObjects: 0.576600 ms CreateObjectMapping: 0.290200 ms MarkObjects: 3.905600 ms  DeleteObjects: 0.232800 ms)
+=======
+Registered in 0.011686 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.77 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.887 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.04 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2761 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.8 MB.
+System memory in use after: 114.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3244.
+Total: 5.032400 ms (FindLiveObjects: 0.458100 ms CreateObjectMapping: 0.301200 ms MarkObjects: 4.213300 ms  DeleteObjects: 0.057500 ms)
+>>>>>>> feater_komugeam
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.004150 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2426,10 +2595,37 @@ System memory in use after: 118.9 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3549.
 Total: 4.481800 ms (FindLiveObjects: 0.495200 ms CreateObjectMapping: 0.244100 ms MarkObjects: 3.512000 ms  DeleteObjects: 0.228900 ms)
+=======
+Registered in 0.013116 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.000 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2761 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.9 MB.
+System memory in use after: 114.1 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3248.
+Total: 3.738400 ms (FindLiveObjects: 0.331100 ms CreateObjectMapping: 0.177500 ms MarkObjects: 3.175500 ms  DeleteObjects: 0.052600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 57383.702859 seconds.
+  path: Assets/Material
+  artifactKey: Guid(0f460417c5ac6f4438aa832d3b129897) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Material using Guid(0f460417c5ac6f4438aa832d3b129897) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbf362fd848587e98980f307c006be78') in 0.017584 seconds
+  Import took 0.024251 seconds .
+>>>>>>> feater_komugeam
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.004909 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2446,10 +2642,29 @@ System memory in use after: 118.9 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3553.
 Total: 3.940200 ms (FindLiveObjects: 0.517600 ms CreateObjectMapping: 0.295300 ms MarkObjects: 2.965800 ms  DeleteObjects: 0.160100 ms)
+=======
+Registered in 0.003809 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.58 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.351 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.61 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2761 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.9 MB.
+System memory in use after: 114.1 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3252.
+Total: 2.919900 ms (FindLiveObjects: 0.310600 ms CreateObjectMapping: 0.156600 ms MarkObjects: 2.424300 ms  DeleteObjects: 0.027200 ms)
+>>>>>>> feater_komugeam
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.004852 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2494,10 +2709,29 @@ Received Import Request.
   artifactKey: Guid(fb0250185b323d84696262a72a5679cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/FieldData/StageData.csv using Guid(fb0250185b323d84696262a72a5679cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef73117165a36e895b9e0682eba4b755') in 0.033575 seconds
   Import took 0.043177 seconds .
+=======
+Registered in 0.004148 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.263 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.57 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2761 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.9 MB.
+System memory in use after: 114.2 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3256.
+Total: 2.834300 ms (FindLiveObjects: 0.343800 ms CreateObjectMapping: 0.176400 ms MarkObjects: 2.287300 ms  DeleteObjects: 0.025400 ms)
+>>>>>>> feater_komugeam
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.003618 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2505,9 +2739,19 @@ Refreshing native plugins compatible for Editor in 0.84 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
 - Completed reload, in  2.669 seconds
+=======
+Registered in 0.003912 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.61 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.428 seconds
+>>>>>>> feater_komugeam
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 1.03 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+<<<<<<< HEAD
 Unloading 2778 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 118.8 MB.
 System memory in use after: 118.9 MB.
@@ -2534,10 +2778,19 @@ System memory in use after: 118.9 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3569.
 Total: 4.633100 ms (FindLiveObjects: 0.588200 ms CreateObjectMapping: 0.298700 ms MarkObjects: 3.572900 ms  DeleteObjects: 0.171400 ms)
+=======
+Unloading 2761 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.9 MB.
+System memory in use after: 114.2 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3260.
+Total: 3.235100 ms (FindLiveObjects: 0.465800 ms CreateObjectMapping: 0.207400 ms MarkObjects: 2.526200 ms  DeleteObjects: 0.034100 ms)
+>>>>>>> feater_komugeam
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.011712 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2574,10 +2827,37 @@ System memory in use after: 119.0 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3577.
 Total: 7.415400 ms (FindLiveObjects: 0.842300 ms CreateObjectMapping: 0.453800 ms MarkObjects: 5.750200 ms  DeleteObjects: 0.365400 ms)
+=======
+Registered in 0.005373 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.484 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.60 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2761 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.9 MB.
+System memory in use after: 114.2 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3264.
+Total: 3.035400 ms (FindLiveObjects: 0.350400 ms CreateObjectMapping: 0.132800 ms MarkObjects: 2.512600 ms  DeleteObjects: 0.038000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 5270.123602 seconds.
+  path: Assets/Scenes/Komugi/KomugiScene.unity
+  artifactKey: Guid(909d6dbe02428d647963ce1cd8d5475b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Komugi/KomugiScene.unity using Guid(909d6dbe02428d647963ce1cd8d5475b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1e12744a0e75d959624eaea3d45c68e') in 0.024597 seconds
+  Import took 0.031724 seconds .
+>>>>>>> feater_komugeam
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.005301 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2638,10 +2918,37 @@ Received Import Request.
   artifactKey: Guid(8f85ca205769fd14aaab3ad060515488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/Select/SelectController.cs using Guid(8f85ca205769fd14aaab3ad060515488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ded99d86d206c8451dd910b90c168741') in 0.010798 seconds
   Import took 0.029160 seconds .
+=======
+Registered in 0.013250 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.287 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.74 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2761 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.0 MB.
+System memory in use after: 114.2 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3268.
+Total: 3.395100 ms (FindLiveObjects: 0.444900 ms CreateObjectMapping: 0.206700 ms MarkObjects: 2.515800 ms  DeleteObjects: 0.226400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 24151.966798 seconds.
+  path: Assets/Scenes/Komugi/EditStage.unity
+  artifactKey: Guid(a91c6c2f672e36d4fb488258f5acb69f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Komugi/EditStage.unity using Guid(a91c6c2f672e36d4fb488258f5acb69f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19c134859e7771364c0e9111ac4250a4') in 0.289084 seconds
+  Import took 0.453423 seconds .
+>>>>>>> feater_komugeam
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.011817 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2671,11 +2978,15 @@ Start importing Assets/Scripts/Select/SelectController.cs using Guid(8f85ca20576
 Received Prepare
 Registering precompiled user dll's ...
 Registered in 0.005879 seconds.
+=======
+Registered in 0.003710 seconds.
+>>>>>>> feater_komugeam
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.58 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  2.837 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 1.61 ms, found 1 plugins.
@@ -2768,5 +3079,17 @@ System memory in use after: 111.4 MB.
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3240.
 Total: 2.578600 ms (FindLiveObjects: 0.290800 ms CreateObjectMapping: 0.162000 ms MarkObjects: 2.077200 ms  DeleteObjects: 0.047400 ms)
 >>>>>>> eea38023a9c6a048c0dbeba2066e33e3125d9ec3
+=======
+- Completed reload, in  1.467 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.60 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2761 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.0 MB.
+System memory in use after: 114.2 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3272.
+Total: 4.117100 ms (FindLiveObjects: 0.592200 ms CreateObjectMapping: 0.316000 ms MarkObjects: 3.166400 ms  DeleteObjects: 0.041200 ms)
+>>>>>>> feater_komugeam
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
