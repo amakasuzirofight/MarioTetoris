@@ -40,10 +40,10 @@ namespace Field
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
                         List<FieldInfo> fields = new List<FieldInfo>();
-                        fields.Add(new FieldInfo(0, 0));
-                        fields.Add(new FieldInfo(0, 1));
-                        fields.Add(new FieldInfo(0, 2));
-                        fields.Add(new FieldInfo(0, 3));
+                        fields.Add(new FieldInfo(4, 0));
+                        fields.Add(new FieldInfo(3, 0));
+                        fields.Add(new FieldInfo(2, 0));
+                        fields.Add(new FieldInfo(1, 0));
 
                         nowField.CreateBrock(fields);
                     }

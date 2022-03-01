@@ -11,8 +11,9 @@ namespace Select
 {
     public class SelectController : MonoBehaviour, ISelectedItem
     {
-        [SerializeField] Sprite stoneSpr;
-        [SerializeField] GameObject RobotGenerateObj;
+        [SerializeField] GameObject RobotObj;
+        [SerializeField] Sprite stoneRogoSpr;
+        [SerializeField] Sprite portionSpr;
 
         IGetItemBox getItemBox;
         IItemDataChange itemDataChange;
@@ -28,7 +29,7 @@ namespace Select
         int tetrisSelectCount;
         TetrisAngle tetrisAngle;
         Dictionary<ItemName, int> SelectItemDic = new Dictionary<ItemName, int>();
-        List<ItemName> haveItemName;
+        List<ItemName> haveItemName = new List<ItemName>();
         List<Tetris.TetrisTypeEnum> tetrisTable = new List<Tetris.TetrisTypeEnum>();
 
         private void Awake()
@@ -75,7 +76,6 @@ namespace Select
                         CursollSlide(1);
                         break;
                     case SelectButtonType.ArrowDown:
-                      
                         GenerateItem();
                         break;
                     case SelectButtonType.Non:
@@ -128,15 +128,24 @@ namespace Select
                 selectItemHighNum += num;
             }
         }
+        int spimNum;
         void SpinMino(int num)
         {
-
+            //超えたらもどす
+            if (spimNum + num < 0)
+            {
+                spimNum = 4;
+            }
+            if (spimNum + num > 4)
+            {
+                spimNum = 0;
+            }
+            spimNum += num;
         }
         void ViewItemCursle()
         {
-            Debug.Log(selectItemWeigthNum);
+            //Debug.Log(selectItemWeigthNum);
 
-            Debug.Log(haveItemName[selectItemHighNum]);
         }
         void SynchroItem(Dictionary<ItemName, int> data)
         {
@@ -155,12 +164,20 @@ namespace Select
         }
         void GenerateItem()
         {
-            if (selectItemWeigthNum % 2 == 0)
+            if (selectState == SelectState.Spin)
             {
-                selectState = SelectState.Spin;
-                return;
+                if (selectItemWeigthNum % 2 == 0)
+                {
+                    selectState = SelectState.Spin;
+                    return;
+                }
+                generator.GenerateItem(haveItemName[selectItemWeigthNum], RobotObj.transform.position);
             }
-            generator.GenerateItem(haveItemName[selectItemWeigthNum], RobotGenerateObj.transform.position);
+            //回転モードだからテトリス生成
+            else if (selectState == SelectState.FirstSelect)
+            {
+                GenerateTetris();
+            }
         }
         void GenerateTetris()
         {
@@ -172,7 +189,8 @@ namespace Select
                 TetrisTableReflash();
             }
             TetrisTypeEnum rand = (TetrisTypeEnum)Random.Range(0, tetrisTable.Count());
-            //generator.GenerateItem(rand,);
+
+            generator.GenerateItem(rand,(TetrisAngle)spimNum,FieldInfo.VecToFieldInfo(RobotObj.transform.position));
         }
         void TetrisTableReflash()
         {

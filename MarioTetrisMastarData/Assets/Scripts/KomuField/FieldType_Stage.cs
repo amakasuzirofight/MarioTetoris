@@ -112,9 +112,9 @@ namespace Field
                     {
                         if (activeBrock[i].csv_pos[j].height >= Utility_.FieldData.Count - 1) // Å‰º‘w‚Å‚ ‚é‚È‚ç—‰º–h~
                         {
-                            Debug.Log("æ‚ª‚È‚¢‚½‚ßˆÚ“®‚ğ’†~‚µ‚Ü‚·");
-                            activeBrock[i].stateChenge(false);
-                            break;
+                            //Debug.Log("æ‚ª‚È‚¢‚½‚ßˆÚ“®‚ğ’†~‚µ‚Ü‚·");
+                            //activeBrock[i].stateChenge(false);
+                            //break;
                         }
                         else if (activeBrock[i].brockNumGet() != Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width]
                                  && Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width] != (int)FieldNumber.NONE) // ˆÚ“®æ‚ªˆá‚¤ƒuƒƒbƒN‚Å‚ ‚é‚È‚ç—‰º–h~

@@ -43,7 +43,7 @@ namespace Robot
 
         }
 
-        public FieldInfo GetPositionToList()
+        public FieldInfo GetPositionToInfo()
         {
             //あとでオフセット直す
             return FieldInfo.VecToFieldInfo(transform.position);

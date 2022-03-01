@@ -12,7 +12,8 @@ public class Way : MonoBehaviour
     {
         for (int i = 0;i < instancePosition.Length;i++)
         {
-            Utility_.CsvWriter(FieldInfo.VecToFieldInfo(instancePosition[i]),brockNumber);
+            Vector2 vec = new Vector2(instancePosition[i].x,instancePosition[i].y * - 1);
+            Utility_.CsvWriter(FieldInfo.VecToFieldInfo(vec),brockNumber);
         }
     }
 

@@ -100,6 +100,7 @@ public static class Utility_
 
     public static void CsvWriter(FieldInfo position, int number)
     {
+        Debug.Log($"height {position.height} width {position.width}");
         csvData[position.height][position.width] = number;
     }
 

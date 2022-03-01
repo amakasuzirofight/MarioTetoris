@@ -8,6 +8,6 @@ namespace Robot
 {
     interface IGetPositionToInfo
     {
-        public FieldInfo GetPositionToList();
+        public FieldInfo GetPositionToInfo();
     }
 }
