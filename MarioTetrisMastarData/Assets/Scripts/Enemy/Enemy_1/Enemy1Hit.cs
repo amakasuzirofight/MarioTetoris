@@ -37,11 +37,6 @@ namespace Enemy
                 //    damage.DamageRecevable(core.AtkPow);
                 //}
             }
-
-            public void RecoveryRecevable(int damage)
-            {
-                throw new System.NotImplementedException();
-            }
         }
     }
 }
