@@ -4,6 +4,6 @@ namespace Connector
     {
         // ダメージ用インターフェース
 
-        void RecoveryRecevable(int damage);
+        void DamageRecevable(int damage);
     }
 }

@@ -21,7 +21,7 @@ namespace Enemy
 
 
             // Enemyƒ_ƒ[ƒWˆ—
-            public void RecoveryRecevable(int damage)
+            public void DamageRecevable(int damage)
             {
                 core.Hp = Damage(core.Hp, damage);
             }
@@ -34,7 +34,7 @@ namespace Enemy
                     IDamageRecevable damage = at;
 
                     Debug.Log("‚Ä‚ß‚¦‚Ç‚±Œ©‚Ä‚ñ‚¾‚æ");
-                    damage.RecoveryRecevable(core.AtkPow);
+                    damage.DamageRecevable(core.AtkPow);
                 }
             }
         }

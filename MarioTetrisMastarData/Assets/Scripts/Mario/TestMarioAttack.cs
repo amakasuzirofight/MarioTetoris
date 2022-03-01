@@ -22,7 +22,7 @@ public class TestMarioAttack : MonoBehaviour
         if (collision.gameObject.GetComponent< Connector.IDamageRecevable>()!=null)
         {
             damageRecevable = collision.gameObject.GetComponent<Connector.IDamageRecevable>();
-            damageRecevable.RecoveryRecevable(5);
+            damageRecevable.DamageRecevable(5);
         }
     }
 }

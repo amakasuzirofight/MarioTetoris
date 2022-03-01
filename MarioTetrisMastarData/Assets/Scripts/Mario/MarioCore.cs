@@ -157,7 +157,7 @@ namespace Mario
         }
         Vector2 dir = new Vector2(5f, 1f);
 
-        public void RecoveryRecevable(int damage)
+        public void DamageRecevable(int damage)
         {
             Hp -= damage;
         }

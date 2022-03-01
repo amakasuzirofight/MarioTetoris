@@ -28,13 +28,13 @@ namespace Enemy
                     IDamageRecevable damage = at;
 
                     Debug.Log("てめえどこ見てんだよ");
-                    damage.RecoveryRecevable(core.AtkPow);
+                    damage.DamageRecevable(core.AtkPow);
                 }
             }
 
 
             // Enemyダメージ処理
-            public void RecoveryRecevable(int damage)
+            public void DamageRecevable(int damage)
             {
                 Debug.Log("痛い！！");
                 core.Hp = Damage(core.Hp, damage);

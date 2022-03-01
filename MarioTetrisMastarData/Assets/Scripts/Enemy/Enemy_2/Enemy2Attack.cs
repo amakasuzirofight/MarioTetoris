@@ -29,7 +29,7 @@ namespace Enemy
                 {
                     IDamageRecevable damage = at;
                     Debug.Log("éEÇ∑ÅIÅIÅI");
-                    damage.RecoveryRecevable(core.AtkPow);
+                    damage.DamageRecevable(core.AtkPow);
                 }
             }
         }
