@@ -8,6 +8,11 @@ namespace Inputer
     public class CharInput : MonoBehaviour, ICharInputter
     {
         public event JumpPush JumpEvent;
+         
+         void Awake()
+        {
+            Utility.Locator<CharInput>.Bind(this);
+        }
 
         void Start()
         {

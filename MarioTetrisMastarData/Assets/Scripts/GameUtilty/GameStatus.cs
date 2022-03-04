@@ -7,9 +7,12 @@ public class GameStatus : MonoBehaviour
     [SerializeField] private BrockToNumber activeBrockList;
     [SerializeField] private EnemyToNumber enemyList;
     [SerializeField] private MinoToNumber minoBrockList;
+    [SerializeField] private GameObject player;
 
     void Awake()
     {
+        Utility_.playerObject = Instantiate(player);
+
         for (int i = 0;i < activeBrockList.objectsList.Length;i++)
         {
             if (activeBrockList.objectsList[i] != null)

@@ -12,7 +12,6 @@ namespace Mario
 
         [SerializeField] float speed;
         [SerializeField] float jumpPower;
-        [SerializeField] GameObject inputObj;
 
         [SerializeField] MarioJump marioJump;
         [SerializeField] MarioWalk marioWalk;
@@ -37,7 +36,7 @@ namespace Mario
             rigidbody2D = GetComponent<Rigidbody2D>();
             capsuleCollider2D = GetComponent<CapsuleCollider2D>();
             boxCollider2D = GetComponent<BoxCollider2D>();
-            inputer = inputObj.GetComponent<ICharInputter>();
+            inputer = Utility.Locator<CharInput>.GetT();
             inputer.JumpEvent += JumpInputCheck;
             //groundCheck = groundCheckObj.GetComponent<IGroundCheck>();
             //groundCheck.ExitGround += ReceiveIsGround;

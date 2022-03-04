@@ -122,6 +122,11 @@ namespace Field
                             obj.transform.position = FieldInfo.FieldInfoToVec(new FieldInfo(i, j));
                             objects.Add(obj);
                         }
+                        else if (csvData[i][j] == Utility_.PLAYER_NUMBER)
+                        {
+                            Utility_.playerObject.transform.position = FieldInfo.FieldInfoToVec(new FieldInfo(i, j));
+                            // Debug.Log($"Mario Pos {Utility_.playerObject.transform.position.x},{Utility_.playerObject.transform.position.y}");
+                        }
                     }
                 }
             }

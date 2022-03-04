@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace Field
 {
@@ -10,6 +11,7 @@ namespace Field
         FieldBase nowField;
         GameObject activeSceneObject;
         FieldState state;
+        [SerializeField] private List<string> debugMs;
 
         private void Start()
         {
@@ -32,9 +34,20 @@ namespace Field
         // Update is called once per frame
         void Update()
         {
-            switch (state)
+            switch (Utility_.GameState)
             {
                 case FieldState.NORMAL:
+                    if (Input.GetKeyDown(KeyCode.K))
+                    {
+                        Utility_.OpenMessage(debugMs);
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Action a = DebugEvent;
+                        Utility_.EventActiveate(a);
+                    }
+
                     nowField.FieldCheck();
 
                     if (Input.GetKeyDown(KeyCode.Space))
@@ -49,6 +62,10 @@ namespace Field
                     }
                     break;
                 case FieldState.CONVERSATION:
+                    if (Input.GetKeyDown(KeyCode.K))
+                    {
+                        Utility_.MessageWriter();
+                    }
                     break;
                 case FieldState.EVENT:
                     break;
@@ -68,6 +85,20 @@ namespace Field
             activeSceneObject = Instantiate(nowField.gameObject);
             nowField.fieldcomplete = FieldChenge;
             nowField.OpenField();
+        }
+
+        public void DebugEvent()
+        {
+            Instantiate(Utility_.enemyGeter[0]);
+
+            StartCoroutine(eve());
+        }
+
+        IEnumerator eve ()
+        {
+             yield return new WaitForSeconds(10);
+
+            Utility_.EventEnd();
         }
     }
 

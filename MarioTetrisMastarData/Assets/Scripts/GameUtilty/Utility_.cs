@@ -14,26 +14,77 @@ public static class Utility_
     private static Text systemMessage;
     private static List<int[]> csvData;
     private static Stage thisStage = Stage.NONE;
+    private static FieldState fieldState;
+    private static List<string> messageList;
+    private static int msIndex;
+    private static bool eventFlg = false;
+
     public static List<bool> stageFlgList;
+    public static GameObject playerObject;
 
     public const int BROCK_NUMBER_COUNT = 20;
     public const int ENEMY_NUMBER_COUNT = 20;
+    public const int PLAYER_NUMBER = 50;
 
-    public static void MessageWriter(string message)
+    public static FieldState GameState
     {
-        systemMessage.text = message;
+        get => fieldState;
+        private set => fieldState = value;
     }
 
-    public static void OpenMessage()
+    public static void MessageSetting()
     {
-        if (systemMessage == null) systemMessage = GameObject.Find("Canvas").GetComponentInChildren<Text>();
+        if (systemMessage == null || systemMessage == default)
+        {
+            systemMessage = GameObject.Find("Canvas").GetComponentInChildren<Text>();
+            systemMessage.gameObject.SetActive(false);
+        }
+        GameState = FieldState.CONVERSATION;
+    }
+
+    public static void MessageWriter()
+    {
+        MessageSetting();
+        if (msIndex + 1 != messageList.Count)
+        {
+            msIndex++;
+            systemMessage.text = messageList[msIndex];
+        }
+        else
+        {
+            msIndex = 0;
+            CloseMessage();
+        }
+    }
+
+    public static void OpenMessage(List<string> newTexts)
+    {
+        MessageSetting();
         systemMessage.gameObject.SetActive(true);
+        messageList = newTexts;
+        msIndex = -1;
+        MessageWriter();
     }
 
-    public static void CloseMessage()
+    private static void CloseMessage()
     {
-        systemMessage.text = default;
         systemMessage.gameObject.SetActive(false);
+        systemMessage.text = default;
+        fieldState = FieldState.NORMAL;
+    }
+
+    public static void EventActiveate(Action target)
+    {
+        if (eventFlg) return;
+        eventFlg = true;
+        fieldState = FieldState.EVENT;
+        target();
+    }
+
+    public static void EventEnd()
+    {
+        eventFlg = false;
+        fieldState = FieldState.NORMAL;
     }
 
     public static void StageFlgSeter(List<bool> newStage, Stage stage)
@@ -100,7 +151,6 @@ public static class Utility_
 
     public static void CsvWriter(FieldInfo position, int number)
     {
-        Debug.Log($"height {position.height} width {position.width}");
         csvData[position.height][position.width] = number;
     }
 
@@ -211,6 +261,51 @@ public class Brock
         fallFlg = true;
         brockNumber = newNum;
         Debug.Log($"CreateBrock number:{brockNumber}");
+    }
+
+    public static List<FieldInfo> LimitChecker(List<FieldInfo> basePos)
+    {
+        int count = 0;
+        List<FieldInfo> answer = basePos;
+        bool endFlg = false;
+
+        Debug.Log("LimitChecker");
+
+        while (count < 30)
+        {
+            count++;
+            for (int i = 0;i < answer.Count;i++)
+            {
+                Debug.Log("check Strat");
+
+                if (answer[i].height + 1 >= Utility_.FieldData.Count)
+                {
+                    Debug.LogWarning("限界値です");
+                    return basePos;
+                }
+
+                if (Utility_.FieldData[answer[i].height + 1][answer[i].width] != 0)
+                {
+                    Debug.Log("out");
+                    endFlg = true;
+                }
+            }
+
+            if (!endFlg)
+            {
+                for (int i = 0;i < answer.Count;i++)
+                {
+                    answer[i] += new FieldInfo(1, 0);
+                }
+            }
+            else
+            {
+                return answer;
+            }
+        }
+
+        Debug.LogWarning("例外処理がなされました　値に異変がないか確認してください");
+        return basePos;
     }
 
     public void brockNumSet(int num)
