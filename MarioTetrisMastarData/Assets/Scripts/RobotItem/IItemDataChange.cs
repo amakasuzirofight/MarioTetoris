@@ -8,6 +8,7 @@ namespace RobotItem
 {
     interface IItemDataChange
     {
-        public event Action<Dictionary<ItemName, int>> ChangeItemBox;
+        public event Action<Dictionary<ItemName, int>> ChangeItemBoxValue;
+        public event Action<int> ChangeTetPieceValue;
     }
 }

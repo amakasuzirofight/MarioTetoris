@@ -12,6 +12,7 @@ namespace Field
         protected FieldBase[] nextField;
         public Action fieldcomplete;
         [SerializeField] protected FieldChenger[] fieldChengers;
+        public int stageNumber;
         protected FieldChenger[] createChengers;
         [HideInInspector] protected GameObject[] chengers_objects;
         [HideInInspector] public FieldChenger activeChenger;
@@ -52,6 +53,7 @@ namespace Field
                 // chengers_objects[i] = Instantiate(fieldChengers[i].gameObject);
                 chengers_objects[i] = fieldChengers[i].Create();
                 createChengers[i] = chengers_objects[i].GetComponent<FieldChenger>();
+                createChengers[i].numberSet(stageNumber);
             }
         }
 
@@ -106,11 +108,25 @@ namespace Field
             {
                 for (int j = 0; j < csvData[i].Length; j++)
                 {
-                    if (csvData[i][j] != 0)
+                    if (csvData[i][j] > 0)
                     {
-                        GameObject obj = Instantiate(Utility_.objectGeter[csvData[i][j]]);
-                        obj.transform.position = new Vector3(j, i * -1, 0);
-                        objects.Add(obj);
+                        if (csvData[i][j] < Utility_.BROCK_NUMBER_COUNT)
+                        {
+                            GameObject obj = Instantiate(Utility_.objectGeter[csvData[i][j]]);
+                            obj.transform.position = FieldInfo.FieldInfoToVec(new FieldInfo(i,j));
+                            objects.Add(obj);
+                        }
+                        else if (csvData[i][j] < Utility_.BROCK_NUMBER_COUNT + Utility_.ENEMY_NUMBER_COUNT)
+                        {
+                            GameObject obj = Instantiate(Utility_.enemyGeter[csvData[i][j] - Utility_.BROCK_NUMBER_COUNT]);
+                            obj.transform.position = FieldInfo.FieldInfoToVec(new FieldInfo(i, j));
+                            objects.Add(obj);
+                        }
+                        else if (csvData[i][j] == Utility_.PLAYER_NUMBER)
+                        {
+                            Utility_.playerObject.transform.position = FieldInfo.FieldInfoToVec(new FieldInfo(i, j));
+                            // Debug.Log($"Mario Pos {Utility_.playerObject.transform.position.x},{Utility_.playerObject.transform.position.y}");
+                        }
                     }
                 }
             }

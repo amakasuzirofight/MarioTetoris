@@ -34,7 +34,7 @@ public class TetrisCreator : EditorWindow
     const int LOOP_NUM = 4;                                                             //ループ回数
     int fx = rangeSize, fy = rangeSize;                                                 //2次元配列の縦(y)と横(x)の長さ
 
-    int fallSpeed;                                                                      //落下スピード
+    float fallSpeed;                                                                      //落下スピード
     string assetName = "";                                                              //作られるassetの名前
     TetrisTypeEnum tetrisTypeEnum;
     TetrisAngle tetrisAngle;
@@ -63,7 +63,7 @@ public class TetrisCreator : EditorWindow
         assetName = EditorGUILayout.TextField("データ名", assetName);
 
         //落下スピードを決めるテキストボックスを表示
-        fallSpeed = EditorGUILayout.IntField("落下スピード", fallSpeed);
+        fallSpeed = EditorGUILayout.FloatField("落下スピード",fallSpeed);
 
         //テトリミノの種類を決めるプルダウンを表示
         tetrisTypeEnum = (TetrisTypeEnum)EditorGUILayout.EnumPopup("テトリスの形", tetrisTypeEnum);

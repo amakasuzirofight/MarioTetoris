@@ -6,12 +6,14 @@ namespace Field
 {
     public class StageChenger : FieldChenger
     {
-        public bool clearFlg = false;
+        private bool clearFlg = false;
 
         public Way[] ways;
 
         public override GameObject Create()
         {
+            clearFlg = false;
+            if (Utility_.stageFlgList[nextField.stageNumber]) clearFlg = true;
             if (clearFlg)
             {
                 for (int i = 0; i < ways.Length; i++)

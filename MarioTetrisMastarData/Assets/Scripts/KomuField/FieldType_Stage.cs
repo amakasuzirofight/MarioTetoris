@@ -18,9 +18,12 @@ namespace Field
         [SerializeField] private int checkFrame;
         [SerializeField] private TextAsset stage_csv;
         [SerializeField] private TextAsset brock_csv;
+        Brock instanceBrock;
 
         public override void OpenField()
         {
+            Utility.Locator<FieldBase>.Bind(this);
+
             activeChenger = default;
             frameCount = 0;
             brockNumber = 10;
@@ -67,6 +70,22 @@ namespace Field
         {
             frameCount++;
 
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                List<FieldInfo> debug = new List<FieldInfo>();
+                debug.Add(new FieldInfo(0,6));
+                debug.Add(new FieldInfo(0,7));
+                debug.Add(new FieldInfo(0,8));
+                debug.Add(new FieldInfo(1,6));
+                debug = Brock.LimitChecker(debug);
+
+                for (int i = 0;i < debug.Count;i++)
+                {
+                    GameObject obj = Instantiate(Utility_.minoGeter[0]);
+                    obj.transform.position = FieldInfo.FieldInfoToVec(debug[i]);
+                }
+            }
+
             if (frameCount % checkFrame == 0)
             {
                 FieldUpdate();
@@ -84,25 +103,29 @@ namespace Field
             groundObjects = new List<GameObject>();
         }
 
-        public override string[] setCharactersGeter => base.setCharactersGeter;
-
         public override void CreateBrock(List<FieldInfo> positions)
         {
+            if (instanceBrock != null) return;
+
             brockNumber++;
 
-            activeBrock.Add(new Brock(brockNumber));
+            instanceBrock = new Brock(brockNumber);
+
+            activeBrock.Add(instanceBrock);
 
             for (int i = 0; i < positions.Count; i++)
             {
                 Utility_.FieldData[positions[i].height][positions[i].width] = brockNumber;
                 activeBrock[activeBrock.Count - 1].csv_pos.Add(positions[i]);
                 activeBrock[activeBrock.Count - 1].minos.Add(Instantiate(Utility_.minoGeter[0]));
+                activeBrock[activeBrock.Count - 1].minos[activeBrock[activeBrock.Count - 1].minos.Count - 1].transform.position = FieldInfo.FieldInfoToVec(positions[i]);
             }
 
         }
 
         private void FieldUpdate()
         {
+            instanceBrock = default;
             for (int i = 0; i < activeBrock.Count; i++)
             {
                 // if (activeBrock[i].stateCheck())
@@ -110,7 +133,7 @@ namespace Field
                     Debug.Log($"number{activeBrock[i].brockNumGet()} is Fall");
                     for (int j = 0; j < activeBrock[i].csv_pos.Count; j++)
                     {
-                        if (activeBrock[i].csv_pos[j].height >= Utility_.FieldData.Count - 1) // Å‰º‘w‚Å‚ ‚é‚È‚ç—‰º–h~
+                        if (activeBrock[i].csv_pos[j].height + 1 >= Utility_.FieldData.Count) // Å‰º‘w‚Å‚ ‚é‚È‚ç—‰º–h~
                         {
                             Debug.Log("æ‚ª‚È‚¢‚½‚ßˆÚ“®‚ğ’†~‚µ‚Ü‚·");
                             activeBrock[i].stateChenge(false);
@@ -121,7 +144,7 @@ namespace Field
                         {
                             activeBrock[i].stateChenge(false);
                             Debug.Log("æ‚ÉƒuƒƒbƒN‚ğŠm”F‚µ‚½‚½‚ßˆÚ“®‚ğ’†~‚µ‚Ü‚·");
-                            Debug.Log(activeBrock[i].stateCheck());
+                            Debug.Log(Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width]);
                             break;
                         }
                     }

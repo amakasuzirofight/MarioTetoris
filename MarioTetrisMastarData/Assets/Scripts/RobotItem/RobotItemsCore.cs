@@ -1,24 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UniRx;
 using Mario;
 using System;
 
 namespace RobotItem
 {
-    public class RobotItemsCore : MonoBehaviour,IItemDataChange
+    public class RobotItemsCore : MonoBehaviour, IItemDataChange, IGetItemBox, IAddTetrisPiece, IAddItemPiece, IRemoveItems
     {
-        IAddAtems addItems;
         Dictionary<ItemName, int> ItemBox;
+        int tetrisPiece;
+        public event Action<Dictionary<ItemName, int>> ChangeItemBoxValue;
+        public event Action<int> ChangeTetPieceValue;
 
-        public event Action<Dictionary<ItemName, int>> ChangeItemBox;
 
-
+        private void Awake()
+        {
+            Utility.Locator<IAddTetrisPiece>.Bind(this);
+            Utility.Locator<IAddItemPiece>.Bind(this);
+            Utility.Locator<IGetItemBox>.Bind(this);
+            Utility.Locator<IItemDataChange>.Bind(this);
+            Utility.Locator<IRemoveItems>.Bind(this);
+        }
         void Start()
         {
-            addItems = Utility.Locator<IAddAtems>.GetT();
-            addItems.GetItemEvent += AddItem;
             ItemBox = new Dictionary<ItemName, int>();
         }
 
@@ -33,14 +38,14 @@ namespace RobotItem
             if (ItemBox.ContainsKey(name))
             {
                 ItemBox[name] += num;
-                ChangeItemBox(ItemBox);
+                ChangeItemBoxValue(ItemBox);
 
             }
             //無かったら追加
             else
             {
                 ItemBox.Add(name, num);
-                ChangeItemBox(ItemBox);
+                ChangeItemBoxValue(ItemBox);
             }
         }
         /// <summary>
@@ -59,21 +64,41 @@ namespace RobotItem
                 return ItemBox[name];
             }
         }
-        /// <summary>
-        /// アイテム使用
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="num"></param>
-        public void UseItem(ItemName name)
-        {
 
+
+        public Dictionary<ItemName, int> GetItemBox()
+        {
+            return ItemBox;
         }
-        /// <summary>
-        /// アイテムを減らす
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="num"></param>
-        public void RemoveItem(ItemName name, int num)
+
+        public int GetTetris()
+        {
+            return tetrisPiece;
+        }
+
+        public void AddTetris(int value)
+        {
+            tetrisPiece += value;
+            ChangeTetPieceValue(tetrisPiece);
+        }
+
+        public void AddItemPiece(ItemName name, int num)
+        {
+            //すでにあるかどうか確認
+            if (ItemBox.ContainsKey(name))
+            {
+                ItemBox[name] += num;
+                ChangeItemBoxValue(ItemBox);
+            }
+            //無い場合新しく登録
+            else
+            {
+                ItemBox.Add(name, num);
+                ChangeItemBoxValue(ItemBox);
+            }
+        }
+
+        public void RemoveItems(ItemName name, int num)
         {
             if (!ItemBox.ContainsKey(name))
             {
@@ -82,22 +107,27 @@ namespace RobotItem
             }
             else
             {
-                if (ItemBox[name]<num )
+                if (ItemBox[name] < num)
                 {
                     Debug.LogError("アイテムマイナスになってるけどいいの?一応消すけどさ。あんたずっとこういうプログラムしてるといつかガタが来るよ？");
                 }
-                else if(ItemBox[name]==num)
+                else if (ItemBox[name] == num)
                 {
                     ItemBox.Remove(name);
-                    ChangeItemBox(ItemBox);
+                    ChangeItemBoxValue(ItemBox);
                 }
                 else
                 {
                     ItemBox[name] -= num;
-                    ChangeItemBox(ItemBox);
+                    ChangeItemBoxValue(ItemBox);
                 }
             }
+        }
 
+        public void RemoveTetrisPiece(int num)
+        {
+            tetrisPiece -= num;
+            ChangeTetPieceValue(tetrisPiece);
         }
     }
 

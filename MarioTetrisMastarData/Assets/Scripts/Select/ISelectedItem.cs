@@ -13,5 +13,7 @@ namespace Select
 }
 public enum ItemName
 {
-    Stone,Ziro
+    Stone=0,
+    Portion=1,
+    SpeedDown=2
 }

@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Inputer;
+using System.Reflection;
 
 namespace Robot
 {
-    public class RobotCore : MonoBehaviour
+    public class RobotCore : MonoBehaviour,IGetPositionToInfo
     {
         [SerializeField] float moveSpeed;
         [SerializeField] GameObject inputObj;
@@ -14,6 +15,10 @@ namespace Robot
         [SerializeField] float MinRoboPositionX;
 
         IRobotInput robotInput;
+        private void Awake()
+        {
+            Utility.Locator<IGetPositionToInfo>.Bind(this);
+        }
         // Start is called before the first frame update
         void Start()
         {
@@ -37,6 +42,14 @@ namespace Robot
             robotMove.ExecutionRoboWalk(moveSpeed * robotInput.MovePower());
 
         }
+
+        public FieldInfo GetPositionToInfo()
+        {
+            //あとでオフセット直す
+            return FieldInfo.VecToFieldInfo(transform.position);
+        }
+
+       
     }
 
 

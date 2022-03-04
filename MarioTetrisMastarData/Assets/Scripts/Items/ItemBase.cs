@@ -4,17 +4,34 @@ using UnityEngine;
 
 namespace Items
 {
-    public class ItemBase : MonoBehaviour, IItemHit
+    public class ItemBase : MonoBehaviour
     {
         /// <summary>
         /// プレイヤーに当たった時に名前を返す
         /// </summary>
         /// <returns></returns>
-        public ItemName GetItemName()
+        
+        protected float fallSpeed;
+        [SerializeField] protected Sprite itemSprite;
+
+        protected enum ItemNameEnum
         {
-            return name;
+            NormalPortion,
+            HighPortion,
+            GreatPortion,
+            Stone,
+            Bom
         }
-        public ItemName name;
+
+        virtual public void FallDown()
+        {
+
+        }
+
+        virtual public void Hit()
+        {
+
+        }
         // Start is called before the first frame update
         void Start()
         {

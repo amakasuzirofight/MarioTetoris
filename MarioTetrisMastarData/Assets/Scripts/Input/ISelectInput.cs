@@ -6,7 +6,7 @@ namespace Inputer
 {
     interface ISelectInput
     {
-        public event Action<SelectBottonType> OnSelectButton;
+        public event Action<SelectButtonType> OnSelectButton;
         public event Action<float> MouceWhileEvent;
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace Field
 {
@@ -10,8 +11,9 @@ namespace Field
         FieldBase nowField;
         GameObject activeSceneObject;
         FieldState state;
+        [SerializeField] private List<string> debugMs;
 
-        private void OnEnable()
+        private void Start()
         {
             state = FieldState.NORMAL;
             activeSceneObject = Instantiate(baseScene.gameObject);
@@ -32,23 +34,38 @@ namespace Field
         // Update is called once per frame
         void Update()
         {
-            switch (state)
+            switch (Utility_.GameState)
             {
                 case FieldState.NORMAL:
+                    if (Input.GetKeyDown(KeyCode.K))
+                    {
+                        Utility_.OpenMessage(debugMs);
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Action a = DebugEvent;
+                        Utility_.EventActiveate(a);
+                    }
+
                     nowField.FieldCheck();
 
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
                         List<FieldInfo> fields = new List<FieldInfo>();
-                        fields.Add(new FieldInfo(0, 0));
-                        fields.Add(new FieldInfo(0, 1));
-                        fields.Add(new FieldInfo(0, 2));
-                        fields.Add(new FieldInfo(0, 3));
+                        fields.Add(new FieldInfo(4, 0));
+                        fields.Add(new FieldInfo(3, 0));
+                        fields.Add(new FieldInfo(2, 0));
+                        fields.Add(new FieldInfo(1, 0));
 
                         nowField.CreateBrock(fields);
                     }
                     break;
                 case FieldState.CONVERSATION:
+                    if (Input.GetKeyDown(KeyCode.K))
+                    {
+                        Utility_.MessageWriter();
+                    }
                     break;
                 case FieldState.EVENT:
                     break;
@@ -68,6 +85,20 @@ namespace Field
             activeSceneObject = Instantiate(nowField.gameObject);
             nowField.fieldcomplete = FieldChenge;
             nowField.OpenField();
+        }
+
+        public void DebugEvent()
+        {
+            Instantiate(Utility_.enemyGeter[0]);
+
+            StartCoroutine(eve());
+        }
+
+        IEnumerator eve ()
+        {
+             yield return new WaitForSeconds(10);
+
+            Utility_.EventEnd();
         }
     }
 

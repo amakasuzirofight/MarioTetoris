@@ -8,7 +8,7 @@ namespace Enemy
 {
     namespace Enemy1State
     {
-        public class Enemy1Hit : EnemyBaseHPManager, IDamageRecevable
+        public class Enemy1Hit : EnemyBaseHPManager,IDamageRecevable
         {
             // Enemy1‚ÌÚG”»’èˆ—
 
@@ -30,12 +30,12 @@ namespace Enemy
             // Player‚ÉG‚ê‚½‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é(ŠÃ‘Œ‘Ò‚¿)
             private void OnCollisionEnter2D(Collision2D collision)
             {
-                if (collision.gameObject.TryGetComponent(out MarioCore at))
-                {
-                    IDamageRecevable damage = at;
+                //if (collision.gameObject.TryGetComponent(out MarioCore at))
+                //{
+                //    IDamageRecevable damage = at;
 
-                    damage.DamageRecevable(core.AtkPow);
-                }
+                //    damage.DamageRecevable(core.AtkPow);
+                //}
             }
         }
     }
