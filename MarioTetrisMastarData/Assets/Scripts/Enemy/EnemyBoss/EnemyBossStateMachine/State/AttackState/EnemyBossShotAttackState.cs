@@ -11,6 +11,10 @@ namespace Enemy
         {
             //Enemyの敵呼び出し状態処理
 
+            [SerializeField] private GameObject bullet;
+            [SerializeField] private GameObject faceObj;
+            [SerializeField] private Vector3 defPos;
+
             public EnemyBossStateType StateType => EnemyBossStateType.SHOTATTACK;
             public event Action<EnemyBossStateType> ChangeStateEvent;
 
@@ -25,6 +29,11 @@ namespace Enemy
             void IEnemyBossState.OnUpdate(EnemyBossCore enemy)
             {
                 Debug.Log(StateType);
+
+                ShotStatePos();
+                Instantiate(bullet);
+                ReturnPos();
+                
                 StateChangeManager();
             }
 
@@ -43,6 +52,15 @@ namespace Enemy
                 ChangeStateEvent(EnemyBossStateType.IDLE);
             }
 
+            private void ShotStatePos() 
+            {
+                // Playerのいる位置を見て右端か左端に顔が移動する
+            }
+
+            private void ReturnPos() 
+            {
+                // 元の位置に戻る
+            }
         }
     }
 }

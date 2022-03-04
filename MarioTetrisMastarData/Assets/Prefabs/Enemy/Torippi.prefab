@@ -81,13 +81,14 @@ GameObject:
   - component: {fileID: 8783895768432152185}
   - component: {fileID: 8783895768432152184}
   - component: {fileID: 1909475908}
+  - component: {fileID: 8625349412371856418}
   m_Layer: 0
   m_Name: Torippi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8783895768432152187
 Transform:
   m_ObjectHideFlags: 0
@@ -303,5 +304,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 565ccef532d4e774db0c1211b5a9a270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8625349412371856418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8783895768432152135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62dc45c12103a3740977d89440dee4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

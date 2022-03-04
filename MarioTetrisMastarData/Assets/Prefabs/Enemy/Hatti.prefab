@@ -21,13 +21,14 @@ GameObject:
   - component: {fileID: 239584743707288846}
   - component: {fileID: 239584743707288847}
   - component: {fileID: 51252641}
+  - component: {fileID: 549628030546489450}
   m_Layer: 0
   m_Name: Hatti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &239584743707288834
 Transform:
   m_ObjectHideFlags: 0
@@ -243,5 +244,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56b3d0bb4f7c4254a9e44cc7b558c98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &549628030546489450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239584743707288838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62dc45c12103a3740977d89440dee4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

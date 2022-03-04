@@ -57,7 +57,7 @@ namespace Enemy
                 }
 
 
-                if (collision.gameObject.tag == "Ground")
+                if (collision.gameObject.tag == "Ground" || collision.gameObject.TryGetComponent(out GetEnemy at))
                 {
                     // Scale‚ð”½“]
                     dir *= -1;
