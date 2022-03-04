@@ -19,7 +19,7 @@ namespace Enemy
                 StatusSet(hp, atkPow, spd, diteRange, atkRange);
             }
 
-            // ステータス初期化メソッド(コンストラクタでいい？？)
+            // ステータス初期化メソッド
             private void StatusSet(int hp, int atkPow, float spd, float diteRange, float atkRange)
             {
                 Hp     = hp;

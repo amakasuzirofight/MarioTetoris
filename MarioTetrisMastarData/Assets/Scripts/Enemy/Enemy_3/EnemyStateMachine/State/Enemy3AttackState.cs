@@ -44,7 +44,7 @@ namespace Enemy
             // ステート変更メソッド
             private void StateChangeManager()
             {
-                if (!Detection(Distance(player), core.AtkRange))
+                if (!Detection(Distance(player, gameObject), core.AtkRange))
                 {
                     ChangeStateEvent(Enemy3StateType.STAY);
                 }

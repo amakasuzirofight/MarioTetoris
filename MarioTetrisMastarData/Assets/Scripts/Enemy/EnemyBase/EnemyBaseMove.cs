@@ -20,9 +20,9 @@ namespace Enemy
 
 
         // 距離を返すメソッド
-        protected virtual float Distance(GameObject obj)
+        protected virtual float Distance(GameObject obj, GameObject thisObj)
         {
-            float distance = obj.transform.position.x - transform.position.x;
+            float distance = obj.transform.position.x - thisObj.transform.position.x;
 
             return distance;
         }
@@ -37,7 +37,7 @@ namespace Enemy
 
 
         // 検出したオブジェクト追従メソッド
-        protected virtual void Follow(Rigidbody2D rb, float spd, float dis, bool flg)
+        protected virtual void Follow(Rigidbody2D rb, GameObject thisObj, float spd, float dis, bool flg)
         {
             Vector3 scale = transform.localScale;
 
@@ -47,7 +47,7 @@ namespace Enemy
             else         dir =  1;
 
             rb.velocity = new Vector3(dir * spd, rb.velocity.y, 0f);
-            transform.localScale = new Vector3(-dir , scale.y);
+            thisObj.transform.localScale = new Vector3(-dir , scale.y);
         }
     }
 }

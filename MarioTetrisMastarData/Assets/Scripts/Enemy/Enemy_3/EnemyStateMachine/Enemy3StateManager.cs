@@ -72,7 +72,6 @@ namespace Enemy
             }
 
 
-            // 引数の中はEnum型にしてもいいっぽい！
             // ステート変更メソッド(event変数に代入するメソッド)
             public void ChangeState(Enemy3StateType enemyState)
             {

@@ -30,7 +30,7 @@ namespace Enemy
                 Debug.Log(StateType);
 
                 // 追従処理
-                Follow(rb, core.Spd, Distance(player), Detection(Distance(player), core.DiteRange));
+                Follow(rb, gameObject,core.Spd, Distance(player,gameObject), Detection(Distance(player,gameObject), core.DiteRange));
                 StateChangeManager();
             }
 
@@ -47,13 +47,13 @@ namespace Enemy
             private void StateChangeManager()
             {
                 // オブジェクトが検知範囲内の場合
-                if (!Detection(Distance(player), core.DiteRange))
+                if (!Detection(Distance(player, gameObject), core.DiteRange))
                 {
                     ChangeStateEvent(Enemy3StateType.STAY);
                 }
 
                 // 攻撃範囲内の場合
-                if (Detection(Distance(player), core.AtkRange))
+                if (Detection(Distance(player, gameObject), core.AtkRange))
                 {
                     ChangeStateEvent(Enemy3StateType.ATTACK);
                 }

@@ -41,7 +41,7 @@ namespace Enemy
             private void StateChangeManager()
             {
                 // オブジェクトが検知範囲に入った場合
-                if (Detection(Distance(player), core.DiteRange))
+                if (Detection(Distance(player, gameObject), core.DiteRange))
                 {
                     ChangeStateEvent(Enemy3StateType.FOLLOW);
                 }

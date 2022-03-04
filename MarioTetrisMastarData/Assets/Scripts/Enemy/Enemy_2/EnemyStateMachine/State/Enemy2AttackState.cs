@@ -57,13 +57,13 @@ namespace Enemy
             private void StateChangeManager()
             {
                 // ŒŸ’m”ÍˆÍŠO‚Ìê‡
-                if (!Detection(Distance(player), core.DiteRange))
+                if (!Detection(Distance(player, gameObject), core.DiteRange))
                 {
                     ChangeStateEvent(Enemy2StateType.STAY);
                 }
 
                 // UŒ‚”ÍˆÍŠO‚Ìê‡
-                if (!Detection(Distance(player), core.AtkRange))
+                if (!Detection(Distance(player, gameObject), core.AtkRange))
                 {
                     if (!WaitTime(transTimeCount)) return;
 
