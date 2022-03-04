@@ -8,12 +8,36 @@ namespace RobotItem
 {
     public class RobotItemsCore : MonoBehaviour, IItemDataChange, IGetItemBox, IAddTetrisPiece, IAddItemPiece, IRemoveItems
     {
-        Dictionary<ItemName, int> ItemBox;
-        int tetrisPiece;
+        Dictionary<ItemName, int> ItemBox
+        {
+            get
+            {
+                return ItemBox2D;
+            }
+            set
+            {
+                ItemBox2D = value;
+                ChangeItemBoxValue(ItemBox2D);
+            }
+        }
+        Dictionary<ItemName, int> ItemBox2D = new Dictionary<ItemName, int>();
+        int tetrisPiecenum;
+        int tetrisPiece
+        {
+            get
+            {
+                return tetrisPiecenum;
+            }
+            set
+            {
+                tetrisPiecenum = value;
+                Debug.Log(ChangeTetPieceValue == null);
+                ChangeTetPieceValue(tetrisPiecenum);
+            }
+        }
+
         public event Action<Dictionary<ItemName, int>> ChangeItemBoxValue;
         public event Action<int> ChangeTetPieceValue;
-
-
         private void Awake()
         {
             Utility.Locator<IAddTetrisPiece>.Bind(this);
@@ -25,29 +49,19 @@ namespace RobotItem
         void Start()
         {
             ItemBox = new Dictionary<ItemName, int>();
-        }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-        void AddItem(ItemName name, int num)
-        {
-            //アイテムをすでにもっているか
-            if (ItemBox.ContainsKey(name))
+            //初期化
+            for (int i = 0; i < (int)ItemName.Count; i++)
             {
-                ItemBox[name] += num;
-                ChangeItemBoxValue(ItemBox);
+                ItemBox.Add((ItemName)i, 0);
+            }
+            //初期値入れる
+            ItemBox[ItemName.Stone] += 5;
 
-            }
-            //無かったら追加
-            else
-            {
-                ItemBox.Add(name, num);
-                ChangeItemBoxValue(ItemBox);
-            }
+            //デバッグ用最初にテトリス入れる
+            tetrisPiecenum += 59;
         }
+
         /// <summary>
         /// アイテムの名前を入れるといくつ持ってるか返す。無い場合は-1を返す
         /// </summary>
@@ -79,7 +93,7 @@ namespace RobotItem
         public void AddTetris(int value)
         {
             tetrisPiece += value;
-            ChangeTetPieceValue(tetrisPiece);
+            //ChangeTetPieceValue(tetrisPiece);
         }
 
         public void AddItemPiece(ItemName name, int num)
@@ -88,13 +102,11 @@ namespace RobotItem
             if (ItemBox.ContainsKey(name))
             {
                 ItemBox[name] += num;
-                ChangeItemBoxValue(ItemBox);
             }
             //無い場合新しく登録
             else
             {
                 ItemBox.Add(name, num);
-                ChangeItemBoxValue(ItemBox);
             }
         }
 
@@ -127,7 +139,7 @@ namespace RobotItem
         public void RemoveTetrisPiece(int num)
         {
             tetrisPiece -= num;
-            ChangeTetPieceValue(tetrisPiece);
+            //ChangeTetPieceValue(tetrisPiece);
         }
     }
 

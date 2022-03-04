@@ -15,5 +15,6 @@ public enum ItemName
 {
     Stone=0,
     Portion=1,
-    SpeedDown=2
+    SpeedDown=2,
+    Count=3
 }
