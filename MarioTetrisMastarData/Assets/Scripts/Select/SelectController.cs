@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using Inputer;
 using RobotItem;
 using ItemGenerater;
@@ -12,8 +13,11 @@ namespace Select
     public class SelectController : MonoBehaviour, ISelectedItem
     {
         [SerializeField] GameObject RobotObj;
-        [SerializeField] Sprite stoneRogoSpr;
-        [SerializeField] Sprite portionSpr;
+        [SerializeField] List<Sprite> itemSprites;
+        [SerializeField] Sprite nullSpr;
+        [SerializeField] Image tetrisImage;
+        [SerializeField] Image itemImage;
+        [SerializeField] Image selectCursor;
 
         IGetItemBox getItemBox;
         IItemDataChange itemDataChange;
@@ -27,11 +31,12 @@ namespace Select
         int selectHighMaxNum;//最大アイテム数
 
         int tetrisSelectCount;
+        int spinCount;
         TetrisAngle tetrisAngle;
-        Dictionary<ItemName, int> SelectItemDic = new Dictionary<ItemName, int>();
+        Dictionary<ItemName, int> selectItemDic = new Dictionary<ItemName, int>();
+        Dictionary<ItemName, Sprite> ItemSpriteDic = new Dictionary<ItemName, Sprite>();
         List<ItemName> haveItemName = new List<ItemName>();
-        List<Tetris.TetrisTypeEnum> tetrisTable = new List<Tetris.TetrisTypeEnum>();
-
+        List<TetrisTypeEnum> tetrisTable = new List<TetrisTypeEnum>();
         private void Awake()
         {
             Utility.Locator<ISelectedItem>.Bind(this);
@@ -49,13 +54,22 @@ namespace Select
             selectInput.MouceWhileEvent += CursollScroll;
             generator = Utility.Locator<IGenerator>.GetT();
 
+            for (int i = 0; i < itemSprites.Count; i++)
+            {
+                ItemSpriteDic.Add((ItemName)i, itemSprites[i]);
+            }
+            selectItemDic = getItemBox.GetItemBox();
 
             selectState = SelectState.FirstSelect;
+            TetrisTableReflash();
         }
         void Update()
         {
             //selectState = selectItemWeigthNum % 2 == 0 ? SelectState.FirstSelect : SelectState.Spin;
+            //if (Input.GetKeyDown(KeyCode.T))
+            //{
 
+            //}
             ViewItemCursle();
         }
         public ItemName ISelectedItem()
@@ -81,7 +95,6 @@ namespace Select
                     case SelectButtonType.Non:
                         break;
                 }
-
             }
             else
             {
@@ -109,7 +122,9 @@ namespace Select
             //if (selectItemWeigthNum+num > 3) selectItemWeigthNum = 0;
             //if (selectItemWeigthNum + num < 0) selectItemWeigthNum = 2;
             if (selectItemWeigthNum + num >= int.MaxValue) selectItemWeigthNum = 0;
+
             selectItemWeigthNum += num;
+            selectItemWeigthNum = Mathf.Clamp(selectItemWeigthNum, 0, 2);
         }
         void CursollScroll(float power)
         {
@@ -128,35 +143,56 @@ namespace Select
                 selectItemHighNum += num;
             }
         }
-        int spimNum;
-        void SpinMino(int num)
-        {
-            //超えたらもどす
-            if (spimNum + num < 0)
+
+            void SpinMino(int num)
             {
-                spimNum = 4;
+                //超えたらもどす
+                if (spinCount + num < 0)
+                {
+                    spinCount = 4;
+                }
+                if (spinCount + num > 4)
+                {
+                    spinCount = 0;
+                }
+                spinCount += num;
             }
-            if (spimNum + num > 4)
-            {
-                spimNum = 0;
-            }
-            spimNum += num;
-        }
         void ViewItemCursle()
         {
-            //Debug.Log(selectItemWeigthNum);
-
+            Debug.Log($"haveItemName count = {haveItemName.Count} || number = {selectItemHighNum}");
+            if (ItemSpriteDic.Count == 0)
+            {
+                itemImage.sprite = nullSpr;
+            }
+            else
+            {
+                Debug.Log($"itemSprteDic count = {ItemSpriteDic.Count} || number = {haveItemName[selectItemHighNum]}");
+                itemImage.sprite = ItemSpriteDic[haveItemName[selectItemHighNum]];
+            }
+            if (selectItemWeigthNum % 2 == 0)
+            {
+                selectCursor.transform.position = itemImage.transform.position;
+            }
+            else
+            {
+                selectCursor.transform.position = tetrisImage.transform.position;
+            }
         }
         void SynchroItem(Dictionary<ItemName, int> data)
         {
-            SelectItemDic = data;
-            //アイテム番号順に並び替え
-            haveItemName = new List<ItemName>(SelectItemDic.Keys);
-            haveItemName.Sort();
+            Debug.Log("しんくろアイテム "+data.Count());
+            selectItemDic = data;
 
-            //めっちゃ不安
-            //SelectItemDic.OrderBy(x => (int)x.Key);
-            //selectHighMaxNum = SelectItemDic.Count;
+            haveItemName = new List<ItemName>(selectItemDic.Keys);
+            //var query = haveItemName.OrderBy(x => x).Where(x => x > 0);
+            for (int i = 0; i < selectItemDic.Count(); i++)
+            {
+                //入ってないアイテムは削除
+                if (haveItemName[i] == 0) haveItemName.RemoveAt(i);
+            }
+            //アイテム番号順に並び替え
+            haveItemName.Sort();
+            selectHighMaxNum = haveItemName.Count();
         }
         void SynchroTetris(int num)
         {
@@ -181,16 +217,33 @@ namespace Select
         }
         void GenerateTetris()
         {
-            TetrisTypeEnum generateType;
+            TetrisTypeEnum type = GetRandomTetrisType();
+            //生成
+            generator.GenerateItem(type, (TetrisAngle)spinCount, FieldInfo.VecToFieldInfo(RobotObj.transform.position));
+
+        }
+        #region tetrisUtility
+        TetrisTypeEnum oldTetrisType;
+        TetrisTypeEnum GetRandomTetrisType()
+        {
             //テーブルに何も入っていない場合
             if (tetrisTable.Count() == 0)
             {
                 //テーブルを生成しなおす
                 TetrisTableReflash();
             }
-            TetrisTypeEnum rand = (TetrisTypeEnum)Random.Range(0, tetrisTable.Count());
-
-            generator.GenerateItem(rand,(TetrisAngle)spimNum,FieldInfo.VecToFieldInfo(RobotObj.transform.position));
+            //ランダムでテトリミノを作成
+            TetrisTypeEnum rand;
+            while (true)
+            {
+                //前回と同じテトリスは出さない
+                rand = (TetrisTypeEnum)Random.Range(0, tetrisTable.Count());
+                if (rand != oldTetrisType) break;
+            }
+            //リストから削除
+            tetrisTable.Remove(rand);
+            oldTetrisType = rand;
+            return rand;
         }
         void TetrisTableReflash()
         {
@@ -206,6 +259,8 @@ namespace Select
         {
             FirstSelect, Spin
         }
+        #endregion
+
 
     }
 }

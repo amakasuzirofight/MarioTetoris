@@ -28,11 +28,12 @@ namespace Inputer
             }
             if(Input.GetMouseButtonDown(0))
             {
-                OnSelectButton(SelectButtonType.MouceRight);
+                OnSelectButton(SelectButtonType.MouceLeft);
             }
             if (Input.GetMouseButtonDown(1))
             {
-                OnSelectButton(SelectButtonType.MouceLeft);
+                Debug.Log("‚Ý‚¬");
+                OnSelectButton(SelectButtonType.MouceRight);
             }
             if(Input.mouseScrollDelta.y!=0)
             {
