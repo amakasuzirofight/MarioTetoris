@@ -12,12 +12,12 @@ namespace Enemy
             //Enemy‚Ì’@‚«‚Â‚¯UŒ‚ó‘Ôˆ—
 
             [SerializeField] private GameObject rightHand;
-            [SerializeField] private GameObject player;
-
+            
             public EnemyBossStateType StateType => EnemyBossStateType.HANDATTACK_RIGHT;
             public event Action<EnemyBossStateType> ChangeStateEvent;
 
             private EnemyBossCore core;
+            private GameObject player;
             private Rigidbody2D rb;
             private float transTimeCount = 5f;
             private float atkWaitCount = 3f;
@@ -25,6 +25,7 @@ namespace Enemy
 
             void IEnemyBossState.OnStart(EnemyBossStateType beforeState, EnemyBossCore enemy)
             {
+                player ??= Utility_.playerObject; 
                 core ??= GetComponent<EnemyBossCore>();
                 rb   ??= rightHand.GetComponent<Rigidbody2D>();
                 time = 0f;

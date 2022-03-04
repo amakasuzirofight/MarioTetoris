@@ -12,12 +12,12 @@ namespace Enemy
         {
             // Player‚ÌDamageó‘Ôˆ—
 
-            [SerializeField] private GameObject player;
 
             public Enemy1StateType StateType =>  Enemy1StateType.DAMAGED;
             public event Action<Enemy1StateType> ChangeStateEvent;
 
             private Enemy1Core core;
+            private GameObject player;
             private Rigidbody2D rb;
 
             private float time = 0f;
@@ -25,6 +25,7 @@ namespace Enemy
 
             void IEnemy1State.OnStart(Enemy1StateType beforeState, Enemy1Core enemy)
             {
+                player ??= Utility_.playerObject;
                 core ??= GetComponent<Enemy1Core>();
                 rb   ??= GetComponent<Rigidbody2D>();
 

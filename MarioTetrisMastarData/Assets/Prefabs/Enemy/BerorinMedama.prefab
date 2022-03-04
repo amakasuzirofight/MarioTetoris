@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 139a8a99c1ef1d14f926c7540ab5beb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 90
+  hp: 10
   atkPow: 1
   spd: 4
 --- !u!114 &8294017748306185986
@@ -220,7 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec47bcfade85d3a40a34e24ccd7a2cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!114 &8294017748306185995
 MonoBehaviour:
   m_ObjectHideFlags: 0

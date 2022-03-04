@@ -11,11 +11,12 @@ namespace Enemy
         {
             // Enemy‚ÌAttackó‘Ôˆ—
 
-            [SerializeField] private GameObject player;
+            
 
             public Enemy2StateType StateType => Enemy2StateType.ATTACK;
             public event Action<Enemy2StateType> ChangeStateEvent;
 
+            private GameObject player;
             private Enemy2Core core;
             private float time = 0f;
             private float attackTimeCount = 5f;
@@ -25,10 +26,8 @@ namespace Enemy
 
             void IEnemy2State.OnStart(Enemy2StateType beforeState, Enemy2Core enemy)
             {
+                player ??= Utility_.playerObject;
                 core ??= GetComponent<Enemy2Core>();
-
-                // Animation‚ğÄ¶
-                Debug.Log("UŒ‚II");
             }
 
             void IEnemy2State.OnUpdate(Enemy2Core enemy)

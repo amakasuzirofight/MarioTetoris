@@ -11,15 +11,17 @@ namespace Enemy
         {
             //Enemy‚ÌStayó‘Ôˆ—
 
-            [SerializeField] private GameObject player;
+            
 
             public Enemy2StateType StateType => Enemy2StateType.STAY;
             public event Action<Enemy2StateType> ChangeStateEvent;
 
+            private GameObject player;
             private Enemy2Core core;
 
             void IEnemy2State.OnStart(Enemy2StateType beforeState, Enemy2Core enemy)
             {
+                player ??= Utility_.playerObject;
                 core ??= GetComponent<Enemy2Core>();
             }
 

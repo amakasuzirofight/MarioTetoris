@@ -33,7 +33,6 @@ namespace Enemy
                 {
                     IDamageRecevable damage = at;
 
-                    Debug.Log("‚Ä‚ß‚¦‚Ç‚±Œ©‚Ä‚ñ‚¾‚æ");
                     damage.DamageRecevable(core.AtkPow);
                 }
             }
