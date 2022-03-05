@@ -7,10 +7,6 @@ namespace Enemy
     public class FootCheckCol : EnemyBaseMove
     {
 
-        private void OnTriggerExit2D(Collider2D collision)
-        {
-            Debug.Log("asdfafaga");            
-        }
     }
 
 }

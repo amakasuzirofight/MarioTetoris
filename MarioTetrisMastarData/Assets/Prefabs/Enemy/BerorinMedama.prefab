@@ -21,13 +21,14 @@ GameObject:
   - component: {fileID: 8294017748306185995}
   - component: {fileID: 8535843053265068962}
   - component: {fileID: 1445343498261069196}
+  - component: {fileID: 172164904}
   m_Layer: 0
   m_Name: BerorinMedama
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8294017748306185994
 Transform:
   m_ObjectHideFlags: 0
@@ -256,3 +257,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1bcf6fa50d38d428804a9c8b22258f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &172164904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294017748306185997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 995a71383534af64f9c068c272ce7209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 8

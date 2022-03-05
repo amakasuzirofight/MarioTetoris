@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MyUtility;
 
 namespace Enemy
 {
@@ -15,11 +16,13 @@ namespace Enemy
             public event Action<Enemy1StateType> ChangeStateEvent;
 
             private Enemy1Core core;
+            private EnemyGround enemyGround;
             private Rigidbody2D rb;
 
             void IEnemy1State.OnStart(Enemy1StateType beforeState, Enemy1Core enemy)
             {
                 core ??= GetComponent<Enemy1Core>();
+                enemyGround ??= GetComponent<EnemyGround>();
                 rb ??= GetComponent<Rigidbody2D>();
             }
 
@@ -27,8 +30,15 @@ namespace Enemy
             {
                 Debug.Log(StateType);
 
+                if (!enemyGround.CheckIsGround())
+                {
+                    Debug.Log("反転！");
+                    dir *= -1;
+                }
+
                 // 移動メソッド
                 Move(rb, core.Spd);
+
             }
 
             void IEnemy1State.OnFixedUpdate(Enemy1Core enemy)
