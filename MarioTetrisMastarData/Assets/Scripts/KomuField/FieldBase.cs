@@ -12,6 +12,7 @@ namespace Field
         protected FieldBase[] nextField;
         public Action fieldcomplete;
         [SerializeField] protected FieldChenger[] fieldChengers;
+        [SerializeField] protected Vector2[] chengersPos;
         public int stageNumber;
         protected FieldChenger[] createChengers;
         [HideInInspector] protected GameObject[] chengers_objects;
@@ -54,6 +55,7 @@ namespace Field
                 chengers_objects[i] = fieldChengers[i].Create();
                 createChengers[i] = chengers_objects[i].GetComponent<FieldChenger>();
                 createChengers[i].numberSet(stageNumber);
+                createChengers[i].transform.position = chengersPos[i];
             }
         }
 
@@ -91,7 +93,7 @@ namespace Field
         {
             for (int i = 0; i < createChengers.Length; i++)
             {
-                if (createChengers[i].activeFlg)
+                if (createChengers[i].clearFlg)
                 {
                     activeChenger = createChengers[i];
                     fieldcomplete();
