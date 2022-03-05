@@ -8,7 +8,7 @@ namespace ItemGenerater
 {
     public class ItemGenarate : MonoBehaviour, IGenerator
     {
-        [SerializeField] GameObject ItemBase;
+        [SerializeField] List<GameObject> ItemPrefs = new List<GameObject>();
         Field.FieldBase fieldBase;
         IGetPositionToInfo getPositionToInfo;
         IGetTetrisInfo getTetrisInfo;
