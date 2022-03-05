@@ -11,11 +11,19 @@ public class GameStatus : MonoBehaviour
 
     [SerializeField] private bool DebugMode = false;
     [SerializeField] private Vector3 DebugPos = Vector3.zero;
+    [SerializeField] private bool CreateFlg = false;
 
     void Awake()
     {
-        Utility_.playerObject = Instantiate(player);
-        if (DebugMode) Utility_.playerObject.transform.position = DebugPos;
+        if (!CreateFlg)
+        {
+            Utility_.playerObject = Instantiate(player);
+            if (DebugMode) Utility_.playerObject.transform.position = DebugPos;
+        }
+        else
+        {
+            Utility_.playerObject = player;
+        }
 
         for (int i = 0;i < activeBrockList.objectsList.Length;i++)
         {

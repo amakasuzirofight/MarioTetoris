@@ -11,6 +11,7 @@ namespace Field
         public FieldBase nextField;
 
         [HideInInspector] public bool activeFlg = false;
+        [HideInInspector] public bool clearFlg = false;
 
         [SerializeField] private KeyCode debugCode = KeyCode.Return;
 
@@ -18,6 +19,7 @@ namespace Field
 
         public virtual GameObject Create()
         {
+            clearFlg = false;
             return Instantiate(gameObject);
         }
 
@@ -28,10 +30,10 @@ namespace Field
 
         public void Update()
         {
-            if (Input.GetKeyDown(debugCode))
+            if (Input.GetKeyDown(KeyCode.Return) && activeFlg)
             {
                 if (fieldNum != 0) Utility_.FlgChenger(fieldNum);
-                activeFlg = true;
+                clearFlg = true;
             }
         }
 
@@ -42,12 +44,12 @@ namespace Field
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.tag == "player") activeFlg = true;
+            if (collision.gameObject.tag == "Player") activeFlg = true;
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.gameObject.tag == "player") activeFlg = false;
+            if (collision.gameObject.tag == "Player") activeFlg = false;
         }
     }
 
