@@ -8,7 +8,7 @@ namespace Enemy
     {
         // Enemyの基底HPクラス
 
-        private const int MAX_HP = 10;// 後で変更
+        private const int MAX_HP = 100;// 後で変更
         private const int MIN_HP = 0;
 
         protected int Damage(int hp, int damageNum)

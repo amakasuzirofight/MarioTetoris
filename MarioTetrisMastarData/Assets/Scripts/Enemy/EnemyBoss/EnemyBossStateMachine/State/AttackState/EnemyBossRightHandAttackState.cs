@@ -12,7 +12,7 @@ namespace Enemy
             //Enemy‚Ì’@‚«‚Â‚¯UŒ‚ó‘Ôˆ—
 
             [SerializeField] private GameObject rightHand;
-            
+
             public EnemyBossStateType StateType => EnemyBossStateType.HANDATTACK_RIGHT;
             public event Action<EnemyBossStateType> ChangeStateEvent;
 
