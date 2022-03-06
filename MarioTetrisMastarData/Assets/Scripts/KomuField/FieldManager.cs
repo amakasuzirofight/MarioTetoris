@@ -15,6 +15,7 @@ namespace Field
 
         private void Start()
         {
+            Utility_.MessageSetting(false);
             state = FieldState.NORMAL;
             activeSceneObject = Instantiate(baseScene.gameObject);
             nowField = baseScene;

@@ -37,7 +37,7 @@ public class EditStage : MonoBehaviour
         position = new FieldInfo(0,0);
         state = EditState.Glid_select;
         state_ = SelectState.Item_select;
-        limitNumber = 5;
+        limitNumber = Utility_.BROCK_NUMBER_COUNT;
         downLimitNumber = 1;
 
         for (int i = 0;i < ACTICVE_STAGELIMIT_WIDTH;i++)
@@ -118,6 +118,13 @@ public class EditStage : MonoBehaviour
                 break;
         }
 
+        systemText.text += "\n\n!!handling warning!!\nbackSpace Key => ExistingData Create";
+
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Restore();
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
             Save();
@@ -171,7 +178,7 @@ public class EditStage : MonoBehaviour
                 num = 1;
                 state_ = SelectState.Item_select;
                 CreateSample();
-                limitNumber = 5;
+                limitNumber = Utility_.BROCK_NUMBER_COUNT;
                 downLimitNumber = 1;
                 break;
             case SelectState.Enemy_select:
@@ -249,6 +256,56 @@ public class EditStage : MonoBehaviour
         Debug.Log("save Compleate");
     }
 
+    public void Restore()
+    {
+        StreamReader reader = new StreamReader(Application.dataPath + "/CreateStage/" + saveFile.name + ".json"); //受け取ったパスのファイルを読み込む
+        string datastr = reader.ReadToEnd();//ファイルの中身をすべて読み込む
+        reader.Close();//ファイルを閉じる
+
+        CreateStageData stageData = JsonUtility.FromJson<CreateStageData>(datastr);
+
+        List<int[]> list = Utility_.StringListToIntList(stageData.datastr);
+
+        for (int i = 0; i < list.Count; i++)
+        {
+            for (int j = 0; j < list[i].Length; j++)
+            {
+                FieldInfo info = new FieldInfo(i, j);
+                AddItems[info] = list[i][j];
+                if (FieldObject[info] != null) Destroy(FieldObject[info]);
+
+                if (list[i][j] != 0)
+                {
+                    if (list[i][j] < Utility_.BROCK_NUMBER_COUNT)
+                    {
+                        FieldObject[info] = Instantiate(Utility_.objectGeter[list[i][j]]);
+                        FieldObject[info].transform.position = FieldInfo.FieldInfoToVec(info);
+                    }
+                    else if (list[i][j] < Utility_.BROCK_NUMBER_COUNT + Utility_.ENEMY_NUMBER_COUNT)
+                    {
+                        FieldObject[info] = Instantiate(new GameObject());
+                        SpriteRenderer spRen = FieldObject[info].AddComponent<SpriteRenderer>();
+                        spRen.sprite = Utility_.enemyGeter[list[i][j] - Utility_.BROCK_NUMBER_COUNT].GetComponent<SpriteRenderer>().sprite;
+                        FieldObject[info].transform.position = FieldInfo.FieldInfoToVec(info);
+                    }
+                    else if (list[i][j] == Utility_.PLAYER_NUMBER)
+                    {
+                        FieldObject[info] = Instantiate(new GameObject());
+                        SpriteRenderer spRen = FieldObject[new FieldInfo(i, j)].AddComponent<SpriteRenderer>();
+                        spRen.sprite = Utility_.playerObject.GetComponent<SpriteRenderer>().sprite;
+                        FieldObject[info].transform.position = FieldInfo.FieldInfoToVec(info);
+                        
+                    }
+                }
+                else
+                {
+                    FieldObject[info] = Instantiate(glid);
+                    AddItems[info] = 0;
+                }
+            }
+        }
+    }
+
     public enum EditState
     {
         Elase_Mode,
@@ -261,4 +318,3 @@ public class EditStage : MonoBehaviour
         Enemy_select,
     }
 }
-
