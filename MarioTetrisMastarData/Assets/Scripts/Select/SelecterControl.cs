@@ -19,7 +19,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     [SerializeField] Image selectCursor;
     [SerializeField] Text tetrisCountText;
     [SerializeField] Text ItemCountText;
-    [Space(20),SerializeField] GameObject guideObj;
+    [Space(20), SerializeField] GameObject guideObj;
 
     IGetItemBox getItemBox;
     IItemDataChange itemDataChange;
@@ -116,8 +116,25 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
             tetrisUnderGuids[i] = temp2;
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (selectState == SelectState.Spin)
+            {
+                selectState = SelectState.Select;
+            }
+        }
+        if (selectState == SelectState.Spin)
+        {
+            GenerateTetrisVision(RandomTetrises[0], (TetrisAngle)spinCount, RobotObj.transform.position);
+        }
+        else
+        {
+            TetrisVisionBye();
+        }
+    }
 
-    
     void CursollMove(SelectButtonType buttonType)
     {
         //アイテム選択中の時
@@ -169,7 +186,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
                 default:
                     break;
             }
-            GenerateTetrisVision(RandomTetrises[0], (TetrisAngle)spinCount, RobotObj.transform.position);
+            /* GenerateTetrisVision*//*(RandomTetrises[0], (TetrisAngle)spinCount, RobotObj.transform.position);*/
         }
     }
     #region テトリス
@@ -178,7 +195,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
         //超えたらもどす
         if (spinCount + num < 0)
         {
-            spinCount = 4;
+            spinCount = 3;
         }
         else if (spinCount + num > 4)
         {
@@ -197,7 +214,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     /// <param name="tetrisType"></param>
     /// <param name="angle"></param>
     /// <param name="generatePos"></param>
-    void GenerateTetrisVision(TetrisTypeEnum tetrisType,TetrisAngle angle,Vector3 generatePos)
+    void GenerateTetrisVision(TetrisTypeEnum tetrisType, TetrisAngle angle, Vector3 generatePos)
     {
         FieldInfo info = FieldInfo.VecToFieldInfo(generatePos);
         //データ取得
@@ -209,12 +226,24 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
                 if (tetrisScriptable.tetriminoArrays[i, j])
                 {
                     //データから位置を出す
-                    info.width = j + info.width;
-                    info.height = i + info.height;
+                    info.height = info.height + i;
+                    info.width = info.width - j;
                     tetrisGuids[i].transform.position = FieldInfo.FieldInfoToVec(info);
                 }
             }
         }
+    }
+    void TetrisVisionBye()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            tetrisGuids[i].transform.position = new Vector3(-100, 100, 0);
+            tetrisUnderGuids[i].transform.position = tetrisGuids[i].transform.position;
+        }
+    }
+    void generatedUnderVision(TetrisTypeEnum tetrisType, TetrisAngle angle, Vector3 generatePos)
+    {
+
     }
     void GenerateTetris(TetrisTypeEnum tetrisType)
     {
@@ -282,7 +311,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
 
     #endregion
     #region ガイド
-    
+
     #endregion
     #region アイテム
     void GenerateItem()
