@@ -12,6 +12,9 @@ public class CreateStage : MonoBehaviour
 
     List<int[]> list = new List<int[]>();
 
+
+    [SerializeField] private GameObject cam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +43,10 @@ public class CreateStage : MonoBehaviour
                         GameObject obj = Instantiate(Utility_.enemyGeter[list[i][j] - Utility_.BROCK_NUMBER_COUNT]);
                         obj.transform.position = FieldInfo.FieldInfoToVec(new FieldInfo(i, j));
                     }
+                    else if (list[i][j] == Utility_.PLAYER_NUMBER)
+                    {
+                        Utility_.playerObject.transform.position = FieldInfo.FieldInfoToVec(new FieldInfo(i, j));
+                    }
                 }
             }
         }
@@ -48,6 +55,6 @@ public class CreateStage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        cam.transform.position = new Vector3(Utility_.playerObject.transform.position.x,Utility_.playerObject.transform.position.y,-10);
     }
 }

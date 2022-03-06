@@ -30,12 +30,11 @@ namespace Enemy
             // PlayerÇ…êGÇÍÇΩéûÇ…É_ÉÅÅ[ÉWÇó^Ç¶ÇÈ(ä√ëåë“Çø)
             private void OnCollisionEnter2D(Collision2D collision)
             {
-                //if (collision.gameObject.TryGetComponent(out MarioCore at))
-                //{
-                //    IDamageRecevable damage = at;
-
-                //    damage.DamageRecevable(core.AtkPow);
-                //}
+                if (collision.gameObject.TryGetComponent(out MarioCore at))
+                {
+                    IDamageRecevable damage = at;
+                    damage.DamageRecevable(core.AtkPow);
+                }
             }
         }
     }

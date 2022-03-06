@@ -8,29 +8,15 @@ namespace Enemy
 {
     namespace EnemyBossState
     {
-        public class EnemyBossHit : EnemyBaseHPManager, IDamageRecevable
+        public class EnemyBossBulletHit : EnemyBaseHPManager
         {
             private EnemyBossCore core;
-            private EnemyBossStateManager stateManager;
 
             void Start()
             {
                 core = GetComponent<EnemyBossCore>();
-                stateManager = GetComponent<EnemyBossStateManager>();
             }
 
-
-            // Enemyダメージ処理
-            public void DamageRecevable(int damage)
-            {
-                // coreがGetできてない！
-                core.Hp = Damage(core.Hp, damage);
-
-                Debug.Log(core.Hp);
-
-                // ここで中断メソッドを呼び出す
-                stateManager.BreakState();
-            }
 
             // Playerに触れた時にダメージを与える
             private void OnCollisionEnter2D(Collision2D collision)
@@ -38,8 +24,8 @@ namespace Enemy
                 if (collision.gameObject.TryGetComponent(out MarioCore at))
                 {
                     IDamageRecevable damage = at;
-
-                    damage.DamageRecevable(core.AtkPow_Hand);
+                    
+                    damage.DamageRecevable(core.AtkPow_Spit);
                 }
             }
         }

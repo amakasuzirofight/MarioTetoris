@@ -13,5 +13,7 @@ namespace Enemy
         public float Spd { get; set; }
         public float DiteRange { get; set; }
         public float AtkRange { get; set; }
+        public int AtkPow_Hand { get; set; }
+        public int AtkPow_Spit { get; set; }
     }
 }
