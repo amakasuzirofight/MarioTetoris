@@ -19,12 +19,14 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     [SerializeField] Image selectCursor;
     [SerializeField] Text tetrisCountText;
     [SerializeField] Text ItemCountText;
+    [Space(20),SerializeField] GameObject guideObj;
 
     IGetItemBox getItemBox;
     IItemDataChange itemDataChange;
     IRemoveItems removeItems;
     ISelectInput selectInput;
     IGenerator generator;
+    IGetTetrisInfo getTetrisInfo;
 
     //現在何を選択しているかステータス
     SelectState selectState;
@@ -48,9 +50,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     int selectItemHighNum;
     //アイテムの縦の上限値
     int selectHighMaxNum;
-
     int spinCount;
-
     int tetCount;
     //名前に対応したロゴを格納
     Dictionary<ItemName, Sprite> ItemSpriteDic = new Dictionary<ItemName, Sprite>();
@@ -76,6 +76,10 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     //控えテトリス
     TetrisTypeEnum[] RandomTetrises = new TetrisTypeEnum[3];
 
+    //エセオブジェクトプール　テトリスのガイド
+    private GameObject[] tetrisGuids = new GameObject[4];
+    //下に出るガイド
+    private GameObject[] tetrisUnderGuids = new GameObject[4];
     private void Awake()
     {
         Utility.Locator<ISelectedItem>.Bind(this);
@@ -93,6 +97,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
         selectInput.MouceWhileEvent += CursollScroll;
 
         generator = Utility.Locator<IGenerator>.GetT();
+        getTetrisInfo = Utility.Locator<IGetTetrisInfo>.GetT();
 
         TetrisTableReflash();
         //どんなテトリスをだすかを最初に3つ生成
@@ -100,11 +105,19 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
         {
             RandomTetrises[i] = GetRandomTetrisType();
         }
+        //エセオブジェクトプール生成
+        for (int i = 0; i < 4; i++)
+        {
+            var temp1 = Instantiate(guideObj);
+            temp1.transform.position = new Vector3(-100, -100, 0);
+            var temp2 = Instantiate(guideObj);
+            temp2.transform.position = new Vector3(-100, -100, 0);
+            tetrisGuids[i] = temp1;
+            tetrisUnderGuids[i] = temp2;
+        }
     }
 
-    void Update()
-    {
-    }
+    
     void CursollMove(SelectButtonType buttonType)
     {
         //アイテム選択中の時
@@ -136,10 +149,9 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
                     break;
             }
         }
+        //回転モードの時
         if (selectState == SelectState.Spin)
         {
-
-
             switch (buttonType)
             {
                 case SelectButtonType.MouceLeft:
@@ -157,7 +169,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
                 default:
                     break;
             }
-            GenerateTetrisVision();
+            GenerateTetrisVision(RandomTetrises[0], (TetrisAngle)spinCount, RobotObj.transform.position);
         }
     }
     #region テトリス
@@ -177,11 +189,32 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
             spinCount += num;
         }
     }
-
+    Field.FieldBase fieldBase;
     //あとでやる
-    void GenerateTetrisVision()
+    /// <summary>
+    /// テトリスのガイド生成
+    /// </summary>
+    /// <param name="tetrisType"></param>
+    /// <param name="angle"></param>
+    /// <param name="generatePos"></param>
+    void GenerateTetrisVision(TetrisTypeEnum tetrisType,TetrisAngle angle,Vector3 generatePos)
     {
-
+        FieldInfo info = FieldInfo.VecToFieldInfo(generatePos);
+        //データ取得
+        TetrisScriptableObject tetrisScriptable = getTetrisInfo.GetTetrimino(tetrisType, angle);
+        for (int i = 3; i >= 0; i--)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (tetrisScriptable.tetriminoArrays[i, j])
+                {
+                    //データから位置を出す
+                    info.width = j + info.width;
+                    info.height = i + info.height;
+                    tetrisGuids[i].transform.position = FieldInfo.FieldInfoToVec(info);
+                }
+            }
+        }
     }
     void GenerateTetris(TetrisTypeEnum tetrisType)
     {
@@ -247,6 +280,9 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
         tetCount = num;
     }
 
+    #endregion
+    #region ガイド
+    
     #endregion
     #region アイテム
     void GenerateItem()

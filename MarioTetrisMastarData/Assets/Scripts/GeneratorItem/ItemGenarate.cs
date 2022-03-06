@@ -38,7 +38,7 @@ namespace ItemGenerater
         }
         public void GenerateItem(ItemName name, Vector3 pos)
         {
-
+            Debug.LogError("アイテム出すけどまだ書いてない");
         }
 
         public void GenerateItem(TetrisTypeEnum tetrisType, TetrisAngle tetrisAngle, FieldInfo info)
