@@ -32,14 +32,14 @@ public static class Utility_
         private set => fieldState = value;
     }
 
-    public static void MessageSetting()
+    public static void MessageSetting(bool stateChenge = true)
     {
         if (systemMessage == null || systemMessage == default)
         {
             systemMessage = GameObject.Find("Canvas").GetComponentInChildren<Text>();
             systemMessage.gameObject.SetActive(false);
         }
-        GameState = FieldState.CONVERSATION;
+        if (stateChenge) GameState = FieldState.CONVERSATION;
     }
 
     public static void MessageWriter()
