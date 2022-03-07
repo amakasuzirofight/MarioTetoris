@@ -21,6 +21,9 @@ namespace Robot
         public void ExecutionRoboWalk(float speed)
         {
             rigidbody2D.velocity = new Vector2(speed, rigidbody2D.velocity.y);
+            transform.position = new Vector3
+                (Mathf.Clamp(transform.position.x, 0, Utility_.FieldData[0].Length), 
+                 transform.position.y);
         }
     }
 

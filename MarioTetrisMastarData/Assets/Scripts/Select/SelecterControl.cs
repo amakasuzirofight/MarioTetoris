@@ -11,7 +11,7 @@ using Select;
 
 public class SelecterControl : MonoBehaviour, ISelectedItem
 {
-    [SerializeField] GameObject RobotObj;
+    GameObject RobotObj;
     [SerializeField] List<Sprite> itemSprites;
     [SerializeField] Sprite nullSpr;
     [SerializeField] Image tetrisImage;
@@ -119,7 +119,6 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     }
     private void Update()
     {
-        Debug.LogWarning(RandomTetrises[0]);
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (selectState == SelectState.Spin)
@@ -156,6 +155,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
                         //生成できる数に満たない場合リターン
                         if (getItemBox.GetTetris() < 4) return;
                         spinCount = 0;
+                        GenerateTetrisVision(RandomTetrises[0], (TetrisAngle)spinCount, RobotObj.transform.position);
                         selectState = SelectState.Spin;
                     }
                     else
@@ -207,7 +207,6 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
 
     }
     Field.FieldBase fieldBase;
-    //あとでやる
     /// <summary>
     /// テトリスのガイド生成
     /// </summary>
@@ -262,6 +261,12 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     }
     void GenerateTetris(TetrisTypeEnum tetrisType)
     {
+        //生成しようとする位置にブロックがあった場合、生成しない
+        if (generator.CanGenerateTetris(tetrisType, (TetrisAngle)spinCount, FieldInfo.VecToFieldInfo(RobotObj.transform.position))==false)
+        {
+            Debug.LogError("なんかあるから出しません");
+            return;
+        }
         generator.GenerateItem(tetrisType, (TetrisAngle)spinCount, FieldInfo.VecToFieldInfo(RobotObj.transform.position));
         //新しいテトリスのデータを生成
         for (int i = 0; i < RandomTetrises.Length; i++)

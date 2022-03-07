@@ -20,7 +20,6 @@ namespace ItemGenerater
         {
             getPositionToInfo = Utility.Locator<IGetPositionToInfo>.GetT();
             getTetrisInfo = Utility.Locator<IGetTetrisInfo>.GetT();
-
         }
 
         void Update()
@@ -30,7 +29,7 @@ namespace ItemGenerater
             fieldKari.height = 0;
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                GenerateItem(TetrisTypeEnum.Type_L, TetrisAngle.Angle_270,fieldKari);
+                GenerateItem(TetrisTypeEnum.Type_L, TetrisAngle.Angle_270, fieldKari);
             }
 
 
@@ -41,12 +40,36 @@ namespace ItemGenerater
             Debug.LogError("アイテム出すけどまだ書いてない");
         }
 
+        public bool CanGenerateTetris(TetrisTypeEnum tetrisType, TetrisAngle tetrisAngle, FieldInfo info)
+        {
+            TetrisScriptableObject tetrisScriptable = getTetrisInfo.GetTetrimino(tetrisType, tetrisAngle);
+            List<int[]> fieldList = Utility_.FieldData;
+            bool flg = true;
+            for (int i = 3; i >= 0; i--/*int i = 0; i < 4; i++*/)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    if (tetrisScriptable.tetriminoArrays[i, j])
+                    {
+                        FieldInfo infomation;
+                        infomation.width = j + info.width;
+                        infomation.height = i + info.height;
+                        if (fieldList[infomation.height][infomation.width] != 0)
+                        {
+                            flg = false;
+                        }
+                       
+                    }
+                }
+            }
+            return flg;
+        }
         public void GenerateItem(TetrisTypeEnum tetrisType, TetrisAngle tetrisAngle, FieldInfo info)
         {
             fieldBase = Utility.Locator<Field.FieldBase>.GetT();
             List<FieldInfo> fieldInfos = new List<FieldInfo>();
             TetrisScriptableObject tetrisScriptable = getTetrisInfo.GetTetrimino(tetrisType, tetrisAngle);
-            for (int i = 3; i  >= 0; i--/*int i = 0; i < 4; i++*/)
+            for (int i = 3; i >= 0; i--/*int i = 0; i < 4; i++*/)
             {
                 for (int j = 0; j < 4; j++)
                 {
@@ -61,14 +84,6 @@ namespace ItemGenerater
                     }
                 }
             }
-
-            //Debug.Log(fieldBase == null);
-
-            //for (int i = 0; i < fieldInfos.Count; i++)
-            //{
-            //    Debug.Log($"infos[{i}] height = {fieldInfos[i].height} width = {fieldInfos[i].width}");
-            //}
-
             fieldBase.CreateBrock(fieldInfos);
             InstanceTetris();
         }
@@ -82,6 +97,7 @@ namespace ItemGenerater
             //もらった値からスクリプタブルを持ってきてデータに従って生成
 
         }
+
     }
 }
 
