@@ -62,12 +62,12 @@ namespace ItemGenerater
                 }
             }
 
-            Debug.Log(fieldBase == null);
+            //Debug.Log(fieldBase == null);
 
-            for (int i = 0; i < fieldInfos.Count; i++)
-            {
-                Debug.Log($"infos[{i}] height = {fieldInfos[i].height} width = {fieldInfos[i].width}");
-            }
+            //for (int i = 0; i < fieldInfos.Count; i++)
+            //{
+            //    Debug.Log($"infos[{i}] height = {fieldInfos[i].height} width = {fieldInfos[i].width}");
+            //}
 
             fieldBase.CreateBrock(fieldInfos);
             InstanceTetris();

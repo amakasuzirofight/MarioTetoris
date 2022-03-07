@@ -8,6 +8,7 @@ public class GameStatus : MonoBehaviour
     [SerializeField] private EnemyToNumber enemyList;
     [SerializeField] private MinoToNumber minoBrockList;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject robot;
 
     [SerializeField] private bool DebugMode = false;
     [SerializeField] private Vector3 DebugPos = Vector3.zero;
@@ -19,6 +20,8 @@ public class GameStatus : MonoBehaviour
         {
             Utility_.playerObject = Instantiate(player);
             if (DebugMode) Utility_.playerObject.transform.position = DebugPos;
+            Utility_.robotObject = Instantiate(robot);
+            Utility_.robotObject.transform.position = Vector3.zero;
         }
         else
         {

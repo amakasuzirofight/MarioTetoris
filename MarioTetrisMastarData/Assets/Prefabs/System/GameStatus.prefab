@@ -47,5 +47,7 @@ MonoBehaviour:
   enemyList: {fileID: 11400000, guid: 4498f28c7eca77d47850e1f967a4fbc9, type: 2}
   minoBrockList: {fileID: 11400000, guid: c89379b76b198164590dd63420fcb6aa, type: 2}
   player: {fileID: 7184368151730898593, guid: 0ad0d006488f4de449ba0576977ceb62, type: 3}
+  robot: {fileID: 1515566093660676569, guid: 6a6bd2b83d39c314c9556890ee5b325b, type: 3}
   DebugMode: 0
   DebugPos: {x: 0, y: 0, z: 0}
+  CreateFlg: 0
