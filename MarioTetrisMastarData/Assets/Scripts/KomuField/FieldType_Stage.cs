@@ -9,8 +9,10 @@ namespace Field
 {
     public class FieldType_Stage : FieldBase
     {
+        private Dictionary<FieldInfo, GameObject> groundObject = new Dictionary<FieldInfo, GameObject>();
+
         int frameCount = 0;
-        int brockNumber = 10;
+        int brockNumber = 100;
         StreamWriter writer;
         public string[] setCharacters_;
         List<Brock> activeBrock = new List<Brock>();
@@ -119,23 +121,15 @@ namespace Field
                 activeBrock[activeBrock.Count - 1].csv_pos.Add(positions[i]);
                 activeBrock[activeBrock.Count - 1].minos.Add(Instantiate(Utility_.minoGeter[0]));
                 activeBrock[activeBrock.Count - 1].minos[activeBrock[activeBrock.Count - 1].minos.Count - 1].transform.position = FieldInfo.FieldInfoToVec(positions[i]);
-                groundObjects.Add(activeBrock[activeBrock.Count - 1].minos[i]);
+                groundObject[positions[i]] = activeBrock[activeBrock.Count - 1].minos[i];
+                // groundObjects.Add(activeBrock[activeBrock.Count - 1].minos[i]);
             }
 
         }
 
         public void DeleteBrock(int heightNum)
         {
-            for (int i = 0;i < activeBrock.Count;i++)
-            {
-                for (int j = 0;j < activeBrock[i].minos.Count;j++)
-                {
-                    if (activeBrock[i].csv_pos[j].height == heightNum)
-                    {
 
-                    }
-                }
-            }
         }
 
         private void FieldUpdate()
@@ -223,6 +217,8 @@ namespace Field
                 activeBrock[i].csv_pos[j] += new FieldInfo(1, 0);
                 activeBrock[i].minos[j].transform.position = new Vector3(activeBrock[i].csv_pos[j].width, activeBrock[i].csv_pos[j].height * -1, 0);
                 Utility_.FieldData[activeBrock[i].csv_pos[j].height][activeBrock[i].csv_pos[j].width] = activeBrock[i].brockNumGet();
+                groundObject[activeBrock[i].csv_pos[j]] = groundObject[activeBrock[i].csv_pos[j] - new FieldInfo(1,0)];
+                groundObject[activeBrock[i].csv_pos[j] - new FieldInfo(1, 0)] = default;
             }
         }
 
