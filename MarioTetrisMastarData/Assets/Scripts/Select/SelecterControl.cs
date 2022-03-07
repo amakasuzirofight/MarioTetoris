@@ -86,6 +86,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     }
     void Start()
     {
+        RobotObj = Utility_.robotObject;
         getItemBox = Utility.Locator<IGetItemBox>.GetT();
         itemDataChange = Utility.Locator<IItemDataChange>.GetT();
         itemDataChange.ChangeItemBoxValue += SynchroItem;
@@ -203,7 +204,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
         {
             spinCount = 0;
         }
-       
+
     }
     Field.FieldBase fieldBase;
     //あとでやる
@@ -329,7 +330,8 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     #region アイテム
     void GenerateItem()
     {
-        generator.GenerateItem(ViewItem(selectItemDic)[selectItemHighNum], RobotObj.transform.position);
+        //Debug.LogWarning(selectItemHighNum);
+        //generator.GenerateItem(ViewItem(selectItemDic)[selectItemHighNum], RobotObj.transform.position);
     }
     /// <summary>
     /// アイテムDicから入っていないアイテムを取り除いて並び変える　
@@ -378,6 +380,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     {
         if (selectState == SelectState.Spin) return;
         int num = power > 0 ? 1 : -1;
+        selectItemHighNum += num;
         if (selectItemHighNum + num > selectHighMaxNum)
         {
             selectItemHighNum = 0;
@@ -386,10 +389,9 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
         {
             selectItemHighNum = selectHighMaxNum;
         }
-        else
-        {
-            selectItemHighNum += num;
-        }
+        //else
+        //{
+        //}
     }
     #endregion
 

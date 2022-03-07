@@ -115,10 +115,11 @@ namespace Field
 
             for (int i = 0; i < positions.Count; i++)
             {
-                Utility_.FieldData[positions[i].height][positions[i].width] = brockNumber;
+                Utility_.FieldData[positions[i].height + 1][positions[i].width] = brockNumber;
                 activeBrock[activeBrock.Count - 1].csv_pos.Add(positions[i]);
                 activeBrock[activeBrock.Count - 1].minos.Add(Instantiate(Utility_.minoGeter[0]));
                 activeBrock[activeBrock.Count - 1].minos[activeBrock[activeBrock.Count - 1].minos.Count - 1].transform.position = FieldInfo.FieldInfoToVec(positions[i]);
+                groundObjects.Add(activeBrock[activeBrock.Count - 1].minos[i]);
             }
 
         }
@@ -140,6 +141,7 @@ namespace Field
                             break;
                         }
                         else if (activeBrock[i].brockNumGet() != Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width]
+                                 && Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width] < Utility_.BROCK_NUMBER_COUNT
                                  && Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width] != (int)FieldNumber.NONE) // ˆÚ“®æ‚ªˆá‚¤ƒuƒƒbƒN‚Å‚ ‚é‚È‚ç—Ž‰º–hŽ~
                         {
                             activeBrock[i].stateChenge(false);

@@ -22,7 +22,7 @@ namespace Robot
         // Start is called before the first frame update
         void Start()
         {
-            robotInput = inputObj.GetComponent<IRobotInput>();
+            robotInput = Utility.Locator<IRobotInput>.GetT();
         }
 
         // Update is called once per frame

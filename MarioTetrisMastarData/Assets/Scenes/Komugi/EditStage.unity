@@ -559,6 +559,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6845615898334920676, guid: 4fbd20db09097284182fa1b47903f93d, type: 3}
+      propertyPath: robot
+      value: 
+      objectReference: {fileID: 1515566093660676569, guid: 6a6bd2b83d39c314c9556890ee5b325b, type: 3}
+    - target: {fileID: 6845615898334920676, guid: 4fbd20db09097284182fa1b47903f93d, type: 3}
       propertyPath: CreateFlg
       value: 1
       objectReference: {fileID: 0}
