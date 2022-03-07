@@ -124,6 +124,20 @@ namespace Field
 
         }
 
+        public void DeleteBrock(int heightNum)
+        {
+            for (int i = 0;i < activeBrock.Count;i++)
+            {
+                for (int j = 0;j < activeBrock[i].minos.Count;j++)
+                {
+                    if (activeBrock[i].csv_pos[j].height == heightNum)
+                    {
+
+                    }
+                }
+            }
+        }
+
         private void FieldUpdate()
         {
             instanceBrock = default;
