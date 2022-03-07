@@ -118,6 +118,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     }
     private void Update()
     {
+        Debug.LogWarning(RandomTetrises[0]);
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (selectState == SelectState.Spin)
@@ -192,6 +193,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     #region テトリス
     void SpinMino(int num)
     {
+        spinCount += num;
         //超えたらもどす
         if (spinCount + num < 0)
         {
@@ -201,10 +203,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
         {
             spinCount = 0;
         }
-        else
-        {
-            spinCount += num;
-        }
+       
     }
     Field.FieldBase fieldBase;
     //あとでやる
@@ -216,8 +215,9 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     /// <param name="generatePos"></param>
     void GenerateTetrisVision(TetrisTypeEnum tetrisType, TetrisAngle angle, Vector3 generatePos)
     {
-        FieldInfo info = FieldInfo.VecToFieldInfo(generatePos);
-        //データ取得
+        fieldBase = Utility.Locator<Field.FieldBase>.GetT();
+        FieldInfo info = FieldInfo.VecToFieldInfo(RobotObj.transform.position);
+        List<FieldInfo> fieldInfos = new List<FieldInfo>();
         TetrisScriptableObject tetrisScriptable = getTetrisInfo.GetTetrimino(tetrisType, angle);
         for (int i = 3; i >= 0; i--)
         {
@@ -225,13 +225,21 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
             {
                 if (tetrisScriptable.tetriminoArrays[i, j])
                 {
-                    //データから位置を出す
-                    info.height = info.height + i;
-                    info.width = info.width - j;
-                    tetrisGuids[i].transform.position = FieldInfo.FieldInfoToVec(info);
+                    //データを読んで配列を並び変える
+                    FieldInfo infomation;
+                    infomation.width = j + info.width;
+                    infomation.height = i + info.height;
+
+                    fieldInfos.Add(infomation);
                 }
             }
         }
+        for (int i = 0; i < fieldInfos.Count; i++)
+        {
+            tetrisGuids[i].transform.position = FieldInfo.FieldInfoToVec(fieldInfos[i]);
+        }
+        //したにも表示
+        generatedUnderVision(fieldInfos);
     }
     void TetrisVisionBye()
     {
@@ -239,11 +247,17 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
         {
             tetrisGuids[i].transform.position = new Vector3(-100, 100, 0);
             tetrisUnderGuids[i].transform.position = tetrisGuids[i].transform.position;
+
         }
     }
-    void generatedUnderVision(TetrisTypeEnum tetrisType, TetrisAngle angle, Vector3 generatePos)
+    void generatedUnderVision(List<FieldInfo> infos)
     {
+        List<FieldInfo> fieldInfos = Brock.LimitChecker(infos);
 
+        for (int i = 0; i < fieldInfos.Count; i++)
+        {
+            tetrisUnderGuids[i].transform.position = FieldInfo.FieldInfoToVec(fieldInfos[i]);
+        }
     }
     void GenerateTetris(TetrisTypeEnum tetrisType)
     {
@@ -291,7 +305,6 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
                 //一度生成したミノをブラックリストに登録
                 GeneratedList.Add(rand);
                 oldTetrisType = rand;
-                Debug.LogWarning(rand);
                 return rand;
             }
         }

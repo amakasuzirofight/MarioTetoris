@@ -44,7 +44,6 @@ namespace ItemGenerater
         public void GenerateItem(TetrisTypeEnum tetrisType, TetrisAngle tetrisAngle, FieldInfo info)
         {
             fieldBase = Utility.Locator<Field.FieldBase>.GetT();
-            var temp = getPositionToInfo.GetPositionToInfo();
             List<FieldInfo> fieldInfos = new List<FieldInfo>();
             TetrisScriptableObject tetrisScriptable = getTetrisInfo.GetTetrimino(tetrisType, tetrisAngle);
             for (int i = 3; i  >= 0; i--/*int i = 0; i < 4; i++*/)
