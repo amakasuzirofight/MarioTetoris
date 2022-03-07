@@ -284,7 +284,8 @@ public class Brock
                     return basePos;
                 }
 
-                if (Utility_.FieldData[answer[i].height + 1][answer[i].width] != 0)
+                if (Utility_.FieldData[answer[i].height + 1][answer[i].width] < Utility_.BROCK_NUMBER_COUNT &&
+                    Utility_.FieldData[answer[i].height + 1][answer[i].width] != 0)
                 {
                     Debug.Log("out");
                     endFlg = true;

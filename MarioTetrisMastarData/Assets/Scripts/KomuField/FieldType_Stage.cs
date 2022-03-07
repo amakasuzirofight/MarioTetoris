@@ -140,6 +140,7 @@ namespace Field
                             break;
                         }
                         else if (activeBrock[i].brockNumGet() != Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width]
+                                 && activeBrock[i].brockNumGet() < Utility_.BROCK_NUMBER_COUNT
                                  && Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width] != (int)FieldNumber.NONE) // ˆÚ“®æ‚ªˆá‚¤ƒuƒƒbƒN‚Å‚ ‚é‚È‚ç—Ž‰º–hŽ~
                         {
                             activeBrock[i].stateChenge(false);
