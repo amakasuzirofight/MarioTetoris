@@ -762,7 +762,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 1009799484
     mosaicPosition: {x: 0, y: 0}
   - name: "\u53F3\u624B\uFF11\u7D50\u6676\u5149"
@@ -811,7 +811,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 1009799977
     mosaicPosition: {x: 0, y: 0}
   - name: "\u5DE6\u624B\uFF11\u7D50\u6676\u8272"
