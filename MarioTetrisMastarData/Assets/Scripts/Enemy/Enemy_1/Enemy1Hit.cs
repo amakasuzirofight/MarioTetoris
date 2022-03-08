@@ -14,6 +14,7 @@ namespace Enemy
 
             private Enemy1Core core;
 
+
             void Start()
             {
                 core = GetComponent<Enemy1Core>();
@@ -27,7 +28,7 @@ namespace Enemy
             }
 
 
-            // Playerに触れた時にダメージを与える(甘糟待ち)
+            // Playerに触れた時にダメージを与える
             private void OnCollisionEnter2D(Collision2D collision)
             {
                 if (collision.gameObject.TryGetComponent(out MarioCore at))

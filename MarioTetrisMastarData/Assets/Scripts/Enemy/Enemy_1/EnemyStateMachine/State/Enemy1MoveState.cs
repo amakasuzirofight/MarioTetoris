@@ -15,30 +15,27 @@ namespace Enemy
             public Enemy1StateType StateType => Enemy1StateType.MOVE;
             public event Action<Enemy1StateType> ChangeStateEvent;
 
-            private Enemy1Core core;
+            private Enemy1Core  core;
             private EnemyGround enemyGround;
             private Rigidbody2D rb;
 
+
             void IEnemy1State.OnStart(Enemy1StateType beforeState, Enemy1Core enemy)
             {
-                core ??= GetComponent<Enemy1Core>();
+                core        ??= GetComponent<Enemy1Core>();
                 enemyGround ??= GetComponent<EnemyGround>();
-                rb ??= GetComponent<Rigidbody2D>();
+                rb          ??= GetComponent<Rigidbody2D>();
             }
 
             void IEnemy1State.OnUpdate(Enemy1Core enemy)
             {
-                Debug.Log(StateType);
-
                 if (!enemyGround.CheckIsGround())
                 {
-                    Debug.Log("反転！");
                     dir *= -1;
                 }
 
                 // 移動メソッド
                 Move(rb, core.Spd);
-
             }
 
             void IEnemy1State.OnFixedUpdate(Enemy1Core enemy)
@@ -49,13 +46,14 @@ namespace Enemy
             {
             }
 
+
             // ステート変更メソッド
             private void StateChangeManager()
             {
                 ChangeStateEvent(Enemy1StateType.DAMAGED);
             }
 
-
+            // 当たり判定
             private void OnTriggerEnter2D(Collider2D collision)
             {
                 var player = collision.GetComponent<TestMarioAttack>();

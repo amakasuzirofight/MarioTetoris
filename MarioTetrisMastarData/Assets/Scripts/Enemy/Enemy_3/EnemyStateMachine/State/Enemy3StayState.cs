@@ -18,6 +18,7 @@ namespace Enemy
 
             private Enemy3Core core;
 
+
             void IEnemy3State.OnStart(Enemy3StateType beforeState, Enemy3Core enemy)
             {
                 core ??= GetComponent<Enemy3Core>();
@@ -25,7 +26,6 @@ namespace Enemy
 
             void IEnemy3State.OnUpdate(Enemy3Core enemy)
             {
-                Debug.Log(StateType);
                 StateChangeManager();
             }
 
@@ -37,6 +37,8 @@ namespace Enemy
             {
             }
 
+
+
             // ステート変更メソッド
             private void StateChangeManager()
             {
@@ -47,6 +49,7 @@ namespace Enemy
                 }
             }
 
+            // 当たり判定
             private void OnTriggerEnter2D(Collider2D collision)
             {
                 var player = collision.GetComponent<TestMarioAttack>();

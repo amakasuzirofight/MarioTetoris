@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Connector;
 
 namespace Enemy
 {
     namespace Enemy2State
     {
-        public class Enemy2StateManager : MonoBehaviour
+        public class Enemy2StateManager : MonoBehaviour,IEnemyUpdateSendable
         {
             // ステート変更する処理
 
@@ -50,7 +51,6 @@ namespace Enemy
 
                     // 最後にここでPlayerのステートを代入
                     enemyStateDic[state.StateType] = state;
-                    //Debug.Log(state.StateType);
 
                     // playerStateDicってのが現在のPlayerのステートを保持してる
                     // Dictionaryの[Key]にvalueを代入している
@@ -59,11 +59,6 @@ namespace Enemy
 
                     // playerStateDic[添え字] = 値をしている 
                 }
-            }
-
-            void Update()
-            {
-                enemyStateDic[crrentEnemy2State].OnUpdate(enemy2);
             }
 
             private void FixedUpdate()
@@ -89,7 +84,12 @@ namespace Enemy
 
                 enemyStateDic[crrentEnemy2State].OnStart(enemyState, enemy2);
             }
+
+            // Updateインタフェース
+            void IEnemyUpdateSendable.EnemyUpdate()
+            {
+                enemyStateDic[crrentEnemy2State].OnUpdate(enemy2);
+            }
         }
     }
-
 }

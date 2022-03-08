@@ -14,6 +14,8 @@ namespace Enemy
             [SerializeField, Tooltip("ŒŸ’m”ÍˆÍ")] private float diteRange;
             [SerializeField, Tooltip("UŒ‚ŒŸ’m”ÍˆÍ")] private float atkRange;
 
+            public bool AtkFlg { get; set; } = true; 
+
             void Start()
             {
                 StatusSet(hp, atkPow, spd, diteRange, atkRange);

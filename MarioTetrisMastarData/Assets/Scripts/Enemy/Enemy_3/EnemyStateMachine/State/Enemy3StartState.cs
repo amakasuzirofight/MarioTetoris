@@ -20,7 +20,6 @@ namespace Enemy
 
             void IEnemy3State.OnUpdate(Enemy3Core enemy)
             {
-                Debug.Log(StateType);
                 ChangeStateEvent(Enemy3StateType.STAY);
             }
 
