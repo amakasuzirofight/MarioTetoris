@@ -48,7 +48,7 @@ namespace RobotItem
         }
         void Start()
         {
-            ItemBox = new Dictionary<ItemName, int>();
+            //ItemBox = new Dictionary<ItemName, int>();
 
             //èâä˙âª
             for (int i = 0; i < (int)ItemName.Count; i++)

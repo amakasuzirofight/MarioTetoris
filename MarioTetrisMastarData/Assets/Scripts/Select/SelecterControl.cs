@@ -11,7 +11,7 @@ using Select;
 
 public class SelecterControl : MonoBehaviour, ISelectedItem
 {
-    [SerializeField] GameObject RobotObj;
+    GameObject RobotObj;
     [SerializeField] List<Sprite> itemSprites;
     [SerializeField] Sprite nullSpr;
     [SerializeField] Image tetrisImage;
@@ -19,12 +19,14 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     [SerializeField] Image selectCursor;
     [SerializeField] Text tetrisCountText;
     [SerializeField] Text ItemCountText;
+    [Space(20), SerializeField] GameObject guideObj;
 
     IGetItemBox getItemBox;
     IItemDataChange itemDataChange;
     IRemoveItems removeItems;
     ISelectInput selectInput;
     IGenerator generator;
+    IGetTetrisInfo getTetrisInfo;
 
     //現在何を選択しているかステータス
     SelectState selectState;
@@ -48,9 +50,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     int selectItemHighNum;
     //アイテムの縦の上限値
     int selectHighMaxNum;
-
     int spinCount;
-
     int tetCount;
     //名前に対応したロゴを格納
     Dictionary<ItemName, Sprite> ItemSpriteDic = new Dictionary<ItemName, Sprite>();
@@ -76,12 +76,17 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     //控えテトリス
     TetrisTypeEnum[] RandomTetrises = new TetrisTypeEnum[3];
 
+    //エセオブジェクトプール　テトリスのガイド
+    private GameObject[] tetrisGuids = new GameObject[4];
+    //下に出るガイド
+    private GameObject[] tetrisUnderGuids = new GameObject[4];
     private void Awake()
     {
         Utility.Locator<ISelectedItem>.Bind(this);
     }
     void Start()
     {
+        RobotObj = Utility_.robotObject;
         getItemBox = Utility.Locator<IGetItemBox>.GetT();
         itemDataChange = Utility.Locator<IItemDataChange>.GetT();
         itemDataChange.ChangeItemBoxValue += SynchroItem;
@@ -93,6 +98,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
         selectInput.MouceWhileEvent += CursollScroll;
 
         generator = Utility.Locator<IGenerator>.GetT();
+        getTetrisInfo = Utility.Locator<IGetTetrisInfo>.GetT();
 
         TetrisTableReflash();
         //どんなテトリスをだすかを最初に3つ生成
@@ -100,11 +106,36 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
         {
             RandomTetrises[i] = GetRandomTetrisType();
         }
+        //エセオブジェクトプール生成
+        for (int i = 0; i < 4; i++)
+        {
+            var temp1 = Instantiate(guideObj);
+            temp1.transform.position = new Vector3(-100, -100, 0);
+            var temp2 = Instantiate(guideObj);
+            temp2.transform.position = new Vector3(-100, -100, 0);
+            tetrisGuids[i] = temp1;
+            tetrisUnderGuids[i] = temp2;
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (selectState == SelectState.Spin)
+            {
+                selectState = SelectState.Select;
+            }
+        }
+        if (selectState == SelectState.Spin)
+        {
+            GenerateTetrisVision(RandomTetrises[0], (TetrisAngle)spinCount, RobotObj.transform.position);
+        }
+        else
+        {
+            TetrisVisionBye();
+        }
     }
 
-    void Update()
-    {
-    }
     void CursollMove(SelectButtonType buttonType)
     {
         //アイテム選択中の時
@@ -124,6 +155,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
                         //生成できる数に満たない場合リターン
                         if (getItemBox.GetTetris() < 4) return;
                         spinCount = 0;
+                        GenerateTetrisVision(RandomTetrises[0], (TetrisAngle)spinCount, RobotObj.transform.position);
                         selectState = SelectState.Spin;
                     }
                     else
@@ -136,10 +168,9 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
                     break;
             }
         }
+        //回転モードの時
         if (selectState == SelectState.Spin)
         {
-
-
             switch (buttonType)
             {
                 case SelectButtonType.MouceLeft:
@@ -157,34 +188,85 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
                 default:
                     break;
             }
-            GenerateTetrisVision();
+            /* GenerateTetrisVision*//*(RandomTetrises[0], (TetrisAngle)spinCount, RobotObj.transform.position);*/
         }
     }
     #region テトリス
     void SpinMino(int num)
     {
+        spinCount += num;
         //超えたらもどす
         if (spinCount + num < 0)
         {
-            spinCount = 4;
+            spinCount = 3;
         }
         else if (spinCount + num > 4)
         {
             spinCount = 0;
         }
-        else
+
+    }
+    Field.FieldBase fieldBase;
+    /// <summary>
+    /// テトリスのガイド生成
+    /// </summary>
+    /// <param name="tetrisType"></param>
+    /// <param name="angle"></param>
+    /// <param name="generatePos"></param>
+    void GenerateTetrisVision(TetrisTypeEnum tetrisType, TetrisAngle angle, Vector3 generatePos)
+    {
+        fieldBase = Utility.Locator<Field.FieldBase>.GetT();
+        FieldInfo info = FieldInfo.VecToFieldInfo(RobotObj.transform.position);
+        List<FieldInfo> fieldInfos = new List<FieldInfo>();
+        TetrisScriptableObject tetrisScriptable = getTetrisInfo.GetTetrimino(tetrisType, angle);
+        for (int i = 3; i >= 0; i--)
         {
-            spinCount += num;
+            for (int j = 0; j < 4; j++)
+            {
+                if (tetrisScriptable.tetriminoArrays[i, j])
+                {
+                    //データを読んで配列を並び変える
+                    FieldInfo infomation;
+                    infomation.width = j + info.width;
+                    infomation.height = i + info.height;
+
+                    fieldInfos.Add(infomation);
+                }
+            }
+        }
+        for (int i = 0; i < fieldInfos.Count; i++)
+        {
+            tetrisGuids[i].transform.position = FieldInfo.FieldInfoToVec(fieldInfos[i]);
+        }
+        //したにも表示
+        generatedUnderVision(fieldInfos);
+    }
+    void TetrisVisionBye()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            tetrisGuids[i].transform.position = new Vector3(-100, 100, 0);
+            tetrisUnderGuids[i].transform.position = tetrisGuids[i].transform.position;
+
         }
     }
-
-    //あとでやる
-    void GenerateTetrisVision()
+    void generatedUnderVision(List<FieldInfo> infos)
     {
+        List<FieldInfo> fieldInfos = Brock.LimitChecker(infos);
 
+        for (int i = 0; i < fieldInfos.Count; i++)
+        {
+            tetrisUnderGuids[i].transform.position = FieldInfo.FieldInfoToVec(fieldInfos[i]);
+        }
     }
     void GenerateTetris(TetrisTypeEnum tetrisType)
     {
+        //生成しようとする位置にブロックがあった場合、生成しない
+        if (generator.CanGenerateTetris(tetrisType, (TetrisAngle)spinCount, FieldInfo.VecToFieldInfo(RobotObj.transform.position))==false)
+        {
+            Debug.LogError("なんかあるから出しません");
+            return;
+        }
         generator.GenerateItem(tetrisType, (TetrisAngle)spinCount, FieldInfo.VecToFieldInfo(RobotObj.transform.position));
         //新しいテトリスのデータを生成
         for (int i = 0; i < RandomTetrises.Length; i++)
@@ -229,7 +311,6 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
                 //一度生成したミノをブラックリストに登録
                 GeneratedList.Add(rand);
                 oldTetrisType = rand;
-                Debug.LogWarning(rand);
                 return rand;
             }
         }
@@ -248,10 +329,14 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     }
 
     #endregion
+    #region ガイド
+
+    #endregion
     #region アイテム
     void GenerateItem()
     {
-        generator.GenerateItem(ViewItem(selectItemDic)[selectItemHighNum], RobotObj.transform.position);
+        //Debug.LogWarning(selectItemHighNum);
+        //generator.GenerateItem(ViewItem(selectItemDic)[selectItemHighNum], RobotObj.transform.position);
     }
     /// <summary>
     /// アイテムDicから入っていないアイテムを取り除いて並び変える　
@@ -300,6 +385,7 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
     {
         if (selectState == SelectState.Spin) return;
         int num = power > 0 ? 1 : -1;
+        selectItemHighNum += num;
         if (selectItemHighNum + num > selectHighMaxNum)
         {
             selectItemHighNum = 0;
@@ -308,10 +394,9 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
         {
             selectItemHighNum = selectHighMaxNum;
         }
-        else
-        {
-            selectItemHighNum += num;
-        }
+        //else
+        //{
+        //}
     }
     #endregion
 

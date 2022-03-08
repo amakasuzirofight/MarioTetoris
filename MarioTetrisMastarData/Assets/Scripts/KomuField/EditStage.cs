@@ -22,27 +22,51 @@ public class EditStage : MonoBehaviour
 
     [SerializeField] private Text debugText;
     [SerializeField] private Text systemText;
+    [SerializeField] private Image image;
+    [SerializeField] private GameObject glid;
 
-    const int ACTICVE_STAGELIMIT = 20;
+    const int ACTICVE_STAGELIMIT_WIDTH = 80;
+    const int ACTICVE_STAGELIMIT_HEIGHT = 20;
 
-    [SerializeField] GameObject sample;
     [SerializeField] GameObject cursor;
-    [SerializeField] Vector2 samplePos;
+    [SerializeField] private int defaultPlayerPos_H = 17;
+    [SerializeField] private int defaultPlayerPos_W = 3;
     // Start is called before the first frame update
     void Start()
     {
         position = new FieldInfo(0,0);
         state = EditState.Glid_select;
         state_ = SelectState.Item_select;
-        limitNumber = 5;
+        limitNumber = Utility_.BROCK_NUMBER_COUNT;
         downLimitNumber = 1;
 
-        for (int i = 0;i < ACTICVE_STAGELIMIT;i++)
+        for (int i = 0;i < ACTICVE_STAGELIMIT_WIDTH;i++)
         {
-            for (int j = 0;j < ACTICVE_STAGELIMIT;j++)
+            for (int j = 0;j < ACTICVE_STAGELIMIT_HEIGHT;j++)
             {
-                AddItems[new FieldInfo(j, i)] = 0;
-                FieldObject[new FieldInfo(j, i)] = null;
+                if (i == defaultPlayerPos_W && j == defaultPlayerPos_H)
+                {
+                    FieldInfo info = new FieldInfo(defaultPlayerPos_H, defaultPlayerPos_W);
+                    AddItems[info] = Utility_.PLAYER_NUMBER;
+                    FieldObject[info] = Instantiate(new GameObject());
+                    SpriteRenderer spRen = FieldObject[info].AddComponent<SpriteRenderer>();
+                    spRen.sprite = Utility_.playerObject.GetComponent<SpriteRenderer>().sprite;
+                    FieldObject[info].transform.position = FieldInfo.FieldInfoToVec(info);
+                }
+                else if (j == ACTICVE_STAGELIMIT_HEIGHT - 1)
+                {
+                    FieldInfo info = new FieldInfo(j, i);
+                    AddItems[info] = 1;
+                    FieldObject[info] = Instantiate(Utility_.objectGeter[1]);
+                    FieldObject[info].transform.position = FieldInfo.FieldInfoToVec(info);
+                }
+                else
+                {
+                    FieldInfo info = new FieldInfo(j, i);
+                    AddItems[info] = 0;
+                    FieldObject[info] = Instantiate(glid);
+                    FieldObject[info].transform.position = FieldInfo.FieldInfoToVec(info);
+                }
             }
         }
         num = 1;
@@ -52,35 +76,53 @@ public class EditStage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        debugText.text = $"create position = {position.height},{position.width}\ncreate Number = {num}\nS Key StageSave\nEditMode = {state}\nSelectMode = {state_}\nA Key Let's Play";
+        cam.transform.position = new Vector3(cursor.transform.position.x,cursor.transform.position.y,-10);
+        debugText.text = $"create position = {position.height},{position.width}\nShift Key StageSave\nEditMode = {state}\nSelectMode = {state_}\nSpace Key Let's Play";
+        systemText.text = "W or S Key => SelectModeChenge\nA and D Key => ItemChenge\nCtrl Key => EditMode Chenge\nArrow Key => CursorMove";
 
-        systemText.text = $"up or down ArrowKey => select Chenge\nSpace Key => ItemElase\nEnter Key => Glid select";
         SelectTime();
+        EditModeCommand();
 
         switch (state)
         {
             case EditState.Glid_select:
-                systemText.text = "backSpace Key => Brock Select\nEnter Key => ItemCreate";
-                curcolMove();
+                systemText.text += "\nEnter Key => ItemCreate";
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
+                    if (AddItems[position] == Utility_.PLAYER_NUMBER) return;
                     int addNum = state_ == SelectState.Item_select ? 0 : Utility_.BROCK_NUMBER_COUNT;
                     if (FieldObject[position] != null) Destroy(FieldObject[position]);
                     AddItems[position] = num + addNum;
-                    FieldObject[position] = Instantiate(sample);
+                    if (state_ == SelectState.Item_select) FieldObject[position] = Instantiate(Utility_.objectGeter[num]);
+                    else if (state_ == SelectState.Enemy_select)
+                    {
+                        GameObject newObj = Instantiate(new GameObject());
+                        SpriteRenderer spRen = newObj.AddComponent<SpriteRenderer>();
+                        spRen.sprite = Utility_.enemyGeter[num].GetComponent<SpriteRenderer>().sprite;
+                        FieldObject[position] = Instantiate(newObj);
+                    }
                     FieldObject[position].transform.position = FieldInfo.FieldInfoToVec(position);
                 }
                 break;
             case EditState.Elase_Mode:
-                systemText.text = "backSpace Key => Brock Select\nEnter Key => ItemElase";
-                curcolMove();
+                systemText.text += "\nEnter Key => ItemElase";
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
+                    if (AddItems[position] == Utility_.PLAYER_NUMBER) return;
                     Debug.Log("delete");
                     AddItems[position] = 0;
                     if (FieldObject[position] != null) Destroy(FieldObject[position]);
+                    FieldObject[position] = Instantiate(glid);
+                    FieldObject[position].transform.position = FieldInfo.FieldInfoToVec(position);
                 }
                 break;
+        }
+
+        systemText.text += "\n\n!!handling warning!!\nbackSpace Key => ExistingData Create";
+
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Restore();
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
@@ -94,21 +136,38 @@ public class EditStage : MonoBehaviour
         }
     }
 
+    public void EditModeCommand()
+    {
+        curcolMove();
+
+        if (Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            state = state == EditState.Glid_select ? EditState.Elase_Mode : EditState.Glid_select;
+
+            StateChenge(state);
+        }
+    }
+
     public void CreateSample()
     {
-        Destroy(sample);
-        if (state_ == SelectState.Item_select) sample = Instantiate(Utility_.objectGeter[num]);
-        else if (state_ == SelectState.Enemy_select) sample = Instantiate(Utility_.enemyGeter[num]);
-        sample.transform.position = samplePos;
+        if (state_ == SelectState.Item_select) 
+        {
+            image.sprite = Utility_.objectGeter[num].GetComponent<SpriteRenderer>().sprite;
+        }
+        if (state_ == SelectState.Enemy_select)
+        {
+            image.sprite = Utility_.enemyGeter[num].GetComponent<SpriteRenderer>().sprite;
+        }
+
     }
 
     public void curcolMove()
     {
         cursor.transform.position = FieldInfo.FieldInfoToVec(position);
-        if (Input.GetKeyDown(KeyCode.RightArrow) && position.width + 1 < ACTICVE_STAGELIMIT) position.width++;
+        if (Input.GetKeyDown(KeyCode.RightArrow) && position.width + 1 < ACTICVE_STAGELIMIT_WIDTH) position.width++;
         if (Input.GetKeyDown(KeyCode.LeftArrow) && position.width - 1 >= 0) position.width--;
         if (Input.GetKeyDown(KeyCode.UpArrow) && position.height - 1 >= 0) position.height--;
-        if (Input.GetKeyDown(KeyCode.DownArrow) && position.height + 1 < ACTICVE_STAGELIMIT) position.height++;
+        if (Input.GetKeyDown(KeyCode.DownArrow) && position.height + 1 < ACTICVE_STAGELIMIT_HEIGHT) position.height++;
     }
 
     public void StateChenge(SelectState newState)
@@ -119,14 +178,14 @@ public class EditStage : MonoBehaviour
                 num = 1;
                 state_ = SelectState.Item_select;
                 CreateSample();
-                limitNumber = 5;
+                limitNumber = Utility_.BROCK_NUMBER_COUNT;
                 downLimitNumber = 1;
                 break;
             case SelectState.Enemy_select:
                 num = 0;
                 state_ = SelectState.Enemy_select;
                 CreateSample();
-                limitNumber = 2;
+                limitNumber = 3;
                 downLimitNumber = 0;
                 break;
         }
@@ -137,13 +196,12 @@ public class EditStage : MonoBehaviour
         switch (newState)
         {
             case EditState.Glid_select:
-                num += number;
+                if (state_ == SelectState.Item_select) num = 1;
+                else num = 0;
                 state = EditState.Glid_select;
                 break;
             case EditState.Elase_Mode:
                 num = 0;
-                limitNumber = 0;
-                Destroy(sample);
                 state = EditState.Elase_Mode;
                 break;
         }
@@ -177,12 +235,12 @@ public class EditStage : MonoBehaviour
     {
         CreateStageData createStage = new CreateStageData();
 
-        for (int i = 0;i < ACTICVE_STAGELIMIT;i++)
+        for (int i = 0;i < ACTICVE_STAGELIMIT_HEIGHT;i++)
         {
-            for (int j = 0;j < ACTICVE_STAGELIMIT;j++)
+            for (int j = 0;j < ACTICVE_STAGELIMIT_WIDTH;j++)
             {
                 createStage.datastr += AddItems[new FieldInfo(i,j)].ToString();
-                if (j != ACTICVE_STAGELIMIT - 1) createStage.datastr += ",";
+                if (j != ACTICVE_STAGELIMIT_WIDTH - 1) createStage.datastr += ",";
             }
 
             createStage.datastr += "\n";
@@ -198,6 +256,56 @@ public class EditStage : MonoBehaviour
         Debug.Log("save Compleate");
     }
 
+    public void Restore()
+    {
+        StreamReader reader = new StreamReader(Application.dataPath + "/CreateStage/" + saveFile.name + ".json"); //受け取ったパスのファイルを読み込む
+        string datastr = reader.ReadToEnd();//ファイルの中身をすべて読み込む
+        reader.Close();//ファイルを閉じる
+
+        CreateStageData stageData = JsonUtility.FromJson<CreateStageData>(datastr);
+
+        List<int[]> list = Utility_.StringListToIntList(stageData.datastr);
+
+        for (int i = 0; i < list.Count; i++)
+        {
+            for (int j = 0; j < list[i].Length; j++)
+            {
+                FieldInfo info = new FieldInfo(i, j);
+                AddItems[info] = list[i][j];
+                if (FieldObject[info] != null) Destroy(FieldObject[info]);
+
+                if (list[i][j] != 0)
+                {
+                    if (list[i][j] < Utility_.BROCK_NUMBER_COUNT)
+                    {
+                        FieldObject[info] = Instantiate(Utility_.objectGeter[list[i][j]]);
+                        FieldObject[info].transform.position = FieldInfo.FieldInfoToVec(info);
+                    }
+                    else if (list[i][j] < Utility_.BROCK_NUMBER_COUNT + Utility_.ENEMY_NUMBER_COUNT)
+                    {
+                        FieldObject[info] = Instantiate(new GameObject());
+                        SpriteRenderer spRen = FieldObject[info].AddComponent<SpriteRenderer>();
+                        spRen.sprite = Utility_.enemyGeter[list[i][j] - Utility_.BROCK_NUMBER_COUNT].GetComponent<SpriteRenderer>().sprite;
+                        FieldObject[info].transform.position = FieldInfo.FieldInfoToVec(info);
+                    }
+                    else if (list[i][j] == Utility_.PLAYER_NUMBER)
+                    {
+                        FieldObject[info] = Instantiate(new GameObject());
+                        SpriteRenderer spRen = FieldObject[new FieldInfo(i, j)].AddComponent<SpriteRenderer>();
+                        spRen.sprite = Utility_.playerObject.GetComponent<SpriteRenderer>().sprite;
+                        FieldObject[info].transform.position = FieldInfo.FieldInfoToVec(info);
+                        
+                    }
+                }
+                else
+                {
+                    FieldObject[info] = Instantiate(glid);
+                    AddItems[info] = 0;
+                }
+            }
+        }
+    }
+
     public enum EditState
     {
         Elase_Mode,
@@ -210,4 +318,3 @@ public class EditStage : MonoBehaviour
         Enemy_select,
     }
 }
-

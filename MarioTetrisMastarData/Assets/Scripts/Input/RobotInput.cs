@@ -7,6 +7,11 @@ namespace Inputer
     public class RobotInput : MonoBehaviour, IRobotInput
     {
         float movePower;
+        void Awake()
+        {
+            Utility.Locator<IRobotInput>.Bind(this);
+        }
+
         // Start is called before the first frame update
         void Start()
         {

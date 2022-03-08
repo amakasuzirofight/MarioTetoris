@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7184368151730898601}
   - component: {fileID: 7184368151730898602}
-  - component: {fileID: 7184368151730898603}
   - component: {fileID: 7184368151730898604}
   - component: {fileID: 7184368151730898592}
   - component: {fileID: 7184368151730898605}
@@ -18,7 +17,7 @@ GameObject:
   - component: {fileID: 7184368151730898607}
   m_Layer: 0
   m_Name: Mario
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7184368151730898593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.04, y: -10.04, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 7184368153623078258}
   m_Father: {fileID: 0}
@@ -89,32 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7184368151730898603
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7184368151730898593}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.9281204, y: -0.35}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16, y: 12}
-    newSize: {x: 16, y: 12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 6.9508233, y: 10.781841}
-  m_EdgeRadius: 0
 --- !u!50 &7184368151730898604
 Rigidbody2D:
   serializedVersion: 4
@@ -130,8 +103,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 1.6
+  m_Material: {fileID: 6200000, guid: 85859f0e65afc944db9c24d4c98a0c37, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -150,7 +123,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.95423657, y: -0.7807398}
-  m_Size: {x: 7.3251176, y: 10.968567}
+  m_Size: {x: 6.62, y: 10.05}
   m_Direction: 0
 --- !u!114 &7184368151730898605
 MonoBehaviour:
@@ -165,9 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TestAttackCol: {fileID: 7184368153623078261}
-  speed: 3
-  jumpPower: 5
-  inputObj: {fileID: 0}
+  speed: 4
+  jumpPower: 8
   marioJump: {fileID: 7184368151730898606}
   marioWalk: {fileID: 7184368151730898607}
   layerMask:

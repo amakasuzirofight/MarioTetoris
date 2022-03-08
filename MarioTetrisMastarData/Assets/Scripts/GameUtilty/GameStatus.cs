@@ -8,14 +8,25 @@ public class GameStatus : MonoBehaviour
     [SerializeField] private EnemyToNumber enemyList;
     [SerializeField] private MinoToNumber minoBrockList;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject robot;
 
     [SerializeField] private bool DebugMode = false;
     [SerializeField] private Vector3 DebugPos = Vector3.zero;
+    [SerializeField] private bool CreateFlg = false;
 
     void Awake()
     {
-        Utility_.playerObject = Instantiate(player);
-        if (DebugMode) Utility_.playerObject.transform.position = DebugPos;
+        if (!CreateFlg)
+        {
+            Utility_.playerObject = Instantiate(player);
+            if (DebugMode) Utility_.playerObject.transform.position = DebugPos;
+            Utility_.robotObject = Instantiate(robot);
+            Utility_.robotObject.transform.position = Vector3.zero;
+        }
+        else
+        {
+            Utility_.playerObject = player;
+        }
 
         for (int i = 0;i < activeBrockList.objectsList.Length;i++)
         {

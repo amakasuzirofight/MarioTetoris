@@ -21,6 +21,7 @@ public static class Utility_
 
     public static List<bool> stageFlgList;
     public static GameObject playerObject;
+    public static GameObject robotObject;
 
     public const int BROCK_NUMBER_COUNT = 20;
     public const int ENEMY_NUMBER_COUNT = 20;
@@ -32,14 +33,14 @@ public static class Utility_
         private set => fieldState = value;
     }
 
-    public static void MessageSetting()
+    public static void MessageSetting(bool stateChenge = true)
     {
         if (systemMessage == null || systemMessage == default)
         {
             systemMessage = GameObject.Find("Canvas").GetComponentInChildren<Text>();
             systemMessage.gameObject.SetActive(false);
         }
-        GameState = FieldState.CONVERSATION;
+        if (stateChenge) GameState = FieldState.CONVERSATION;
     }
 
     public static void MessageWriter()
@@ -284,7 +285,8 @@ public class Brock
                     return basePos;
                 }
 
-                if (Utility_.FieldData[answer[i].height + 1][answer[i].width] != 0)
+                if (Utility_.FieldData[answer[i].height + 1][answer[i].width] < Utility_.BROCK_NUMBER_COUNT &&
+                    Utility_.FieldData[answer[i].height + 1][answer[i].width] != 0)
                 {
                     Debug.Log("out");
                     endFlg = true;
