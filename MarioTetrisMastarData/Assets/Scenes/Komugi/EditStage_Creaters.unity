@@ -152,9 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97cfeeb7a9952ca479f413ccc8852ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveFile: {fileID: 0}
+  temporarilySaved: {fileID: 4900000, guid: 1fb0d56f5b237a244bbd610618c83a02, type: 3}
+  SaveData: {fileID: 4900000, guid: f5c8e34435440fc4bbe2accbf9cd99f1, type: 3}
+  fileName: CreateStage
   cam: {fileID: 798469458}
-  debugText: {fileID: 580437008}
+  debugText: {fileID: 801225585}
   systemText: {fileID: 580437008}
   image: {fileID: 257307775}
   glid: {fileID: 1070300680078303608, guid: e19989e3d6f70c545a192058f1767efd, type: 3}
@@ -1011,7 +1013,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1891855120789479077, guid: c8a819bf06b46274eb7fa4160e4f8740, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8aafa685c261f4f4f9336d8170906e70, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

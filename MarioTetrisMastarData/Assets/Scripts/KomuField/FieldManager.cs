@@ -8,6 +8,7 @@ namespace Field
     public class FieldManager : MonoBehaviour
     {
         [SerializeField] private FieldBase baseScene;
+        [SerializeField] private GameObject mainCamara;
         FieldBase nowField;
         GameObject activeSceneObject;
         FieldState state;
@@ -35,6 +36,8 @@ namespace Field
         // Update is called once per frame
         void Update()
         {
+            mainCamara.transform.position = new Vector3(Utility_.playerObject.transform.position.x,Utility_.playerObject.transform.position.y,-10);
+
             switch (Utility_.GameState)
             {
                 case FieldState.NORMAL:
