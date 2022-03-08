@@ -42,7 +42,6 @@ namespace Enemy
                 if (!core.WaitTime(transTimeCount)) return;
                 ChangeStateEvent(EnemyBossStateType.IDLE);
             }
-
         }
     }
 }
