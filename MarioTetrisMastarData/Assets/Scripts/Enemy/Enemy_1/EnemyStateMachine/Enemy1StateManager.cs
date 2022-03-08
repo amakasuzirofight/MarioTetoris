@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Connector;
 
 namespace Enemy
 {
     namespace Enemy1State
     {
-        public class Enemy1StateManager : MonoBehaviour
+        public class Enemy1StateManager : MonoBehaviour,IEnemyUpdateSendable
         {
             // ステート変更する処理
 
@@ -61,11 +62,6 @@ namespace Enemy
                 }
             }
 
-            void Update()
-            {
-                enemyStateDic[crrentEnemy1State].OnUpdate(enemy1);
-            }
-
             private void FixedUpdate()
             {
                 enemyStateDic[crrentEnemy1State].OnFixedUpdate(enemy1);
@@ -89,7 +85,13 @@ namespace Enemy
 
                 enemyStateDic[crrentEnemy1State].OnStart(enemyState, enemy1);
             }
+
+
+            // Updateインタフェース
+            void IEnemyUpdateSendable.EnemyUpdate()
+            {
+                enemyStateDic[crrentEnemy1State].OnUpdate(enemy1);
+            }
         }
     }
-
 }

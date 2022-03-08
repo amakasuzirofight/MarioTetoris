@@ -7,11 +7,14 @@ using Mario;
 namespace Enemy
 {
     namespace Enemy3State
-    {
+   {
         public class Enemy3Hit : EnemyBaseHPManager, IDamageRecevable
         {
+            // Enemy3‚ÌÚG”»’èˆ—
+
             private IDamageRecevable damageRecevable;
             private Enemy3Core core;
+
 
             void Start()
             {

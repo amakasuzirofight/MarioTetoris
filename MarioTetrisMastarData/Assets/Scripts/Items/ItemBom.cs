@@ -16,7 +16,11 @@ namespace Items
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            
+            if(TryGetComponent<IDamageRecevable>(out var toPlayerHit))
+            {
+                toPlayerHit.DamageRecevable(damageAmount);
+                Hit();
+            }
         }
     }
 }

@@ -15,12 +15,13 @@ namespace Enemy
             private IDamageRecevable damageRecevable;
             private Enemy2Core core;
 
-            // Start is called before the first frame update
+
             void Start()
             {
                 damageRecevable = GetComponent<IDamageRecevable>();
                 core = GetComponent<Enemy2Core>();
             }
+
 
             // Player‚ÉG‚ê‚½‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é(ŠÃ‘Œ‘Ò‚¿)
             private void OnCollisionEnter2D(Collision2D collision)

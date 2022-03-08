@@ -6,9 +6,10 @@ namespace Enemy
 {
     namespace EnemyBossState
     {
-        public class EnemyBossSpit : MonoBehaviour
+        public class EnemyBossBullet : MonoBehaviour
         {
-            [SerializeField] private GameObject faceObj;
+            // íeÇÃãììÆèàóù
+
             [SerializeField] private float spd;
             private GameObject player;
             private Rigidbody2D rb;
@@ -17,7 +18,6 @@ namespace Enemy
             {
                 player = Utility_.playerObject;
                 rb = GetComponent<Rigidbody2D>();
-                //transform.position = faceObj.transform.position;
                 Shot();
             }
 
@@ -33,7 +33,7 @@ namespace Enemy
             private void Delete() 
             {
                 // íeÇ™è¡Ç¶ÇÈ
-                Destroy(gameObject, 3f);
+                Destroy(gameObject, 5f);
             }
         }
 

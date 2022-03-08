@@ -11,23 +11,21 @@ namespace Enemy
         {
             //EnemyのStay状態処理
 
-            
-
             public Enemy2StateType StateType => Enemy2StateType.STAY;
             public event Action<Enemy2StateType> ChangeStateEvent;
 
             private GameObject player;
             private Enemy2Core core;
 
+
             void IEnemy2State.OnStart(Enemy2StateType beforeState, Enemy2Core enemy)
             {
                 player ??= Utility_.playerObject;
-                core ??= GetComponent<Enemy2Core>();
+                core   ??= GetComponent<Enemy2Core>();
             }
 
             void IEnemy2State.OnUpdate(Enemy2Core enemy)
             {
-                Debug.Log(StateType);
                 StateChangeManager();
             }
 
@@ -39,6 +37,7 @@ namespace Enemy
             {
             }
 
+
             private void StateChangeManager() 
             {
                 // オブジェクトが検知範囲に入った場合
@@ -48,7 +47,7 @@ namespace Enemy
                 }
             }
 
-
+            // 当たり判定
             private void OnTriggerEnter2D(Collider2D collision)
             {
                 var player = collision.GetComponent<TestMarioAttack>();

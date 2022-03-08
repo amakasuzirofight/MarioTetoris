@@ -11,29 +11,25 @@ namespace Enemy
         {
             // Enemy‚ÌAttackó‘Ôˆ—
 
-            
-
             public Enemy2StateType StateType => Enemy2StateType.ATTACK;
             public event Action<Enemy2StateType> ChangeStateEvent;
 
             private GameObject player;
             private Enemy2Core core;
+
             private float time = 0f;
             private float attackTimeCount = 5f;
             private float transTimeCount  = 3f;
 
 
-
             void IEnemy2State.OnStart(Enemy2StateType beforeState, Enemy2Core enemy)
             {
                 player ??= Utility_.playerObject;
-                core ??= GetComponent<Enemy2Core>();
+                core   ??= GetComponent<Enemy2Core>();
             }
 
             void IEnemy2State.OnUpdate(Enemy2Core enemy)
             {
-                Debug.Log(StateType);
-
                 // ‚±‚ÌŠÔ‚É‘Ò‚¿ŠÔ‚ğì‚é
                 if (WaitTime(attackTimeCount))
                 { 
@@ -70,6 +66,7 @@ namespace Enemy
                 }
             }
 
+            // “–‚½‚è”»’è
             private void OnTriggerEnter2D(Collider2D collision)
             {
                 var player = collision.GetComponent<TestMarioAttack>();

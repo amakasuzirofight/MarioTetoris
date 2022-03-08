@@ -14,13 +14,13 @@ namespace Enemy
             public Enemy1StateType StateType => Enemy1StateType.START;
             public event Action<Enemy1StateType> ChangeStateEvent;
 
+
             void IEnemy1State.OnStart(Enemy1StateType beforeState, Enemy1Core enemy)
             {
             }
 
             void IEnemy1State.OnUpdate(Enemy1Core enemy)
             {
-                Debug.Log(StateType);
                 ChangeStateEvent(Enemy1StateType.MOVE);
             }
 
@@ -32,8 +32,5 @@ namespace Enemy
             {
             }
         }
-
     }
-
-
 }

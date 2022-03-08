@@ -16,18 +16,19 @@ namespace Enemy
             public Enemy1StateType StateType =>  Enemy1StateType.DAMAGED;
             public event Action<Enemy1StateType> ChangeStateEvent;
 
-            private Enemy1Core core;
-            private GameObject player;
+            private Enemy1Core  core;
+            private GameObject  player;
             private Rigidbody2D rb;
 
             private float time = 0f;
             private const float TRANS_COUNT = 0.8f;
 
+
             void IEnemy1State.OnStart(Enemy1StateType beforeState, Enemy1Core enemy)
             {
                 player ??= Utility_.playerObject;
-                core ??= GetComponent<Enemy1Core>();
-                rb   ??= GetComponent<Rigidbody2D>();
+                core 　??= GetComponent<Enemy1Core>();
+                rb     ??= GetComponent<Rigidbody2D>();
 
                 // ノックバック処理
                 KnockBack(player, rb, 5f);
@@ -35,7 +36,6 @@ namespace Enemy
 
             void IEnemy1State.OnUpdate(Enemy1Core enemy)
             {
-                Debug.Log(StateType);
                 StateChangeManager();
             }
 
