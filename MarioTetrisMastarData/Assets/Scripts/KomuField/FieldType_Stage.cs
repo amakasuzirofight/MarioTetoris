@@ -75,13 +75,13 @@ namespace Field
             if (Input.GetKeyDown(KeyCode.M))
             {
                 List<FieldInfo> debug = new List<FieldInfo>();
-                debug.Add(new FieldInfo(0,6));
-                debug.Add(new FieldInfo(0,7));
-                debug.Add(new FieldInfo(0,8));
-                debug.Add(new FieldInfo(1,6));
+                debug.Add(new FieldInfo(0, 6));
+                debug.Add(new FieldInfo(0, 7));
+                debug.Add(new FieldInfo(0, 8));
+                debug.Add(new FieldInfo(1, 6));
                 debug = Brock.LimitChecker(debug);
 
-                for (int i = 0;i < debug.Count;i++)
+                for (int i = 0; i < debug.Count; i++)
                 {
                     GameObject obj = Instantiate(Utility_.minoGeter[0]);
                     obj.transform.position = FieldInfo.FieldInfoToVec(debug[i]);
@@ -105,7 +105,7 @@ namespace Field
             groundObjects = new List<GameObject>();
         }
 
-        public override void CreateBrock(List<FieldInfo> positions,int brockNumber = 0)
+        public override void CreateBrock(List<FieldInfo> positions, int _brockNumber = 0)
         {
             if (instanceBrock != null) return;
 
@@ -119,7 +119,7 @@ namespace Field
             {
                 Utility_.FieldData[positions[i].height + 1][positions[i].width] = brockNumber;
                 activeBrock[activeBrock.Count - 1].csv_pos.Add(positions[i]);
-                activeBrock[activeBrock.Count - 1].minos.Add(Instantiate(Utility_.minoGeter[brockNumber]));
+                activeBrock[activeBrock.Count - 1].minos.Add(Instantiate(Utility_.minoGeter[_brockNumber]));
                 activeBrock[activeBrock.Count - 1].minos[activeBrock[activeBrock.Count - 1].minos.Count - 1].transform.position = FieldInfo.FieldInfoToVec(positions[i]);
                 groundObject[positions[i]] = activeBrock[activeBrock.Count - 1].minos[i];
                 // groundObjects.Add(activeBrock[activeBrock.Count - 1].minos[i]);
@@ -217,7 +217,7 @@ namespace Field
                 activeBrock[i].csv_pos[j] += new FieldInfo(1, 0);
                 activeBrock[i].minos[j].transform.position = new Vector3(activeBrock[i].csv_pos[j].width, activeBrock[i].csv_pos[j].height * -1, 0);
                 Utility_.FieldData[activeBrock[i].csv_pos[j].height][activeBrock[i].csv_pos[j].width] = activeBrock[i].brockNumGet();
-                groundObject[activeBrock[i].csv_pos[j]] = groundObject[activeBrock[i].csv_pos[j] - new FieldInfo(1,0)];
+                groundObject[activeBrock[i].csv_pos[j]] = groundObject[activeBrock[i].csv_pos[j] - new FieldInfo(1, 0)];
                 groundObject[activeBrock[i].csv_pos[j] - new FieldInfo(1, 0)] = default;
             }
         }

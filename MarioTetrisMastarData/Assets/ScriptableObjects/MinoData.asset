@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: MinoData
   m_EditorClassIdentifier: 
   minoBrockList:
-  - {fileID: 7112629143529290429, guid: 56a532ada7cb5cd4a9a0261d3b955243, type: 3}
+  - {fileID: 5527158330037298752, guid: a07a2da00170a6d4e9c1a167b6e0605a, type: 3}
+  - {fileID: 3989665065019740766, guid: a4bc013dba540234584aea44030931ee, type: 3}
+  - {fileID: 103466253173685608, guid: 19e92d71e557c2642b2f02cb35312d9d, type: 3}
+  - {fileID: 5826037467579468661, guid: efc9784e740b2a340937f33ccfec3c57, type: 3}
+  - {fileID: 8507695357090245981, guid: ec676aee2268b9c43a302c317967bf9a, type: 3}
+  - {fileID: 1013892045270662754, guid: 5ab031d2e189d484e9e6e01d8f8f3c60, type: 3}
+  - {fileID: 5731857219671473627, guid: 61bef37efb02b8f47b39986793e17d41, type: 3}
