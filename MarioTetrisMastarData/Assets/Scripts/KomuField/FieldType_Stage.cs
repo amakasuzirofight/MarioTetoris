@@ -105,7 +105,7 @@ namespace Field
             groundObjects = new List<GameObject>();
         }
 
-        public override void CreateBrock(List<FieldInfo> positions)
+        public override void CreateBrock(List<FieldInfo> positions,int brockNumber = 0)
         {
             if (instanceBrock != null) return;
 
@@ -119,7 +119,7 @@ namespace Field
             {
                 Utility_.FieldData[positions[i].height + 1][positions[i].width] = brockNumber;
                 activeBrock[activeBrock.Count - 1].csv_pos.Add(positions[i]);
-                activeBrock[activeBrock.Count - 1].minos.Add(Instantiate(Utility_.minoGeter[0]));
+                activeBrock[activeBrock.Count - 1].minos.Add(Instantiate(Utility_.minoGeter[brockNumber]));
                 activeBrock[activeBrock.Count - 1].minos[activeBrock[activeBrock.Count - 1].minos.Count - 1].transform.position = FieldInfo.FieldInfoToVec(positions[i]);
                 groundObject[positions[i]] = activeBrock[activeBrock.Count - 1].minos[i];
                 // groundObjects.Add(activeBrock[activeBrock.Count - 1].minos[i]);

@@ -10,8 +10,9 @@ public class EditStgae_Creaters : MonoBehaviour
 {
     Dictionary<FieldInfo, int> AddItems = new Dictionary<FieldInfo, int>();
     Dictionary<FieldInfo, GameObject> FieldObject = new Dictionary<FieldInfo, GameObject>();
-    [SerializeField,Header("ステージデータの保存先")] private TextAsset saveFile;
-    [SerializeField, Header("ファイルネーム設定")] private string fileName = "CreateData";
+    [SerializeField,Header("一時保存ファイル(json形式に限ります)")] private TextAsset temporarilySaved;
+    [SerializeField,Header("ステージデータの保存先(csv形式)")] private TextAsset SaveData;
+    [SerializeField,Header("ファイルネーム設定")] private string fileName = "CreateData";
     [SerializeField,Header("ステージを移すカメラ設定")] private GameObject cam;
 
     SelectState state_;
@@ -236,18 +237,29 @@ public class EditStgae_Creaters : MonoBehaviour
     {
         CreateStageData createStage = new CreateStageData();
 
+        StreamWriter writer = new StreamWriter(Application.dataPath + "/FieldData/" + SaveData.name + ".csv",false);
+
         for (int i = 0; i < ACTICVE_STAGELIMIT_HEIGHT; i++)
         {
             for (int j = 0; j < ACTICVE_STAGELIMIT_WIDTH; j++)
             {
+                writer.Write(AddItems[new FieldInfo(i,j)].ToString());
                 createStage.datastr += AddItems[new FieldInfo(i, j)].ToString();
-                if (j != ACTICVE_STAGELIMIT_WIDTH - 1) createStage.datastr += ",";
+                if (j != ACTICVE_STAGELIMIT_WIDTH - 1)
+                {
+                    writer.Write(",");
+                    createStage.datastr += ",";
+                }
             }
 
+            writer.WriteLine();
             createStage.datastr += "\n";
         }
 
-        StreamWriter writer = new StreamWriter(Application.dataPath + "/" + fileName + "/" + saveFile.name + ".json");
+        writer.Flush();
+        writer.Close();
+
+        writer = new StreamWriter(Application.dataPath + "/" + fileName + "/" + temporarilySaved.name + ".json");
 
         string jsonstr = JsonUtility.ToJson(createStage);// JSONに変換
         writer.WriteLine(jsonstr);
@@ -259,7 +271,7 @@ public class EditStgae_Creaters : MonoBehaviour
 
     public void Restore()
     {
-        StreamReader reader = new StreamReader(Application.dataPath + "/" + fileName + "/" + saveFile.name + ".json"); //受け取ったパスのファイルを読み込む
+        StreamReader reader = new StreamReader(Application.dataPath + "/" + fileName + "/" + temporarilySaved.name + ".json"); //受け取ったパスのファイルを読み込む
         string datastr = reader.ReadToEnd();//ファイルの中身をすべて読み込む
         reader.Close();//ファイルを閉じる
 
