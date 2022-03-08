@@ -9,7 +9,7 @@ namespace Enemy
     {
         public class EnemyBossRightHandAttackState : EnemyBaseMove, IEnemyBossState
         {
-            //Enemy‚Ì’@‚«‚Â‚¯UŒ‚ó‘Ôˆ—
+            // Enemy‚Ì’@‚«‚Â‚¯UŒ‚ó‘Ôˆ—
 
             [SerializeField] private GameObject rightHand;
 

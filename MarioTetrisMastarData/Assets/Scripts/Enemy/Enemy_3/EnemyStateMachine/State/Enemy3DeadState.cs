@@ -14,14 +14,21 @@ namespace Enemy
             public Enemy3StateType StateType => Enemy3StateType.DEAD;
             public event Action<Enemy3StateType> ChangeStateEvent;
 
+            private Enemy3Core core;
+
             void IEnemy3State.OnStart(Enemy3StateType beforeState, Enemy3Core enemy)
             {
+                core ??= GetComponent<Enemy3Core>();
+
+                ItemSpawn();
+
+                // 死亡処理
+                Dead();
             }
 
             void IEnemy3State.OnUpdate(Enemy3Core enemy)
             {
-                Debug.Log(StateType);
-                Dead();
+                
             }
 
             void IEnemy3State.OnFixedUpdate(Enemy3Core enemy)
@@ -30,6 +37,17 @@ namespace Enemy
 
             void IEnemy3State.OnEnd(Enemy3StateType nextState, Enemy3Core enemy)
             {
+            }
+
+
+            // ここで子オブジェクトを解除する
+            private void ItemSpawn() 
+            {
+                if (core.AtkFlg) 
+                {
+
+                    Debug.Log("落ちたアイテム:");
+                } 
             }
         }
     }

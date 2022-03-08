@@ -24,7 +24,6 @@ namespace Enemy
 
             void IEnemy3State.OnUpdate(Enemy3Core enemy)
             {
-                Debug.Log(StateType);
                 StateChangeManager();
             }
 
@@ -35,6 +34,8 @@ namespace Enemy
             void IEnemy3State.OnEnd(Enemy3StateType nextState, Enemy3Core enemy)
             {
             }
+
+
 
             // ステート変更メソッド
             private void StateChangeManager()

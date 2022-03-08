@@ -14,10 +14,9 @@ namespace Enemy
             public Enemy2StateType StateType => Enemy2StateType.DEAD;
             public event Action<Enemy2StateType> ChangeStateEvent;
 
+
             void IEnemy2State.OnStart(Enemy2StateType beforeState, Enemy2Core enemy)
             {
-                Debug.Log(StateType);
-
                 // €–Sˆ—
                 Dead();
             }
@@ -34,8 +33,5 @@ namespace Enemy
             {
             }
         }
-
     }
-
-
 }

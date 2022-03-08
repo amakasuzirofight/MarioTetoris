@@ -14,13 +14,13 @@ namespace Enemy
             public Enemy2StateType StateType => Enemy2StateType.START;
             public event Action<Enemy2StateType> ChangeStateEvent;
 
+
             void IEnemy2State.OnStart(Enemy2StateType beforeState, Enemy2Core enemy)
             {
             }
 
             void IEnemy2State.OnUpdate(Enemy2Core enemy)
             {
-                Debug.Log(StateType);
                 ChangeStateEvent(Enemy2StateType.STAY);
             }
 

@@ -10,30 +10,29 @@ namespace Enemy
     {
         public class EnemyBossHit : EnemyBaseHPManager, IDamageRecevable
         {
+            [SerializeField] private GameObject manager;
+
             private EnemyBossCore core;
             private EnemyBossStateManager stateManager;
 
             void Start()
             {
-                core = GetComponent<EnemyBossCore>();
-                stateManager = GetComponent<EnemyBossStateManager>();
+                core = manager.GetComponent<EnemyBossCore>();
+                stateManager = manager.GetComponent<EnemyBossStateManager>();
             }
 
 
             // Enemyダメージ処理
             public void DamageRecevable(int damage)
             {
-                // coreがGetできてない！
                 core.Hp = Damage(core.Hp, damage);
 
-                Debug.Log(core.Hp);
-
-                // ここで中断メソッドを呼び出す
+                // 中断メソッド呼び出し
                 stateManager.BreakState();
             }
 
             // Playerに触れた時にダメージを与える
-            private void OnCollisionEnter2D(Collision2D collision)
+            private void OnTriggerEnter2D(Collider2D collision)
             {
                 if (collision.gameObject.TryGetComponent(out MarioCore at))
                 {

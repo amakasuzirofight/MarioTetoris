@@ -36,15 +36,14 @@ namespace Enemy
             {
             }
 
-            private void ChangeStateManager() 
+            private void ChangeStateManager()
             {
                 if (core.Hp <= 0)
                 {
                     Dead();
                 }
-                else 
+                else
                 {
-                    if (!core.WaitTime(transTimeCount)) return;
                     ChangeStateEvent(EnemyBossStateType.IDLE);
                 }
             }

@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Connector;
 
 namespace Enemy
 {
     namespace EnemyBossState
     {
-        public class EnemyBossStateManager : MonoBehaviour
+        public class EnemyBossStateManager : MonoBehaviour,IEnemyUpdateSendable
         {
             // ステート変更する処理
 
@@ -21,7 +22,7 @@ namespace Enemy
             private EnemyBossStateType[] stateFlow;
             private EnemyBossCore core;
             private int thisStateNum = 0;
-            
+
 
             private EnemyBossStateType crrentEnemyBossState = EnemyBossStateType.START;
             private Dictionary<EnemyBossStateType, IEnemyBossState> enemyStateDic = new Dictionary<EnemyBossStateType, IEnemyBossState>((int)EnemyBossStateType.COUNT);
@@ -67,13 +68,8 @@ namespace Enemy
                     // Key(名前みたいなもん？)をPlayerのステートEnumにしている
                     // Valueは現在のPlayerのステートを入れてる
 
-                    // playerStateDic[添え字] = 値をしている
+                    // playerStateDic[添え字] == 現在のステート
                 }
-            }
-
-            void Update()
-            {
-                enemyStateDic[crrentEnemyBossState].OnUpdate(enemyBoss);
             }
 
             private void FixedUpdate()
@@ -81,19 +77,17 @@ namespace Enemy
                 enemyStateDic[crrentEnemyBossState].OnFixedUpdate(enemyBoss);
             }
 
-
-            
-
             // ダメージ状態遷移メソッド
             private void DamageState()
             {
-                enemyStateDic[crrentEnemyBossState].OnEnd(EnemyBossStateType.IDLE/*ダメージ*/,enemyBoss);
-                // thisStateNum = 0; // ステートを一回リセットする場合
+                enemyStateDic[crrentEnemyBossState].OnEnd(EnemyBossStateType.IDLE/*ダメージ*/, enemyBoss);
+                //thisStateNum = 0; // ステートを一回リセットする場合
                 crrentEnemyBossState = EnemyBossStateType.DAMAGE; // ダメージ
+                enemyStateDic[crrentEnemyBossState].OnStart(EnemyBossStateType.IDLE, enemyBoss);
             }
 
             // ステート中断処理
-            public void BreakState() 
+            public void BreakState()
             {
                 DamageState();
             }
@@ -111,11 +105,11 @@ namespace Enemy
 
 
                 // キャラクターのHPによって行うステートを変更する
-                if      (core.Hp <   30) stateFlow = stateBrock_3;
-                else if (core.Hp <   50) stateFlow = stateBrock_2;
+                if (core.Hp < 30) stateFlow = stateBrock_3;
+                else if (core.Hp < 50) stateFlow = stateBrock_2;
                 else if (core.Hp <= 100) stateFlow = stateBrock_1;
 
-                
+
                 // 中身を変更
                 crrentEnemyBossState = stateFlow[thisStateNum];
 
@@ -124,6 +118,12 @@ namespace Enemy
                 else thisStateNum = 0;
 
                 enemyStateDic[crrentEnemyBossState].OnStart(enemyState, enemyBoss);
+            }
+
+            // Updateインタフェース
+            void IEnemyUpdateSendable.EnemyUpdate()
+            {
+                enemyStateDic[crrentEnemyBossState].OnUpdate(enemyBoss);
             }
         }
     }

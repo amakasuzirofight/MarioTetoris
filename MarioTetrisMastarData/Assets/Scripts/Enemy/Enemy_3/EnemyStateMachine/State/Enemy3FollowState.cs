@@ -11,26 +11,22 @@ namespace Enemy
         {
             //EnemyÇÃFollowèÛë‘èàóù
 
-            
-
             public Enemy3StateType StateType => Enemy3StateType.FOLLOW;
             public event Action<Enemy3StateType> ChangeStateEvent;
 
-            private GameObject player;
-            private Enemy3Core core;
+            private GameObject  player;
+            private Enemy3Core  core;
             private Rigidbody2D rb;
 
             void IEnemy3State.OnStart(Enemy3StateType beforeState, Enemy3Core enemy)
             {
                 player ??= Utility_.playerObject;
-                core ??= GetComponent<Enemy3Core>();
-                rb   ??= GetComponent<Rigidbody2D>();
+                core   ??= GetComponent<Enemy3Core>();
+                rb     ??= GetComponent<Rigidbody2D>();
             }
 
             void IEnemy3State.OnUpdate(Enemy3Core enemy)
             {
-                Debug.Log(StateType);
-
                 // í«è]èàóù
                 Follow(rb, gameObject,core.Spd, Distance(player,gameObject), Detection(Distance(player,gameObject), core.DiteRange));
                 StateChangeManager();
@@ -61,6 +57,7 @@ namespace Enemy
                 }
             }
 
+            // ìñÇΩÇËîªíË
             private void OnTriggerEnter2D(Collider2D collision)
             {
                 var player = collision.GetComponent<TestMarioAttack>();

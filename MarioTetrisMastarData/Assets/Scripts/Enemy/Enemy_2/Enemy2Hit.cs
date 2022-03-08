@@ -10,24 +10,24 @@ namespace Enemy
     {
         public class Enemy2Hit : EnemyBaseHPManager, IDamageRecevable
         {
-            private IDamageRecevable damageRecevable;
+            // Enemy2の接触判定処理
+
             private Enemy2Core core;
+
 
             void Start()
             {
-                damageRecevable = GetComponent<IDamageRecevable>();
                 core = GetComponent<Enemy2Core>();
             }
 
 
-            // Playerに触れた時にダメージを与える(甘糟待ち)
+            // Playerに触れた時にダメージを与える
             private void OnCollisionEnter2D(Collision2D collision)
             {
                 if (collision.gameObject.TryGetComponent(out MarioCore at))
                 {
                     IDamageRecevable damage = at;
 
-                    Debug.Log("てめえどこ見てんだよ");
                     damage.DamageRecevable(core.AtkPow);
                 }
             }
@@ -36,10 +36,7 @@ namespace Enemy
             // Enemyダメージ処理
             public void DamageRecevable(int damage)
             {
-                Debug.Log("痛い！！");
                 core.Hp = Damage(core.Hp, damage);
-
-                // Playerの攻撃判定をボタンが押された瞬間にすればいける
             }
         }
 
