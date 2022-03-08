@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class SoundDataBase : MonoBehaviour
+public class SESoundDataBase : MonoBehaviour
 {
-    public static SoundDataBase instance;
+    public static SESoundDataBase instance;
     static AudioSource audioSource;
 
     static Dictionary<string, AudioClip> seAudioDic = new Dictionary<string, AudioClip>();
     static Dictionary<string, AudioClip> bgmAudioDic = new Dictionary<string, AudioClip>();
 
-    [SerializeField] AudioClip[] audioClipSEArray = new AudioClip[0];
-    [SerializeField] AudioClip[] audioClipsBGMArray = new AudioClip[0];
+    [SerializeField] AudioClip[] seAudioClipArray = new AudioClip[0];
     [SerializeField] string[] seAudioNameArray = new string[0];
-    [SerializeField] string[] bgmAudioNameArray = new string[0];
 
     private void Awake()
     {
@@ -35,14 +33,9 @@ public class SoundDataBase : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
 
-        for (int i = 0; i < audioClipSEArray.Length; i++)
+        for (int i = 0; i < seAudioClipArray.Length; i++)
         {
-            seAudioDic[seAudioNameArray[i]] = audioClipSEArray[i];
-        }
-
-        for (int i = 0; i < bgmAudioNameArray.Length; i++)
-        {
-            bgmAudioDic[bgmAudioNameArray[i]] = audioClipsBGMArray[i];
+            seAudioDic[seAudioNameArray[i]] = seAudioClipArray[i];
         }
     }
 
@@ -51,8 +44,5 @@ public class SoundDataBase : MonoBehaviour
         audioSource.PlayOneShot(seAudioDic[seName]);
     }
 
-    public static void BGMRing(string bgmName)
-    {
-        audioSource.PlayOneShot(bgmAudioDic[bgmName]);
-    }
+ 
 }
