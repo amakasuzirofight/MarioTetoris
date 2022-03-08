@@ -16,6 +16,13 @@ C:/Users/user/Desktop/Mariteto/MarioTetrisMastarData
 Logs/AssetImportWorker0.log
 -srvPort
 <<<<<<< HEAD
+57781
+Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 89.70 ms, found 1 plugins.
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -43,6 +50,7 @@ Refreshing native plugins compatible for Editor in 102.73 ms, found 1 plugins.
 =======
 >>>>>>> a9de128cfb356cb7fde1a228bf0d414559423d3a
 >>>>>>> b7ce17959910cb4821800e1d9e5de8ab299d09b8
+<<<<<<< HEAD
 =======
 58451
 Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
@@ -50,6 +58,9 @@ C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 116.13 ms, found 1 plugins.
 >>>>>>> featureBaseItem
+=======
+>>>>>>> 62347fad81a20b6873bc68361de0cda4442331cb
+>>>>>>> 10932259148a537dcad24c9116cb7ca7ec30acce
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.8f1 (507919d4fff5)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -65,6 +76,54 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< HEAD
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56524
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004200 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 91.59 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.231 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.013510 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 68.80 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.372 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.57 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2818 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.7 MB.
+System memory in use after: 115.9 MB.
+
+Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 3266.
+Total: 2.518100 ms (FindLiveObjects: 0.301200 ms CreateObjectMapping: 0.117700 ms MarkObjects: 1.993500 ms  DeleteObjects: 0.104900 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/GameTestScene/GameTestScene.unity
+  artifactKey: Guid(2b72d7c01ab847b4cb7a6e4fcbae64db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/GameTestScene/GameTestScene.unity using Guid(2b72d7c01ab847b4cb7a6e4fcbae64db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a5cdfcdc408e534a42db03b6e446921') in 0.021596 seconds
+  Import took 0.027639 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016502 seconds.
+  path: Assets/Scenes/GameTestScene/GameTestScene.unity
+  artifactKey: Guid(2b72d7c01ab847b4cb7a6e4fcbae64db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/GameTestScene/GameTestScene.unity using Guid(2b72d7c01ab847b4cb7a6e4fcbae64db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a5cdfcdc408e534a42db03b6e446921') in 0.003993 seconds
+  Import took 0.010234 seconds .
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1005,10 +1064,29 @@ Received Import Request.
 Start importing Assets/Prefabs/ItemCursleManager.prefab using Guid(69bda68f4b732894fb747bd9ff8696eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d95b549fa687d5e940ee1a23e018358') in 0.020703 seconds
   Import took 0.026808 seconds .
 >>>>>>> 77b5b7c98dfdc92aaba590bf79d6f8b72f216c3e
+>>>>>>> 62347fad81a20b6873bc68361de0cda4442331cb
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
+Registered in 1.456822 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.83 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in 10.839 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2804 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.7 MB.
+System memory in use after: 115.0 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3270.
+Total: 5.047900 ms (FindLiveObjects: 0.422500 ms CreateObjectMapping: 0.171200 ms MarkObjects: 4.409000 ms  DeleteObjects: 0.042900 ms)
+=======
 <<<<<<< HEAD
 Registered in 0.006579 seconds.
 Begin MonoManager ReloadAssembly
@@ -2166,6 +2244,7 @@ Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3461.
 Total: 2.240600 ms (FindLiveObjects: 0.302100 ms CreateObjectMapping: 0.149200 ms MarkObjects: 1.766800 ms  DeleteObjects: 0.021200 ms)
 >>>>>>> 77b5b7c98dfdc92aaba590bf79d6f8b72f216c3e
 >>>>>>> a9de128cfb356cb7fde1a228bf0d414559423d3a
+<<<<<<< HEAD
 =======
 Registered in 0.009261 seconds.
 Begin MonoManager ReloadAssembly
@@ -2584,5 +2663,8 @@ Received Import Request.
 Start importing Assets/Animator/ItemBom.controller using Guid(42f73c645191e054c8d953c40a0dd2b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a4f06ce66950c9e4319fc8850b08770') in 0.005432 seconds
   Import took 0.015191 seconds .
 >>>>>>> featureBaseItem
+=======
+>>>>>>> 62347fad81a20b6873bc68361de0cda4442331cb
+>>>>>>> 10932259148a537dcad24c9116cb7ca7ec30acce
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

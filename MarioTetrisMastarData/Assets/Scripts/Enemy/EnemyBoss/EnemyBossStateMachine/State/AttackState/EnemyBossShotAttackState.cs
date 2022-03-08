@@ -51,7 +51,7 @@ namespace Enemy
                 ChangeStateEvent(EnemyBossStateType.IDLE);
             }
 
-            // 生成メソッド
+            // 生成メソッド(アニメーションで呼び出す)
             public void Genarator()
             {
                 Vector3 facePos = faceObj.transform.position;
