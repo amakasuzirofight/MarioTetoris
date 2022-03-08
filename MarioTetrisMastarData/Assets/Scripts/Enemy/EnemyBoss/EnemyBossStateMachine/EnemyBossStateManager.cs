@@ -72,6 +72,11 @@ namespace Enemy
                 }
             }
 
+            private void Update()
+            {
+                enemyStateDic[crrentEnemyBossState].OnUpdate(enemyBoss);
+            }
+
             private void FixedUpdate()
             {
                 enemyStateDic[crrentEnemyBossState].OnFixedUpdate(enemyBoss);
@@ -123,7 +128,6 @@ namespace Enemy
             // Updateインタフェース
             void IEnemyUpdateSendable.EnemyUpdate()
             {
-                enemyStateDic[crrentEnemyBossState].OnUpdate(enemyBoss);
             }
         }
     }

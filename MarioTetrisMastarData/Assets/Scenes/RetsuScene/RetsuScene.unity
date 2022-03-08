@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBoss: {fileID: 2048812}
-  stateBrock_1: 0100000004000000
+  stateBrock_1: 0100000002000000
   stateBrock_2: 010000000200000001000000
   stateBrock_3: 010000000300000001000000
 --- !u!114 &2048812
@@ -969,7 +969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 239584743707288838, guid: 893359473db4dac48b7a409af6433157, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 239584743707288844, guid: 893359473db4dac48b7a409af6433157, type: 3}
       propertyPath: player
