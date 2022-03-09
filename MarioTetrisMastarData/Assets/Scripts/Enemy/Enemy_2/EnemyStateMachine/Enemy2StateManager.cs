@@ -18,9 +18,12 @@ namespace Enemy
             private Enemy2StateType crrentEnemy2State = Enemy2StateType.START;
             private Dictionary<Enemy2StateType, IEnemy2State> enemyStateDic = new Dictionary<Enemy2StateType, IEnemy2State>((int)Enemy2StateType.COUNT);
 
+            private Rigidbody2D rb;
 
             void Start()
             {
+                rb = GetComponent<Rigidbody2D>();
+
                 // IPlayerを配列で複数取得しているのはなぜ？
                 IEnemy2State[] stateComponents = GetComponents<IEnemy2State>();
 
@@ -90,6 +93,13 @@ namespace Enemy
             {
                 enemyStateDic[crrentEnemy2State].OnUpdate(enemy2);
             }
+
+            // Velocity初期化インタフェース
+            void IEnemyUpdateSendable.EnemyVelocityDefault()
+            {
+                rb.velocity = Vector2.zero;
+            }
+
         }
     }
 }

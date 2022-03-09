@@ -11,5 +11,6 @@ public enum EnemyBossStateType
     CALLENEMY,
 
     DAMAGE,
+    STAN,
     COUNT
 }

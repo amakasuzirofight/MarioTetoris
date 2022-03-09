@@ -15,16 +15,21 @@ namespace Enemy
             public event Action<EnemyBossStateType> ChangeStateEvent;
 
             private EnemyBossCore core;
-            private float transTimeCount = 3f;
+            private EnemySpawnManager spawnManager;
+            private float transTimeCount = 7f;
 
             void IEnemyBossState.OnStart(EnemyBossStateType beforeState, EnemyBossCore enemy)
             {
                 core ??= GetComponent<EnemyBossCore>();
+                spawnManager ??= GetComponent<EnemySpawnManager>();
             }
 
             void IEnemyBossState.OnUpdate(EnemyBossCore enemy)
             {
                 Debug.Log(StateType);
+
+                spawnManager.EnemySpawn();
+
                 StateChangeManager();
             }
 

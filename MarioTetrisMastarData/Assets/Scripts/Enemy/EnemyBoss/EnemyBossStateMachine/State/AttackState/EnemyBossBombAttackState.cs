@@ -15,16 +15,20 @@ namespace Enemy
             public event Action<EnemyBossStateType> ChangeStateEvent;
 
             private EnemyBossCore core;
-            private float transTimeCount = 3f;
+            private EnemyBossBombSpawn bombSpawn;
+            private float transTimeCount = 16;
+
 
             void IEnemyBossState.OnStart(EnemyBossStateType beforeState, EnemyBossCore enemy)
             {
                 core ??= GetComponent<EnemyBossCore>();
+                bombSpawn ??= GetComponent<EnemyBossBombSpawn>();
             }
 
             void IEnemyBossState.OnUpdate(EnemyBossCore enemy)
             {
                 Debug.Log(StateType);
+                bombSpawn.BombSpawn();
                 StateChangeManager();
             }
 
