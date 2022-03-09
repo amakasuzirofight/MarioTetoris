@@ -36,7 +36,10 @@ namespace Field
         // Update is called once per frame
         void Update()
         {
-            mainCamara.transform.position = new Vector3(Utility_.playerObject.transform.position.x,Utility_.playerObject.transform.position.y,-10);
+            mainCamara.transform.position = 
+                new Vector3(Mathf.Clamp(Utility_.playerObject.transform.position.x,0,Utility_.FieldData[0].Length),
+                            Utility_.playerObject.transform.position.y,
+                            -10);
 
             switch (Utility_.GameState)
             {
