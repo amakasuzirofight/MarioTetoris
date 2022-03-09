@@ -28,9 +28,12 @@ namespace Enemy
             private Dictionary<EnemyBossStateType, IEnemyBossState> enemyStateDic = new Dictionary<EnemyBossStateType, IEnemyBossState>((int)EnemyBossStateType.COUNT);
 
 
+            private Rigidbody2D rb;
+
             void Start()
             {
                 core = GetComponent<EnemyBossCore>();
+                rb   = GetComponent<Rigidbody2D>();
 
                 // 複数あるステートクラスを取得
                 IEnemyBossState[] stateComponents = GetComponents<IEnemyBossState>();
@@ -85,16 +88,30 @@ namespace Enemy
             // ダメージ状態遷移メソッド
             private void DamageState()
             {
-                enemyStateDic[crrentEnemyBossState].OnEnd(EnemyBossStateType.IDLE/*ダメージ*/, enemyBoss);
+                enemyStateDic[crrentEnemyBossState].OnEnd(EnemyBossStateType.IDLE, enemyBoss);
                 //thisStateNum = 0; // ステートを一回リセットする場合
                 crrentEnemyBossState = EnemyBossStateType.DAMAGE; // ダメージ
                 enemyStateDic[crrentEnemyBossState].OnStart(EnemyBossStateType.IDLE, enemyBoss);
             }
 
+            // スタン状態
+            private void StanState() 
+            {
+                enemyStateDic[crrentEnemyBossState].OnEnd(EnemyBossStateType.IDLE, enemyBoss);
+                //thisStateNum = 0; // ステートを一回リセットする場合
+                crrentEnemyBossState = EnemyBossStateType.STAN;
+                enemyStateDic[crrentEnemyBossState].OnStart(EnemyBossStateType.IDLE, enemyBoss);
+            }
+
             // ステート中断処理
-            public void BreakState()
+            public void BreakState_Damage()
             {
                 DamageState();
+            }
+
+            public void BreakState_Stan() 
+            {
+                StanState();
             }
 
             // ステート変更メソッド(event変数に代入するメソッド)
@@ -128,6 +145,12 @@ namespace Enemy
             // Updateインタフェース
             void IEnemyUpdateSendable.EnemyUpdate()
             {
+                enemyStateDic[crrentEnemyBossState].OnUpdate(enemyBoss);
+            }
+
+            void IEnemyUpdateSendable.EnemyVelocityDefault()
+            {
+                rb.velocity = Vector2.zero;
             }
         }
     }

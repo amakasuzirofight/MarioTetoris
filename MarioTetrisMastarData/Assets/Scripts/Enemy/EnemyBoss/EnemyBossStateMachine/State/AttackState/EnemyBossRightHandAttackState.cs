@@ -26,8 +26,9 @@ namespace Enemy
             void IEnemyBossState.OnStart(EnemyBossStateType beforeState, EnemyBossCore enemy)
             {
                 player ??= Utility_.playerObject; 
-                core ??= GetComponent<EnemyBossCore>();
-                rb   ??= rightHand.GetComponent<Rigidbody2D>();
+                core   ??= GetComponent<EnemyBossCore>();
+                rb     ??= rightHand.GetComponent<Rigidbody2D>();
+
                 time = 0f;
             }
 
@@ -79,7 +80,6 @@ namespace Enemy
                 }
                 return false;
             }
-
         }
     }
 }

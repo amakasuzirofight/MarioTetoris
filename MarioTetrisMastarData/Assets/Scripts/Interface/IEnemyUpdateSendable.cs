@@ -5,5 +5,7 @@ namespace Connector
         // EnemyのUpdateインタフェース
 
         void EnemyUpdate();
+
+        void EnemyVelocityDefault();
     }
 }
