@@ -157,7 +157,7 @@ namespace Field
                 return null;
             }
         }
-        virtual public void CreateBrock(List<FieldInfo> positions,int brockNumber = 0)
+        virtual public void CreateBrock(List<FieldInfo> positions,int _brockNumber = 0 )
         {
             Debug.LogError("設定したフィールドにCreateBrock関数は使用されていません");
         }

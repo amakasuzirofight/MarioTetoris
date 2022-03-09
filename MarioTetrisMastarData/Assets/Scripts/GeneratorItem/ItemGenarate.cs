@@ -84,7 +84,7 @@ namespace ItemGenerater
                     }
                 }
             }
-            fieldBase.CreateBrock(fieldInfos);
+            fieldBase.CreateBrock(fieldInfos,(int)tetrisType);
             InstanceTetris();
         }
         void InstanceTetris()

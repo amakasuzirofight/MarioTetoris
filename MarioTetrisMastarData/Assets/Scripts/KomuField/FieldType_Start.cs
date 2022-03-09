@@ -8,12 +8,15 @@ namespace Field
     {
         StartStete state;
 
-        List<string> contnt_1 = new List<string>();
-        List<string> contnt_2 = new List<string>();
-        List<string> contnt_3 = new List<string>();
+        [SerializeField] private List<string> contnt_1 = new List<string>();
+
+        [SerializeField] private TextAsset csvData;
         public override void OpenField()
         {
-            base.OpenField();
+            state = StartStete.CONVERSATION_1;
+            Utility_.CsvToIntList(csvData);
+            CreateCharacters();
+            CreateField(Utility_.FieldData);
         }
 
         public override void FieldCheck()
@@ -21,22 +24,24 @@ namespace Field
             switch (state)
             {
                 case StartStete.CONVERSATION_1:
-
+                    Utility_.MessageSetting(true);
+                    Utility_.OpenMessage(contnt_1);
+                    state = StartStete.NONE;
                     break;
-                case StartStete.MOVE_DEMO:
+                //case StartStete.MOVE_DEMO:
 
-                    break;
-                case StartStete.CONVERSATION_2:
+                //    break;
+                //case StartStete.CONVERSATION_2:
 
-                    break;
-                case StartStete.MOVE_DEMO_ROBO:
+                //    break;
+                //case StartStete.MOVE_DEMO_ROBO:
 
-                    break;
-                case StartStete.CONVERSATION_3:
+                //    break;
+                //case StartStete.CONVERSATION_3:
 
-                    break;
+                //    break;
                 case StartStete.NONE:
-
+                    ChengerCheck();
                     break;
             }
         }
