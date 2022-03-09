@@ -37,7 +37,7 @@ namespace Field
         void Update()
         {
             mainCamara.transform.position = 
-                new Vector3(Mathf.Clamp(Utility_.playerObject.transform.position.x,0,Utility_.FieldData[0].Length),
+                new Vector3(Mathf.Clamp(Utility_.playerObject.transform.position.x,10,Utility_.FieldData[0].Length - 10),
                             Utility_.playerObject.transform.position.y,
                             -10);
 

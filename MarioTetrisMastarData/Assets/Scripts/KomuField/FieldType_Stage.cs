@@ -28,7 +28,7 @@ namespace Field
 
             activeChenger = default;
             frameCount = 0;
-            brockNumber = 10;
+            brockNumber = 100;
             setCharacters = setCharacters_;
             groundObjects = new List<GameObject>();
 
@@ -66,6 +66,14 @@ namespace Field
             #endregion
 
             CreateCharacters();
+
+            for (int i = 0;i < Utility_.FieldData.Count;i++)
+            {
+                for (int j = 0;j < Utility_.FieldData[i].Length;j++)
+                {
+                    groundObject[new FieldInfo(i, j)] = default;
+                }
+            }
         }
 
         public override void FieldCheck()
@@ -74,18 +82,19 @@ namespace Field
 
             if (Input.GetKeyDown(KeyCode.M))
             {
-                List<FieldInfo> debug = new List<FieldInfo>();
-                debug.Add(new FieldInfo(0, 6));
-                debug.Add(new FieldInfo(0, 7));
-                debug.Add(new FieldInfo(0, 8));
-                debug.Add(new FieldInfo(1, 6));
-                debug = Brock.LimitChecker(debug);
+                //List<FieldInfo> debug = new List<FieldInfo>();
+                //debug.Add(new FieldInfo(0, 6));
+                //debug.Add(new FieldInfo(0, 7));
+                //debug.Add(new FieldInfo(0, 8));
+                //debug.Add(new FieldInfo(1, 6));
+                //debug = Brock.LimitChecker(debug);
 
-                for (int i = 0; i < debug.Count; i++)
-                {
-                    GameObject obj = Instantiate(Utility_.minoGeter[0]);
-                    obj.transform.position = FieldInfo.FieldInfoToVec(debug[i]);
-                }
+                //for (int i = 0; i < debug.Count; i++)
+                //{
+                //    GameObject obj = Instantiate(Utility_.minoGeter[0]);
+                //    obj.transform.position = FieldInfo.FieldInfoToVec(debug[i]);
+                //}
+                DeleteBrock(10);
             }
 
             if (frameCount % checkFrame == 0)
@@ -129,7 +138,44 @@ namespace Field
 
         public void DeleteBrock(int heightNum)
         {
+            List<int> list_i = new List<int>();
+            List<int> list_j = new List<int>();
 
+            for (int i = 0;i < activeBrock.Count;i++)
+            {
+                for (int j = 0; j < activeBrock[i].csv_pos.Count; j++)
+                {
+                    if (activeBrock[i].csv_pos[j].height == heightNum)
+                    {
+                        list_i.Add(i);
+                        list_j.Add(j);
+                    }
+                }
+            }
+
+            for (int i = list_i.Count - 1; i >= 0;i--)
+            {
+                Debug.Log($"i = {list_i[i]}({i})||j = {list_j[i]}({i})");
+                //Destroy(groundObject[activeBrock[list_i[i]].csv_pos[list_j[j]]]);
+                //groundObject[activeBrock[list_i[i]].csv_pos[list_j[j]]] = default;
+                Destroy(activeBrock[list_i[i]].minos[list_j[i]]);
+                // Utility_.CsvWriter(new FieldInfo(activeBrock[list_i[i]].csv_pos[list_j[i]].height,activeBrock[list_i[i]].csv_pos[list_j[i]].width),0);
+                activeBrock[list_i[i]].csv_pos.RemoveAt(list_j[i]);
+                activeBrock[list_i[i]].minos.RemoveAt(list_j[i]);
+
+                Utility_.FieldData[activeBrock[list_i[i]].csv_pos[list_j[i]].height][activeBrock[list_i[i]].csv_pos[list_j[i]].width] = 0;
+                Debug.Log($"FieldData after {Utility_.FieldData[activeBrock[list_i[i]].csv_pos[list_j[i]].height][activeBrock[list_i[i]].csv_pos[list_j[i]].width]}");
+            }
+
+            for (int i = 0;i < activeBrock.Count;i++)
+            {
+                activeBrock[i].stateChenge(true);
+                if (activeBrock[i].minos.Count == 0)
+                {
+                    activeBrock.RemoveAt(i);
+                    i--;
+                }
+            }
         }
 
         private void FieldUpdate()
@@ -137,31 +183,28 @@ namespace Field
             instanceBrock = default;
             for (int i = 0; i < activeBrock.Count; i++)
             {
-                // if (activeBrock[i].stateCheck())
+                Debug.Log($"number{activeBrock[i].brockNumGet()} is Fall");
+                for (int j = 0; j < activeBrock[i].csv_pos.Count; j++)
                 {
-                    Debug.Log($"number{activeBrock[i].brockNumGet()} is Fall");
-                    for (int j = 0; j < activeBrock[i].csv_pos.Count; j++)
+                    if (activeBrock[i].csv_pos[j].height + 1 >= Utility_.FieldData.Count) // ç≈â∫ëwÇ≈Ç†ÇÈÇ»ÇÁóéâ∫ñhé~
                     {
-                        if (activeBrock[i].csv_pos[j].height + 1 >= Utility_.FieldData.Count) // ç≈â∫ëwÇ≈Ç†ÇÈÇ»ÇÁóéâ∫ñhé~
-                        {
-                            Debug.Log("êÊÇ™Ç»Ç¢ÇΩÇﬂà⁄ìÆÇíÜé~ÇµÇ‹Ç∑");
-                            activeBrock[i].stateChenge(false);
-                            break;
-                        }
-                        else if (activeBrock[i].brockNumGet() != Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width]
-                                 && Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width] < Utility_.BROCK_NUMBER_COUNT
-                                 && Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width] != (int)FieldNumber.NONE) // à⁄ìÆêÊÇ™à·Ç§ÉuÉçÉbÉNÇ≈Ç†ÇÈÇ»ÇÁóéâ∫ñhé~
-                        {
-                            activeBrock[i].stateChenge(false);
-                            Debug.Log("êÊÇ…ÉuÉçÉbÉNÇämîFÇµÇΩÇΩÇﬂà⁄ìÆÇíÜé~ÇµÇ‹Ç∑");
-                            Debug.Log(Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width]);
-                            break;
-                        }
+                        Debug.Log("êÊÇ™Ç»Ç¢ÇΩÇﬂà⁄ìÆÇíÜé~ÇµÇ‹Ç∑");
+                        activeBrock[i].stateChenge(false);
+                        break;
                     }
-
-                    if (activeBrock[i].stateCheck()) fallBrocks(i);
+                    else if (activeBrock[i].brockNumGet() != Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width]
+                             && (Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width] < Utility_.BROCK_NUMBER_COUNT
+                             || Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width] >= 100)
+                             && Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width] != (int)FieldNumber.NONE) // à⁄ìÆêÊÇ™à·Ç§ÉuÉçÉbÉNÇ≈Ç†ÇÈÇ»ÇÁóéâ∫ñhé~
+                    {
+                        activeBrock[i].stateChenge(false);
+                        Debug.Log("êÊÇ…ÉuÉçÉbÉNÇämîFÇµÇΩÇΩÇﬂà⁄ìÆÇíÜé~ÇµÇ‹Ç∑");
+                        Debug.Log(Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width]);
+                        break;
+                    }
                 }
 
+                if (activeBrock[i].stateCheck()) fallBrocks(i);
             }
             #region writer
             //using (writer = new StreamWriter($"Assets/FieldData/{stage_csv.name}.csv", append: false))
@@ -217,8 +260,8 @@ namespace Field
                 activeBrock[i].csv_pos[j] += new FieldInfo(1, 0);
                 activeBrock[i].minos[j].transform.position = new Vector3(activeBrock[i].csv_pos[j].width, activeBrock[i].csv_pos[j].height * -1, 0);
                 Utility_.FieldData[activeBrock[i].csv_pos[j].height][activeBrock[i].csv_pos[j].width] = activeBrock[i].brockNumGet();
-                groundObject[activeBrock[i].csv_pos[j]] = groundObject[activeBrock[i].csv_pos[j] - new FieldInfo(1, 0)];
-                groundObject[activeBrock[i].csv_pos[j] - new FieldInfo(1, 0)] = default;
+                //groundObject[activeBrock[i].csv_pos[j]] = groundObject[activeBrock[i].csv_pos[j] - new FieldInfo(1, 0)];
+                //groundObject[activeBrock[i].csv_pos[j] - new FieldInfo(1, 0)] = default;
             }
         }
 
