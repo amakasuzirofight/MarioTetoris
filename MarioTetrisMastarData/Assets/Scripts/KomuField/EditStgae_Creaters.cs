@@ -79,8 +79,8 @@ public class EditStgae_Creaters : MonoBehaviour
     void Update()
     {
         cam.transform.position = new Vector3(cursor.transform.position.x, cursor.transform.position.y, -10);
-        debugText.text = $"create position = {position.height},{position.width}\nShift Key StageSave\nEditMode = {state}\nSelectMode = {state_}\nSpace Key Let's Play";
-        systemText.text = "W or S Key => SelectModeChenge\nA and D Key => ItemChenge\nCtrl Key => EditMode Chenge\nArrow Key => CursorMove";
+        debugText.text = $"create position = {position.height},{position.width}\nShift Key StageSave\nEditMode = {state}\nSelectMode = {state_}";
+        systemText.text = "W or S Key => SelectModeChenge\nA and D Key => ItemChenge\nCtrl Key => EditMode Chenge\nArrow Key => CursorMove\nSpace Key => AllDelete";
 
         SelectTime();
         EditModeCommand();
@@ -127,14 +127,14 @@ public class EditStgae_Creaters : MonoBehaviour
             Restore();
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AllDelete();
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
             Save();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene("CreateStage_");
         }
     }
 
@@ -269,6 +269,21 @@ public class EditStgae_Creaters : MonoBehaviour
         Debug.Log("save Compleate");
     }
 
+    public void AllDelete()
+    {
+        for (int i = 0;i < ACTICVE_STAGELIMIT_HEIGHT;i++)
+        {
+            for (int j = 0;j < ACTICVE_STAGELIMIT_WIDTH;j++)
+            {
+                FieldInfo info = new FieldInfo(i,j);
+                Destroy(FieldObject[info]);
+                FieldObject[info] = Instantiate(glid);
+                FieldObject[info].transform.position = FieldInfo.FieldInfoToVec(info);
+                AddItems[info] = 0;
+            }
+        }
+    }
+
     public void Restore()
     {
         StreamReader reader = new StreamReader(Application.dataPath + "/" + fileName + "/" + temporarilySaved.name + ".json"); //受け取ったパスのファイルを読み込む
@@ -313,6 +328,7 @@ public class EditStgae_Creaters : MonoBehaviour
                 else
                 {
                     FieldObject[info] = Instantiate(glid);
+                    FieldObject[info].transform.position = FieldInfo.FieldInfoToVec(info);
                     AddItems[info] = 0;
                 }
             }

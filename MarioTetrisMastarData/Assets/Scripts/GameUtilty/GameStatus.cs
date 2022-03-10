@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameStatus : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class GameStatus : MonoBehaviour
     [SerializeField] private MinoToNumber minoBrockList;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject robot;
+    [SerializeField] private Text nameText;
+    [SerializeField] private Text mainText;
+    [SerializeField] private Image namePanel;
+    [SerializeField] private Image mainPanel;
 
     [SerializeField] private bool DebugMode = false;
     [SerializeField] private Vector3 DebugPos = Vector3.zero;
@@ -16,6 +21,8 @@ public class GameStatus : MonoBehaviour
 
     void Awake()
     {
+        if (nameText != null) Utility_.MessageSetting(mainText,nameText,mainPanel,namePanel);
+
         if (!CreateFlg)
         {
             Utility_.playerObject = Instantiate(player);

@@ -36,7 +36,7 @@ namespace Field
                     break;
                 case StartStete.CONVERSATION_1:
                     Utility_.MessageSetting(true);
-                    Utility_.OpenMessage(contnt_1);
+                    Utility_.OpenMessage(contnt_1,"ÉJÉC");
                     state++;
                     break;
                 case StartStete.EVENT_2:
@@ -44,7 +44,7 @@ namespace Field
                     eventflg = true;
                     break;
                 case StartStete.CONVERSATION_2:
-                    Utility_.OpenMessage(contnt_2);
+                    Utility_.OpenMessage(contnt_2,"???");
                     state = StartStete.NONE;
                     break;
                 case StartStete.NONE:

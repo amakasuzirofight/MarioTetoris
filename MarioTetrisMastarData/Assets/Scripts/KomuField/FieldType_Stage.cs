@@ -171,6 +171,22 @@ namespace Field
             }
         }
 
+        public void AllDelete()
+        {
+            for (int i = 0; i < Utility_.FieldData.Count; i++)
+            {
+                for (int j = 0; j < Utility_.FieldData[i].Length; j++)
+                {
+                    if (groundObject[new FieldInfo(i, j)] != default && groundObject[new FieldInfo(i, j)] != null) Destroy(groundObject[new FieldInfo(i, j)]);
+                }
+            }
+
+            for (int i = activeBrock.Count - 1;i >= 0;i--)
+            {
+                activeBrock.RemoveAt(i);
+            }
+        }
+
         private void FieldUpdate()
         {
             instanceBrock = default;
