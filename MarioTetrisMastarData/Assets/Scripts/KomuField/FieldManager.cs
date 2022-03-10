@@ -15,6 +15,7 @@ namespace Field
 
         List<GameObject> enemys = new List<GameObject>();
         List<Connector.IEnemyUpdateSendable> enemyUpdates = new List<Connector.IEnemyUpdateSendable>();
+        Mario.IPlayerUpdate coreUpdate;
 
         private void Start()
         {
@@ -25,6 +26,7 @@ namespace Field
             nowField.fieldcomplete = FieldChenge;
             nowField.OpenField();
             enemys = nowField.enemys;
+            coreUpdate = Utility_.playerObject.GetComponent<Mario.IPlayerUpdate>();
             for (int i = 0;i < enemys.Count;i++)
             {
                 enemyUpdates.Add(enemys[i].GetComponent<Connector.IEnemyUpdateSendable>());
@@ -52,6 +54,7 @@ namespace Field
             {
                 case FieldState.NORMAL:
                     nowField.FieldCheck();
+                    coreUpdate.MarioUpdate();
                     for (int i = 0;i < enemyUpdates.Count;i++)
                     {
                         enemyUpdates[i].EnemyUpdate();

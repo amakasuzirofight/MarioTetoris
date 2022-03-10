@@ -51,6 +51,7 @@ MonoBehaviour:
   - {x: 10, y: -5.1}
   stageNumber: 0
   activeChenger: {fileID: 0}
-  field_csv: {fileID: 4900000, guid: 60d565935280c154db225571b91523b6, type: 3}
+  enemys: []
+  field_csv: {fileID: 4900000, guid: c620aa229a3389b449d190cc656a9f0d, type: 3}
   stageFlgs: {fileID: 4900000, guid: e97a6fc44d6ecbb4db426294e80f62ac, type: 3}
   stage: 1
