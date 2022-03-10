@@ -24,7 +24,7 @@ namespace Enemy
             // Enemyƒ_ƒ[ƒWˆ—
             public void DamageRecevable(int damage)
             {
-                core.Hp = Damage(core.Hp, damage);
+                core.Hp = Damage(core.Hp, damage); 
             }
 
 

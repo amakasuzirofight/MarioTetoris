@@ -82,8 +82,8 @@ namespace Enemy
                     if (!core.WaitTime(atkWaitCount)) return;
                     // AnimationÇçƒê∂
                     Debug.Log("éËÇÃÇ–ÇÁçUåÇÅIÅIÅI");
-                    if (handObj == rightHand) animator.SetTrigger("HandAtk_R");
-                    else                      animator.SetTrigger("HandAtk_L");
+                    //if (handObj == rightHand) animator.SetTrigger("HandAtk_R");
+                    /*else*/                      animator.SetTrigger("HandAtk_L");
                     StateChangeManager();
                 }
             }
@@ -102,8 +102,7 @@ namespace Enemy
             {
                 rb.velocity = Vector2.zero;
 
-
-                if (!core.WaitTime(5)) return;
+                if (!core.WaitTime(1)) return;
                 handAtkObj.SetActive(false);
                 idleObj.SetActive(true);
 
