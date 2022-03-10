@@ -18,13 +18,16 @@ namespace Enemy
             private Enemy1Core  core;
             private EnemyGround enemyGround;
             private Rigidbody2D rb;
-
+            private Animator animator;
 
             void IEnemy1State.OnStart(Enemy1StateType beforeState, Enemy1Core enemy)
             {
                 core        ??= GetComponent<Enemy1Core>();
                 enemyGround ??= GetComponent<EnemyGround>();
                 rb          ??= GetComponent<Rigidbody2D>();
+                animator    ??= GetComponent<Animator>();
+
+                animator.SetBool("Dash", true);
             }
 
             void IEnemy1State.OnUpdate(Enemy1Core enemy)
@@ -60,7 +63,7 @@ namespace Enemy
 
                 // PlayerÇÃçUåÇÇ…ìñÇΩÇ¡ÇΩÇÁ
                 if (player != null)
-                {
+                { 
                     StateChangeManager();
                 }
 

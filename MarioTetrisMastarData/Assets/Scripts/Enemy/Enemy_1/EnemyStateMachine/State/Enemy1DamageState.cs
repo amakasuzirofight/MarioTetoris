@@ -19,6 +19,7 @@ namespace Enemy
             private Enemy1Core  core;
             private GameObject  player;
             private Rigidbody2D rb;
+            private Animator animator;
 
             private float time = 0f;
             private const float TRANS_COUNT = 0.8f;
@@ -29,6 +30,9 @@ namespace Enemy
                 player ??= Utility_.playerObject;
                 core 　??= GetComponent<Enemy1Core>();
                 rb     ??= GetComponent<Rigidbody2D>();
+                animator ??= GetComponent<Animator>();
+
+                animator.SetTrigger("Damage");
 
                 // ノックバック処理
                 KnockBack(player, rb, 5f);

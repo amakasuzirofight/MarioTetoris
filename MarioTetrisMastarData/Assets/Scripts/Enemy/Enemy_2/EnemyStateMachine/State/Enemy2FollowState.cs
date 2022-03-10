@@ -17,6 +17,7 @@ namespace Enemy
             private GameObject  player;
             private Enemy2Core  core;
             private Rigidbody2D rb;
+            private Animator animator;
 
 
             void IEnemy2State.OnStart(Enemy2StateType beforeState, Enemy2Core enemy)
@@ -24,6 +25,9 @@ namespace Enemy
                 player ??= Utility_.playerObject;
                 core   ??= GetComponent<Enemy2Core>();
                 rb     ??= GetComponent<Rigidbody2D>();
+                animator ??= GetComponent<Animator>();
+
+                animator.SetBool("Dash", true);
             }
 
             void IEnemy2State.OnUpdate(Enemy2Core enemy)
@@ -48,12 +52,14 @@ namespace Enemy
                 // オブジェクトが検知範囲外の場合
                 if (!Detection(Distance(player, gameObject), core.DiteRange))
                 {
+                    animator.SetBool("Dash", false);
                     ChangeStateEvent(Enemy2StateType.STAY);
                 }
 
                 // 攻撃範囲内に入った場合
                 if (Detection(Distance(player, gameObject), core.AtkRange))
                 {
+                    animator.SetBool("Dash", false);
                     ChangeStateEvent(Enemy2StateType.ATTACK);
                 }
             }

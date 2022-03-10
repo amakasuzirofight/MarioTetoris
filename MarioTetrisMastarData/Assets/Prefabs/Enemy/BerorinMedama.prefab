@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 8535843053265068962}
   - component: {fileID: 1445343498261069196}
   - component: {fileID: 172164904}
+  - component: {fileID: 959835980}
   m_Layer: 0
   m_Name: BerorinMedama
   m_TagString: Untagged
@@ -272,3 +273,22 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!95 &959835980
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294017748306185997}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a015a5bc8179bca47bb32a17a5524ad1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

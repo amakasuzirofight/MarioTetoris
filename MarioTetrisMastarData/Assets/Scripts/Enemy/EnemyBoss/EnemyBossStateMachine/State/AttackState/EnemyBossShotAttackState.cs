@@ -14,20 +14,28 @@ namespace Enemy
 
             [SerializeField] private GameObject bullet;
             [SerializeField] private GameObject faceObj;
+            [SerializeField] private GameObject animObj;
+            [SerializeField] private GameObject bossObj;
+
+            [SerializeField] private Vector3 pos_R;
+            [SerializeField] private Vector3 pos_L;
 
             public EnemyBossStateType StateType => EnemyBossStateType.SHOTATTACK;
             public event Action<EnemyBossStateType> ChangeStateEvent;
 
             private EnemyBossCore core;
             private GameObject player;
-            private float transTimeCount = 3f;
+            private Animator animator;
+            private float transTimeCount = 5f;
 
             void IEnemyBossState.OnStart(EnemyBossStateType beforeState, EnemyBossCore enemy)
             {
                 player ??= Utility_.playerObject;
                 core ??= GetComponent<EnemyBossCore>();
+                animator ??= animObj.GetComponent<Animator>();
 
                 ShotStatePos();
+                Genarator();
             }
 
             void IEnemyBossState.OnUpdate(EnemyBossCore enemy)
@@ -48,6 +56,7 @@ namespace Enemy
             private void StateChangeManager()
             {
                 if (!core.WaitTime(transTimeCount)) return;
+                bossObj.transform.position = new Vector3(0f, -2f);
                 ChangeStateEvent(EnemyBossStateType.IDLE);
             }
 
@@ -71,8 +80,8 @@ namespace Enemy
                 float dir = player.transform.position.x;
 
                 // AniamtionÇåƒÇ—èoÇ∑
-                if (dir < 0) Debug.Log("ç∂ë§Ç…à⁄ìÆ");
-                if(dir >= 0) Debug.Log("âEë§Ç…à⁄ìÆ");
+                if (dir < 0) bossObj.transform.position = pos_R;
+                if(dir >= 0) bossObj.transform.position = pos_L;
             }
         }
     }
