@@ -77,8 +77,17 @@ namespace Mario
             AirStateJudge();
             oldPos = transform.position;
         }
+        private void Update()
+        {
+            MarioUpdate();
 
-
+           
+        }
+        private void FixedUpdate()
+        {
+            MarioFixedUpdate();
+          
+        }
         void JumpInputCheck()
         {
             //地面に接地しているときジャンプする
