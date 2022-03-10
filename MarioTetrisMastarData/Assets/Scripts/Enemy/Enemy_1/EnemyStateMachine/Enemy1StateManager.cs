@@ -89,12 +89,6 @@ namespace Enemy
                 enemyStateDic[crrentEnemy1State].OnStart(enemyState, enemy1);
             }
 
-
-            //private void Update()
-            //{
-            //    enemyStateDic[crrentEnemy1State].OnUpdate(enemy1);
-            //}
-
             // Updateインタフェース
             void IEnemyUpdateSendable.EnemyUpdate()
             {
@@ -106,6 +100,11 @@ namespace Enemy
             {
                 rb.velocity = Vector2.zero;
             }
+
+            //private void Update()
+            //{
+            //    enemyStateDic[crrentEnemy1State].OnUpdate(enemy1);
+            //}
         }
     }
 }

@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temporarilySaved: {fileID: 4900000, guid: 1fb0d56f5b237a244bbd610618c83a02, type: 3}
-  SaveData: {fileID: 4900000, guid: c620aa229a3389b449d190cc656a9f0d, type: 3}
+  SaveData: {fileID: 4900000, guid: 4159eb4824f50d040b11c8f457fb92f2, type: 3}
   fileName: CreateStage
   cam: {fileID: 798469458}
   debugText: {fileID: 801225585}
@@ -161,8 +161,8 @@ MonoBehaviour:
   image: {fileID: 257307775}
   glid: {fileID: 1070300680078303608, guid: e19989e3d6f70c545a192058f1767efd, type: 3}
   cursor: {fileID: 1326249059}
-  defaultPlayerPos_H: 13
-  defaultPlayerPos_W: 3
+  defaultPlayerPos_H: 3
+  defaultPlayerPos_W: 10
 --- !u!4 &90217154
 Transform:
   m_ObjectHideFlags: 0
