@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 8783895768432152184}
   - component: {fileID: 1909475908}
   - component: {fileID: 8625349412371856418}
+  - component: {fileID: 2093450283}
   m_Layer: 0
   m_Name: Torippi
   m_TagString: Untagged
@@ -318,3 +319,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc45c12103a3740977d89440dee4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2093450283
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8783895768432152135}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96fcecba3b51d804783040e005f8e2fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

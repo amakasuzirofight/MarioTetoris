@@ -89,7 +89,7 @@ namespace Enemy
             private void DamageState()
             {
                 enemyStateDic[crrentEnemyBossState].OnEnd(EnemyBossStateType.IDLE, enemyBoss);
-                //thisStateNum = 0; // ステートを一回リセットする場合
+                thisStateNum = 0; // ステートを一回リセットする場合
                 crrentEnemyBossState = EnemyBossStateType.DAMAGE; // ダメージ
                 enemyStateDic[crrentEnemyBossState].OnStart(EnemyBossStateType.IDLE, enemyBoss);
             }
@@ -98,7 +98,7 @@ namespace Enemy
             private void StanState() 
             {
                 enemyStateDic[crrentEnemyBossState].OnEnd(EnemyBossStateType.IDLE, enemyBoss);
-                //thisStateNum = 0; // ステートを一回リセットする場合
+                thisStateNum = 0; // ステートを一回リセットする場合
                 crrentEnemyBossState = EnemyBossStateType.STAN;
                 enemyStateDic[crrentEnemyBossState].OnStart(EnemyBossStateType.IDLE, enemyBoss);
             }

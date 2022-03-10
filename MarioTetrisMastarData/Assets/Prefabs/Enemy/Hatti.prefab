@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 239584743707288847}
   - component: {fileID: 51252641}
   - component: {fileID: 549628030546489450}
+  - component: {fileID: 1342708895}
   m_Layer: 0
   m_Name: Hatti
   m_TagString: Untagged
@@ -257,3 +258,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc45c12103a3740977d89440dee4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1342708895
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239584743707288838}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27e61a40d14ef3d4c8d1f8489595a7ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

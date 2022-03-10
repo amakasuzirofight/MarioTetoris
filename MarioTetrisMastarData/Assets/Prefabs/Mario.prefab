@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TestAttackCol: {fileID: 7184368153623078261}
-  IsDebugMode: 0
+  IsDebugMode: 1
   speed: 4
   jumpPower: 8
   marioJump: {fileID: 7184368151730898606}
