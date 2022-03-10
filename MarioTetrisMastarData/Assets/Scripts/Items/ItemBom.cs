@@ -30,12 +30,12 @@ namespace Items
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            Hit();
             var toSomethingHit = collision.gameObject.GetComponent<IDamageRecevable>();
             if (toSomethingHit != null)
             {
                 toSomethingHit.DamageRecevable(damageAmount);
                 Debug.Log("name = " + collision.gameObject.name);
-                Hit();
             }
         }
     }

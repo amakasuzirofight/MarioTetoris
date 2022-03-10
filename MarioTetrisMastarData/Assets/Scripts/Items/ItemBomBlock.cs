@@ -9,6 +9,7 @@ namespace Items
     public class ItemBomBlock : ItemBase
     {
         Rigidbody2D rib2d;
+        Animator animator;
         int damageAmount = 1;
         float limitTime = 30f;
 
@@ -16,6 +17,7 @@ namespace Items
         void Start()
         {
             rib2d = GetComponent<Rigidbody2D>();
+            animator = GetComponent<Animator>();
         }
 
         // Update is called once per frame
@@ -27,7 +29,7 @@ namespace Items
 
                 if(limitTime <= 0)
                 {
-
+                    animator.SetTrigger("explosionTrigger");
                 }
             }
         }
