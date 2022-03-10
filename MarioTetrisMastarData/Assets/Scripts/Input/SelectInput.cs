@@ -4,10 +4,30 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Inputer
 {
-    public class SelectInput : MonoBehaviour,ISelectInput
+    public class SelectInput : MonoBehaviour,ISelectInput,ISelectInputUpdate
     {
         public event Action<SelectButtonType> OnSelectButton;
         public event Action<float> MouceWhileEvent;
+
+        public void SelectUpdate()
+        {
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                OnSelectButton(SelectButtonType.ArrowDown);
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                OnSelectButton(SelectButtonType.MouceLeft);
+            }
+            if (Input.GetMouseButtonDown(1))
+            {
+                OnSelectButton(SelectButtonType.MouceRight);
+            }
+            if (Input.mouseScrollDelta.y != 0)
+            {
+                MouceWhileEvent(Input.mouseScrollDelta.y);
+            }
+        }
 
         private void Awake()
         {
@@ -22,23 +42,7 @@ namespace Inputer
         // Update is called once per frame
         void Update()
         {
-            if(Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                OnSelectButton(SelectButtonType.ArrowDown);
-            }
-            if(Input.GetMouseButtonDown(0))
-            {
-                OnSelectButton(SelectButtonType.MouceLeft);
-            }
-            if (Input.GetMouseButtonDown(1))
-            {
-                Debug.Log("‚Ý‚¬");
-                OnSelectButton(SelectButtonType.MouceRight);
-            }
-            if(Input.mouseScrollDelta.y!=0)
-            {
-                MouceWhileEvent(Input.mouseScrollDelta.y);
-            }
+         
         }
     }
     public enum SelectButtonType
