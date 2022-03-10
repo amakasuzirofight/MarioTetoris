@@ -12,16 +12,23 @@ namespace Field
         FieldBase nowField;
         GameObject activeSceneObject;
         FieldState state;
-        [SerializeField] private List<string> debugMs;
+
+        List<GameObject> enemys = new List<GameObject>();
+        List<Connector.IEnemyUpdateSendable> enemyUpdates = new List<Connector.IEnemyUpdateSendable>();
 
         private void Start()
         {
             Utility_.MessageSetting(false);
             state = FieldState.NORMAL;
             activeSceneObject = Instantiate(baseScene.gameObject);
-            nowField = baseScene;
+            nowField = activeSceneObject.GetComponent<FieldBase>();
             nowField.fieldcomplete = FieldChenge;
             nowField.OpenField();
+            enemys = nowField.enemys;
+            for (int i = 0;i < enemys.Count;i++)
+            {
+                enemyUpdates.Add(enemys[i].GetComponent<Connector.IEnemyUpdateSendable>());
+            }
         }
 
         void Awake()
@@ -37,44 +44,34 @@ namespace Field
         void Update()
         {
             mainCamara.transform.position = 
-                new Vector3(Mathf.Clamp(Utility_.playerObject.transform.position.x,0,Utility_.FieldData[0].Length),
+                new Vector3(Mathf.Clamp(Utility_.playerObject.transform.position.x,10,Utility_.FieldData[0].Length - 10),
                             Utility_.playerObject.transform.position.y,
                             -10);
 
             switch (Utility_.GameState)
             {
                 case FieldState.NORMAL:
-                    if (Input.GetKeyDown(KeyCode.K))
-                    {
-                        Utility_.OpenMessage(debugMs);
-                    }
-
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        Action a = DebugEvent;
-                        Utility_.EventActiveate(a);
-                    }
-
                     nowField.FieldCheck();
-
-                    if (Input.GetKeyDown(KeyCode.Space))
+                    for (int i = 0;i < enemyUpdates.Count;i++)
                     {
-                        List<FieldInfo> fields = new List<FieldInfo>();
-                        fields.Add(new FieldInfo(4, 0));
-                        fields.Add(new FieldInfo(3, 0));
-                        fields.Add(new FieldInfo(2, 0));
-                        fields.Add(new FieldInfo(1, 0));
-
-                        nowField.CreateBrock(fields);
+                        enemyUpdates[i].EnemyUpdate();
                     }
                     break;
                 case FieldState.CONVERSATION:
-                    if (Input.GetKeyDown(KeyCode.K))
+                    for (int i = 0; i < enemyUpdates.Count; i++)
+                    {
+                        enemyUpdates[i].EnemyVelocityDefault();
+                    }
+                    if (Input.GetKeyDown(KeyCode.Return))
                     {
                         Utility_.MessageWriter();
                     }
                     break;
                 case FieldState.EVENT:
+                    for (int i = 0; i < enemyUpdates.Count; i++)
+                    {
+                        enemyUpdates[i].EnemyVelocityDefault();
+                    }
                     break;
                 default:
                     break;
@@ -88,10 +85,16 @@ namespace Field
             nowField.CloseField();
             FieldBase next = nowField.activeChenger.nextField;
             Destroy(activeSceneObject);
-            nowField = next;
-            activeSceneObject = Instantiate(nowField.gameObject);
+            activeSceneObject = Instantiate(next.gameObject);
+            nowField = activeSceneObject.GetComponent<FieldBase>();
             nowField.fieldcomplete = FieldChenge;
             nowField.OpenField();
+            enemyUpdates = new List<Connector.IEnemyUpdateSendable>();
+            enemys = nowField.enemys;
+            for (int i = 0; i < enemys.Count; i++)
+            {
+                enemyUpdates.Add(enemys[i].GetComponent<Connector.IEnemyUpdateSendable>());
+            }
         }
 
         public void DebugEvent()
