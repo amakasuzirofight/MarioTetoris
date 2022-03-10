@@ -8,7 +8,7 @@ namespace Enemy
     {
         // Enemy‚ÌŠî’êHPƒNƒ‰ƒX
 
-        private const int MAX_HP = 100;// Œã‚Å•ÏX
+        private const int MAX_HP = 100;
         private const int MIN_HP = 0;
 
         protected int Damage(int hp, int damageNum)
@@ -17,7 +17,7 @@ namespace Enemy
             return Mathf.Max(hp, MIN_HP);
         }
 
-        protected float Recovery(int hp, int recoveryNum)
+        protected int Recovery(int hp, int recoveryNum)
         {
             hp += recoveryNum;
             return Mathf.Min(hp, MAX_HP);

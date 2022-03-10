@@ -8,7 +8,7 @@ namespace Enemy
 {
     namespace Enemy1State
     {
-        public class Enemy1Hit : EnemyBaseHPManager,IDamageRecevable
+        public class Enemy1Hit : EnemyBaseHPManager,IDamageRecevable,IRecoveryReceivable
         {
             // Enemy1‚ÌÚG”»’èˆ—
 
@@ -36,6 +36,12 @@ namespace Enemy
                     IDamageRecevable damage = at;
                     damage.DamageRecevable(core.AtkPow);
                 }
+            }
+
+            // Enemy‰ñ•œˆ—
+            public void RecoveryReceivable(int recoveryAmount)
+            {
+                core.Hp = Recovery(core.Hp, recoveryAmount);
             }
         }
     }
