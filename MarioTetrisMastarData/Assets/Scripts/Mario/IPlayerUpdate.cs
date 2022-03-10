@@ -1,18 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class IPlayerUpdate : MonoBehaviour
+namespace Mario
 {
-    // Start is called before the first frame update
-    void Start()
+    interface IPlayerUpdate
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void MarioUpdate();
+        public void MarioFixedUpdate();
     }
 }
