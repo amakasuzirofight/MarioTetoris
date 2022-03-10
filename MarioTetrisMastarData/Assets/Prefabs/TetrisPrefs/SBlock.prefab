@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3140637188792142941}
   - component: {fileID: 6594625526783114898}
   - component: {fileID: 6877683083369937735}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SBlock
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

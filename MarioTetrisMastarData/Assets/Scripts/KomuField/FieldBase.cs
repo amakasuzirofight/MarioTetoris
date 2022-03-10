@@ -18,6 +18,8 @@ namespace Field
         [HideInInspector] protected GameObject[] chengers_objects;
         [HideInInspector] public FieldChenger activeChenger;
 
+        public List<GameObject> enemys;
+
         /// <summary>
         /// 仮想関数　フィールド生成時に呼ばれる関数です
         /// </summary>
@@ -105,6 +107,7 @@ namespace Field
         protected List<GameObject> CreateField(List<int[]> csvData)
         {
             List<GameObject> objects = new List<GameObject>();
+            enemys = new List<GameObject>();
 
             for (int i = 0; i < csvData.Count; i++)
             {
@@ -123,6 +126,7 @@ namespace Field
                             GameObject obj = Instantiate(Utility_.enemyGeter[csvData[i][j] - Utility_.BROCK_NUMBER_COUNT]);
                             obj.transform.position = FieldInfo.FieldInfoToVec(new FieldInfo(i, j));
                             objects.Add(obj);
+                            enemys.Add(obj);
                         }
                         else if (csvData[i][j] == Utility_.PLAYER_NUMBER)
                         {

@@ -82,18 +82,6 @@ namespace Field
 
             if (Input.GetKeyDown(KeyCode.M))
             {
-                //List<FieldInfo> debug = new List<FieldInfo>();
-                //debug.Add(new FieldInfo(0, 6));
-                //debug.Add(new FieldInfo(0, 7));
-                //debug.Add(new FieldInfo(0, 8));
-                //debug.Add(new FieldInfo(1, 6));
-                //debug = Brock.LimitChecker(debug);
-
-                //for (int i = 0; i < debug.Count; i++)
-                //{
-                //    GameObject obj = Instantiate(Utility_.minoGeter[0]);
-                //    obj.transform.position = FieldInfo.FieldInfoToVec(debug[i]);
-                //}
                 DeleteBrock(10);
             }
 
@@ -108,6 +96,14 @@ namespace Field
 
         public override void CloseField()
         {
+
+            for (int i = 0;i < Utility_.FieldData.Count;i++)
+            {
+                for (int j = 0;j < Utility_.FieldData[i].Length;j++)
+                {
+                    if (groundObject[new FieldInfo(i, j)] != default && groundObject[new FieldInfo(i, j)] != null) Destroy(groundObject[new FieldInfo(i,j)]);
+                }
+            }
 
             DestroyObjects(groundObjects);
 
@@ -131,7 +127,6 @@ namespace Field
                 activeBrock[activeBrock.Count - 1].minos.Add(Instantiate(Utility_.minoGeter[_brockNumber]));
                 activeBrock[activeBrock.Count - 1].minos[activeBrock[activeBrock.Count - 1].minos.Count - 1].transform.position = FieldInfo.FieldInfoToVec(positions[i]);
                 groundObject[positions[i]] = activeBrock[activeBrock.Count - 1].minos[i];
-                // groundObjects.Add(activeBrock[activeBrock.Count - 1].minos[i]);
             }
 
         }
@@ -156,15 +151,13 @@ namespace Field
             for (int i = list_i.Count - 1; i >= 0;i--)
             {
                 Debug.Log($"i = {list_i[i]}({i})||j = {list_j[i]}({i})");
-                //Destroy(groundObject[activeBrock[list_i[i]].csv_pos[list_j[j]]]);
-                //groundObject[activeBrock[list_i[i]].csv_pos[list_j[j]]] = default;
-                Destroy(activeBrock[list_i[i]].minos[list_j[i]]);
-                // Utility_.CsvWriter(new FieldInfo(activeBrock[list_i[i]].csv_pos[list_j[i]].height,activeBrock[list_i[i]].csv_pos[list_j[i]].width),0);
-                activeBrock[list_i[i]].csv_pos.RemoveAt(list_j[i]);
-                activeBrock[list_i[i]].minos.RemoveAt(list_j[i]);
+                Destroy(groundObject[activeBrock[list_i[i]].csv_pos[list_j[i]]]);
+                groundObject[activeBrock[list_i[i]].csv_pos[list_j[i]]] = default;
 
                 Utility_.FieldData[activeBrock[list_i[i]].csv_pos[list_j[i]].height][activeBrock[list_i[i]].csv_pos[list_j[i]].width] = 0;
-                Debug.Log($"FieldData after {Utility_.FieldData[activeBrock[list_i[i]].csv_pos[list_j[i]].height][activeBrock[list_i[i]].csv_pos[list_j[i]].width]}");
+                // Destroy(activeBrock[list_i[i]].minos[list_j[i]]);
+                activeBrock[list_i[i]].csv_pos.RemoveAt(list_j[i]);
+                activeBrock[list_i[i]].minos.RemoveAt(list_j[i]);
             }
 
             for (int i = 0;i < activeBrock.Count;i++)
@@ -175,6 +168,22 @@ namespace Field
                     activeBrock.RemoveAt(i);
                     i--;
                 }
+            }
+        }
+
+        public void AllDelete()
+        {
+            for (int i = 0; i < Utility_.FieldData.Count; i++)
+            {
+                for (int j = 0; j < Utility_.FieldData[i].Length; j++)
+                {
+                    if (groundObject[new FieldInfo(i, j)] != default && groundObject[new FieldInfo(i, j)] != null) Destroy(groundObject[new FieldInfo(i, j)]);
+                }
+            }
+
+            for (int i = activeBrock.Count - 1;i >= 0;i--)
+            {
+                activeBrock.RemoveAt(i);
             }
         }
 
@@ -260,8 +269,8 @@ namespace Field
                 activeBrock[i].csv_pos[j] += new FieldInfo(1, 0);
                 activeBrock[i].minos[j].transform.position = new Vector3(activeBrock[i].csv_pos[j].width, activeBrock[i].csv_pos[j].height * -1, 0);
                 Utility_.FieldData[activeBrock[i].csv_pos[j].height][activeBrock[i].csv_pos[j].width] = activeBrock[i].brockNumGet();
-                //groundObject[activeBrock[i].csv_pos[j]] = groundObject[activeBrock[i].csv_pos[j] - new FieldInfo(1, 0)];
-                //groundObject[activeBrock[i].csv_pos[j] - new FieldInfo(1, 0)] = default;
+                groundObject[activeBrock[i].csv_pos[j]] = groundObject[activeBrock[i].csv_pos[j] - new FieldInfo(1, 0)];
+                groundObject[activeBrock[i].csv_pos[j] - new FieldInfo(1, 0)] = default;
             }
         }
 

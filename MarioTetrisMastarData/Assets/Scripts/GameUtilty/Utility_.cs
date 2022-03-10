@@ -12,10 +12,14 @@ public static class Utility_
     public static Dictionary<int, GameObject> enemyGeter = new Dictionary<int, GameObject>();
 
     private static Text systemMessage;
+    private static Text nameMessage;
+    private static Image systemPanel;
+    private static Image namePanel;
     private static List<int[]> csvData;
     private static Stage thisStage = Stage.NONE;
     private static FieldState fieldState;
     private static List<string> messageList;
+    private static string messageMaster;
     private static int msIndex;
     private static bool eventFlg = false;
 
@@ -43,9 +47,23 @@ public static class Utility_
         if (stateChenge) GameState = FieldState.CONVERSATION;
     }
 
+    public static void MessageSetting(Text mainText,Text nameText,Image mainPanel,Image namePanel_)
+    {
+        systemMessage = mainText;
+        nameMessage = nameText;
+        systemPanel = mainPanel;
+        namePanel = namePanel_;
+
+        systemMessage.gameObject.SetActive(false);
+        nameMessage.gameObject.SetActive(false);
+        systemPanel.gameObject.SetActive(false);
+        namePanel.gameObject.SetActive(false);
+    }
+
     public static void MessageWriter()
     {
         MessageSetting();
+        nameMessage.text = messageMaster;
         if (msIndex + 1 != messageList.Count)
         {
             msIndex++;
@@ -58,20 +76,27 @@ public static class Utility_
         }
     }
 
-    public static void OpenMessage(List<string> newTexts)
+    public static void OpenMessage(List<string> newTexts,string name)
     {
-        MessageSetting();
+        MessageSetting(true);
+        messageMaster = name;
         systemMessage.gameObject.SetActive(true);
+        nameMessage.gameObject.SetActive(true);
         messageList = newTexts;
         msIndex = -1;
         MessageWriter();
+        systemPanel.gameObject.SetActive(true);
+        namePanel.gameObject.SetActive(true);
     }
 
     private static void CloseMessage()
     {
         systemMessage.gameObject.SetActive(false);
+        nameMessage.gameObject.SetActive(false);
         systemMessage.text = default;
         fieldState = FieldState.NORMAL;
+        systemPanel.gameObject.SetActive(false);
+        namePanel.gameObject.SetActive(false);
     }
 
     public static void EventActiveate(Action target)

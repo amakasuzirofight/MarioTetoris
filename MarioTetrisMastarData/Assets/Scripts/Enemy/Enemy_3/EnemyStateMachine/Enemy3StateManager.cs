@@ -101,12 +101,10 @@ namespace Enemy
                 rb.velocity = Vector2.zero;
             }
 
-            //private void Update()
-            //{
-            //    enemyStateDic[crrentEnemy3State].OnUpdate(enemy3);
-            //}
-
+            private void Update()
+            {
+                enemyStateDic[crrentEnemy3State].OnUpdate(enemy3);
+            }
         }
     }
-
 }
