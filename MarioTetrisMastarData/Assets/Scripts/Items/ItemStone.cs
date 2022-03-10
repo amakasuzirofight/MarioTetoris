@@ -18,7 +18,7 @@ namespace Items
 
         public override void Hit()
         {
-            
+            Destroy(this.gameObject);
         }
         
         private void OnCollisionEnter2D(Collision2D collision)
