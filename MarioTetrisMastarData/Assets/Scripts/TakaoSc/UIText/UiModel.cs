@@ -52,17 +52,17 @@ public class UiModel : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            if (selectSceneNum.Value == (int)SelectSceneEnum.scene_Setting) return;
-            selectTempNum = selectSceneNum.Value;
-            selectSceneNum.Value = (int)SelectSceneEnum.scene_Setting;
-        }
+        //if(Input.GetKeyDown(KeyCode.RightArrow))
+        //{
+        //    if (selectSceneNum.Value == (int)SelectSceneEnum.scene_Setting) return;
+        //    selectTempNum = selectSceneNum.Value;
+        //    selectSceneNum.Value = (int)SelectSceneEnum.scene_Setting;
+        //}
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            selectSceneNum.Value = selectTempNum;
-        }
+        //if (Input.GetKeyDown(KeyCode.LeftArrow))
+        //{
+        //    selectSceneNum.Value = selectTempNum;
+        //}
 
         if(Input.GetKeyDown(KeyCode.Return))
         {
@@ -76,9 +76,6 @@ public class UiModel : MonoBehaviour
                     break;
                 case (int)SelectSceneEnum.scene_Edit:
                     Debug.Log(selectSceneNum.Value + " Edit");
-                    break;
-                case (int)SelectSceneEnum.scene_Setting:
-                    Debug.Log(selectSceneNum.Value + " ê›íË");
                     break;
                 default:
                     break;
