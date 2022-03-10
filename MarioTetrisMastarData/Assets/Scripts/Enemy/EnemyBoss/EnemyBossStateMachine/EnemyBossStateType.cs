@@ -3,8 +3,7 @@ public enum EnemyBossStateType
     START,
     IDLE,
 
-    HANDATTACK_RIGHT,
-    HANDATTACK_LEFT,
+    HANDATTACK,
 
     SHOTATTACK,
     BOMBATTACK,

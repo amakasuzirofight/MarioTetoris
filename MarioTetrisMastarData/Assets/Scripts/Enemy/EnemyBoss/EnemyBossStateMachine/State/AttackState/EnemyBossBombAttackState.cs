@@ -16,13 +16,16 @@ namespace Enemy
 
             private EnemyBossCore core;
             private EnemyBossBombSpawn bombSpawn;
+
             private float transTimeCount = 16;
 
 
             void IEnemyBossState.OnStart(EnemyBossStateType beforeState, EnemyBossCore enemy)
             {
-                core ??= GetComponent<EnemyBossCore>();
+                core Å@ Å@??= GetComponent<EnemyBossCore>();
                 bombSpawn ??= GetComponent<EnemyBossBombSpawn>();
+
+                // ã©ÇÒÇ≈ÇÈAnimation
             }
 
             void IEnemyBossState.OnUpdate(EnemyBossCore enemy)

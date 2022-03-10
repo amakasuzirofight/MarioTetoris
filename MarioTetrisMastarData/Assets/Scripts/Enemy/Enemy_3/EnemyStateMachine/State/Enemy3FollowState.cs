@@ -62,7 +62,7 @@ namespace Enemy
             {
                 var player = collision.GetComponent<TestMarioAttack>();
 
-                // Player‚Ì–{‘Ì‚É“–‚½‚Á‚½‚ç
+                // Player‚ÌUŒ‚‚É“–‚½‚Á‚½‚ç
                 if (player != null)
                 {
                     ChangeStateEvent(Enemy3StateType.DAMAGED);
