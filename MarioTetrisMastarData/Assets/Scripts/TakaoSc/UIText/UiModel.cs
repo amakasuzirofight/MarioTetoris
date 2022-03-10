@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
+using UnityEngine.SceneManagement;
 
 public class UiModel : MonoBehaviour
 {
     public IntReactiveProperty selectSceneNum = new IntReactiveProperty(0);
     int selectTempNum = 0;
 
+
     enum SelectSceneEnum
     {
         scene_Beginning,
-        scene_Continuation,
+        //scene_Continuation,
         scene_Edit,
         scene_Setting
     }
@@ -69,13 +71,13 @@ public class UiModel : MonoBehaviour
             switch (selectSceneNum.Value)
             {
                 case (int)SelectSceneEnum.scene_Beginning:
-                    Debug.Log(selectSceneNum.Value + " ‚Í‚¶‚ß‚©‚ç");
+                    SceneManager.LoadScene("KomugiScene");
                     break;
-                case (int)SelectSceneEnum.scene_Continuation:
-                    Debug.Log(selectSceneNum.Value + " ‚Â‚Ã‚«‚©‚ç");
-                    break;
+                //case (int)SelectSceneEnum.scene_Continuation:
+                //    Debug.Log(selectSceneNum.Value + " ‚Â‚Ã‚«‚©‚ç");
+                //    break;
                 case (int)SelectSceneEnum.scene_Edit:
-                    Debug.Log(selectSceneNum.Value + " Edit");
+                    SceneManager.LoadScene("EditStage");
                     break;
                 default:
                     break;

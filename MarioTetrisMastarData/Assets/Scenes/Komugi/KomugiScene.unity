@@ -1408,7 +1408,7 @@ PrefabInstance:
     - target: {fileID: 3495437678960830983, guid: b582d5f4e9937a04394739459dcd07b7, type: 3}
       propertyPath: baseScene
       value: 
-      objectReference: {fileID: 1501552383245228382, guid: 3baab2359ed1fa240a3d3fb8ab399b50, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3495437678960830983, guid: b582d5f4e9937a04394739459dcd07b7, type: 3}
       propertyPath: mainCamara
       value: 
