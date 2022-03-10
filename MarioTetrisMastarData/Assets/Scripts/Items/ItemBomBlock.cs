@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace Items
 {
-    public class ItemStone : ItemBase
+    public class ItemBomBlock : ItemBase
     {
         Rigidbody2D rib2d;
         int damageAmount = 1;
+        float limitTime = 30f;
 
         // Start is called before the first frame update
         void Start()
@@ -16,14 +18,23 @@ namespace Items
             rib2d = GetComponent<Rigidbody2D>();
         }
 
-        public override void Hit()
+        // Update is called once per frame
+        void Update()
         {
-            Destroy(this.gameObject);
+            if(rib2d.velocity.y >= 0)
+            {
+                limitTime -= Time.deltaTime;
+
+                if(limitTime <= 0)
+                {
+
+                }
+            }
         }
-        
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (rib2d.velocity.y < 0)
+            if(rib2d.velocity.y < 0)
             {
                 var toSomethingHit = collision.gameObject.GetComponent<IDamageRecevable>();
                 if (toSomethingHit != null)
@@ -33,13 +44,12 @@ namespace Items
                     Hit();
                 }
             }
-            
-            //if (TryGetComponent<IDamageRecevable>(out var toDamageHit))
+            //if (TryGetComponent<IDamageRecevable>(out var toSomethingHit))
             //{
-            //    toDamageHit.DamageRecevable(damageAmount);
+            //    toSomethingHit.DamageRecevable(damageAmount);
             //    Hit();
             //}
         }
     }
-}
 
+}
