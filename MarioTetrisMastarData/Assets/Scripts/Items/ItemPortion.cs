@@ -16,11 +16,19 @@ namespace Items
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (TryGetComponent<IRecoveryReceivable>(out var toSometningHit))
+            var toSomethingHit = collision.gameObject.GetComponent<IRecoveryReceivable>();
+            if(toSomethingHit != null)
             {
-                toSometningHit.RecoveryReceivable(recoveryAmount);
+                toSomethingHit.RecoveryReceivable(recoveryAmount);
+                Debug.Log("name = " + collision.gameObject.name);
                 Hit();
             }
+
+            //if (TryGetComponent<IRecoveryReceivable>(out var toSomethingHit))
+            //{
+            //    toSomethingHit.RecoveryReceivable(recoveryAmount);
+            //    Hit();
+            //}
         }
     }
 }
