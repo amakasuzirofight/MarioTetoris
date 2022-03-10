@@ -6,7 +6,8 @@ using System.Reflection;
 
 namespace Robot
 {
-    public class RobotCore : MonoBehaviour,IGetPositionToInfo
+    public class RobotCore : MonoBehaviour,IGetPositionToInfo,IRobotUpdate
+
     {
         [SerializeField] float moveSpeed;
         [SerializeField] GameObject inputObj;
@@ -26,14 +27,16 @@ namespace Robot
         }
 
         // Update is called once per frame
-        void Update()
+          
+        public void RobotUpdate()
         {
-
         }
-        private void FixedUpdate()
+
+        public void RobotFixedUpdate()
         {
             WalkJudde();
         }
+       
         void WalkJudde()
         {
             if (robotInput.MovePower() != 0)
@@ -49,7 +52,7 @@ namespace Robot
             return FieldInfo.VecToFieldInfo(transform.position);
         }
 
-       
+   
     }
 
 
