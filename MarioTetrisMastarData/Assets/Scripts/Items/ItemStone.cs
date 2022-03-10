@@ -23,12 +23,22 @@ namespace Items
         
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (rib2d.velocity.y <= 0) return;
-            if(TryGetComponent<IDamageRecevable>(out var toDamageHit))
+            if (rib2d.velocity.y < 0)
             {
-                toDamageHit.DamageRecevable(damageAmount);
-                Hit();
+                var toSomethingHit = collision.gameObject.GetComponent<IDamageRecevable>();
+                if (toSomethingHit != null)
+                {
+                    toSomethingHit.DamageRecevable(damageAmount);
+                    Debug.Log("name = " + collision.gameObject.name);
+                    Hit();
+                }
             }
+            
+            //if (TryGetComponent<IDamageRecevable>(out var toDamageHit))
+            //{
+            //    toDamageHit.DamageRecevable(damageAmount);
+            //    Hit();
+            //}
         }
     }
 }

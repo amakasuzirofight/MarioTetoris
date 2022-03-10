@@ -10,6 +10,7 @@ namespace Enemy
 
         protected virtual void Dead() 
         {
+            Debug.Log("ÇµÇÒÇæÅI");
             Destroy(gameObject);
         } 
     }

@@ -11,10 +11,13 @@ namespace Enemy
         {
             // Enemyの爆弾攻撃状態処理
 
+            [SerializeField] private GameObject faceObj;
+
             public EnemyBossStateType StateType => EnemyBossStateType.STAN;
             public event Action<EnemyBossStateType> ChangeStateEvent;
 
             private EnemyBossCore core;
+            // コライダーのクラス変数作ってActive化する
             private float transTimeCount = 16;
 
 

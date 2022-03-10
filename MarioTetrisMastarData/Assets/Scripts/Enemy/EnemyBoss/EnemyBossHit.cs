@@ -8,7 +8,7 @@ namespace Enemy
 {
     namespace EnemyBossState
     {
-        public class EnemyBossHit : EnemyBaseHPManager, IDamageRecevable
+        public class EnemyBossHit : EnemyBaseHPManager, IDamageRecevable,IRecoveryReceivable
         {
             [SerializeField] private GameObject manager;
 
@@ -47,6 +47,12 @@ namespace Enemy
             private void SpawnzBlockMaterial() 
             {
                 // –¢À‘•
+            }
+
+            // Enemy‰ñ•œˆ—
+            public void RecoveryReceivable(int recoveryAmount)
+            {
+                core.Hp = Recovery(core.Hp, recoveryAmount);
             }
         }
     }

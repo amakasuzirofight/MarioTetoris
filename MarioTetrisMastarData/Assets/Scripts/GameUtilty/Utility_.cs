@@ -15,6 +15,7 @@ public static class Utility_
     private static Text nameMessage;
     private static Image systemPanel;
     private static Image namePanel;
+    private static Action eventObj;
     private static List<int[]> csvData;
     private static Stage thisStage = Stage.NONE;
     private static FieldState fieldState;
@@ -104,11 +105,18 @@ public static class Utility_
         if (eventFlg) return;
         eventFlg = true;
         fieldState = FieldState.EVENT;
-        target();
+        playerObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        eventObj = target;
+    }
+
+    public static void EventExecution()
+    {
+        eventObj();
     }
 
     public static void EventEnd()
     {
+        Debug.Log("EVENT_END");
         eventFlg = false;
         fieldState = FieldState.NORMAL;
     }
