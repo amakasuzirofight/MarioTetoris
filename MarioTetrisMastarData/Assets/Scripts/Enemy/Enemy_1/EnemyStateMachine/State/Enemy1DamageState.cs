@@ -10,7 +10,7 @@ namespace Enemy
     {
         public class Enemy1DamageState : EnemyBaseTouched, IEnemy1State
         {
-            // Player‚ÌDamageó‘Ôˆ—
+            // Enemy1‚ÌDamageó‘Ôˆ—
 
 
             public Enemy1StateType StateType =>  Enemy1StateType.DAMAGED;

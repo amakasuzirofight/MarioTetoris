@@ -270,25 +270,21 @@ public class Brock
         List<FieldInfo> answer = basePos;
         bool endFlg = false;
 
-        Debug.Log("LimitChecker");
-
         while (count < 30)
         {
             count++;
             for (int i = 0;i < answer.Count;i++)
             {
-                Debug.Log("check Strat");
-
                 if (answer[i].height + 1 >= Utility_.FieldData.Count)
                 {
                     Debug.LogWarning("ŒÀŠE’l‚Å‚·");
                     return basePos;
                 }
 
-                if (Utility_.FieldData[answer[i].height + 1][answer[i].width] < Utility_.BROCK_NUMBER_COUNT &&
-                    Utility_.FieldData[answer[i].height + 1][answer[i].width] != 0)
+                if ((Utility_.FieldData[answer[i].height + 1][answer[i].width] < Utility_.BROCK_NUMBER_COUNT 
+                    || Utility_.FieldData[answer[i].height + 1][answer[i].width] >= 100)
+                    && Utility_.FieldData[answer[i].height + 1][answer[i].width] != 0)
                 {
-                    Debug.Log("out");
                     endFlg = true;
                 }
             }

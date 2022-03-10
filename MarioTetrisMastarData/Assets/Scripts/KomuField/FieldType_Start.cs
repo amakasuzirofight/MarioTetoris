@@ -11,12 +11,14 @@ namespace Field
         [SerializeField] private List<string> contnt_1 = new List<string>();
 
         [SerializeField] private TextAsset csvData;
+
+        List<GameObject> grounds = new List<GameObject>();
         public override void OpenField()
         {
             state = StartStete.CONVERSATION_1;
             Utility_.CsvToIntList(csvData);
             CreateCharacters();
-            CreateField(Utility_.FieldData);
+            grounds = CreateField(Utility_.FieldData);
         }
 
         public override void FieldCheck()
@@ -48,7 +50,7 @@ namespace Field
 
         public override void CloseField()
         {
-            DestroyObjects();
+            DestroyObjects(grounds);
         }
 
         public void Event()
