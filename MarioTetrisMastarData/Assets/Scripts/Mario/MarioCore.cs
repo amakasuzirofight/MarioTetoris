@@ -5,11 +5,11 @@ using UnityEngine;
 using Inputer;
 namespace Mario
 {
-    public class MarioCore : MonoBehaviour, Connector.IDamageRecevable
+    public class MarioCore : MonoBehaviour, Connector.IDamageRecevable, IPlayerUpdate
     {
         [SerializeField] GameObject TestAttackCol;
 
-
+        [SerializeField] bool IsDebugMode;
         [SerializeField] float speed;
         [SerializeField] float jumpPower;
 
@@ -30,6 +30,10 @@ namespace Mario
         MarioState marioState;
         bool isGround;
         bool canJump;
+        private void Awake()
+        {
+            Utility.Locator<IPlayerUpdate>.Bind(this);
+        }
         // Start is called before the first frame update
         void Start()
         {
@@ -46,9 +50,7 @@ namespace Mario
             marioState = MarioState.Stay;
             _localScale = transform.localScale;
         }
-
-        // Update is called once per frame
-        void Update()
+        public void MarioUpdate()
         {
             if (Input.GetKey(KeyCode.Space))
             {
@@ -60,7 +62,7 @@ namespace Mario
             }
         }
         Vector3 _localScale;
-        private void FixedUpdate()
+        public void MarioFixedUpdate()
         {
             if (inputer.MoveInput() != 0)
             {
@@ -74,7 +76,19 @@ namespace Mario
             MoveJudge();
             AirStateJudge();
             oldPos = transform.position;
+        }
+        private void Update()
+        {
+            if (IsDebugMode == false) return;
+            MarioUpdate();
 
+           
+        }
+        private void FixedUpdate()
+        {
+            if (IsDebugMode == false) return;
+            MarioFixedUpdate();
+          
         }
         void JumpInputCheck()
         {
@@ -160,6 +174,7 @@ namespace Mario
         {
             Hp -= damage;
         }
+
     }
     public enum MarioState
     {

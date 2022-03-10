@@ -65,11 +65,7 @@ namespace Select
         }
         void Update()
         {
-            //selectState = selectItemWeigthNum % 2 == 0 ? SelectState.FirstSelect : SelectState.Spin;
-            //if (Input.GetKeyDown(KeyCode.T))
-            //{
-
-            //}
+          
             ViewItemCursle();
         }
         public ItemName ISelectedItem()

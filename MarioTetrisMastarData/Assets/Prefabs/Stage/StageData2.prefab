@@ -49,7 +49,8 @@ MonoBehaviour:
   - {x: 14.5, y: -4.05}
   stageNumber: 2
   activeChenger: {fileID: 0}
+  enemys: []
   setCharacters_: []
   checkFrame: 30
-  stage_csv: {fileID: 4900000, guid: 559ea52ed6977744fa6501e5a10cfd54, type: 3}
+  stage_csv: {fileID: 4900000, guid: 4159eb4824f50d040b11c8f457fb92f2, type: 3}
   brock_csv: {fileID: 4900000, guid: 00a6f621ecaafc44aa7a0c4711e14465, type: 3}

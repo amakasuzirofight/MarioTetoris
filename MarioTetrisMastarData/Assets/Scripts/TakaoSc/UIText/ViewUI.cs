@@ -9,8 +9,10 @@ public class ViewUI : MonoBehaviour
     [SerializeField] Button beginningButton;
     [SerializeField] Button continuationButton;
     [SerializeField] Button editButton;
-    [SerializeField] Button settingButton;
 
+    [SerializeField] Sprite beginningSprite;
+    [SerializeField] Sprite continuationSprite;
+    [SerializeField] Sprite editSprite;
     private void Awake()
     {
         Utility.Locator<ViewUI>.Bind(this);
@@ -30,23 +32,14 @@ public class ViewUI : MonoBehaviour
                 beginningButton.transform.DOScale(new Vector2(1.5f, 1.5f), 0.2f);
                 continuationButton.transform.DOScale(new Vector2(1, 1), 0.1f);
                 editButton.transform.DOScale(new Vector2(1, 1), 0.1f);
-                settingButton.transform.DOScale(new Vector2(1, 1), 0.1f);
                 break;
             case 1:
                 beginningButton.transform.DOScale(new Vector2(1, 1), 0.1f);
                 continuationButton.transform.DOScale(new Vector2(1.5f, 1.5f), 0.2f);
                 editButton.transform.DOScale(new Vector2(1, 1), 0.1f);
-                settingButton.transform.DOScale(new Vector2(1, 1), 0.1f);
                 break;
             case 2:
                 editButton.transform.DOScale(new Vector2(1.5f, 1.5f), 0.2f);
-                continuationButton.transform.DOScale(new Vector2(1, 1), 0.1f);
-                beginningButton.transform.DOScale(new Vector2(1, 1), 0.1f);
-                settingButton.transform.DOScale(new Vector2(1, 1), 0.1f);
-                break;
-            case 3:
-                settingButton.transform.DOScale(new Vector2(1.5f, 1.5f), 0.2f);
-                editButton.transform.DOScale(new Vector2(1, 1), 0.1f);
                 continuationButton.transform.DOScale(new Vector2(1, 1), 0.1f);
                 beginningButton.transform.DOScale(new Vector2(1, 1), 0.1f);
                 break;
