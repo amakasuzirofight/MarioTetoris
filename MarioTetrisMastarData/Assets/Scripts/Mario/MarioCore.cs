@@ -9,7 +9,7 @@ namespace Mario
     {
         [SerializeField] GameObject TestAttackCol;
 
-
+        [SerializeField] bool IsDebugMode;
         [SerializeField] float speed;
         [SerializeField] float jumpPower;
 
@@ -79,12 +79,14 @@ namespace Mario
         }
         private void Update()
         {
+            if (IsDebugMode == false) return;
             MarioUpdate();
 
            
         }
         private void FixedUpdate()
         {
+            if (IsDebugMode == false) return;
             MarioFixedUpdate();
           
         }

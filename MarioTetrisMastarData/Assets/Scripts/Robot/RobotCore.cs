@@ -36,7 +36,11 @@ namespace Robot
         {
             WalkJudde();
         }
-       
+        private void FixedUpdate()
+        {
+            //WalkJudde();
+
+        }
         void WalkJudde()
         {
             if (robotInput.MovePower() != 0)
