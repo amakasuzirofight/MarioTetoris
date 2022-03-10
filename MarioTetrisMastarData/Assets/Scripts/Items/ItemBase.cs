@@ -4,6 +4,12 @@ using UnityEngine;
 
 namespace Items
 {
+    public enum ItemNameEnum
+    {
+        NormalPortion,
+        Stone,
+        Bom
+    }
     public class ItemBase : MonoBehaviour
     {
         /// <summary>
@@ -13,15 +19,7 @@ namespace Items
         
         protected float fallSpeed;
         [SerializeField] protected Sprite itemSprite;
-
-        protected enum ItemNameEnum
-        {
-            NormalPortion,
-            HighPortion,
-            GreatPortion,
-            Stone,
-            Bom
-        }
+        [SerializeField] protected ItemNameEnum itemNameEnum;
 
         virtual public void FallDown()
         {
