@@ -15,11 +15,67 @@ C:/Users/user/Desktop/Mariteto/MarioTetrisMastarData
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< HEAD
 52893
 Successfully changed project path to: C:/Users/user/Desktop/Mariteto/MarioTetrisMastarData
 C:/Users/user/Desktop/Mariteto/MarioTetrisMastarData
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 80.27 ms, found 1 plugins.
+=======
+<<<<<<< HEAD
+53367
+Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 113.92 ms, found 1 plugins.
+=======
+<<<<<<< HEAD
+53184
+Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 189.00 ms, found 1 plugins.
+=======
+<<<<<<< HEAD
+53059
+Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 265.93 ms, found 1 plugins.
+=======
+<<<<<<< HEAD
+59921
+Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 90.45 ms, found 1 plugins.
+=======
+<<<<<<< HEAD
+55509
+Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 104.57 ms, found 1 plugins.
+=======
+<<<<<<< HEAD
+51315
+Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 113.59 ms, found 1 plugins.
+=======
+60186
+Successfully changed project path to: C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+C:/Users/user/Documents/MarioTetoris/MarioTetrisMastarData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 90.11 ms, found 1 plugins.
+>>>>>>> 246658e2b3d1ba0a88e3edc73105b9ef96e644b7
+>>>>>>> 954e516132c49466e7990aa4be83318068af97fc
+>>>>>>> 5157f62612cd677b3a023b0e35e31c6d4ceb6f70
+>>>>>>> e94daaeaeab116e683d45429aedfb0406d7f8fae
+>>>>>>> 933a71d52bc1d84f69224de2f0003b99dcf41d45
+>>>>>>> ae4deb306f8aeebd12ac17adda50ac1f883f6b25
+>>>>>>> f48f904f880f9b7cf79d8ef7e85de7d52dafe406
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.8f1 (507919d4fff5)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -35,6 +91,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56860
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -63,6 +120,239 @@ Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3053 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 123.7 MB.
 System memory in use after: 123.9 MB.
+=======
+<<<<<<< HEAD
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56752
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002707 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 220.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.582 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006653 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 309.01 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.623 seconds
+=======
+<<<<<<< HEAD
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56016
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004957 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 243.87 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.336 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.011197 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 285.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.776 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.20 seconds
+Refreshing native plugins compatible for Editor in 1.59 ms, found 1 plugins.
+=======
+<<<<<<< HEAD
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56076
+=======
+<<<<<<< HEAD
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56688
+=======
+<<<<<<< HEAD
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56704
+>>>>>>> e94daaeaeab116e683d45429aedfb0406d7f8fae
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004695 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 146.79 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.478 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006197 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 154.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  6.460 seconds
+>>>>>>> ae4deb306f8aeebd12ac17adda50ac1f883f6b25
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+<<<<<<< HEAD
+Refreshing native plugins compatible for Editor in 1.61 ms, found 1 plugins.
+=======
+Refreshing native plugins compatible for Editor in 0.67 ms, found 1 plugins.
+>>>>>>> 933a71d52bc1d84f69224de2f0003b99dcf41d45
+>>>>>>> ae4deb306f8aeebd12ac17adda50ac1f883f6b25
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3052 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 123.6 MB.
+System memory in use after: 123.8 MB.
+
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 3499.
+<<<<<<< HEAD
+Total: 12.965300 ms (FindLiveObjects: 1.051200 ms CreateObjectMapping: 0.605100 ms MarkObjects: 10.999800 ms  DeleteObjects: 0.304100 ms)
+=======
+<<<<<<< HEAD
+Total: 3.673300 ms (FindLiveObjects: 0.370200 ms CreateObjectMapping: 0.219400 ms MarkObjects: 3.001600 ms  DeleteObjects: 0.081100 ms)
+=======
+Total: 3.609200 ms (FindLiveObjects: 0.354300 ms CreateObjectMapping: 0.160400 ms MarkObjects: 3.006500 ms  DeleteObjects: 0.087100 ms)
+>>>>>>> 933a71d52bc1d84f69224de2f0003b99dcf41d45
+>>>>>>> ae4deb306f8aeebd12ac17adda50ac1f883f6b25
+
+========================================================================
+Received Import Request.
+  path: Assets/Prefabs/Enemy/Boss/FlogMain.prefab
+  artifactKey: Guid(6a01a2de73b87db4ea0bdf0b9e4d2a8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ae4deb306f8aeebd12ac17adda50ac1f883f6b25
+Start importing Assets/Prefabs/Enemy/Boss/FlogMain.prefab using Guid(6a01a2de73b87db4ea0bdf0b9e4d2a8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Flog': Transition 'FlogDown -> Exit' in state 'FlogDown' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
+
+Asset 'Flog': Transition 'FlogDamage -> Exit' in state 'FlogDamage' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
+
+<<<<<<< HEAD
+ -> (artifact id: '0529745ddba9b53b5452dd6bc2606970') in 0.525843 seconds
+  Import took 0.554326 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.079003 seconds.
+  path: Assets/Prefabs/Enemy/Boss/FlogMain (1).prefab
+  artifactKey: Guid(5b810a3a9f1cc2a45aec93f04cc6da71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy/Boss/FlogMain (1).prefab using Guid(5b810a3a9f1cc2a45aec93f04cc6da71) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Flog': Transition 'FlogDown -> Exit' in state 'FlogDown' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
+
+Asset 'Flog': Transition 'FlogDamage -> Exit' in state 'FlogDamage' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
+
+ -> (artifact id: 'c3a4ea3e9ec91f1c0d08de544cef4922') in 0.104345 seconds
+  Import took 0.159233 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.430683 seconds.
+  path: Assets/Scenes/RetsuScene/RetsuScene.unity
+  artifactKey: Guid(b492089f2941ea74eaa842358f249d7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/RetsuScene/RetsuScene.unity using Guid(b492089f2941ea74eaa842358f249d7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02b6331c2c6c1f6389caee589d04a7b7') in 0.009546 seconds
+  Import took 0.072964 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.606209 seconds.
+  path: Assets/Scenes/RetsuScene/RetsuSceneNeo.unity
+  artifactKey: Guid(c7f7373dd9f64f747947884d62d9b972) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/RetsuScene/RetsuSceneNeo.unity using Guid(c7f7373dd9f64f747947884d62d9b972) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'feccc80029431552e97f3033b2015dea') in 0.008453 seconds
+  Import took 0.076585 seconds .
+
+=======
+ -> (artifact id: '0529745ddba9b53b5452dd6bc2606970') in 0.384344 seconds
+  Import took 0.439911 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.565355 seconds.
+  path: Assets/Prefabs/Enemy/Boss/EnemyBossStateMachine (1).prefab
+  artifactKey: Guid(ec7c9421b505bbf4aac026de3578c0a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy/Boss/EnemyBossStateMachine (1).prefab using Guid(ec7c9421b505bbf4aac026de3578c0a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a039251e547ce93f7c0894c8d4859ae') in 0.037026 seconds
+  Import took 0.044090 seconds .
+=======
+<<<<<<< HEAD
+Start importing Assets/Prefabs/Enemy/Boss/FlogMain.prefab using Guid(6a01a2de73b87db4ea0bdf0b9e4d2a8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad7cdd0beea1f19a1bc229d5185f2e77') in 0.059878 seconds
+  Import took 0.065371 seconds .
+=======
+Start importing Assets/Prefabs/Enemy/Boss/FlogMain.prefab using Guid(6a01a2de73b87db4ea0bdf0b9e4d2a8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa6b4c7bef07aed948576add93700d10') in 0.066378 seconds
+  Import took 0.076267 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000353 seconds.
+  path: Assets/Prefabs/Enemy/Torippi.prefab
+  artifactKey: Guid(2416597795627784f9abb7e068b6dd47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy/Torippi.prefab using Guid(2416597795627784f9abb7e068b6dd47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3e605ca6fd241869eb9d7f1a6713e3a') in 0.022739 seconds
+  Import took 0.031240 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.033702 seconds.
+  path: Assets/Scenes/Komugi/KomugiScene.unity
+  artifactKey: Guid(909d6dbe02428d647963ce1cd8d5475b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Komugi/KomugiScene.unity using Guid(909d6dbe02428d647963ce1cd8d5475b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91b8095d760109d98ee594a1cf0c9687') in 0.010009 seconds
+  Import took 0.016586 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 40.082254 seconds.
+  path: Assets/Scenes/RetsuScene/RetsuScene.unity
+  artifactKey: Guid(b492089f2941ea74eaa842358f249d7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/RetsuScene/RetsuScene.unity using Guid(b492089f2941ea74eaa842358f249d7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd72424099492dc12cd7892f383550f16') in 0.011339 seconds
+  Import took 0.025970 seconds .
+>>>>>>> f48f904f880f9b7cf79d8ef7e85de7d52dafe406
 
 Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 3500.
 Total: 3.352100 ms (FindLiveObjects: 0.316900 ms CreateObjectMapping: 0.188800 ms MarkObjects: 2.766200 ms  DeleteObjects: 0.078800 ms)
@@ -115,6 +405,7 @@ Total: 4.424400 ms (FindLiveObjects: 0.349000 ms CreateObjectMapping: 0.181700 m
 
 ========================================================================
 Received Import Request.
+<<<<<<< HEAD
   Time since last request: 23.487400 seconds.
   path: Assets/FieldData/FieldData.csv
   artifactKey: Guid(60d565935280c154db225571b91523b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
@@ -304,6 +595,45 @@ Received Import Request.
   artifactKey: Guid(f1fddc2647251854bb080578fe8f7488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/FieldData/StartData_.csv using Guid(f1fddc2647251854bb080578fe8f7488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42b88d84cf03a7332a5b1ed2f19a113e') in 0.003831 seconds
   Import took 0.009544 seconds .
+=======
+  Time since last request: 0.000369 seconds.
+  path: Assets/Sprites/ronot.png
+  artifactKey: Guid(d95a996ea8b15a144a8ec0516cc13034) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/ronot.png using Guid(d95a996ea8b15a144a8ec0516cc13034) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5df9927b4d6be3fc84d7e5690bc37fc1') in 0.018513 seconds
+  Import took 0.026398 seconds .
+>>>>>>> e94daaeaeab116e683d45429aedfb0406d7f8fae
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.743795 seconds.
+  path: Assets/Prefabs/Enemy/Boss/Bullet.prefab
+  artifactKey: Guid(935fc235d9bb81e4bb19ccebe466c43d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy/Boss/Bullet.prefab using Guid(935fc235d9bb81e4bb19ccebe466c43d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03afd008a0db15e1cf695f87019f6ada') in 0.203034 seconds
+  Import took 0.211745 seconds .
+
+========================================================================
+Received Import Request.
+<<<<<<< HEAD
+  Time since last request: 0.659965 seconds.
+  path: Assets/Prefabs/Enemy/Boss/EnemyBossStateMachine.prefab
+  artifactKey: Guid(3a756e1e7542b534982dbbb62980d05b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy/Boss/EnemyBossStateMachine.prefab using Guid(3a756e1e7542b534982dbbb62980d05b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0871a454e577e5406aeb830745b3fc92') in 0.064896 seconds
+  Import took 0.071194 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.247209 seconds.
+  path: Assets/Prefabs/Enemy/BerorinMedama.prefab
+  artifactKey: Guid(0a96cae797096c54284498f146a1d51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy/BerorinMedama.prefab using Guid(0a96cae797096c54284498f146a1d51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '920f4269aa32ecac900c97e70abcd6f4') in 0.073240 seconds
+  Import took 0.089214 seconds .
+=======
+  Time since last request: 2.605595 seconds.
+  path: Assets/Prefabs/ItemNeo/TetrisStone.prefab
+  artifactKey: Guid(20d1d33aa7b76944585af24dd76b618a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/ItemNeo/TetrisStone.prefab using Guid(20d1d33aa7b76944585af24dd76b618a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51e63ba67a969fff6c3f1ac44c607dfb') in 0.025042 seconds
+  Import took 0.032420 seconds .
+>>>>>>> f48f904f880f9b7cf79d8ef7e85de7d52dafe406
 
 ========================================================================
 Received Prepare
@@ -1094,7 +1424,25 @@ Unloading 3037 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 126.0 MB.
 System memory in use after: 126.2 MB.
 
+<<<<<<< HEAD
 Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3635.
 Total: 3.970000 ms (FindLiveObjects: 0.340900 ms CreateObjectMapping: 0.162000 ms MarkObjects: 3.436700 ms  DeleteObjects: 0.028600 ms)
 
+=======
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3603.
+Total: 3.235400 ms (FindLiveObjects: 0.401400 ms CreateObjectMapping: 0.196300 ms MarkObjects: 2.601000 ms  DeleteObjects: 0.035100 ms)
+=======
+  Time since last request: 0.008433 seconds.
+  path: Assets/Prefabs/ItemGenerator.prefab
+  artifactKey: Guid(24987b5e5cc30e24abe5ad4e9d863f47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/ItemGenerator.prefab using Guid(24987b5e5cc30e24abe5ad4e9d863f47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fca95f58b271ca510ff12d9b94a095d5') in 0.005462 seconds
+  Import took 0.013068 seconds .
+>>>>>>> 246658e2b3d1ba0a88e3edc73105b9ef96e644b7
+>>>>>>> 954e516132c49466e7990aa4be83318068af97fc
+>>>>>>> 5157f62612cd677b3a023b0e35e31c6d4ceb6f70
+>>>>>>> e94daaeaeab116e683d45429aedfb0406d7f8fae
+>>>>>>> 933a71d52bc1d84f69224de2f0003b99dcf41d45
+
+>>>>>>> ae4deb306f8aeebd12ac17adda50ac1f883f6b25
+>>>>>>> f48f904f880f9b7cf79d8ef7e85de7d52dafe406
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
