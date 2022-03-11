@@ -58,7 +58,7 @@ namespace Enemy
             {
                 animator.SetTrigger("Down");
                 Destroy(bossObj, 1.2f);
-                SceneManager.LoadScene("TakaoTestScene2");
+                SceneManager.LoadScene("TakaoScene2");
             }
         }
     }

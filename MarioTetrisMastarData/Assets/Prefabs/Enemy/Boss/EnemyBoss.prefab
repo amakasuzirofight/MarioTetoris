@@ -103,6 +103,18 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 6898401333909973896}
+    - target: {fileID: 4236418686807185983, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
+      propertyPath: m_Radius
+      value: 4.4880056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236418686807185983, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236418686807185983, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.61
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
 --- !u!1 &2713529267031145524 stripped
