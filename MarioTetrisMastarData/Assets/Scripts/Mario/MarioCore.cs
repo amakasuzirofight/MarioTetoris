@@ -17,7 +17,7 @@ namespace Mario
         [SerializeField] MarioWalk marioWalk;
         [SerializeField] LayerMask layerMask;
         [SerializeField] protected int attackPower;
-        [SerializeField] protected int Hp;
+        [SerializeField] public int Hp;
 
         Rigidbody2D rigidbody2D;
         CapsuleCollider2D capsuleCollider2D;

@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96fefbc89ff91a440b219d9c5d30cddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 5
   atkPow_Hand: 2
   atkPow_Spit: 1
   spd_Hand: 1.5
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBoss: {fileID: 564312517058740107}
-  stateBrock_1: 010000000500000003000000020000000100000002000000
+  stateBrock_1: 010000000100000003000000020000000100000002000000
   stateBrock_2: 0500000001000000020000000300000001000000
   stateBrock_3: 050000000300000001000000020000000300000001000000
 --- !u!114 &564312517058740109
@@ -149,8 +149,8 @@ MonoBehaviour:
   faceObj: {fileID: 0}
   animObj: {fileID: 0}
   bossObj: {fileID: 0}
-  pos_R: {x: -9, y: -6, z: 0}
-  pos_L: {x: 9, y: -6, z: 0}
+  pos_R: {x: -5, y: -8, z: 0}
+  pos_L: {x: 5, y: -8, z: 0}
 --- !u!114 &564312517058740111
 MonoBehaviour:
   m_ObjectHideFlags: 0

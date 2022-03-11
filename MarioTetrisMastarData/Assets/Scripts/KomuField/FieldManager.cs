@@ -23,6 +23,8 @@ namespace Field
         [SerializeField] private TextAsset saveData;
         [SerializeField] private FieldBase defaultScene;
 
+        Mario.MarioCore core;
+
         private void Start()
         {
             Utility_.MessageSetting(false);
@@ -34,11 +36,14 @@ namespace Field
             nowField.OpenField();
             enemys = nowField.enemys;
             coreUpdate = Utility_.playerObject.GetComponent<Mario.IPlayerUpdate>();
+            core = Utility_.playerObject.GetComponent<Mario.MarioCore>();
             robotUpdate = Utility_.robotObject.GetComponent<Robot.IRobotUpdate>();
             InputUpdate = GameObject.Find("Input 1").GetComponent<Inputer.ISelectInputUpdate>();
+            Utility_.robotObject.transform.position = new Vector3(Utility_.playerObject.transform.position.x, Utility_.playerObject.transform.position.y + 4);
             for (int i = 0;i < enemys.Count;i++)
             {
                 enemyUpdates.Add(enemys[i].GetComponent<Connector.IEnemyUpdateSendable>());
+                if (enemyUpdates[i] == null) enemyUpdates[i] = enemys[i].GetComponentInChildren<Connector.IEnemyUpdateSendable>();
             }
         }
 
@@ -58,6 +63,27 @@ namespace Field
                 new Vector3(Mathf.Clamp(Utility_.playerObject.transform.position.x,10,Utility_.FieldData[0].Length - 10),
                             Utility_.playerObject.transform.position.y,
                             -10);
+
+            if (core.Hp <= 0)
+            {
+                Debug.Log("Close");
+                nowField.CloseField();
+                FieldBase next = defaultScene;
+                Destroy(activeSceneObject);
+                activeSceneObject = Instantiate(next.gameObject);
+                nowField = activeSceneObject.GetComponent<FieldBase>();
+                nowField.fieldcomplete = FieldChenge;
+                nowField.OpenField();
+                enemyUpdates = new List<Connector.IEnemyUpdateSendable>();
+                Utility_.robotObject.transform.position = new Vector3(Utility_.playerObject.transform.position.x, Utility_.playerObject.transform.position.y + 4);
+                enemys = nowField.enemys;
+                for (int i = 0; i < enemys.Count; i++)
+                {
+                    enemyUpdates.Add(enemys[i].GetComponent<Connector.IEnemyUpdateSendable>());
+                    if (enemyUpdates[i] == null) enemyUpdates[i] = enemys[i].GetComponentInChildren<Connector.IEnemyUpdateSendable>();
+                }
+                core.Hp = 5;
+            }
 
             switch (Utility_.GameState)
             {
@@ -118,6 +144,7 @@ namespace Field
             for (int i = 0; i < enemys.Count; i++)
             {
                 enemyUpdates.Add(enemys[i].GetComponent<Connector.IEnemyUpdateSendable>());
+                if (enemyUpdates[i] == null) enemyUpdates[i] = enemys[i].GetComponentInChildren<Connector.IEnemyUpdateSendable>();
             }
         }
 

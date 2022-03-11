@@ -87,10 +87,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlogMain
       objectReference: {fileID: 0}
-    - target: {fileID: 3713433820894723833, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3713433821287680967, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
       propertyPath: manager
       value: 
@@ -103,18 +99,6 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 6898401333909973896}
-    - target: {fileID: 4236418686807185983, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
-      propertyPath: m_Radius
-      value: 4.4880056
-      objectReference: {fileID: 0}
-    - target: {fileID: 4236418686807185983, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 4236418686807185983, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.61
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
 --- !u!1 &2713529267031145524 stripped
@@ -239,9 +223,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 564312517058740108, guid: 3a756e1e7542b534982dbbb62980d05b, type: 3}
-      propertyPath: stateBrock_1.Array.data[1]
-      value: 2
+    - target: {fileID: 564312517058740107, guid: 3a756e1e7542b534982dbbb62980d05b, type: 3}
+      propertyPath: hp
+      value: 380
       objectReference: {fileID: 0}
     - target: {fileID: 564312517058740119, guid: 3a756e1e7542b534982dbbb62980d05b, type: 3}
       propertyPath: animObj
