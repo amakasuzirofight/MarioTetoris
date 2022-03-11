@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using System;
 using System.IO;
 
 namespace Field
 {
-    public class FieldType_Stage : FieldBase
+    public class FieldType_Test:FieldBase
     {
         private Dictionary<FieldInfo, GameObject> groundObject = new Dictionary<FieldInfo, GameObject>();
 
         int frameCount = 0;
         int brockNumber = 100;
-        StreamWriter writer;
+        // StreamWriter writer;
         public string[] setCharacters_;
         List<Brock> activeBrock = new List<Brock>();
         private List<GameObject> groundObjects;
@@ -22,6 +21,9 @@ namespace Field
         [SerializeField] private TextAsset brock_csv;
         Brock instanceBrock;
 
+        [SerializeField, TextArea] private List<string> co1; 
+        [SerializeField, TextArea] private List<string> co2; 
+        int count = 0;
         public override void OpenField()
         {
             Utility.Locator<FieldBase>.Bind(this);
@@ -41,49 +43,62 @@ namespace Field
             #endregion
 
             #region ブロック展開
-            StringReader brockReader = new StringReader(brock_csv.text);
-            List<string[]> brockBase = new List<string[]>();
+            //StringReader brockReader = new StringReader(brock_csv.text);
+            //List<string[]> brockBase = new List<string[]>();
 
-            while (brockReader.Peek() != -1)
-            {
-                string line = brockReader.ReadLine();
-                brockBase.Add(line.Split(','));
-            }
+            //while (brockReader.Peek() != -1)
+            //{
+            //    string line = brockReader.ReadLine();
+            //    brockBase.Add(line.Split(','));
+            //}
 
-            for (int i = 0; i < brockBase.Count; i++)
-            {
-                activeBrock.Add(new Brock(Convert.ToInt32(brockBase[i][0])));
-                brockNumber = Convert.ToInt32(brockBase[i][0]);
-                for (int j = 1; j < brockBase[i].Length - 1; j += 2)
-                {
-                    activeBrock[i].csv_pos.Add(new FieldInfo(Convert.ToInt32(brockBase[i][j]), Convert.ToInt32(brockBase[i][j + 1])));
-                    GameObject obj = Instantiate(Utility_.minoGeter[0]);
-                    obj.transform.position = new Vector3(activeBrock[i].csv_pos[activeBrock[i].csv_pos.Count - 1].width, activeBrock[i].csv_pos[activeBrock[i].csv_pos.Count - 1].height * -1);
-                    activeBrock[activeBrock.Count - 1].minos.Add(obj);
-                }
-            }
+            //for (int i = 0; i < brockBase.Count; i++)
+            //{
+            //    activeBrock.Add(new Brock(Convert.ToInt32(brockBase[i][0])));
+            //    brockNumber = Convert.ToInt32(brockBase[i][0]);
+            //    for (int j = 1; j < brockBase[i].Length - 1; j += 2)
+            //    {
+            //        activeBrock[i].csv_pos.Add(new FieldInfo(Convert.ToInt32(brockBase[i][j]), Convert.ToInt32(brockBase[i][j + 1])));
+            //        GameObject obj = Instantiate(Utility_.minoGeter[0]);
+            //        obj.transform.position = new Vector3(activeBrock[i].csv_pos[activeBrock[i].csv_pos.Count - 1].width, activeBrock[i].csv_pos[activeBrock[i].csv_pos.Count - 1].height * -1);
+            //        activeBrock[activeBrock.Count - 1].minos.Add(obj);
+            //    }
+            //}
 
             #endregion
 
             CreateCharacters();
 
-            for (int i = 0;i < Utility_.FieldData.Count;i++)
+            for (int i = 0; i < Utility_.FieldData.Count; i++)
             {
-                for (int j = 0;j < Utility_.FieldData[i].Length;j++)
+                for (int j = 0; j < Utility_.FieldData[i].Length; j++)
                 {
                     groundObject[new FieldInfo(i, j)] = default;
                 }
             }
+
+            Utility_.robotObject.transform.position += new Vector3(0,-3,0);
         }
 
         public override void FieldCheck()
         {
             frameCount++;
 
-            //if (Input.GetKeyDown(KeyCode.M))
-            //{
-            //    DeleteBrock(10);
-            //}
+            if (Utility_.playerObject.transform.position.x >= 15 && count == 0)
+            {
+                Utility_.playerObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                Utility_.robotObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                Utility_.OpenMessage(co1,"ライ");
+                count++;
+            }
+
+            if (Utility_.playerObject.transform.position.x >= 30 && count == 1)
+            {
+                Utility_.playerObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                Utility_.robotObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                Utility_.OpenMessage(co2,"ライ");
+                count++;
+            }
 
             if (frameCount % checkFrame == 0)
             {
@@ -96,12 +111,11 @@ namespace Field
 
         public override void CloseField()
         {
-
-            for (int i = 0;i < Utility_.FieldData.Count;i++)
+            for (int i = 0; i < Utility_.FieldData.Count; i++)
             {
-                for (int j = 0;j < Utility_.FieldData[i].Length;j++)
+                for (int j = 0; j < Utility_.FieldData[i].Length; j++)
                 {
-                    if (groundObject[new FieldInfo(i, j)] != default && groundObject[new FieldInfo(i, j)] != null) Destroy(groundObject[new FieldInfo(i,j)]);
+                    if (groundObject[new FieldInfo(i, j)] != default && groundObject[new FieldInfo(i, j)] != null) Destroy(groundObject[new FieldInfo(i, j)]);
                 }
             }
 
@@ -136,7 +150,7 @@ namespace Field
             List<int> list_i = new List<int>();
             List<int> list_j = new List<int>();
 
-            for (int i = 0;i < activeBrock.Count;i++)
+            for (int i = 0; i < activeBrock.Count; i++)
             {
                 for (int j = 0; j < activeBrock[i].csv_pos.Count; j++)
                 {
@@ -148,7 +162,7 @@ namespace Field
                 }
             }
 
-            for (int i = list_i.Count - 1; i >= 0;i--)
+            for (int i = list_i.Count - 1; i >= 0; i--)
             {
                 Debug.Log($"i = {list_i[i]}({i})||j = {list_j[i]}({i})");
                 Destroy(groundObject[activeBrock[list_i[i]].csv_pos[list_j[i]]]);
@@ -160,7 +174,7 @@ namespace Field
                 activeBrock[list_i[i]].minos.RemoveAt(list_j[i]);
             }
 
-            for (int i = 0;i < activeBrock.Count;i++)
+            for (int i = 0; i < activeBrock.Count; i++)
             {
                 activeBrock[i].stateChenge(true);
                 if (activeBrock[i].minos.Count == 0)
@@ -181,7 +195,7 @@ namespace Field
                 }
             }
 
-            for (int i = activeBrock.Count - 1;i >= 0;i--)
+            for (int i = activeBrock.Count - 1; i >= 0; i--)
             {
                 activeBrock.RemoveAt(i);
             }
