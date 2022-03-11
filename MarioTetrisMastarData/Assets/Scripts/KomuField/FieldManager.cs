@@ -39,6 +39,7 @@ namespace Field
             for (int i = 0;i < enemys.Count;i++)
             {
                 enemyUpdates.Add(enemys[i].GetComponent<Connector.IEnemyUpdateSendable>());
+                if (enemyUpdates[i] == null) enemyUpdates[i] = enemys[i].GetComponentInChildren<Connector.IEnemyUpdateSendable>();
             }
         }
 
@@ -118,6 +119,7 @@ namespace Field
             for (int i = 0; i < enemys.Count; i++)
             {
                 enemyUpdates.Add(enemys[i].GetComponent<Connector.IEnemyUpdateSendable>());
+                if (enemyUpdates[i] == null) enemyUpdates[i] = enemys[i].GetComponentInChildren<Connector.IEnemyUpdateSendable>();
             }
         }
 

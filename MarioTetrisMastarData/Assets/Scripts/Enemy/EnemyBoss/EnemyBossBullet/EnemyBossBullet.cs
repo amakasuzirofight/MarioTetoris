@@ -24,7 +24,7 @@ namespace Enemy
             // ”­ŽËƒƒ\ƒbƒh
             private void Shot()
             {
-                float dir = player.transform.position.x > 0f ? -1f : 1f; 
+                float dir = player.transform.position.x > 0f ? 1f : -1f; 
                 rb.AddForce(Vector2.right * spd * dir);
                 Delete();
             }
