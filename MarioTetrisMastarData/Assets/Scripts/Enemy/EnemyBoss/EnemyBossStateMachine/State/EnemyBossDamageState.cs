@@ -27,14 +27,18 @@ namespace Enemy
                 core ??= GetComponent<EnemyBossCore>();
                 animator ??= animObj.GetComponent<Animator>();
 
-                animator.SetTrigger("Damage");
                 Debug.Log(StateType);
 
                 if (core.Hp <= 0)
                 {
                     Dead();
                 }
-                else ChangeStateManager();
+                else
+                {
+                    animator.SetTrigger("Damage");
+                    ChangeStateManager();
+                } 
+
             }
 
             void IEnemyBossState.OnUpdate(EnemyBossCore enemy)
@@ -57,9 +61,18 @@ namespace Enemy
             protected override void Dead()
             {
                 animator.SetTrigger("Down");
-                Destroy(bossObj, 1.2f);
 
-                if (!core.WaitTime(3)) return;
+                StartCoroutine(WaitTime());
+            }
+
+            public void SceneChange() 
+            {
+                
+            }
+
+            IEnumerator WaitTime() 
+            {
+                yield return new WaitForSeconds(3);
                 SceneManager.LoadScene("TakaoScene2");
             }
         }

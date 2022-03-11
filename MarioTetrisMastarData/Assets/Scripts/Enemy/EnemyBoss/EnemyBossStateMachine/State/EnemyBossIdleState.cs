@@ -15,7 +15,7 @@ namespace Enemy
             public event Action<EnemyBossStateType> ChangeStateEvent;
 
             private EnemyBossCore core;
-            private float transTimeCount = 7f;
+            private float transTimeCount = 4f;
 
 
             void IEnemyBossState.OnStart(EnemyBossStateType beforeState, EnemyBossCore enemy)

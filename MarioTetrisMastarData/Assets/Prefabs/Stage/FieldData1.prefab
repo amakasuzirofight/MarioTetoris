@@ -46,11 +46,13 @@ MonoBehaviour:
   fieldChengers:
   - {fileID: 3566662643874121332, guid: 9c56f15b080d3a045b3d0ad6abca9101, type: 3}
   - {fileID: 8082256166052333307, guid: 772c9bc3131f288449f6a1c77e2d9bf3, type: 3}
-  - {fileID: 4938699564738893376, guid: c2a59ee44103de447bbf2f64876c1a2a, type: 3}
+  - {fileID: 4125084657169383386, guid: 2796109251760684b88bc9aeaa225b9d, type: 3}
+  - {fileID: 3331920900109461509, guid: 638ee210dcf8efd43964885897590300, type: 3}
   chengersPos:
   - {x: 10, y: -4.1}
   - {x: 20, y: -4.1}
   - {x: 35, y: -10.5}
+  - {x: 51, y: -12.6}
   stageNumber: 0
   activeChenger: {fileID: 0}
   enemys: []

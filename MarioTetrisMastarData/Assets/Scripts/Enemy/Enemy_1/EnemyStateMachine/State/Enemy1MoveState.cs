@@ -20,6 +20,7 @@ namespace Enemy
             private Rigidbody2D rb;
             private Animator animator;
 
+
             void IEnemy1State.OnStart(Enemy1StateType beforeState, Enemy1Core enemy)
             {
                 core        ??= GetComponent<Enemy1Core>();

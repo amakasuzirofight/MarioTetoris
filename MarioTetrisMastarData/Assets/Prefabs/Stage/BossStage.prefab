@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7129352459293852497
+--- !u!1 &1318850631025011067
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1398040358796632788}
-  - component: {fileID: 8201027084615368141}
+  - component: {fileID: 7195386251249486078}
+  - component: {fileID: 104169166588876775}
   m_Layer: 0
-  m_Name: StageData2
+  m_Name: BossStage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1398040358796632788
+--- !u!4 &7195386251249486078
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7129352459293852497}
+  m_GameObject: {fileID: 1318850631025011067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.398411, y: -4.436756, z: -5.184677}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,13 +31,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8201027084615368141
+--- !u!114 &104169166588876775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7129352459293852497}
+  m_GameObject: {fileID: 1318850631025011067}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ef464e23715cef41a0f83a14db5879b, type: 3}
@@ -46,11 +46,11 @@ MonoBehaviour:
   fieldChengers:
   - {fileID: 2167748351525670585, guid: 4a73e37386dc1124888c23f8fb94a135, type: 3}
   chengersPos:
-  - {x: 75, y: -3.7}
+  - {x: 76.89, y: -5}
   stageNumber: 2
   activeChenger: {fileID: 0}
   enemys: []
   setCharacters_: []
   checkFrame: 30
-  stage_csv: {fileID: 4900000, guid: 9c65588ee6de0c440931b5309b06cfd0, type: 3}
+  stage_csv: {fileID: 4900000, guid: 2c583f013c393a94da50f506b19e1e93, type: 3}
   brock_csv: {fileID: 4900000, guid: 00a6f621ecaafc44aa7a0c4711e14465, type: 3}
