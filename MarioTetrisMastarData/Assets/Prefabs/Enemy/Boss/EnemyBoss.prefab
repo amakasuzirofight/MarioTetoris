@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 3713433820894723833, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: 438d70531e02ce040915872c9ff26584, type: 2}
     - target: {fileID: 3713433821287680967, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
       propertyPath: manager
       value: 
@@ -103,6 +103,18 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 6898401333909973896}
+    - target: {fileID: 4236418686807185983, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
+      propertyPath: m_Radius
+      value: 4.4880056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236418686807185983, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236418686807185983, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.61
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b810a3a9f1cc2a45aec93f04cc6da71, type: 3}
 --- !u!1 &2713529267031145524 stripped
@@ -183,6 +195,22 @@ PrefabInstance:
       propertyPath: faceObj
       value: 
       objectReference: {fileID: 6110825804847654452}
+    - target: {fileID: 564312517058740105, guid: 3a756e1e7542b534982dbbb62980d05b, type: 3}
+      propertyPath: pos_L.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 564312517058740105, guid: 3a756e1e7542b534982dbbb62980d05b, type: 3}
+      propertyPath: pos_L.y
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 564312517058740105, guid: 3a756e1e7542b534982dbbb62980d05b, type: 3}
+      propertyPath: pos_R.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 564312517058740105, guid: 3a756e1e7542b534982dbbb62980d05b, type: 3}
+      propertyPath: pos_R.y
+      value: -8
+      objectReference: {fileID: 0}
     - target: {fileID: 564312517058740106, guid: 3a756e1e7542b534982dbbb62980d05b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -226,6 +254,10 @@ PrefabInstance:
     - target: {fileID: 564312517058740106, guid: 3a756e1e7542b534982dbbb62980d05b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 564312517058740107, guid: 3a756e1e7542b534982dbbb62980d05b, type: 3}
+      propertyPath: hp
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 564312517058740108, guid: 3a756e1e7542b534982dbbb62980d05b, type: 3}
       propertyPath: stateBrock_1.Array.data[1]

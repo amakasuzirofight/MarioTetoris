@@ -39,6 +39,7 @@ namespace Field
             for (int i = 0;i < enemys.Count;i++)
             {
                 enemyUpdates.Add(enemys[i].GetComponent<Connector.IEnemyUpdateSendable>());
+                if (enemyUpdates[i] == null) enemyUpdates[i] = enemys[i].GetComponentInChildren<Connector.IEnemyUpdateSendable>();
             }
         }
 
@@ -113,10 +114,12 @@ namespace Field
             nowField.fieldcomplete = FieldChenge;
             nowField.OpenField();
             enemyUpdates = new List<Connector.IEnemyUpdateSendable>();
+            Utility_.robotObject.transform.position = new Vector3(Utility_.playerObject.transform.position.x,Utility_.playerObject.transform.position.y + 4);
             enemys = nowField.enemys;
             for (int i = 0; i < enemys.Count; i++)
             {
                 enemyUpdates.Add(enemys[i].GetComponent<Connector.IEnemyUpdateSendable>());
+                if (enemyUpdates[i] == null) enemyUpdates[i] = enemys[i].GetComponentInChildren<Connector.IEnemyUpdateSendable>();
             }
         }
 

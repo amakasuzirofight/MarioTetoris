@@ -281,6 +281,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7184368151730898593, guid: 0ad0d006488f4de449ba0576977ceb62, type: 3}
     - target: {fileID: 6845615898334920676, guid: 4fbd20db09097284182fa1b47903f93d, type: 3}
+      propertyPath: CreateFlg
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845615898334920676, guid: 4fbd20db09097284182fa1b47903f93d, type: 3}
       propertyPath: DebugMode
       value: 0
       objectReference: {fileID: 0}
@@ -1350,10 +1354,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2713529267200973432, guid: a375d7776428ca145913ea81a4bbc94e, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6370583874786218888, guid: a375d7776428ca145913ea81a4bbc94e, type: 3}
       propertyPath: m_Name
       value: EnemyBoss

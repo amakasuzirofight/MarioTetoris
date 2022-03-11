@@ -134,40 +134,41 @@ public class SelecterControl : MonoBehaviour, ISelectedItem
         {
             TetrisVisionBye();
         }
+        selectState = SelectState.Spin;
     }
 
     void CursollMove(SelectButtonType buttonType)
     {
-        //アイテム選択中の時
-        if (selectState == SelectState.Select)
-        {
-            switch (buttonType)
-            {
-                case SelectButtonType.MouceLeft:
-                    selectItemWeight++;
-                    break;
-                case SelectButtonType.MouceRight:
-                    selectItemWeight--;
-                    break;
-                case SelectButtonType.ArrowDown:
-                    if (selectItemWeight == 0)
-                    {
-                        //生成できる数に満たない場合リターン
-                        if (getItemBox.GetTetris() < 4) return;
-                        spinCount = 0;
-                        GenerateTetrisVision(RandomTetrises[0], (TetrisAngle)spinCount, RobotObj.transform.position);
-                        selectState = SelectState.Spin;
-                    }
-                    else
-                    {
-                        GenerateItem();
-                    }
+        ////アイテム選択中の時
+        //if (selectState == SelectState.Select)
+        //{
+        //    switch (buttonType)
+        //    {
+        //        case SelectButtonType.MouceLeft:
+        //            selectItemWeight++;
+        //            break;
+        //        case SelectButtonType.MouceRight:
+        //            selectItemWeight--;
+        //            break;
+        //        case SelectButtonType.ArrowDown:
+        //            if (selectItemWeight == 0)
+        //            {
+        //                //生成できる数に満たない場合リターン
+        //                if (getItemBox.GetTetris() < 4) return;
+        //                spinCount = 0;
+        //                GenerateTetrisVision(RandomTetrises[0], (TetrisAngle)spinCount, RobotObj.transform.position);
+        //                selectState = SelectState.Spin;
+        //            }
+        //            else
+        //            {
+        //                GenerateItem();
+        //            }
 
-                    break;
-                case SelectButtonType.Non:
-                    break;
-            }
-        }
+        //            break;
+        //        case SelectButtonType.Non:
+        //            break;
+        //    }
+        //}
         //回転モードの時
         if (selectState == SelectState.Spin)
         {

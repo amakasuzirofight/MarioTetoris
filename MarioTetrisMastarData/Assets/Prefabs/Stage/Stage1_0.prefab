@@ -46,7 +46,7 @@ MonoBehaviour:
   fieldChengers:
   - {fileID: 2167748351525670585, guid: 4a73e37386dc1124888c23f8fb94a135, type: 3}
   chengersPos:
-  - {x: 43, y: -7}
+  - {x: 43, y: -5.5}
   stageNumber: 0
   activeChenger: {fileID: 0}
   enemys: []
