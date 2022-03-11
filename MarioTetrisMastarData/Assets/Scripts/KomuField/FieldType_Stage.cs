@@ -199,6 +199,14 @@ namespace Field
                     {
                         Debug.Log("æ‚ª‚È‚¢‚½‚ßˆÚ“®‚ð’†Ž~‚µ‚Ü‚·");
                         activeBrock[i].stateChenge(false);
+                        for (int I = activeBrock[i].csv_pos.Count - 1;I >= 0;I--)
+                        {
+                            Destroy(activeBrock[i].minos[I]);
+                            Utility_.FieldData[activeBrock[i].csv_pos[I].height][activeBrock[i].csv_pos[I].width] = 0;
+                            groundObject[activeBrock[i].csv_pos[I]] = default;
+                        }
+                        activeBrock.RemoveAt(i);
+                        i--;
                         break;
                     }
                     else if (activeBrock[i].brockNumGet() != Utility_.FieldData[activeBrock[i].csv_pos[j].height + 1][activeBrock[i].csv_pos[j].width]
