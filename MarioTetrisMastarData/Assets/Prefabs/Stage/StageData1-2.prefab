@@ -52,5 +52,5 @@ MonoBehaviour:
   enemys: []
   setCharacters_: []
   checkFrame: 30
-  stage_csv: {fileID: 4900000, guid: 4159eb4824f50d040b11c8f457fb92f2, type: 3}
+  stage_csv: {fileID: 4900000, guid: 9c65588ee6de0c440931b5309b06cfd0, type: 3}
   brock_csv: {fileID: 4900000, guid: 00a6f621ecaafc44aa7a0c4711e14465, type: 3}

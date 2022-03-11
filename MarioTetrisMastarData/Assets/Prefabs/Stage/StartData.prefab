@@ -46,7 +46,7 @@ MonoBehaviour:
   fieldChengers:
   - {fileID: 446264055131800124, guid: afacaa43dfc84d24c830558d544b48d5, type: 3}
   chengersPos:
-  - {x: 15, y: -4}
+  - {x: 15, y: -5}
   stageNumber: 0
   activeChenger: {fileID: 0}
   enemys: []
@@ -57,4 +57,4 @@ MonoBehaviour:
   - "\u3046\u30FC\u3093...\u305D\u3046\u3060\uFF01\u4FFA\u4E00\u4EBA\u3058\u3083\u52DD\u3066\u305D\u3046\u306B\u306A\u3044\u3057\n\u4E00\u7DD2\u306B\u5012\u3057\u3066\u304F\u308C\u306A\u3044\u304B\uFF1F"
   contet_3:
   - "\u304A\u524D\u558B\u308C\u305F\u306E\u304B\uFF01\uFF1F\n\u3053\u3093\u306A\u3059\u3054\u3044\u767A\u660E\u898B\u305F\u3053\u3068\u306A\u3044\u305C\uFF01\n\u304A\u793C\u3082\u3082\u3089\u3048\u305D\u3046\u3060\u3057\u884C\u3063\u3066\u3084\u308B\u304B\uFF01"
-  csvData: {fileID: 4900000, guid: 60d565935280c154db225571b91523b6, type: 3}
+  csvData: {fileID: 4900000, guid: f1fddc2647251854bb080578fe8f7488, type: 3}
