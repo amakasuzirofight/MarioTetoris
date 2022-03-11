@@ -27,10 +27,10 @@ namespace ItemGenerater
             FieldInfo fieldKari;
             fieldKari.width = 0;
             fieldKari.height = 0;
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                GenerateItem(TetrisTypeEnum.Type_L, TetrisAngle.Angle_270, fieldKari);
-            }
+            //if (Input.GetKeyDown(KeyCode.Return))
+            //{
+            //    GenerateItem(TetrisTypeEnum.Type_L, TetrisAngle.Angle_270, fieldKari);
+            //}
 
 
 
