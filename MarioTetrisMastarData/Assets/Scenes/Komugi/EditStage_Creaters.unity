@@ -153,7 +153,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temporarilySaved: {fileID: 4900000, guid: 1fb0d56f5b237a244bbd610618c83a02, type: 3}
+<<<<<<< HEAD
+  SaveData: {fileID: 4900000, guid: a674a6459d70a41429aab593a057444a, type: 3}
+=======
+<<<<<<< HEAD
+  SaveData: {fileID: 4900000, guid: 54d81c1bc4bbfb6449f9f4dc12fcc71c, type: 3}
+=======
   SaveData: {fileID: 4900000, guid: 2c583f013c393a94da50f506b19e1e93, type: 3}
+>>>>>>> 5157f62612cd677b3a023b0e35e31c6d4ceb6f70
+>>>>>>> a79a4237188672767ef6f101bdddaa0bac2cfba3
   fileName: CreateStage
   cam: {fileID: 798469458}
   debugText: {fileID: 801225585}

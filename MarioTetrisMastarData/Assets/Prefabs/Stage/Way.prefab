@@ -45,7 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brockNumber: 2
   instancePosition:
-  - {x: 5, y: 7}
-  - {x: 6, y: 7}
-  - {x: 7, y: 7}
-  - {x: 8, y: 7}
+  - {x: 14, y: 7}
+  - {x: 15, y: 7}
+  - {x: 16, y: 7}
+  - {x: 17, y: 7}
+  - {x: 18, y: 7}

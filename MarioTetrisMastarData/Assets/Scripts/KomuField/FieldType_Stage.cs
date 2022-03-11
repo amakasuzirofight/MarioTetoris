@@ -80,10 +80,10 @@ namespace Field
         {
             frameCount++;
 
-            if (Input.GetKeyDown(KeyCode.M))
-            {
-                DeleteBrock(10);
-            }
+            //if (Input.GetKeyDown(KeyCode.M))
+            //{
+            //    DeleteBrock(10);
+            //}
 
             if (frameCount % checkFrame == 0)
             {
