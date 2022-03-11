@@ -29,26 +29,24 @@ namespace Enemy
             public event Action<EnemyBossStateType> ChangeStateEvent;
 
             private EnemyBossCore core;
-            private GameObject    player;
-            private GameObject    handObj;
-            private Rigidbody2D   rb_R;
-            private Rigidbody2D   rb_L;
-            private Rigidbody2D   rb;
-            private Animator      animator;
-            
+            private GameObject player;
+            private GameObject handObj;
+            private Rigidbody2D rb_R;
+            private Rigidbody2D rb_L;
+            private Rigidbody2D rb;
+
             private float transTimeCount = 5f;
-            private float atkWaitCount   = 3f;
+            private float atkWaitCount = 3f;
             private float time;
 
-            
+
 
             void IEnemyBossState.OnStart(EnemyBossStateType beforeState, EnemyBossCore enemy)
             {
-                player   ??= Utility_.playerObject; 
-                core     ??= GetComponent<EnemyBossCore>();
-                rb_R     ??= rightHand.GetComponent<Rigidbody2D>();
-                rb_L     ??= leftHand.GetComponent<Rigidbody2D>();
-                animator ??= animObj.GetComponent<Animator>();
+                player ??= Utility_.playerObject;
+                core ??= GetComponent<EnemyBossCore>();
+                rb_R ??= rightHand.GetComponent<Rigidbody2D>();
+                rb_L ??= leftHand.GetComponent<Rigidbody2D>();
 
                 idleObj.SetActive(false);
                 handAtkObj.SetActive(true);
@@ -62,29 +60,26 @@ namespace Enemy
 
                 // 攻撃する手を変更
                 handObj = player.transform.position.x < 0 ? rightHand : leftHand;
-                rb      = player.transform.position.x < 0 ? rb_R : rb_L;
+                rb = player.transform.position.x < 0 ? rb_R : rb_L;
 
 
                 // 反対の手を止める
                 if (rb == rb_R) rb_L.velocity = Vector2.zero;
-                else            rb_R.velocity = Vector2.zero;
+                else rb_R.velocity = Vector2.zero;
 
                 // 追従処理
                 Follow(rb, handObj, core.Spd, Distance(player, handObj), true);
 
                 if (!WaitTime(transTimeCount)) return;
-                Debug.Log("攻撃可能！！");
+                //Debug.Log("攻撃可能！！");
 
                 // 攻撃範囲内の場合
                 if (Detection(Distance(player, handObj), core.AtkRange))
                 {
-                    Debug.Log("Player検知！！");
+                    //Debug.Log("Player検知！！");
                     if (!core.WaitTime(atkWaitCount)) return;
-                    // Animationを再生
-                    Debug.Log("手のひら攻撃！！！");
-                    if (handObj == rightHand) animator.SetTrigger("HandAtk_R");
-                    else                      animator.SetTrigger("HandAtk_L");
-                    StateChangeManager();
+                    //Debug.Log("手のひら攻撃！！！");
+                    Attack(handObj);
                 }
             }
 
@@ -102,8 +97,6 @@ namespace Enemy
             {
                 rb.velocity = Vector2.zero;
 
-
-                if (!core.WaitTime(5)) return;
                 handAtkObj.SetActive(false);
                 idleObj.SetActive(true);
 
@@ -120,6 +113,27 @@ namespace Enemy
                     return true;
                 }
                 return false;
+            }
+
+            private void Attack(GameObject obj)
+            {
+                Vector3 pos = obj.transform.position;
+
+                obj.transform.DOMove(new Vector3(pos.x, pos.y + 30), 2)
+                    .OnComplete(() =>
+                    {
+                        obj.transform.DOMove(new Vector3(pos.x, pos.y - 13), 0.5f)
+                        .OnComplete(() =>
+                        {
+                            obj.transform.DOMove(new Vector3(pos.x, pos.y + 20), 7f)
+                            .OnComplete(() =>
+                            {
+                                // ?
+                                obj.transform.position = new Vector3(transform.position.x, 1f);
+                                StateChangeManager();
+                            });
+                        });
+                    });
             }
         }
     }

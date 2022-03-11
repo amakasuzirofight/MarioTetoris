@@ -9,13 +9,13 @@ namespace Enemy
     {
         public class EnemyBossIdleState : MonoBehaviour, IEnemyBossState
         {
-            //Enemy‚ÌIdleó‘Ôˆ—
+            // Enemy‚ÌIdleó‘Ôˆ—
 
             public EnemyBossStateType StateType => EnemyBossStateType.IDLE;
             public event Action<EnemyBossStateType> ChangeStateEvent;
 
             private EnemyBossCore core;
-            private float transTimeCount = 3f;
+            private float transTimeCount = 7f;
 
 
             void IEnemyBossState.OnStart(EnemyBossStateType beforeState, EnemyBossCore enemy)

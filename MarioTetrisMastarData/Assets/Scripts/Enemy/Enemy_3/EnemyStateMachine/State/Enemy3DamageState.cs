@@ -15,11 +15,15 @@ namespace Enemy
             public event Action<Enemy3StateType> ChangeStateEvent;
 
             private Enemy3Core core;
+            private Animator animator;
 
 
             void IEnemy3State.OnStart(Enemy3StateType beforeState, Enemy3Core enemy)
             {
                 core ??= GetComponent<Enemy3Core>();
+                animator ??= GetComponent<Animator>();
+
+                animator.SetTrigger("Damage");
             }
 
             void IEnemy3State.OnUpdate(Enemy3Core enemy)

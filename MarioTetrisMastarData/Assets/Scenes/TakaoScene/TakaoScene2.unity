@@ -188,7 +188,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -64.5}
+  m_AnchoredPosition: {x: 0, y: -91}
   m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &295453786
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc1529a93fb01484981a808c01a3f2e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66e51c14d09492c42a2b014a24832bc4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -390,7 +390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -200.6}
+  m_AnchoredPosition: {x: 0, y: -176}
   m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &884344235
@@ -817,7 +817,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beginningButton: {fileID: 295453786}
-  continuationButton: {fileID: 1990237103}
   editButton: {fileID: 884344235}
   beginningSprite: {fileID: 0}
   continuationSprite: {fileID: 0}
@@ -1106,7 +1105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1990237102
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1526,6 +1525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TetrisStone
       objectReference: {fileID: 0}
+    - target: {fileID: 703734057470805474, guid: edea1da576a638a49bc4bb2804431f13, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 703734057470805503, guid: edea1da576a638a49bc4bb2804431f13, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1640,6 +1643,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemBom
       objectReference: {fileID: 0}
+    - target: {fileID: 4405149804310323058, guid: 9a6055e7c980d114f9cd56a5ef26d149, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4405149804310323063, guid: 9a6055e7c980d114f9cd56a5ef26d149, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1697,6 +1704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemPortion
       objectReference: {fileID: 0}
+    - target: {fileID: 5330346712653741963, guid: 057eb6c95185eb44a85130bcda1d2142, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5330346712653741967, guid: 057eb6c95185eb44a85130bcda1d2142, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1753,6 +1764,10 @@ PrefabInstance:
     - target: {fileID: 7106627333888665906, guid: f24df44f12342164fa921bb0789d9a4d, type: 3}
       propertyPath: m_Name
       value: BomBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106627333888665906, guid: f24df44f12342164fa921bb0789d9a4d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7106627333888665918, guid: f24df44f12342164fa921bb0789d9a4d, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -1825,3 +1840,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6f237542a496764ebb5438446b15907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &7106627332963100797
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7106627332963100790}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
