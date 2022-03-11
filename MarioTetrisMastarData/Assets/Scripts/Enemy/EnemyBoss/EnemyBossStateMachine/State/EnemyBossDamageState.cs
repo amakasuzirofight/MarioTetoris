@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Enemy
 {
@@ -57,6 +58,7 @@ namespace Enemy
             {
                 animator.SetTrigger("Down");
                 Destroy(bossObj, 1.2f);
+                SceneManager.LoadScene("TakaoScene2");
             }
         }
     }
