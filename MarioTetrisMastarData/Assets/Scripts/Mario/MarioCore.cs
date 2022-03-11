@@ -20,7 +20,6 @@ namespace Mario
         [SerializeField] protected int Hp;
 
         Rigidbody2D rigidbody2D;
-        BoxCollider2D boxCollider2D;
         CapsuleCollider2D capsuleCollider2D;
 
         ICharInputter inputer;
@@ -30,6 +29,8 @@ namespace Mario
         MarioState marioState;
         bool isGround;
         bool canJump;
+        //ç°É_ÉÅÅ[ÉWÇéÛÇØÇÈèÛë‘Ç©
+        bool canDamage;
         private void Awake()
         {
             Utility.Locator<IPlayerUpdate>.Bind(this);
@@ -39,13 +40,10 @@ namespace Mario
         {
             rigidbody2D = GetComponent<Rigidbody2D>();
             capsuleCollider2D = GetComponent<CapsuleCollider2D>();
-            boxCollider2D = GetComponent<BoxCollider2D>();
             inputer = Utility.Locator<CharInput>.GetT();
             inputer.JumpEvent += JumpInputCheck;
-            //groundCheck = groundCheckObj.GetComponent<IGroundCheck>();
-            //groundCheck.ExitGround += ReceiveIsGround;
-            //groundCheck.OnGround += ReceiveIsGround;
 
+            canDamage = true;
             canJump = true;
             marioState = MarioState.Stay;
             _localScale = transform.localScale;
@@ -82,13 +80,16 @@ namespace Mario
             if (IsDebugMode == false) return;
             MarioUpdate();
 
-           
+
         }
         private void FixedUpdate()
         {
-            if (IsDebugMode == false) return;
-            MarioFixedUpdate();
-          
+            if (IsDebugMode == true)
+            {
+                //MarioFixedUpdate();
+            }
+
+            nonDamage();
         }
         void JumpInputCheck()
         {
@@ -121,10 +122,7 @@ namespace Mario
                 marioState = MarioState.Stay;
             }
         }
-        void ReceiveIsGround(bool Ground)
-        {
-            isGround = Ground;
-        }
+
         void AirStateJudge()
         {
             //ãÛíÜÇ…Ç¢ÇÈÇ∆Ç´
@@ -172,9 +170,14 @@ namespace Mario
 
         public void DamageRecevable(int damage)
         {
+            if (canDamage == false) return;
             Hp -= damage;
+            canDamage = false;
         }
+        void nonDamage()
+        {
 
+        }
     }
     public enum MarioState
     {

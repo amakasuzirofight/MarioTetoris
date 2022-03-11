@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TakaoScene/TakaoScene2.unity
+    guid: 5e6ad5b37efacaf469a31f63ba84d195
+  - enabled: 1
+    path: Assets/Scenes/Komugi/KomugiScene.unity
+    guid: 909d6dbe02428d647963ce1cd8d5475b
+  - enabled: 1
     path: Assets/Scenes/Komugi/EditStage.unity
     guid: a91c6c2f672e36d4fb488258f5acb69f
   - enabled: 1
-    path: Assets/Scenes/Amakasu/AmakasuScene2D.unity
-    guid: c94f9bdfd227eda4ca4cbf1011d9cf06
-  - enabled: 1
     path: Assets/Scenes/Komugi/CreateStage_.unity
     guid: 7811a4e0fc025654682ab772e5335736
+  - enabled: 1
+    path: Assets/Scenes/Amakasu/AmakasuScene2D.unity
+    guid: c94f9bdfd227eda4ca4cbf1011d9cf06
   m_configObjects: {}

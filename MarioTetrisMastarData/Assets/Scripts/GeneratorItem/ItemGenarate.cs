@@ -85,12 +85,9 @@ namespace ItemGenerater
                 }
             }
             fieldBase.CreateBrock(fieldInfos,(int)tetrisType);
-            InstanceTetris();
+           
         }
-        void InstanceTetris()
-        {
-            Debug.Log("ê∂ê¨ÅIÅI");
-        }
+   
 
         public void GenerateItem(TetrisTypeEnum tetrisType, TetrisAngle tetrisAngle, List<FieldInfo> positions)
         {

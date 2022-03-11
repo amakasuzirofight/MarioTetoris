@@ -7,7 +7,7 @@ using DG.Tweening;
 public class ViewUI : MonoBehaviour
 {
     [SerializeField] Button beginningButton;
-    [SerializeField] Button continuationButton;
+    //[SerializeField] Button continuationButton;
     [SerializeField] Button editButton;
 
     [SerializeField] Sprite beginningSprite;
@@ -30,17 +30,17 @@ public class ViewUI : MonoBehaviour
         {
             case 0:
                 beginningButton.transform.DOScale(new Vector2(1.5f, 1.5f), 0.2f);
-                continuationButton.transform.DOScale(new Vector2(1, 1), 0.1f);
+                //continuationButton.transform.DOScale(new Vector2(1, 1), 0.1f);
                 editButton.transform.DOScale(new Vector2(1, 1), 0.1f);
                 break;
+            //case 1:
+            //    beginningButton.transform.DOScale(new Vector2(1, 1), 0.1f);
+            //    continuationButton.transform.DOScale(new Vector2(1.5f, 1.5f), 0.2f);
+            //    editButton.transform.DOScale(new Vector2(1, 1), 0.1f);
+            //    break;
             case 1:
-                beginningButton.transform.DOScale(new Vector2(1, 1), 0.1f);
-                continuationButton.transform.DOScale(new Vector2(1.5f, 1.5f), 0.2f);
-                editButton.transform.DOScale(new Vector2(1, 1), 0.1f);
-                break;
-            case 2:
                 editButton.transform.DOScale(new Vector2(1.5f, 1.5f), 0.2f);
-                continuationButton.transform.DOScale(new Vector2(1, 1), 0.1f);
+                //continuationButton.transform.DOScale(new Vector2(1, 1), 0.1f);
                 beginningButton.transform.DOScale(new Vector2(1, 1), 0.1f);
                 break;
             default:

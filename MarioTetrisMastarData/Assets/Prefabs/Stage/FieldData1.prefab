@@ -47,8 +47,8 @@ MonoBehaviour:
   - {fileID: 3566662643874121332, guid: 9c56f15b080d3a045b3d0ad6abca9101, type: 3}
   - {fileID: 8082256166052333307, guid: 772c9bc3131f288449f6a1c77e2d9bf3, type: 3}
   chengersPos:
-  - {x: 3.5, y: -5.1}
-  - {x: 10, y: -5.1}
+  - {x: 10, y: -4.1}
+  - {x: 20, y: -4.1}
   stageNumber: 0
   activeChenger: {fileID: 0}
   enemys: []

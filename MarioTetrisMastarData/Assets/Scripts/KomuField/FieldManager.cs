@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.IO;
 
 namespace Field
 {
@@ -19,11 +20,15 @@ namespace Field
         Robot.IRobotUpdate robotUpdate;
         Inputer.ISelectInputUpdate InputUpdate;
 
+        [SerializeField] private TextAsset saveData;
+        [SerializeField] private FieldBase defaultScene;
+
         private void Start()
         {
             Utility_.MessageSetting(false);
             state = FieldState.NORMAL;
-            activeSceneObject = Instantiate(baseScene.gameObject);
+            if (flgChecker()) activeSceneObject = Instantiate(defaultScene.gameObject);
+            else activeSceneObject = Instantiate(baseScene.gameObject);
             nowField = activeSceneObject.GetComponent<FieldBase>();
             nowField.fieldcomplete = FieldChenge;
             nowField.OpenField();
@@ -115,18 +120,33 @@ namespace Field
             }
         }
 
-        public void DebugEvent()
+        public bool flgChecker()
         {
-            Instantiate(Utility_.enemyGeter[0]);
+            StreamReader reader = new StreamReader(Application.dataPath + "/JsonData/" + saveData.name + ".json");
+            string data = reader.ReadToEnd();
+            reader.Close();
 
-            StartCoroutine(eve());
-        }
+            StageClearFlg clearFlg = JsonUtility.FromJson<StageClearFlg>(saveData.text);
 
-        IEnumerator eve ()
-        {
-             yield return new WaitForSeconds(10);
+            List<bool> flgs = new List<bool>();
+            flgs.Add(false);
+            flgs.Add(clearFlg.clearFlg_1);
+            flgs.Add(clearFlg.clearFlg_2);
+            flgs.Add(clearFlg.clearFlg_3);
+            flgs.Add(clearFlg.clearFlg_4);
+            flgs.Add(clearFlg.clearFlg_5);
+            flgs.Add(clearFlg.clearFlg_6);
+            flgs.Add(clearFlg.clearFlg_7);
+            flgs.Add(clearFlg.clearFlg_8);
+            flgs.Add(clearFlg.clearFlg_9);
+            flgs.Add(clearFlg.clearFlg_10);
 
-            Utility_.EventEnd();
+            for (int i = 0;i < flgs.Count;i++)
+            {
+                if (flgs[i]) return true;
+            }
+
+            return false;
         }
     }
 
