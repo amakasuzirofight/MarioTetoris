@@ -15,6 +15,9 @@ public class CreateStage : MonoBehaviour
 
     [SerializeField] private GameObject cam;
 
+    Mario.IPlayerUpdate playerUpdate;
+    Robot.IRobotUpdate robotUpdate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +49,8 @@ public class CreateStage : MonoBehaviour
                     else if (list[i][j] == Utility_.PLAYER_NUMBER)
                     {
                         Utility_.playerObject.transform.position = FieldInfo.FieldInfoToVec(new FieldInfo(i, j));
+                        playerUpdate = Utility_.playerObject.GetComponent<Mario.IPlayerUpdate>();
+                        robotUpdate = Utility_.robotObject.GetComponent<Robot.IRobotUpdate>();
                     }
                 }
             }
@@ -56,5 +61,14 @@ public class CreateStage : MonoBehaviour
     void Update()
     {
         cam.transform.position = new Vector3(Utility_.playerObject.transform.position.x,Utility_.playerObject.transform.position.y,-10);
+
+        playerUpdate.MarioUpdate();
+        robotUpdate.RobotUpdate();
+    }
+
+    void FixedUpdate()
+    {
+        playerUpdate.MarioFixedUpdate();
+        robotUpdate.RobotFixedUpdate();
     }
 }

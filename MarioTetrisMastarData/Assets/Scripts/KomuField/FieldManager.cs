@@ -113,6 +113,7 @@ namespace Field
             nowField.fieldcomplete = FieldChenge;
             nowField.OpenField();
             enemyUpdates = new List<Connector.IEnemyUpdateSendable>();
+            Utility_.robotObject.transform.position = new Vector3(Utility_.playerObject.transform.position.x,Utility_.playerObject.transform.position.y + 4);
             enemys = nowField.enemys;
             for (int i = 0; i < enemys.Count; i++)
             {
