@@ -93,6 +93,8 @@ namespace Field
         /// </summary>
         protected void ChengerCheck()
         {
+            if (Utility_.playerObject.transform.position.y * -1 >= Utility_.FieldData.Count) Utility_.playerObject.transform.position = FieldInfo.FieldInfoToVec(new FieldInfo(3,10));
+
             for (int i = 0; i < createChengers.Length; i++)
             {
                 if (createChengers[i].clearFlg)

@@ -1406,6 +1406,10 @@ PrefabInstance:
       value: FieldManager
       objectReference: {fileID: 0}
     - target: {fileID: 3495437678960830983, guid: b582d5f4e9937a04394739459dcd07b7, type: 3}
+      propertyPath: saveData
+      value: 
+      objectReference: {fileID: 4900000, guid: e97a6fc44d6ecbb4db426294e80f62ac, type: 3}
+    - target: {fileID: 3495437678960830983, guid: b582d5f4e9937a04394739459dcd07b7, type: 3}
       propertyPath: baseScene
       value: 
       objectReference: {fileID: 1501552383245228382, guid: 3baab2359ed1fa240a3d3fb8ab399b50, type: 3}
@@ -1413,6 +1417,10 @@ PrefabInstance:
       propertyPath: mainCamara
       value: 
       objectReference: {fileID: 2143926856}
+    - target: {fileID: 3495437678960830983, guid: b582d5f4e9937a04394739459dcd07b7, type: 3}
+      propertyPath: defaultScene
+      value: 
+      objectReference: {fileID: 1721779795635731353, guid: 2dfc0f500a848664fb906a76c526503a, type: 3}
     - target: {fileID: 3495437678960830983, guid: b582d5f4e9937a04394739459dcd07b7, type: 3}
       propertyPath: debugMs.Array.size
       value: 4
