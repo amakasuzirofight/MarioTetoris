@@ -91,7 +91,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
   m_Sprite: {fileID: 6158802113039044628, guid: 66f36d734ae33bd4f840b463dd9becb2, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: c6e40a33467cd0044811392eeafcc043, type: 3}
+>>>>>>> feature_ItemPrefabs
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
