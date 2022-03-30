@@ -39,7 +39,7 @@ namespace Field
             core = Utility_.playerObject.GetComponent<Mario.MarioCore>();
             robotUpdate = Utility_.robotObject.GetComponent<Robot.IRobotUpdate>();
             InputUpdate = GameObject.Find("Input 1").GetComponent<Inputer.ISelectInputUpdate>();
-            Utility_.robotObject.transform.position = new Vector3(Utility_.playerObject.transform.position.x, Utility_.playerObject.transform.position.y + 4);
+            // Utility_.robotObject.transform.position = new Vector3(Utility_.playerObject.transform.position.x, Utility_.playerObject.transform.position.y + 4);
             for (int i = 0;i < enemys.Count;i++)
             {
                 enemyUpdates.Add(enemys[i].GetComponent<Connector.IEnemyUpdateSendable>());
